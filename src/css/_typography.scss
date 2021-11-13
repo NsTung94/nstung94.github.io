@@ -24,21 +24,40 @@ body {
   background-color: $primary-color;
   color: #ffffff;
 }
+.btn-no-border {
+  border: none;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
 
 .container {
   display: block;
   width: 100%;
-  padding: 0 20px;
+  padding: 0 15px;
   margin: 0 auto;
   @include large {
-    width: 1180px;
+    max-width: 1180px;
+    padding: 0 20px;
   }
-  .row {
-    @include flexBox();
+  &__row {
     @include large {
       margin: 0 -20px;
+      
     }
   }
+}
+
+.flex {
+  display: flex;
+}
+
+.item {
+  width: 100%;
+  margin-bottom: 16px;
 }
 
 :root {
@@ -47,6 +66,7 @@ body {
 
 html {
   font-size: $body-font-size;
+  font-family: "Electrolux";
   @include desktop {
     font-size: $body-font-size-tablet;
   }
@@ -85,7 +105,7 @@ label {
   flex-direction: row;
 }
 
-.flex-column {
+.flex-start-column {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -94,23 +114,14 @@ label {
 }
 
 .hide-on-mobile {
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  @include desktop {
-    visibility: visible;
-    width: auto;
-    height: auto;
+  display: none;
+  @include large {
+    display: flex;
   }
 }
 
-button {
-  border: none;
-  background-color: transparent;
-}
-
 .hide-on-desktop {
-  @include desktop {
+  @include large {
     display: none;
     visibility: hidden;
     width: 0;
@@ -119,34 +130,36 @@ button {
 }
 
 .hide {
-  visibility: hidden;
-  width: 0;
-  height: 0;
+  display: none;
 }
 
 .show {
-  visibility: visible;
-  width: auto;
-  height: auto;
+  display: block;
 }
 
-
-.hideDropDown{
+.hideDropDown {
   display: none;
 }
-.showDropDown {
+.dropDown {
   display: block;
-  .title {
-    margin-bottom: 10px;
-    &:before {
-      visibility: hidden;
-    }
+  &__header {
   }
-  .content {
-    visibility: visible;
-    height: 90px;
-    min-width: 250px;
-    transition: 0.5s;
-    gap: 5px;
+
+  &__container {
+  }
+}
+
+.active {
+  &__content {
+    bottom: 0;
+  }
+  @include large {
+    bottom: auto;
+  }
+}
+
+.full-img {
+  img {
+    height: 100%;
   }
 }

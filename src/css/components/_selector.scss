@@ -1,0 +1,112 @@
+.selector {
+  @include flexBox($dir: column);
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+  z-index: 60;
+  background-color: #fff;
+  transition: bottom 0.8s ease-in-out;
+  @include large {
+    position: relative;
+    width: 20%;
+    margin-left: -20px;
+  }
+  &__header {
+    @include flexBox(center, space-between);
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    padding: 15px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: $secondary-color;
+    margin-top: 0;
+    &-icon {
+      position: absolute;
+      right: 15px;
+      top: calc(50%);
+      width: 21px;
+      height: 21px;
+    }
+    &-iconFilter{
+      @include flexBox(center, center);
+    }
+    @include large {
+      display: none;
+    }
+  }
+  &__container {
+    position: relative;
+    left: 0;
+    right: 0;
+    flex: 1 0 auto;
+    overflow: auto;
+    padding: 15px;
+    width: 100%;
+    @include large {
+      padding: 0;
+    }
+    &-list {
+      padding: 0;
+    }
+    &-filter {
+      border-bottom: 1px solid $secondary-color;
+      padding: 20px 0;
+      overflow: hidden;
+    }
+    &-title {
+      position: relative;
+      text-transform: uppercase;
+      cursor: pointer;
+      font: 600 14px/17px $font-primary;
+      padding: 10px 0;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 2px;
+        height: 14px;
+        top: calc(50% - 6px);
+        right: 22px;
+        background-color: $primary-color;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        width: 16px;
+        height: 2px;
+        top: calc(50%);
+        right: 15px;
+        background-color: $primary-color;
+      }
+    }
+    &-content {
+      height: 0;
+      transition: 0.5s;
+      overflow:hidden;
+      @include flexBox(center, $dir: column);
+    }
+    &-checkbox {
+      width: 100%;
+      padding-top: 10px;
+    }
+    &-label{
+      margin-left: 15px;
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+    position: relative;
+    bottom: 15px;
+    width: 100%;
+    background-color: #fff;
+    &-button {
+      width: calc(50% - 5px);
+    }
+  }
+}

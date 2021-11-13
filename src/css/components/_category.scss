@@ -1,0 +1,56 @@
+@import './slider';
+
+.category {
+    margin-top: 20px;
+    &__header {
+        text-transform: uppercase;
+        font: 600 18px/25.2px $font-primary;
+        margin-bottom: 8px;
+        @include large{
+            font-size: 20px;
+        }
+    }
+    &__content{
+        height: 64px;
+        @include large {
+            height: 200px;
+        }
+    }
+    &__item{
+        font: 400 14px/18px $font-primary;
+        min-width: fit-content;
+        height: 60px;
+        margin: 0 8px;
+        padding: 11px 18px;
+        border: 1px solid rgba(0,0,0,0.1);
+        &:hover {
+            border: 2px solid $primary-color;
+            border-radius: 2px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+        @include flexBox(center, center, wrap, row);
+        &-type {
+            @include flexBox(center, center);
+            @include large{
+                width: 100%;
+            }
+        }
+        @include large{
+            height: 160px;
+            width: 130px;
+            max-width: 135px;
+            margin: 0 10px;
+            padding: 25px 1px;
+            border: none;
+        }
+    }
+    @include large {
+        margin-top: 40px;
+    }
+}
+.selected {
+    border: 2px solid $primary-color;
+    border-radius: 1px;
+    font-weight: 600;
+}

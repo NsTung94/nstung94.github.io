@@ -1,0 +1,81 @@
+.footer {
+  @include flexBox();
+
+  &__option {
+    background-color: $primary-color;
+    color: #fff;
+    padding-top: 10px;
+    &-item {
+      width: 100%;
+      &-title {
+        position: relative;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        font: 600 14px/22px $font-primary;
+        border-bottom: 1px solid #fff;
+        color: #fff;
+        padding: 8px 0;
+        text-decoration: none;
+        &:before {
+          position: absolute;
+          content: "";
+          width: 2px;
+          height: 14px;
+          top: calc(50% - 6px);
+          right: 22px;
+          background-color: #fff;
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          width: 16px;
+          height: 2px;
+          top: calc(50%);
+          right: 15px;
+          background-color: #fff;
+        }
+        // @include large {
+        //   border: none;
+        //   &:before, &:after {
+        //     display: none;
+        //   }
+        // }
+      }
+      &-content{
+          padding: 0;
+          height: 0;
+          overflow: hidden;
+          transition: 0.5s;
+          li{
+            padding: 5px;
+          }
+          // @include large {
+          //   display: flex;
+          //   height: 100px;
+          // }
+      }
+    }
+    @include large {
+      @include flexBox($dir: column)
+    }
+  }
+
+  &__connect{
+      @include flexBox();
+      margin-top: 16px;
+    &-icon{
+        margin:0 15px 15px 0;
+    }
+    &-infor{
+        margin-bottom: 15px;
+    }
+    &-download{
+        @include flexBox();
+        &--button {
+            width: 100%;
+            padding: 5px 0;
+        }
+    }
+  }
+}

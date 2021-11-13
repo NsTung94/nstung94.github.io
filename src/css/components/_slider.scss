@@ -1,0 +1,68 @@
+.owl-carousel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.no-js .owl-carousel,
+.owl-carousel.owl-loaded {
+  display: flex;
+}
+.owl-carousel .owl-nav {
+  margin: 0;
+}
+.owl-item .active {
+  width: fit-content;
+}
+.owl-stage {
+  width: 150%;
+  display: flex;
+  // overflow: hidden;
+  flex-wrap: nowrap;
+  margin-left: 10px;
+}
+.owl-prev,
+.owl-next {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  // left: 0;
+  width: 20px;
+
+  span {
+    position: absolute;
+    color: $primary-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: auto;
+  }
+}
+.owl-prev {
+  left: 0;
+}
+.owl-next {
+  right: 0;
+}
+.owl-theme .owl-nav [class*="owl-"] {
+  color: $primary-color;
+  font-size: 39px;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.owl-item > div {
+  cursor: pointer;
+  transition: margin 0.4s ease;
+}
+.owl-item.center > div {
+  cursor: auto;
+  margin: 0;
+  border: 1.5px solid $primary-color;
+}
+
