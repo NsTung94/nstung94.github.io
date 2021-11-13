@@ -1,0 +1,152 @@
+body {
+  color: var(--primary-color);
+  font-family: "Electrolux";
+  margin: 0;
+}
+
+.btn {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px 12px;
+  border: 1px solid #d5d5d5;
+  background-color: #ffffff;
+  font: 700 13px/18px "Electrolux", serif;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.3 ease-in-out;
+  }
+}
+
+.btn--primary {
+  background-color: $primary-color;
+  color: #ffffff;
+}
+
+.container {
+  display: block;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+  @include large {
+    width: 1180px;
+  }
+  .row {
+    @include flexBox();
+    @include large {
+      margin: 0 -20px;
+    }
+  }
+}
+
+:root {
+  --primary-color: #011e41;
+}
+
+html {
+  font-size: $body-font-size;
+  @include desktop {
+    font-size: $body-font-size-tablet;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  // margin-bottom: 16px;
+}
+.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.show {
+  visibility: visible;
+}
+
+.center-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.hide-on-mobile {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  @include desktop {
+    visibility: visible;
+    width: auto;
+    height: auto;
+  }
+}
+
+button {
+  border: none;
+  background-color: transparent;
+}
+
+.hide-on-desktop {
+  @include desktop {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+.hide {
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.show {
+  visibility: visible;
+  width: auto;
+  height: auto;
+}
+
+
+.hideDropDown{
+  display: none;
+}
+.showDropDown {
+  display: block;
+  .title {
+    margin-bottom: 10px;
+    &:before {
+      visibility: hidden;
+    }
+  }
+  .content {
+    visibility: visible;
+    height: 90px;
+    min-width: 250px;
+    transition: 0.5s;
+    gap: 5px;
+  }
+}

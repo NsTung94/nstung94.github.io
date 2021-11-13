@@ -1,0 +1,15 @@
+  
+
+@include font-face("Electrolux Sans",  "./assets/fonts/ElectroluxSans-Regular", 500, normal, eot woff2 woff ttf svg);
+@include font-face("Electrolux SemiBold Sans",  "./assets/fonts/ElectroluxSans-Semibold", 600, normal, eot woff2 woff ttf svg);
+
+
+@font-face {
+    font-family: 'Electrolux';
+    src: url('../../../fonts/ElectroluxSans-Regular.eot'); /* IE9 Compat Modes */
+    src: url('../../../fonts/ElectroluxSans-Regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('../../../fonts/ElectroluxSans-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('../../../fonts/ElectroluxSansVN-Regular.woff') format('woff'), /* Pretty Modern Browsers */
+         url('../../../fonts/ElectroluxSans-Regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+        //  url('../../../fonts/Electro') format('svg'); /* Legacy iOS */
+  }

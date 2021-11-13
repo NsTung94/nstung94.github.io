@@ -1,0 +1,49 @@
+@mixin font-face(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot ttf svg woff woff2
+) {
+  // to do woff woff2
+  $src: $path;
+
+  $formats: (
+    eot: "embedded-opentype",
+    ttf: "truetype",
+  );
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+    font-display: swap;
+  }
+}
+
+@mixin flexBox($ai: flex-start, $jc: flex-start, $wrap: wrap, $dir: row) {
+  display: flex;
+  align-items: $ai;
+  justify-content: $jc;
+  flex-wrap: $wrap;
+  flex-direction: $dir;
+}
+
+@mixin tablet {
+  @media only screen and (min-width: $tablet) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: $large) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: $desktop) {
+    @content;
+  }
+}
