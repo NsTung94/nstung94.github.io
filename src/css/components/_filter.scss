@@ -11,7 +11,8 @@
     width: 100%;
     @include flexBox(center, space-between);
     @include large {
-        height: 40px;
+      height: 40px;
+      margin: 0;
     }
   }
   &__button {
@@ -25,10 +26,10 @@
         margin: 0 5px;
       }
     }
-    &-item{
-        @include flexBox(center);
-        gap: 5px;
-        position: relative;
+    &-item {
+      @include flexBox(center);
+      gap: 5px;
+      position: relative;
     }
     &-reset {
       display: none;
@@ -50,18 +51,18 @@
       }
     }
     @include large {
-        @include flexBox(center);
-      
+      @include flexBox(center);
+      padding: 0;
       border: none;
       width: 20%;
       &-number {
-          padding: 0 30px;
-          width: 60%;
-          text-transform: capitalize;
-          &:after {
-              content: ' Products';
-              margin-left: 10px;
-          }
+        padding: 0 30px;
+        width: 60%;
+        text-transform: capitalize;
+        &:after {
+          content: " Products";
+          margin-left: 10px;
+        }
       }
     }
   }
@@ -69,8 +70,8 @@
     position: relative;
     width: 100%;
     &__button-wrap-reset {
-        @include flexBox(center, space-between);
-        width: 20%;
+      @include flexBox(center, space-between);
+      width: 15%;
     }
   }
 
@@ -88,7 +89,6 @@
       bottom: 0;
       height: 0;
       overflow: hidden;
-
     }
     &--overlay {
       width: 100%;

@@ -11,10 +11,12 @@
         }
     }
     &__content{
-        height: 64px;
+        margin-right: 20px;
+        height: 70px;
         @include large {
             height: 200px;
         }
+        border-bottom: 1px solid $primary-color;
     }
     &__item{
         font: 400 14px/18px $font-primary;
@@ -32,6 +34,7 @@
         @include flexBox(center, center, wrap, row);
         &-type {
             @include flexBox(center, center);
+            text-align: center;
             @include large{
                 width: 100%;
             }

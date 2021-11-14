@@ -1,0 +1,1933 @@
+/*! nstung94.github.io v1.0.0 | (c) 2021  | ISC License | git+https://github.com/NsTung94/nstung94.github.io.git */
+@font-face {
+  font-family: 'Electrolux';
+  src: url("../fonts/ElectroluxSans-Regular.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/ElectroluxSans-Regular.eot?#iefix") format("embedded-opentype"), url("../fonts/ElectroluxSans-Regular.woff2") format("woff2"), url("../fonts/ElectroluxSansVN-Regular.woff") format("woff"), url("../fonts/ElectroluxSans-Regular.ttf") format("truetype");
+}
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 10, src/css/_reset.scss */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background-repeat: no-repeat;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 19, src/css/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 23, src/css/_reset.scss */
+body {
+  margin: 0;
+  padding: 0;
+  line-height: 1;
+}
+
+/* line 28, src/css/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 31, src/css/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 34, src/css/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 39, src/css/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 1, src/css/components/_header.scss */
+.header {
+  margin-bottom: 24px;
+}
+
+/* line 4, src/css/components/_header.scss */
+.header__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 63px;
+  box-shadow: 0px 1px 0px #dfe7ea;
+}
+
+/* line 10, src/css/components/_header.scss */
+.header__logo {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* line 13, src/css/components/_header.scss */
+.header__navigation {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: auto;
+}
+
+/* line 16, src/css/components/_header.scss */
+.header__navigation-icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 16, src/css/components/_header.scss */
+  .header__navigation-icons {
+    width: auto;
+  }
+}
+
+/* line 23, src/css/components/_header.scss */
+.header__navigation-icon {
+  margin-left: 15px;
+}
+
+/* line 26, src/css/components/_header.scss */
+.header__navigation-language {
+  position: relative;
+  border-left: 1px solid #011E41;
+  padding-left: 20px;
+  margin-left: 20px;
+}
+
+/* line 31, src/css/components/_header.scss */
+.header__navigation-language-dropdown {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: absolute;
+  top: 30px;
+  right: 0;
+  width: 150px;
+  height: 50px;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 1px #dfe7ea;
+  padding: 10px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 13, src/css/components/_header.scss */
+  .header__navigation {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+/* line 47, src/css/components/_header.scss */
+.header__navigation-link {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0 10px;
+}
+
+/* line 51, src/css/components/_header.scss */
+.header__navigation-button {
+  margin: 0 20px;
+  font: 600 14px/26px "Electrolux", serif;
+}
+
+/* line 56, src/css/components/_header.scss */
+.header__breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 42px;
+}
+
+/* line 59, src/css/components/_header.scss */
+.header__breadcrumb-mobile {
+  font: 600 14px;
+}
+
+/* line 61, src/css/components/_header.scss */
+.header__breadcrumb-mobile--item {
+  text-decoration: none;
+  text-transform: capitalize;
+  color: #011E41;
+}
+
+/* line 65, src/css/components/_header.scss */
+.header__breadcrumb-mobile--item:before {
+  content: " <";
+  color: #011E41;
+  padding-right: 5px;
+  width: 15px;
+  height: 15px;
+}
+
+/* line 77, src/css/components/_header.scss */
+.header__hero-wrapper {
+  position: relative;
+  margin: 0 -15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 77, src/css/components/_header.scss */
+  .header__hero-wrapper {
+    height: 368px;
+  }
+}
+
+/* line 85, src/css/components/_header.scss */
+.header__hero-img {
+  width: 100%;
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 85, src/css/components/_header.scss */
+  .header__hero-img {
+    height: 100%;
+  }
+}
+
+/* line 93, src/css/components/_header.scss */
+.header__hero-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  height: 74px;
+  background-color: #011E41;
+  text-transform: capitalize;
+  font: 600 26px/34px "Electrolux", serif;
+  color: #fff;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 93, src/css/components/_header.scss */
+  .header__hero-inner {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 15%;
+    width: 470px;
+    height: 148px;
+    justify-content: flex-start;
+    padding-left: 55px;
+  }
+}
+
+/* line 116, src/css/components/_header.scss */
+.header__breadcrumb-desktop {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0;
+}
+
+/* line 119, src/css/components/_header.scss */
+.header__breadcrumb-desktop li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* line 124, src/css/components/_header.scss */
+.header__breadcrumb-desktop li a {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 26px;
+  opacity: 0.5;
+}
+
+/* line 130, src/css/components/_header.scss */
+.header__breadcrumb-desktop li + li a {
+  text-decoration: underline;
+  font-style: italic;
+  color: #011E41;
+  opacity: 1;
+}
+
+/* line 1, src/css/_typography.scss */
+body {
+  color: var(--primary-color);
+  font-family: "Electrolux";
+  margin: 0;
+}
+
+/* line 7, src/css/_typography.scss */
+.btn {
+  display: inline-block;
+  border-radius: 3px;
+  padding: 7px 12px;
+  border: 1px solid #d5d5d5;
+  background-color: #ffffff;
+  font: 700 13px/18px "Electrolux", serif;
+  text-transform: uppercase;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* line 17, src/css/_typography.scss */
+.btn:hover {
+  opacity: 0.8;
+  transition: all 0.3 ease-in-out;
+}
+
+/* line 23, src/css/_typography.scss */
+.btn--primary {
+  background-color: #011E41;
+  color: #ffffff;
+}
+
+/* line 27, src/css/_typography.scss */
+.btn-no-border {
+  border: none;
+}
+
+/* line 31, src/css/_typography.scss */
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+/* line 37, src/css/_typography.scss */
+.container {
+  display: block;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 37, src/css/_typography.scss */
+  .container {
+    max-width: 1180px;
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 46, src/css/_typography.scss */
+  .container__row {
+    margin: 0 -20px;
+  }
+}
+
+/* line 54, src/css/_typography.scss */
+.flex {
+  display: flex;
+}
+
+/* line 58, src/css/_typography.scss */
+.item {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* line 63, src/css/_typography.scss */
+:root {
+  --primary-color: #011e41;
+}
+
+/* line 67, src/css/_typography.scss */
+html {
+  font-size: 14px;
+  font-family: "Electrolux";
+}
+
+@media only screen and (min-width: 1280px) {
+  /* line 67, src/css/_typography.scss */
+  html {
+    font-size: 16px;
+  }
+}
+
+/* line 75, src/css/_typography.scss */
+.wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+/* line 81, src/css/_typography.scss */
+input[type="checkbox"] {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+/* line 86, src/css/_typography.scss */
+label {
+  display: flex;
+  align-items: center;
+}
+
+/* line 91, src/css/_typography.scss */
+.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* line 96, src/css/_typography.scss */
+.show {
+  visibility: visible;
+}
+
+/* line 100, src/css/_typography.scss */
+.center-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* line 108, src/css/_typography.scss */
+.flex-start-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* line 116, src/css/_typography.scss */
+.hide-on-mobile {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 116, src/css/_typography.scss */
+  .hide-on-mobile {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 123, src/css/_typography.scss */
+  .hide-on-desktop {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+
+/* line 132, src/css/_typography.scss */
+.hide {
+  display: none;
+}
+
+/* line 136, src/css/_typography.scss */
+.show {
+  display: block;
+}
+
+/* line 140, src/css/_typography.scss */
+.hideDropDown {
+  display: none;
+}
+
+/* line 143, src/css/_typography.scss */
+.dropDown {
+  display: block;
+}
+
+/* line 153, src/css/_typography.scss */
+.active__content {
+  bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 152, src/css/_typography.scss */
+  .active {
+    bottom: auto;
+  }
+}
+
+/* line 162, src/css/_typography.scss */
+.full-img img {
+  height: 100%;
+}
+
+/* line 1, src/css/components/_selector.scss */
+.selector {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+  z-index: 60;
+  background-color: #fff;
+  transition: bottom 0.8s ease-in-out;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 1, src/css/components/_selector.scss */
+  .selector {
+    position: relative;
+    width: 20%;
+    margin-left: -20px;
+  }
+}
+
+/* line 17, src/css/components/_selector.scss */
+.selector__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-transform: uppercase;
+  position: relative;
+  display: flex;
+  padding: 15px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  background: #dfe7ea;
+  margin-top: 0;
+}
+
+/* line 28, src/css/components/_selector.scss */
+.selector__header-icon {
+  position: absolute;
+  right: 15px;
+  top: calc(50%);
+  width: 21px;
+  height: 21px;
+}
+
+/* line 35, src/css/components/_selector.scss */
+.selector__header-iconFilter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 17, src/css/components/_selector.scss */
+  .selector__header {
+    display: none;
+  }
+}
+
+/* line 42, src/css/components/_selector.scss */
+.selector__container {
+  position: relative;
+  left: 0;
+  right: 0;
+  flex: 1 0 auto;
+  overflow: auto;
+  padding: 15px;
+  width: 100%;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 42, src/css/components/_selector.scss */
+  .selector__container {
+    padding: 0;
+  }
+}
+
+/* line 53, src/css/components/_selector.scss */
+.selector__container-list {
+  padding: 0;
+}
+
+/* line 56, src/css/components/_selector.scss */
+.selector__container-filter {
+  border-bottom: 1px solid #dfe7ea;
+  padding: 20px 0;
+  overflow: hidden;
+}
+
+/* line 61, src/css/components/_selector.scss */
+.selector__container-title {
+  position: relative;
+  text-transform: uppercase;
+  cursor: pointer;
+  font: 600 14px/17px "Electrolux", serif;
+  padding: 10px 0;
+}
+
+/* line 67, src/css/components/_selector.scss */
+.selector__container-title:before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 14px;
+  top: calc(50% - 6px);
+  right: 22px;
+  background-color: #011E41;
+}
+
+/* line 76, src/css/components/_selector.scss */
+.selector__container-title:after {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 2px;
+  top: calc(50%);
+  right: 15px;
+  background-color: #011E41;
+}
+
+/* line 86, src/css/components/_selector.scss */
+.selector__container-content {
+  height: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* line 92, src/css/components/_selector.scss */
+.selector__container-checkbox {
+  width: 100%;
+  padding-top: 10px;
+}
+
+/* line 96, src/css/components/_selector.scss */
+.selector__container-label {
+  margin-left: 15px;
+}
+
+/* line 100, src/css/components/_selector.scss */
+.selector__footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px;
+  position: relative;
+  bottom: 15px;
+  width: 100%;
+  background-color: #fff;
+}
+
+/* line 108, src/css/components/_selector.scss */
+.selector__footer-button {
+  width: calc(50% - 5px);
+}
+
+/* line 114, src/css/components/_selector.scss */
+.active {
+  bottom: 0;
+}
+
+/* line 1, src/css/components/_menu.scss */
+.menu {
+  position: fixed;
+  left: -100%;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  z-index: 9999;
+  transition: 0.5s;
+  overflow: hidden;
+}
+
+/* line 12, src/css/components/_menu.scss */
+.menu__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid;
+  height: 100%;
+  width: 300px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+/* line 22, src/css/components/_menu.scss */
+.menu__content-heading {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* line 24, src/css/components/_menu.scss */
+.menu__content-heading span {
+  height: 18px;
+  font-weight: 600;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+/* line 30, src/css/components/_menu.scss */
+.menu__content-heading span img {
+  height: 100%;
+}
+
+/* line 34, src/css/components/_menu.scss */
+.menu__content-heading-title {
+  font-weight: 600;
+  flex-grow: 1;
+  align-self: center;
+  text-decoration: none;
+  font-size: 16px;
+  height: 48px;
+  line-height: 24px;
+  padding: 15px 50px 15px 25px;
+  color: var(--primary-color);
+  cursor: pointer;
+}
+
+/* line 47, src/css/components/_menu.scss */
+.menu__content-productList {
+  padding: 0 20px 25px;
+  margin-top: 25px;
+}
+
+/* line 52, src/css/components/_menu.scss */
+.menu__subMenu {
+  display: flex;
+  left: 0;
+  width: 100%;
+  top: 0;
+  position: absolute;
+  z-index: 1;
+  min-width: 200px;
+  border: 1px solid #dbdfe1;
+  background: #fff;
+  height: 100%;
+  overflow: scroll;
+  justify-content: space-between;
+  transform: translateX(120%);
+  transition: transform 0.4s;
+}
+
+/* line 67, src/css/components/_menu.scss */
+.menu__subMenu-heading {
+  display: block;
+  width: 100%;
+  padding: 27px 50px 27px 60px;
+  position: relative;
+  color: #011e41;
+  font-size: 1.14286rem;
+  font-weight: 600;
+  line-height: 1;
+  background-color: #dfe7ea;
+}
+
+/* line 77, src/css/components/_menu.scss */
+.menu__subMenu-heading:before {
+  position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border: solid var(--primary-color);
+  padding: 3px;
+  transform: rotate(-45deg);
+  bottom: 30px;
+  border-width: 2px 0 0 2px;
+  left: 35px;
+}
+
+/* line 90, src/css/components/_menu.scss */
+.menu__subMenu-item {
+  padding: 15px 45px 15px 30px;
+  font-weight: 600;
+  font-size: 14px;
+  pointer-events: none;
+}
+
+/* line 97, src/css/components/_menu.scss */
+.menu__footer {
+  position: relative;
+}
+
+/* line 99, src/css/components/_menu.scss */
+.menu__footer a {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--primary-color);
+  font-size: 16px;
+  position: relative;
+  color: #011e41;
+  font-size: 1.14286rem;
+  padding: 12px 50px 12px 35px;
+  font-weight: 600;
+  flex: 1;
+}
+
+/* line 112, src/css/components/_menu.scss */
+.menu__footer:before {
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 0;
+  bottom: top;
+}
+
+/* line 123, src/css/components/_menu.scss */
+.menu__overlay {
+  flex-grow: 1;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* line 126, src/css/components/_menu.scss */
+.menu__overlay .overlay__heading {
+  position: relative;
+  height: 60px;
+  min-width: 50px;
+  background-color: var(--primary-color);
+}
+
+/* line 131, src/css/components/_menu.scss */
+.menu__overlay .overlay__heading .icon {
+  position: absolute;
+  right: 0;
+  height: 100%;
+  display: flex;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+/* line 144, src/css/components/_menu.scss */
+.active {
+  display: flex;
+  align-items: auto;
+  justify-content: flex-start;
+  flex-wrap: auto;
+  flex-direction: column;
+  transform: translateX(0);
+  transition: transform 0.4s;
+}
+
+/* line 149, src/css/components/_menu.scss */
+.showMenu {
+  left: 0;
+  transition: 0.5s;
+}
+
+/* line 1, src/css/components/_slider.scss */
+.owl-carousel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+/* line 6, src/css/components/_slider.scss */
+.no-js .owl-carousel,
+.owl-carousel.owl-loaded {
+  display: flex;
+}
+
+/* line 10, src/css/components/_slider.scss */
+.owl-carousel .owl-nav {
+  margin: 0;
+}
+
+/* line 13, src/css/components/_slider.scss */
+.owl-item .active {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* line 16, src/css/components/_slider.scss */
+.owl-stage {
+  width: 150%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-left: 10px;
+}
+
+/* line 23, src/css/components/_slider.scss */
+.owl-prev,
+.owl-next {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 20px;
+}
+
+/* line 32, src/css/components/_slider.scss */
+.owl-prev span,
+.owl-next span {
+  position: absolute;
+  color: #011E41;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: auto;
+}
+
+/* line 42, src/css/components/_slider.scss */
+.owl-prev {
+  left: 0;
+}
+
+/* line 45, src/css/components/_slider.scss */
+.owl-next {
+  right: 0;
+}
+
+/* line 48, src/css/components/_slider.scss */
+.owl-theme .owl-nav [class*="owl-"] {
+  color: #011E41;
+  font-size: 39px;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 54, src/css/components/_slider.scss */
+.owl-theme .owl-nav [class*="owl-"]:hover {
+  background-color: transparent;
+}
+
+/* line 59, src/css/components/_slider.scss */
+.owl-item > div {
+  cursor: pointer;
+  transition: margin 0.4s ease;
+}
+
+/* line 63, src/css/components/_slider.scss */
+.owl-item.center > div {
+  cursor: auto;
+  margin: 0;
+  border: 1.5px solid #011E41;
+}
+
+/* line 3, src/css/components/_category.scss */
+.category {
+  margin-top: 20px;
+}
+
+/* line 5, src/css/components/_category.scss */
+.category__header {
+  text-transform: uppercase;
+  font: 600 18px/25.2px "Electrolux", serif;
+  margin-bottom: 8px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 5, src/css/components/_category.scss */
+  .category__header {
+    font-size: 20px;
+  }
+}
+
+/* line 13, src/css/components/_category.scss */
+.category__content {
+  height: 64px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 13, src/css/components/_category.scss */
+  .category__content {
+    height: 200px;
+  }
+}
+
+/* line 19, src/css/components/_category.scss */
+.category__item {
+  font: 400 14px/18px "Electrolux", serif;
+  min-width: -webkit-fit-content;
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  height: 60px;
+  margin: 0 8px;
+  padding: 11px 18px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* line 26, src/css/components/_category.scss */
+.category__item:hover {
+  border: 2px solid #011E41;
+  border-radius: 2px;
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+/* line 33, src/css/components/_category.scss */
+.category__item-type {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 33, src/css/components/_category.scss */
+  .category__item-type {
+    width: 100%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 19, src/css/components/_category.scss */
+  .category__item {
+    height: 160px;
+    width: 130px;
+    max-width: 135px;
+    margin: 0 10px;
+    padding: 25px 1px;
+    border: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 3, src/css/components/_category.scss */
+  .category {
+    margin-top: 40px;
+  }
+}
+
+/* line 52, src/css/components/_category.scss */
+.selected {
+  border: 2px solid #011E41;
+  border-radius: 1px;
+  font-weight: 600;
+}
+
+/* line 1, src/css/components/_filter.scss */
+.filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  height: 80px;
+  z-index: 10;
+}
+
+/* line 10, src/css/components/_filter.scss */
+.filter__wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 10, src/css/components/_filter.scss */
+  .filter__wrapper {
+    height: 40px;
+  }
+}
+
+/* line 17, src/css/components/_filter.scss */
+.filter__button {
+  width: 120px;
+  height: 45px;
+  font: 600 16px/19.2px "Electrolux", serif;
+  position: relative;
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 23, src/css/components/_filter.scss */
+  .filter__button-detail {
+    margin: 0 5px;
+  }
+}
+
+/* line 28, src/css/components/_filter.scss */
+.filter__button-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+  position: relative;
+}
+
+/* line 33, src/css/components/_filter.scss */
+.filter__button-reset {
+  display: none;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 33, src/css/components/_filter.scss */
+  .filter__button-reset {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 41, src/css/components/_filter.scss */
+  .filter__button:first-child {
+    pointer-events: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 46, src/css/components/_filter.scss */
+  .filter__button:last-child {
+    text-transform: capitalize;
+    justify-content: flex-end;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 17, src/css/components/_filter.scss */
+  .filter__button {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border: none;
+    width: 20%;
+  }
+  /* line 57, src/css/components/_filter.scss */
+  .filter__button-number {
+    padding: 0 30px;
+    width: 60%;
+    text-transform: capitalize;
+  }
+  /* line 61, src/css/components/_filter.scss */
+  .filter__button-number:after {
+    content: ' Products';
+    margin-left: 10px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 1, src/css/components/_filter.scss */
+  .filter {
+    position: relative;
+    width: 100%;
+  }
+  /* line 71, src/css/components/_filter.scss */
+  .filter__button-wrap-reset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 20%;
+  }
+}
+
+/* line 77, src/css/components/_filter.scss */
+.filter-sort-selection {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  bottom: -100%;
+  left: 0;
+  transition: 0.5s;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 77, src/css/components/_filter.scss */
+  .filter-sort-selection {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+/* line 93, src/css/components/_filter.scss */
+.filter-sort-selection--overlay {
+  width: 100%;
+  height: 80%;
+  background-color: black;
+  opacity: 0.5;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 93, src/css/components/_filter.scss */
+  .filter-sort-selection--overlay {
+    display: none;
+  }
+}
+
+/* line 102, src/css/components/_filter.scss */
+.filter-sort-selection--list {
+  background-color: #fff;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* line 107, src/css/components/_filter.scss */
+.filter-sort-selection--list button {
+  border: none;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 102, src/css/components/_filter.scss */
+  .filter-sort-selection--list {
+    height: 100%;
+    justify-content: unset;
+  }
+}
+
+/* line 122, src/css/components/_filter.scss */
+.active {
+  bottom: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 122, src/css/components/_filter.scss */
+  .active {
+    height: 120px;
+  }
+}
+
+/* line 1, src/css/components/_product.scss */
+.product {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 1, src/css/components/_product.scss */
+  .product {
+    width: 80%;
+  }
+  /* line 5, src/css/components/_product.scss */
+  .product__list {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+
+/* line 9, src/css/components/_product.scss */
+.product__item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 9, src/css/components/_product.scss */
+  .product__item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: calc(30% - 10px);
+    margin: 0 20px 40px;
+  }
+}
+
+/* line 18, src/css/components/_product.scss */
+.product__item-heart {
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 18, src/css/components/_product.scss */
+  .product__item-heart {
+    right: 0;
+  }
+}
+
+/* line 26, src/css/components/_product.scss */
+.product__item-tag {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 8px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 26, src/css/components/_product.scss */
+  .product__item-tag {
+    position: absolute;
+    flex-direction: column;
+    width: auto;
+    height: 90px;
+  }
+}
+
+/* line 36, src/css/components/_product.scss */
+.product__item-img {
+  width: 110px;
+  height: 110px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 36, src/css/components/_product.scss */
+  .product__item-img {
+    margin-top: 28px;
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* line 44, src/css/components/_product.scss */
+.product__item-img--content {
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 44, src/css/components/_product.scss */
+  .product__item-img--content {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+/* line 53, src/css/components/_product.scss */
+.product__item-detail {
+  width: calc(100% - 110px);
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 53, src/css/components/_product.scss */
+  .product__item-detail {
+    width: 100%;
+  }
+}
+
+/* line 59, src/css/components/_product.scss */
+.product__item-code {
+  text-transform: uppercase;
+  font: 600 14px/22px "Electrolux", serif;
+}
+
+/* line 63, src/css/components/_product.scss */
+.product__item-name {
+  font: 600 18px/22px "Electrolux", serif;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 63, src/css/components/_product.scss */
+  .product__item-name {
+    font-size: 20px;
+    line-height: 26px;
+    height: 80px;
+  }
+}
+
+/* line 71, src/css/components/_product.scss */
+.product__item-rate {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+/* line 74, src/css/components/_product.scss */
+.product__item-rate--number {
+  font: 400 14px/16.8px "Electrolux", serif;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+/* line 77, src/css/components/_product.scss */
+.product__item-rate--number:before {
+  content: "(";
+}
+
+/* line 80, src/css/components/_product.scss */
+.product__item-rate--number:after {
+  content: ")";
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 74, src/css/components/_product.scss */
+  .product__item-rate--number {
+    line-height: 24px;
+  }
+}
+
+/* line 88, src/css/components/_product.scss */
+.product__item-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 88, src/css/components/_product.scss */
+  .product__item-price {
+    margin-top: auto;
+    order: 2;
+  }
+}
+
+/* line 95, src/css/components/_product.scss */
+.product__item-price--old {
+  font: 400 14px/28px "Electrolux", serif;
+  text-decoration: line-through;
+}
+
+/* line 99, src/css/components/_product.scss */
+.product__item-price--new {
+  font: 600 18px/28px "Electrolux", serif;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 99, src/css/components/_product.scss */
+  .product__item-price--new {
+    font-size: 24px;
+  }
+}
+
+/* line 106, src/css/components/_product.scss */
+.product__item-suggestion {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 46px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 106, src/css/components/_product.scss */
+  .product__item-suggestion {
+    display: none;
+  }
+}
+
+/* line 113, src/css/components/_product.scss */
+.product__item-interest {
+  width: 15%;
+  height: 100%;
+  background-color: #011E41;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* line 119, src/css/components/_product.scss */
+.product__item-interest--number {
+  font: 600 18px "Electrolux", serif;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/* line 122, src/css/components/_product.scss */
+.product__item-interest--number:after {
+  content: "interest";
+  text-transform: uppercase;
+  font: 600 8px/10px "Electrolux", serif;
+}
+
+/* line 129, src/css/components/_product.scss */
+.product__item-payment {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100%;
+  width: 85%;
+  padding: 5px;
+  background-color: #dfe7ea;
+}
+
+/* line 136, src/css/components/_product.scss */
+.product__item-description {
+  list-style-type: disc;
+  padding-left: 15px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 136, src/css/components/_product.scss */
+  .product__item-description {
+    order: 1;
+  }
+}
+
+/* line 142, src/css/components/_product.scss */
+.product__item-description--item {
+  font: 400 14px/24px "Electrolux", serif;
+}
+
+/* line 146, src/css/components/_product.scss */
+.product__item-action {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 146, src/css/components/_product.scss */
+  .product__item-action {
+    flex-direction: row-reverse;
+    gap: 10px;
+    order: 3;
+  }
+}
+
+/* line 154, src/css/components/_product.scss */
+.product__item-action--add, .product__item-action--research {
+  height: 45px;
+  width: 100%;
+  font: 600 14px/16.8px "Electrolux", serif;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 154, src/css/components/_product.scss */
+  .product__item-action--add, .product__item-action--research {
+    width: calc(50% - 5px);
+  }
+}
+
+/* line 164, src/css/components/_product.scss */
+.product__item-compare {
+  width: auto;
+}
+
+/* line 166, src/css/components/_product.scss */
+.product__item-compare-label {
+  padding-left: 10px;
+  font: 400 16px/22px "Electrolux", serif;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 164, src/css/components/_product.scss */
+  .product__item-compare {
+    order: 4;
+  }
+}
+
+/* line 1, src/css/components/_contact.scss */
+.contact-icon {
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+  z-index: 10;
+}
+
+@-webkit-keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+@keyframes placeHolderShimmer {
+  0% {
+    background-position: -468px 0;
+  }
+  100% {
+    background-position: 468px 0;
+  }
+}
+
+/* line 10, src/css/_placeholder.scss */
+.placeholder {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-name: placeHolderShimmer;
+          animation-name: placeHolderShimmer;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+  background: darkgray;
+  background: linear-gradient(to right, #eeeeee 10%, #dddddd 18%, #eeeeee 33%);
+  background-size: 100% 100%;
+  z-index: 2;
+}
+
+/* line 1, src/css/components/_footer.scss */
+.footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* line 4, src/css/components/_footer.scss */
+.footer__option {
+  background-color: #011E41;
+  color: #fff;
+  padding-top: 10px;
+}
+
+/* line 8, src/css/components/_footer.scss */
+.footer__option-item {
+  width: 100%;
+}
+
+/* line 10, src/css/components/_footer.scss */
+.footer__option-item-title {
+  position: relative;
+  text-transform: uppercase;
+  position: relative;
+  display: block;
+  font: 600 14px/22px "Electrolux", serif;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  padding: 8px 0;
+  text-decoration: none;
+}
+
+/* line 20, src/css/components/_footer.scss */
+.footer__option-item-title:before {
+  position: absolute;
+  content: "";
+  width: 2px;
+  height: 14px;
+  top: calc(50% - 6px);
+  right: 22px;
+  background-color: #fff;
+}
+
+/* line 29, src/css/components/_footer.scss */
+.footer__option-item-title:after {
+  position: absolute;
+  content: "";
+  width: 16px;
+  height: 2px;
+  top: calc(50%);
+  right: 15px;
+  background-color: #fff;
+}
+
+/* line 45, src/css/components/_footer.scss */
+.footer__option-item-content {
+  padding: 0;
+  height: 0;
+  overflow: hidden;
+  transition: 0.5s;
+}
+
+/* line 50, src/css/components/_footer.scss */
+.footer__option-item-content li {
+  padding: 5px;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 4, src/css/components/_footer.scss */
+  .footer__option {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
+
+/* line 64, src/css/components/_footer.scss */
+.footer__connect {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-top: 16px;
+}
+
+/* line 67, src/css/components/_footer.scss */
+.footer__connect-icon {
+  margin: 0 15px 15px 0;
+}
+
+/* line 70, src/css/components/_footer.scss */
+.footer__connect-infor {
+  margin-bottom: 15px;
+}
+
+/* line 73, src/css/components/_footer.scss */
+.footer__connect-download {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+/* line 75, src/css/components/_footer.scss */
+.footer__connect-download--button {
+  width: 100%;
+  padding: 5px 0;
+}
+
+/* line 1, src/css/components/_tag.scss */
+.tag {
+  border: 1px solid #011E41;
+  padding: 0 8px;
+  text-transform: uppercase;
+  font: 600 14px/26px "Electrolux", serif;
+  border-radius: 2px;
+}
+
+/* line 8, src/css/components/_tag.scss */
+.tag--new, .tag--gift {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 4px;
+}
+
+/* line 13, src/css/components/_tag.scss */
+.tag--discount {
+  background-color: #fe392f;
+  border: none;
+}
+
+/* line 17, src/css/components/_tag.scss */
+.tag--gift {
+  margin-bottom: 5px;
+}
+
+/* line 20, src/css/components/_tag.scss */
+.tag--bundle, .tag--discount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: #fff;
+  position: relative;
+}
+
+@media only screen and (min-width: 1024px) {
+  /* line 20, src/css/components/_tag.scss */
+  .tag--bundle, .tag--discount {
+    width: 57px;
+    height: 54px;
+    font: 600 12px/16px "Electrolux", serif;
+  }
+  /* line 30, src/css/components/_tag.scss */
+  .tag--bundle:before, .tag--bundle:after, .tag--discount:before, .tag--discount:after {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    bottom: -19px;
+    border-top: 0px solid transparent;
+    border-bottom: 20px solid transparent;
+  }
+  /* line 41, src/css/components/_tag.scss */
+  .tag--bundle:before, .tag--discount:before {
+    left: 0;
+    border-left: 29px solid #fe392f;
+  }
+  /* line 45, src/css/components/_tag.scss */
+  .tag--bundle:after, .tag--discount:after {
+    right: 0;
+    border-right: 29px solid #fe392f;
+  }
+}
+
+/* line 51, src/css/components/_tag.scss */
+.tag--bundle {
+  background-color: #011E41;
+}
+
+/* line 54, src/css/components/_tag.scss */
+.tag--bundle:before {
+  left: -0.5px;
+  border-left: 29px solid #011E41;
+}
+
+/* line 58, src/css/components/_tag.scss */
+.tag--bundle:after {
+  right: -1px;
+  border-right: 29px solid #011E41;
+}
+
+/* line 1, src/css/components/_checkbox.scss */
+.checkBox {
+  padding-left: 0;
+  line-height: 22px;
+  font-size: 1.14286rem;
+  display: flex;
+}
+
+/* line 8, src/css/components/_checkbox.scss */
+.checkBox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* line 16, src/css/components/_checkbox.scss */
+.checkmark {
+  border: 1px solid #7a8a9c;
+  height: 22px;
+  width: 22px;
+  border-radius: 2px;
+  padding: 10px;
+  position: relative;
+  align-self: center;
+  top: 0;
+}
+
+/* line 27, src/css/components/_checkbox.scss */
+.checkBox:hover input ~ .checkmark {
+  background-color: #fff;
+}
+
+/* line 31, src/css/components/_checkbox.scss */
+.checkBox input:checked ~ .checkmark {
+  background-color: transparent;
+}
+
+/* line 35, src/css/components/_checkbox.scss */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* line 41, src/css/components/_checkbox.scss */
+.checkBox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* line 45, src/css/components/_checkbox.scss */
+.checkBox .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  border-right: 2px solid #011E41;
+  border-bottom: 2px solid #011E41;
+  transform: rotate(45deg);
+  left: 7px;
+  width: 6px;
+  height: 12px;
+  top: 3px;
+}

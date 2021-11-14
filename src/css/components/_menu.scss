@@ -39,13 +39,18 @@
         font-size: 16px;
         height: 48px;
         line-height: 24px;
-        padding: 15px 50px 15px 25px;
-        color: var(--primary-color);
+        padding: 15px 50px 15px 40px;
+        color: $primary-color;
         cursor: pointer;
+        @include flexBox(center, unset);
+        gap: 10px;
+      }
+      &--nosub {
+        pointer-events: none;
       }
     }
     &-productList {
-      padding: 0 20px 25px;
+      padding: 0 20px 25px 0;
       margin-top: 25px;
     }
   }
@@ -60,7 +65,7 @@
     border: 1px solid #dbdfe1;
     background: #fff;
     height: 100%;
-    overflow: scroll;
+    overflow: auto;
     justify-content: space-between;
     transform: translateX(120%);
     transition: transform 0.4s;
@@ -74,6 +79,7 @@
       font-weight: 600;
       line-height: 1;
       background-color: #dfe7ea;
+      cursor: pointer;
       &:before {
         position: absolute;
         content: "";
@@ -100,10 +106,9 @@
       @include flexBox(center);
       gap: 10px;
       text-decoration: none;
-      color: var(--primary-color);
+      color: $primary-color;
       font-size: 16px;
       position: relative;
-      color: #011e41;
       font-size: 1.14286rem;
       padding: 12px 50px 12px 35px;
       font-weight: 600;

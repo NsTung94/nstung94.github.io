@@ -284,6 +284,10 @@ li {
     margin: 0 -20px;
   }
 }
+.container__wrapper {
+  margin: 0 -20px;
+  display: flex;
+}
 
 .flex {
   display: flex;
@@ -413,7 +417,7 @@ label {
 }
 @media only screen and (min-width: 1024px) {
   .selector {
-    position: relative;
+    position: static;
     width: 20%;
     margin-left: -20px;
   }
@@ -464,11 +468,11 @@ label {
 }
 @media only screen and (min-width: 1024px) {
   .selector__container {
-    padding: 0;
+    padding: 20px;
   }
 }
 .selector__container-list {
-  padding: 0;
+  padding: 0 0 0 20px;
 }
 .selector__container-filter {
   border-bottom: 1px solid #dfe7ea;
@@ -582,12 +586,21 @@ label {
   font-size: 16px;
   height: 48px;
   line-height: 24px;
-  padding: 15px 50px 15px 25px;
-  color: var(--primary-color);
+  padding: 15px 50px 15px 40px;
+  color: #011E41;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.menu__content-heading--nosub {
+  pointer-events: none;
 }
 .menu__content-productList {
-  padding: 0 20px 25px;
+  padding: 0 20px 25px 0;
   margin-top: 25px;
 }
 .menu__subMenu {
@@ -601,7 +614,7 @@ label {
   border: 1px solid #dbdfe1;
   background: #fff;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   justify-content: space-between;
   transform: translateX(120%);
   transition: transform 0.4s;
@@ -616,6 +629,7 @@ label {
   font-weight: 600;
   line-height: 1;
   background-color: #dfe7ea;
+  cursor: pointer;
 }
 .menu__subMenu-heading:before {
   position: absolute;
@@ -646,10 +660,9 @@ label {
   flex-direction: row;
   gap: 10px;
   text-decoration: none;
-  color: var(--primary-color);
+  color: #011E41;
   font-size: 16px;
   position: relative;
-  color: #011e41;
   font-size: 1.14286rem;
   padding: 12px 50px 12px 35px;
   font-weight: 600;
@@ -723,7 +736,7 @@ label {
   width: 150%;
   display: flex;
   flex-wrap: nowrap;
-  margin-left: 10px;
+  margin: 0 25px;
 }
 
 .owl-prev,
@@ -789,7 +802,9 @@ label {
   }
 }
 .category__content {
-  height: 64px;
+  margin-right: 20px;
+  height: 70px;
+  border-bottom: 1px solid #011E41;
 }
 @media only screen and (min-width: 1024px) {
   .category__content {
@@ -821,6 +836,7 @@ label {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  text-align: center;
 }
 @media only screen and (min-width: 1024px) {
   .category__item-type {
@@ -874,6 +890,7 @@ label {
 @media only screen and (min-width: 1024px) {
   .filter__wrapper {
     height: 40px;
+    margin: 0;
   }
 }
 .filter__button {
@@ -929,6 +946,7 @@ label {
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 0;
     border: none;
     width: 20%;
   }
@@ -953,7 +971,7 @@ label {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 20%;
+    width: 15%;
   }
 }
 .filter-sort-selection {
@@ -1032,6 +1050,8 @@ label {
 @media only screen and (min-width: 1024px) {
   .product {
     width: 80%;
+    margin: 0;
+    display: flex;
   }
   .product__list {
     display: flex;
@@ -1039,6 +1059,11 @@ label {
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  .product__list {
+    gap: 40px;
   }
 }
 .product__item {
@@ -1057,8 +1082,8 @@ label {
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
-    width: calc(30% - 10px);
-    margin: 0 20px 40px;
+    width: calc((100% - 80px) / 3);
+    margin-bottom: 40px;
   }
 }
 .product__item-heart {
@@ -1122,6 +1147,7 @@ label {
 }
 .product__item-name {
   font: 600 18px/22px "Electrolux", serif;
+  min-height: 50px;
 }
 @media only screen and (min-width: 1024px) {
   .product__item-name {

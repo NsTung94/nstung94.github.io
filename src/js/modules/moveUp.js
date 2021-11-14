@@ -12,7 +12,6 @@ export function closeFilterSelector() {
   let selectorPopup = document.querySelector(".js-selector");
   buttons.forEach(function (btn) {
     btn.addEventListener("click", function () {
-      console.log("selectorPopup", selectorPopup),
         selectorPopup.classList.remove("active");
     });
   });
@@ -34,7 +33,6 @@ export function closeSortSelector() {
   let btns = document.querySelectorAll(".js-sort-close");
   let sortPopup = document.querySelector(".js-sort-selector");
   btns.forEach(function (btn) {
-    console.log("btn", btn),
       btn.addEventListener("click", function () {
         sortPopup.classList.remove("active");
       });

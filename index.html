@@ -30,15 +30,13 @@
       <div class="menu">
         <div class="menu__content">
           <div class="menu__content-heading js-open-submenu">
-            <div class="menu__content-heading-title js-close-submenu">
-              <div class="hasIcon">
-                <img src="./src/images/icon/user.png" alt="" />
-                <span>Sign in</span>
-              </div>
+            <div class="menu__content-heading-title">
+              <img src="./src/images/icon/user.png" alt="" />
+              <span>Sign in</span>
             </div>
             <span><img src="" alt="" /> </span>
-            <div class="menu__subMenu">
-              <div class="menu__subMenu-heading">Account</div>
+            <div class="menu__subMenu js-submenu">
+              <div class="menu__subMenu-heading js-close-submenu">Account</div>
               <div class="menu__subMenu-item">Washing machines</div>
               <div class="menu__subMenu-item">Dryers</div>
               <div class="menu__subMenu-item">Irons</div>
@@ -47,14 +45,14 @@
           </div>
           <div class="menu__content-productList">
             <div class="menu__content-heading js-open-submenu">
-              <a class="menu__content-heading-title js-close-submenu" href="#"
-                >Laundry</a
-              >
+              <a class="menu__content-heading-title" href="#">Laundry</a>
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
-              <div class="menu__subMenu">
-                <div class="menu__subMenu-heading">Laundry</div>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
                 <div class="menu__subMenu-item">Washing machines</div>
                 <div class="menu__subMenu-item">Dryers</div>
                 <div class="menu__subMenu-item">Irons</div>
@@ -62,14 +60,14 @@
               </div>
             </div>
             <div class="menu__content-heading js-open-submenu">
-              <a class="menu__content-heading-title js-close-submenu" href="#"
-                >Floor</a
-              >
+              <a class="menu__content-heading-title" href="#">Floor</a>
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
-              <div class="menu__subMenu">
-                <div class="menu__subMenu-heading">Laundry</div>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
                 <div class="menu__subMenu-item">Washing machines</div>
                 <div class="menu__subMenu-item">Dryers</div>
                 <div class="menu__subMenu-item">Irons</div>
@@ -79,31 +77,31 @@
               </div>
             </div>
             <div class="menu__content-heading js-open-submenu disable">
-              <a class="menu__content-heading-title js-close-submenu" href="#"
-                >Bathroom</a
-              >
+              <a class="menu__content-heading-title" href="#">Bathroom</a>
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
-              <div class="menu__subMenu">
-                <div class="menu__subMenu-heading">Laundry</div>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
               </div>
             </div>
             <div class="menu__content-heading js-open-submenu disable">
-              <a class="menu__content-heading-title js-close-submenu" href="#"
-                >Bathroom</a
-              >
+              <a class="menu__content-heading-title" href="#">Bathroom</a>
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
-              <div class="menu__subMenu">
-                <div class="menu__subMenu-heading">Laundry</div>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
               </div>
             </div>
-            <div class="menu__content-heading js-open-submenu disable">
+            <div class="menu__content-heading menu__content-heading--noSub">
               <a class="menu__content-heading-title" href="#">Promotions</a>
             </div>
-            <div class="menu__content-heading js-open-submenu disable">
+            <div class="menu__content-heading menu__content-heading--nosub">
               <a class="menu__content-heading-title" href="#">Blog</a>
             </div>
           </div>
@@ -240,17 +238,17 @@
       <section class="container item category">
         <div class="category__header">Categories</div>
         <div class="category__content owl-carousel owl-theme">
-          <div class="category__item js-slider-item">
+          <!-- <div class="category__item js-slider-item">
             <div class="category__item-icon hide-on-mobile">
               <img src="./src/images/logo/all-categories-icon.png" alt="" />
             </div>
             <div class="category__item-type">All Categories</div>
-          </div>
+          </div> -->
           <div class="category__item js-slider-item">
             <div class="category__item-icon hide-on-mobile">
               <img src="./src/images/logo/air-fryer.png" alt="" />
             </div>
-            <div class="category__item-type">Coffee Machine</div>
+            <div class="category__item-type">All categories</div>
           </div>
           <div class="category__item js-slider-item">
             <div class="category__item-icon hide-on-mobile">
@@ -356,464 +354,449 @@
         </div>
       </section>
       <div class="container flex">
-        <section class="selector js-selector">
-          <div class="selector__header hide-on-desktop js-selector-close">
-            <div class="selector__header--iconFilter">
-              <img src="./src/images/icon/filter-icon.svg" alt="" class="" />
-              Filter
+        <div class="container__wrapper">
+          <section class="selector js-selector">
+            <div class="selector__header hide-on-desktop js-selector-close">
+              <div class="selector__header--iconFilter">
+                <img src="./src/images/icon/filter-icon.svg" alt="" class="" />
+                Filter
+              </div>
+              <div>
+                <img
+                  src="./src/images/icon/close-icon.svg"
+                  alt=""
+                  class="selector__header--icon"
+                />
+              </div>
             </div>
-            <div>
-              <img
-                src="./src/images/icon/close-icon.svg"
-                alt=""
-                class="selector__header--icon"
-              />
-              <!-- <div
+            <div class="selector__container">
+              <ul class="selector__container-list">
+                <li class="selector__container-filter js-dropdown-menu">
+                  <div class="selector__container-title js-dropdown-button">
+                    stock status
+                  </div>
+                  <div class="selector__container-content js-dropdown-content">
+                    <div
+                      class="selector__container-checkbox js-selector-checkbox"
+                    >
+                      <label class="checkBox">
+                        <input type="checkbox" class="" />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >In stock</span
+                        >
+                      </label>
+                    </div>
+                    <div
+                      class="selector__container-checkbox js-selector-checkbox"
+                    >
+                      <label class="checkBox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label selector__container-label"
+                          >All</span
+                        >
+                      </label>
+                    </div>
+                  </div>
+                </li>
+                <li class="selector__container-filter js-dropdown-menu">
+                  <div class="selector__container-title js-dropdown-button">
+                    stock status
+                  </div>
+                  <div class="selector__container-content js-dropdown-content">
+                    <div class="selector__container-checkbox">
+                      <label class="checkBox js-selector-checkbox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label selector__container-label"
+                          >In stock</span
+                        >
+                      </label>
+                    </div>
+                    <div class="selector__container-checkbox">
+                      <label class="checkBox js-selector-checkbox">
+                        <input type="checkbox" class="" />
+                        <span class="checkmark checkmark--selector"></span>
+                        <span class="checkbox__label selector__container-label"
+                          >All</span
+                        >
+                      </label>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="selector__footer hide-on-desktop">
+              <div
                 class="
-                  btn btn-no-border
-                  js-include-active
-                  btn-refresh
-                  hide-on-mobile
-
+                  btn
+                  center-flex-row
+                  selector__footer-button
+                  js-reset-selector
                 "
               >
-                <img
-                  class="selector__header-icon"
-                  src="./src/images/icon/reset-filter.svg"
-                  alt=""
-                />
-                <span class="">Reset</span> -->
-              <!-- </div> -->
-            </div>
-          </div>
-          <div class="selector__container">
-            <ul class="selector__container-list">
-              <li class="selector__container-filter js-dropdown-menu">
-                <div class="selector__container-title js-dropdown-button">
-                  stock status
-                </div>
-                <div class="selector__container-content js-dropdown-content">
-                  <div
-                    class="selector__container-checkbox js-selector-checkbox"
-                  >
-                    <label class="checkBox">
-                      <input type="checkbox" class="" />
-                      <span
-                        class="
-                          checkmark checkmark--selector
-                          select__container-checkmark
-                        "
-                      ></span>
-                      <span class="checkbox__label selector__container-label"
-                        >In stock</span
-                      >
-                    </label>
-                  </div>
-                  <div
-                    class="selector__container-checkbox js-selector-checkbox"
-                  >
-                    <label class="checkBox">
-                      <input type="checkbox" class="" />
-                      <span class="checkmark checkmark--selector"></span>
-                      <span class="checkbox__label selector__container-label"
-                        >All</span
-                      >
-                    </label>
-                  </div>
-                </div>
-              </li>
-              <li class="selector__container-filter js-dropdown-menu">
-                <div class="selector__container-title js-dropdown-button">
-                  stock status
-                </div>
-                <div class="selector__container-content js-dropdown-content">
-                  <div class="selector__container-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="" />
-                      <span class="checkmark checkmark--selector"></span>
-                      <span class="checkbox__label selector__container-label"
-                        >In stock</span
-                      >
-                    </label>
-                  </div>
-                  <div class="selector__container-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="" />
-                      <span class="checkmark checkmark--selector"></span>
-                      <span class="checkbox__label selector__container-label"
-                        >All</span
-                      >
-                    </label>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="selector__footer hide-on-desktop">
-            <div
-              class="
-                btn
-                center-flex-row
-                selector__footer-button
-                js-reset-selector
-              "
-            >
-              Reset
-            </div>
-            <div
-              class="
-                btn btn--primary
-                center-flex-row
-                selector__footer-button
-                js-selector-close
-              "
-            >
-              Apply Filters
-            </div>
-          </div>
-        </section>
-        <section class="container product">
-          <div class="container__row product__list">
-            <div class="product__item">
-              <div class="product__item-heart js-heart-button">
-                <img
-                  class="outline"
-                  src="./src/images/icon/heart-outline-icon.svg"
-                  alt=""
-                />
-                <img
-                  src="./src/images/icon/heart-filled-icon.svg"
-                  alt=""
-                  class="fill hide"
-                />
+                Reset
               </div>
-              <div class="item product__item-tag">
-                <div class="tag tag--discount">sale</div>
-                <div class="tag tag--gift">
-                  <img src="./src/images/icon/gift.png" alt="" />
-                  <span>free gift</span>
-                </div>
-              </div>
-              <div class="item product__item-img placeholder">
-                <img
-                  class="product__item-img--content lazy-observer"
-                  data-src="./src/images/product/tulanh3.png"
-                  alt=""
-                />
-              </div>
-              <div class="item product__item-detail">
-                <div class="product__item-code">EBE4500B-G</div>
-                <div class="product__item-name">
-                  421L bottom freezer refrigerator 421L bottom freezer
-                  refrigerator
-                </div>
-                <div class="product__item-rate">
-                  <div class="product__item-rate--star">
-                    <img src="./src/images/icon/star.png" alt="" />
-                  </div>
-                  <div class="product__item-rate--number">102 Reviews</div>
-                </div>
-              </div>
-              <div class="item product__item-price">
-                <div class="product__item-price--old">25.390.000 đ</div>
-                <div class="product__item-price--new">16.390.000 đ</div>
-              </div>
-              <div class="item product__item-suggestion hide-on-desktop">
-                <div class="product__item-interest">
-                  <div class="product__item-interest--number">0%</div>
-                </div>
-                <div class="product__item-payment">
-                  <div class="product__item-payment--money">
-                    3.331.000 VND/month
-                  </div>
-                  <div class="product__item-payment--due">for 6 months</div>
-                </div>
-              </div>
-              <ul class="item product__item-description">
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-                <li class="product__item-description--item">
-                  EvenTemp reduces temperature fluctuations.
-                </li>
-                <li class="product__item-description--item">
-                  Spacious freezer provides ample storage.
-                </li>
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-              </ul>
-              <div class="item product__item-action">
-                <button class="btn btn--primary product__item-action--add">
-                  add to cart
-                </button>
-                <button class="btn product__item-action--research">
-                  learn more
-                </button>
-              </div>
-              <div class="product__item-compare hide-on-mobile">
-                <label class="checkBox js-compare-checkbox">
-                  <input type="checkbox" class="" />
-                  <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label">
-                    Add to Compare</span
-                  >
-                </label>
+              <div
+                class="
+                  btn btn--primary
+                  center-flex-row
+                  selector__footer-button
+                  js-selector-close
+                "
+              >
+                Apply Filters
               </div>
             </div>
-            <div class="product__item">
-              <div class="product__item-heart js-heart-button">
-                <img
-                  class="outline"
-                  src="./src/images/icon/heart-outline-icon.svg"
-                  alt=""
-                />
-                <img
-                  src="./src/images/icon/heart-filled-icon.svg"
-                  alt=""
-                  class="fill hide"
-                />
-              </div>
-              <div class="item product__item-tag">
-                <div class="tag tag--bundle">bundle</div>
-              </div>
-              <div class="item product__item-img placeholder">
-                <img
-                  class="product__item-img--content lazy-observer"
-                  data-src="./src/images/product/tulanh3.png"
-                  alt=""
-                />
-              </div>
-              <div class="item product__item-detail">
-                <div class="product__item-code">EBE4500B-G</div>
-                <div class="product__item-name">
-                  421L bottom freezer refrigerator
+          </section>
+          <section class="container product">
+            <div class="container__row product__list">
+              <div class="product__item">
+                <div class="product__item-heart js-heart-button">
+                  <img
+                    class="outline"
+                    src="./src/images/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./src/images/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill hide"
+                  />
                 </div>
-                <div class="product__item-rate">
-                  <div class="product__item-rate--star">
-                    <img src="./src/images/icon/star.png" alt="" />
+                <div class="item product__item-tag">
+                  <div class="tag tag--discount">sale</div>
+                  <div class="tag tag--gift">
+                    <img src="./src/images/icon/gift.png" alt="" />
+                    <span>free gift</span>
                   </div>
-                  <div class="product__item-rate--number">102 Reviews</div>
                 </div>
-              </div>
-              <div class="item product__item-price">
-                <div class="product__item-price--new">16.390.000 đ</div>
-              </div>
-              <div class="item product__item-suggestion hide-on-desktop">
-                <div class="product__item-interest">
-                  <div class="product__item-interest--number">0%</div>
+                <div class="item product__item-img placeholder">
+                  <img
+                    class="product__item-img--content lazy-observer"
+                    data-src="./src/images/product/tulanh3.png"
+                    alt=""
+                  />
                 </div>
-                <div class="product__item-payment">
-                  <div class="product__item-payment--money">
-                    3.331.000 VND/month
+                <div class="item product__item-detail">
+                  <div class="product__item-code">EBE4500B-G</div>
+                  <div class="product__item-name">
+                    421L bottom freezer refrigerator 421L bottom freezer
+                    refrigerator
                   </div>
-                  <div class="product__item-payment--due">for 6 months</div>
+                  <div class="product__item-rate">
+                    <div class="product__item-rate--star">
+                      <img src="./src/images/icon/star.png" alt="" />
+                    </div>
+                    <div class="product__item-rate--number">102 Reviews</div>
+                  </div>
+                </div>
+                <div class="item product__item-price">
+                  <div class="product__item-price--old">25.390.000 đ</div>
+                  <div class="product__item-price--new">16.390.000 đ</div>
+                </div>
+                <div class="item product__item-suggestion hide-on-desktop">
+                  <div class="product__item-interest">
+                    <div class="product__item-interest--number">0%</div>
+                  </div>
+                  <div class="product__item-payment">
+                    <div class="product__item-payment--money">
+                      3.331.000 VND/month
+                    </div>
+                    <div class="product__item-payment--due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item product__item-description">
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                  <li class="product__item-description--item">
+                    EvenTemp reduces temperature fluctuations.
+                  </li>
+                  <li class="product__item-description--item">
+                    Spacious freezer provides ample storage.
+                  </li>
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                </ul>
+                <div class="item product__item-action">
+                  <button class="btn btn--primary product__item-action--add">
+                    add to cart
+                  </button>
+                  <button class="btn product__item-action--research">
+                    learn more
+                  </button>
+                </div>
+                <div class="product__item-compare hide-on-mobile">
+                  <label class="checkBox js-compare-checkbox">
+                    <input type="checkbox" class="" />
+                    <span class="checkmark checkmark--compare"></span>
+                    <span class="checkbox__label product__item-compare-label">
+                      Add to Compare</span
+                    >
+                  </label>
                 </div>
               </div>
-              <ul class="item product__item-description">
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-
-                <li class="product__item-description--item">
-                  Spacious freezer provides ample storage.
-                </li>
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-              </ul>
-              <div class="item product__item-action">
-                <button class="btn btn--primary product__item-action--add">
-                  add to cart
-                </button>
-                <button class="btn product__item-action--research">
-                  learn more
-                </button>
+              <div class="product__item">
+                <div class="product__item-heart js-heart-button">
+                  <img
+                    class="outline"
+                    src="./src/images/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./src/images/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill hide"
+                  />
+                </div>
+                <div class="item product__item-tag">
+                  <div class="tag tag--bundle">bundle</div>
+                </div>
+                <div class="item product__item-img placeholder">
+                  <img
+                    class="product__item-img--content lazy-observer"
+                    data-src="./src/images/product/tulanh3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="item product__item-detail">
+                  <div class="product__item-code">EBE4500B-G</div>
+                  <div class="product__item-name">
+                    421L bottom freezer refrigerator
+                  </div>
+                  <div class="product__item-rate">
+                    <div class="product__item-rate--star">
+                      <img src="./src/images/icon/star.png" alt="" />
+                    </div>
+                    <div class="product__item-rate--number">102 Reviews</div>
+                  </div>
+                </div>
+                <div class="item product__item-price">
+                  <div class="product__item-price--new">16.390.000 đ</div>
+                </div>
+                <div class="item product__item-suggestion hide-on-desktop">
+                  <div class="product__item-interest">
+                    <div class="product__item-interest--number">0%</div>
+                  </div>
+                  <div class="product__item-payment">
+                    <div class="product__item-payment--money">
+                      3.331.000 VND/month
+                    </div>
+                    <div class="product__item-payment--due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item product__item-description">
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                  <li class="product__item-description--item">
+                    Spacious freezer provides ample storage.
+                  </li>
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                </ul>
+                <div class="item product__item-action">
+                  <button class="btn btn--primary product__item-action--add">
+                    add to cart
+                  </button>
+                  <button class="btn product__item-action--research">
+                    learn more
+                  </button>
+                </div>
+                <div class="product__item-compare hide-on-mobile">
+                  <label class="checkBox js-compare-checkbox">
+                    <input type="checkbox" class="" />
+                    <span class="checkmark checkmark--compare"></span>
+                    <span class="checkbox__label product__item-compare-label">
+                      Add to Compare</span
+                    >
+                  </label>
+                </div>
               </div>
-              <div class="product__item-compare hide-on-mobile">
-                <label class="checkBox js-compare-checkbox">
-                  <input type="checkbox" class="" />
-                  <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label">
-                    Add to Compare</span
-                  >
-                </label>
+              <div class="product__item">
+                <div class="product__item-heart js-heart-button">
+                  <img
+                    class="outline"
+                    src="./src/images/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./src/images/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill hide"
+                  />
+                </div>
+                <div class="item product__item-tag">
+                  <div class="tag tag--new">new</div>
+                  <div class="tag tag--discount">sale</div>
+                  <div class="tag tag--gift">
+                    <img src="./src/images/icon/gift.png" alt="" />
+                    <span>free gift</span>
+                  </div>
+                </div>
+                <div class="item product__item-img placeholder">
+                  <img
+                    class="product__item-img--content lazy-observer"
+                    data-src="./src/images/product/tulanh3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="item product__item-detail">
+                  <div class="product__item-code">EBE4500B-G</div>
+                  <div class="product__item-name">
+                    421L bottom freezer refrigerator
+                  </div>
+                  <div class="product__item-rate">
+                    <div class="product__item-rate--star">
+                      <img src="./src/images/icon/star.png" alt="" />
+                    </div>
+                    <div class="product__item-rate--number">102 Reviews</div>
+                  </div>
+                </div>
+                <div class="item product__item-price">
+                  <div class="product__item-price--new">16.390.000 đ</div>
+                </div>
+                <div class="item product__item-suggestion hide-on-desktop">
+                  <div class="product__item-interest">
+                    <div class="product__item-interest--number">0%</div>
+                  </div>
+                  <div class="product__item-payment">
+                    <div class="product__item-payment--money">
+                      3.331.000 VND/month
+                    </div>
+                    <div class="product__item-payment--due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item product__item-description">
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                  <li class="product__item-description--item">
+                    EvenTemp reduces temperature fluctuations.
+                  </li>
+                  <li class="product__item-description--item">
+                    Spacious freezer provides ample storage.
+                  </li>
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                </ul>
+                <div class="item product__item-action">
+                  <button class="btn btn--primary product__item-action--add">
+                    add to cart
+                  </button>
+                  <button class="btn product__item-action--research">
+                    learn more
+                  </button>
+                </div>
+                <div class="product__item-compare hide-on-mobile">
+                  <label class="checkBox js-compare-checkbox">
+                    <input type="checkbox" class="" />
+                    <span class="checkmark checkmark--compare"></span>
+                    <span class="checkbox__label product__item-compare-label">
+                      Add to Compare</span
+                    >
+                  </label>
+                </div>
+              </div>
+              <div class="product__item">
+                <div class="product__item-heart js-heart-button">
+                  <img
+                    class="outline"
+                    src="./src/images/icon/heart-outline-icon.svg"
+                    alt=""
+                  />
+                  <img
+                    src="./src/images/icon/heart-filled-icon.svg"
+                    alt=""
+                    class="fill hide"
+                  />
+                </div>
+                <div class="item product__item-tag">
+                  <div class="tag tag--new">new</div>
+                  <div class="tag tag--discount">sale</div>
+                  <div class="tag tag--gift">
+                    <img src="./src/images/icon/gift.png" alt="" />
+                    <span>free gift</span>
+                  </div>
+                </div>
+                <div class="item product__item-img placeholder">
+                  <img
+                    class="product__item-img--content lazy-observer"
+                    data-src="./src/images/product/tulanh3.png"
+                    alt=""
+                  />
+                </div>
+                <div class="item product__item-detail">
+                  <div class="product__item-code">EBE4500B-G</div>
+                  <div class="product__item-name">
+                    421L bottom freezer refrigerator
+                  </div>
+                  <div class="product__item-rate">
+                    <div class="product__item-rate--star">
+                      <img src="./src/images/icon/star.png" alt="" />
+                    </div>
+                    <div class="product__item-rate--number">102 Reviews</div>
+                  </div>
+                </div>
+                <div class="item product__item-price">
+                  <div class="product__item-price--new">16.390.000 đ</div>
+                </div>
+                <div class="item product__item-suggestion hide-on-desktop">
+                  <div class="product__item-interest">
+                    <div class="product__item-interest--number">0%</div>
+                  </div>
+                  <div class="product__item-payment">
+                    <div class="product__item-payment--money">
+                      3.331.000 VND/month
+                    </div>
+                    <div class="product__item-payment--due">for 6 months</div>
+                  </div>
+                </div>
+                <ul class="item product__item-description">
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                  <li class="product__item-description--item">
+                    EvenTemp reduces temperature fluctuations.
+                  </li>
+                  <li class="product__item-description--item">
+                    Spacious freezer provides ample storage.
+                  </li>
+                  <li class="product__item-description--item">
+                    TasteLockPlus keeps vegetables fresh for 7 days*.
+                  </li>
+                </ul>
+                <div class="item product__item-action">
+                  <button class="btn btn--primary product__item-action--add">
+                    add to cart
+                  </button>
+                  <button class="btn product__item-action--research">
+                    learn more
+                  </button>
+                </div>
+                <div class="product__item-compare hide-on-mobile">
+                  <label class="checkBox js-compare-checkbox">
+                    <input type="checkbox" class="" />
+                    <span class="checkmark checkmark--compare"></span>
+                    <span class="checkbox__label product__item-compare-label">
+                      Add to Compare</span
+                    >
+                  </label>
+                </div>
               </div>
             </div>
-            <div class="product__item">
-              <div class="product__item-heart js-heart-button">
-                <img
-                  class="outline"
-                  src="./src/images/icon/heart-outline-icon.svg"
-                  alt=""
-                />
-                <img
-                  src="./src/images/icon/heart-filled-icon.svg"
-                  alt=""
-                  class="fill hide"
-                />
-              </div>
-              <div class="item product__item-tag">
-                <div class="tag tag--new">new</div>
-                <div class="tag tag--discount">sale</div>
-                <div class="tag tag--gift">
-                  <img src="./src/images/icon/gift.png" alt="" />
-                  <span>free gift</span>
-                </div>
-              </div>
-              <div class="item product__item-img placeholder">
-                <img
-                  class="product__item-img--content lazy-observer"
-                  data-src="./src/images/product/tulanh3.png"
-                  alt=""
-                />
-              </div>
-              <div class="item product__item-detail">
-                <div class="product__item-code">EBE4500B-G</div>
-                <div class="product__item-name">
-                  421L bottom freezer refrigerator
-                </div>
-                <div class="product__item-rate">
-                  <div class="product__item-rate--star">
-                    <img src="./src/images/icon/star.png" alt="" />
-                  </div>
-                  <div class="product__item-rate--number">102 Reviews</div>
-                </div>
-              </div>
-              <div class="item product__item-price">
-                <div class="product__item-price--new">16.390.000 đ</div>
-              </div>
-              <div class="item product__item-suggestion hide-on-desktop">
-                <div class="product__item-interest">
-                  <div class="product__item-interest--number">0%</div>
-                </div>
-                <div class="product__item-payment">
-                  <div class="product__item-payment--money">
-                    3.331.000 VND/month
-                  </div>
-                  <div class="product__item-payment--due">for 6 months</div>
-                </div>
-              </div>
-              <ul class="item product__item-description">
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-                <li class="product__item-description--item">
-                  EvenTemp reduces temperature fluctuations.
-                </li>
-                <li class="product__item-description--item">
-                  Spacious freezer provides ample storage.
-                </li>
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-              </ul>
-              <div class="item product__item-action">
-                <button class="btn btn--primary product__item-action--add">
-                  add to cart
-                </button>
-                <button class="btn product__item-action--research">
-                  learn more
-                </button>
-              </div>
-              <div class="product__item-compare hide-on-mobile">
-                <label class="checkBox js-compare-checkbox">
-                  <input type="checkbox" class="" />
-                  <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label">
-                    Add to Compare</span
-                  >
-                </label>
-              </div>
-            </div>
-            <div class="product__item">
-              <div class="product__item-heart js-heart-button">
-                <img
-                  class="outline"
-                  src="./src/images/icon/heart-outline-icon.svg"
-                  alt=""
-                />
-                <img
-                  src="./src/images/icon/heart-filled-icon.svg"
-                  alt=""
-                  class="fill hide"
-                />
-              </div>
-              <div class="item product__item-tag">
-                <div class="tag tag--new">new</div>
-                <div class="tag tag--discount">sale</div>
-                <div class="tag tag--gift">
-                  <img src="./src/images/icon/gift.png" alt="" />
-                  <span>free gift</span>
-                </div>
-              </div>
-              <div class="item product__item-img placeholder">
-                <img
-                  class="product__item-img--content lazy-observer"
-                  data-src="./src/images/product/tulanh3.png"
-                  alt=""
-                />
-              </div>
-              <div class="item product__item-detail">
-                <div class="product__item-code">EBE4500B-G</div>
-                <div class="product__item-name">
-                  421L bottom freezer refrigerator
-                </div>
-                <div class="product__item-rate">
-                  <div class="product__item-rate--star">
-                    <img src="./src/images/icon/star.png" alt="" />
-                  </div>
-                  <div class="product__item-rate--number">102 Reviews</div>
-                </div>
-              </div>
-              <div class="item product__item-price">
-                <div class="product__item-price--new">16.390.000 đ</div>
-              </div>
-              <div class="item product__item-suggestion hide-on-desktop">
-                <div class="product__item-interest">
-                  <div class="product__item-interest--number">0%</div>
-                </div>
-                <div class="product__item-payment">
-                  <div class="product__item-payment--money">
-                    3.331.000 VND/month
-                  </div>
-                  <div class="product__item-payment--due">for 6 months</div>
-                </div>
-              </div>
-              <ul class="item product__item-description">
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-                <li class="product__item-description--item">
-                  EvenTemp reduces temperature fluctuations.
-                </li>
-                <li class="product__item-description--item">
-                  Spacious freezer provides ample storage.
-                </li>
-                <li class="product__item-description--item">
-                  TasteLockPlus keeps vegetables fresh for 7 days*.
-                </li>
-              </ul>
-              <div class="item product__item-action">
-                <button class="btn btn--primary product__item-action--add">
-                  add to cart
-                </button>
-                <button class="btn product__item-action--research">
-                  learn more
-                </button>
-              </div>
-              <div class="product__item-compare hide-on-mobile">
-                <label class="checkBox js-compare-checkbox">
-                  <input type="checkbox" class="" />
-                  <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label">
-                    Add to Compare</span
-                  >
-                </label>
-              </div>
-            </div>
-          </div>
-        </section>
+          </section>
+        </div>
       </div>
       <div class="contact-icon">
         <a href="tel:123-456-7890">
@@ -953,11 +936,17 @@
                 Download Electrolux Life App
               </div>
               <div class="footer__connect-download--option">
-                <div class="footer__connect-download--store">
-                  <img src="./src/images/logo/App Store.png" />
+                <div class="footer__connect-download--store placeholder">
+                  <img
+                    class="lazy-observer"
+                    src="./src/images/logo/App Store.png"
+                  />
                 </div>
                 <div class="footer__connect-download--store">
-                  <img src="./src/images/logo/Play Store.png" />
+                  <img
+                    class="lazy-observer"
+                    src="./src/images/logo/Play Store.png"
+                  />
                 </div>
               </div>
             </div>
