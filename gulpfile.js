@@ -120,11 +120,11 @@ var cleanDist = function (done) {
 // Repeated JavaScript tasks
 var jsTasks = lazypipe()
 	.pipe(header, banner.main, {package: package})
-	.pipe(optimizejs)
+	// .pipe(optimizejs)
 	.pipe(dest, paths.scripts.output)
 	.pipe(rename, {suffix: '.min'})
 	.pipe(uglify)
-	.pipe(optimizejs)
+	// .pipe(optimizejs)
 	.pipe(header, banner.main, {package: package})
 	.pipe(dest, paths.scripts.output);
 
@@ -298,7 +298,7 @@ var watchSource = function (done) {
 exports.default = series(
 	cleanDist,
 	parallel(
-		// buildScripts,
+		buildScripts,
 		lintScripts,
 		buildStyles,
 		buildSVGs,

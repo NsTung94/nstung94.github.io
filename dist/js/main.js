@@ -1,3 +1,4 @@
+/*! nstung94.github.io v1.0.0 | (c) 2021  | ISC License | git+https://github.com/NsTung94/nstung94.github.io.git */
 import { openMenu , openSubMenu } from './modules/menu.js';
 import { wish } from './modules/wish.js';
 import {dropdown, language} from './modules/dropdown.js';

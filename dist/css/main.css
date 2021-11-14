@@ -358,66 +358,72 @@ li {
   }
 }
 
-/* line 54, src/css/_typography.scss */
-.flex {
+/* line 52, src/css/_typography.scss */
+.container__wrapper {
+  margin: 0 -20px;
   display: flex;
 }
 
 /* line 58, src/css/_typography.scss */
+.flex {
+  display: flex;
+}
+
+/* line 62, src/css/_typography.scss */
 .item {
   width: 100%;
   margin-bottom: 16px;
 }
 
-/* line 63, src/css/_typography.scss */
+/* line 67, src/css/_typography.scss */
 :root {
   --primary-color: #011e41;
 }
 
-/* line 67, src/css/_typography.scss */
+/* line 71, src/css/_typography.scss */
 html {
   font-size: 14px;
   font-family: "Electrolux";
 }
 
 @media only screen and (min-width: 1280px) {
-  /* line 67, src/css/_typography.scss */
+  /* line 71, src/css/_typography.scss */
   html {
     font-size: 16px;
   }
 }
 
-/* line 75, src/css/_typography.scss */
+/* line 79, src/css/_typography.scss */
 .wrapper {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 
-/* line 81, src/css/_typography.scss */
+/* line 85, src/css/_typography.scss */
 input[type="checkbox"] {
   transform: scale(1.5);
   cursor: pointer;
 }
 
-/* line 86, src/css/_typography.scss */
+/* line 90, src/css/_typography.scss */
 label {
   display: flex;
   align-items: center;
 }
 
-/* line 91, src/css/_typography.scss */
+/* line 95, src/css/_typography.scss */
 .disable {
   opacity: 0.5;
   pointer-events: none;
 }
 
-/* line 96, src/css/_typography.scss */
+/* line 100, src/css/_typography.scss */
 .show {
   visibility: visible;
 }
 
-/* line 100, src/css/_typography.scss */
+/* line 104, src/css/_typography.scss */
 .center-flex-row {
   display: flex;
   align-items: center;
@@ -426,7 +432,7 @@ label {
   flex-direction: row;
 }
 
-/* line 108, src/css/_typography.scss */
+/* line 112, src/css/_typography.scss */
 .flex-start-column {
   display: flex;
   align-items: center;
@@ -435,20 +441,20 @@ label {
   flex-direction: column;
 }
 
-/* line 116, src/css/_typography.scss */
+/* line 120, src/css/_typography.scss */
 .hide-on-mobile {
   display: none;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 116, src/css/_typography.scss */
+  /* line 120, src/css/_typography.scss */
   .hide-on-mobile {
     display: flex;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 123, src/css/_typography.scss */
+  /* line 127, src/css/_typography.scss */
   .hide-on-desktop {
     display: none;
     visibility: hidden;
@@ -457,39 +463,39 @@ label {
   }
 }
 
-/* line 132, src/css/_typography.scss */
+/* line 136, src/css/_typography.scss */
 .hide {
   display: none;
 }
 
-/* line 136, src/css/_typography.scss */
+/* line 140, src/css/_typography.scss */
 .show {
   display: block;
 }
 
-/* line 140, src/css/_typography.scss */
+/* line 144, src/css/_typography.scss */
 .hideDropDown {
   display: none;
 }
 
-/* line 143, src/css/_typography.scss */
+/* line 147, src/css/_typography.scss */
 .dropDown {
   display: block;
 }
 
-/* line 153, src/css/_typography.scss */
+/* line 157, src/css/_typography.scss */
 .active__content {
   bottom: 0;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 152, src/css/_typography.scss */
+  /* line 156, src/css/_typography.scss */
   .active {
     bottom: auto;
   }
 }
 
-/* line 162, src/css/_typography.scss */
+/* line 166, src/css/_typography.scss */
 .full-img img {
   height: 100%;
 }
@@ -515,7 +521,7 @@ label {
 @media only screen and (min-width: 1024px) {
   /* line 1, src/css/components/_selector.scss */
   .selector {
-    position: relative;
+    position: static;
     width: 20%;
     margin-left: -20px;
   }
@@ -578,13 +584,13 @@ label {
 @media only screen and (min-width: 1024px) {
   /* line 42, src/css/components/_selector.scss */
   .selector__container {
-    padding: 0;
+    padding: 20px;
   }
 }
 
 /* line 53, src/css/components/_selector.scss */
 .selector__container-list {
-  padding: 0;
+  padding: 0 0 0 20px;
 }
 
 /* line 56, src/css/components/_selector.scss */
@@ -728,18 +734,29 @@ label {
   font-size: 16px;
   height: 48px;
   line-height: 24px;
-  padding: 15px 50px 15px 25px;
-  color: var(--primary-color);
+  padding: 15px 50px 15px 40px;
+  color: #011E41;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: unset;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
 }
 
-/* line 47, src/css/components/_menu.scss */
-.menu__content-productList {
-  padding: 0 20px 25px;
-  margin-top: 25px;
+/* line 48, src/css/components/_menu.scss */
+.menu__content-heading--nosub {
+  pointer-events: none;
 }
 
 /* line 52, src/css/components/_menu.scss */
+.menu__content-productList {
+  padding: 0 20px 25px 0;
+  margin-top: 25px;
+}
+
+/* line 57, src/css/components/_menu.scss */
 .menu__subMenu {
   display: flex;
   left: 0;
@@ -751,13 +768,13 @@ label {
   border: 1px solid #dbdfe1;
   background: #fff;
   height: 100%;
-  overflow: scroll;
+  overflow: auto;
   justify-content: space-between;
   transform: translateX(120%);
   transition: transform 0.4s;
 }
 
-/* line 67, src/css/components/_menu.scss */
+/* line 72, src/css/components/_menu.scss */
 .menu__subMenu-heading {
   display: block;
   width: 100%;
@@ -768,9 +785,10 @@ label {
   font-weight: 600;
   line-height: 1;
   background-color: #dfe7ea;
+  cursor: pointer;
 }
 
-/* line 77, src/css/components/_menu.scss */
+/* line 83, src/css/components/_menu.scss */
 .menu__subMenu-heading:before {
   position: absolute;
   content: "";
@@ -784,7 +802,7 @@ label {
   left: 35px;
 }
 
-/* line 90, src/css/components/_menu.scss */
+/* line 96, src/css/components/_menu.scss */
 .menu__subMenu-item {
   padding: 15px 45px 15px 30px;
   font-weight: 600;
@@ -792,12 +810,12 @@ label {
   pointer-events: none;
 }
 
-/* line 97, src/css/components/_menu.scss */
+/* line 103, src/css/components/_menu.scss */
 .menu__footer {
   position: relative;
 }
 
-/* line 99, src/css/components/_menu.scss */
+/* line 105, src/css/components/_menu.scss */
 .menu__footer a {
   display: flex;
   align-items: center;
@@ -806,17 +824,16 @@ label {
   flex-direction: row;
   gap: 10px;
   text-decoration: none;
-  color: var(--primary-color);
+  color: #011E41;
   font-size: 16px;
   position: relative;
-  color: #011e41;
   font-size: 1.14286rem;
   padding: 12px 50px 12px 35px;
   font-weight: 600;
   flex: 1;
 }
 
-/* line 112, src/css/components/_menu.scss */
+/* line 117, src/css/components/_menu.scss */
 .menu__footer:before {
   content: " ";
   display: block;
@@ -828,13 +845,13 @@ label {
   bottom: top;
 }
 
-/* line 123, src/css/components/_menu.scss */
+/* line 128, src/css/components/_menu.scss */
 .menu__overlay {
   flex-grow: 1;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
-/* line 126, src/css/components/_menu.scss */
+/* line 131, src/css/components/_menu.scss */
 .menu__overlay .overlay__heading {
   position: relative;
   height: 60px;
@@ -842,7 +859,7 @@ label {
   background-color: var(--primary-color);
 }
 
-/* line 131, src/css/components/_menu.scss */
+/* line 136, src/css/components/_menu.scss */
 .menu__overlay .overlay__heading .icon {
   position: absolute;
   right: 0;
@@ -853,7 +870,7 @@ label {
   cursor: pointer;
 }
 
-/* line 144, src/css/components/_menu.scss */
+/* line 149, src/css/components/_menu.scss */
 .active {
   display: flex;
   align-items: auto;
@@ -864,7 +881,7 @@ label {
   transition: transform 0.4s;
 }
 
-/* line 149, src/css/components/_menu.scss */
+/* line 154, src/css/components/_menu.scss */
 .showMenu {
   left: 0;
   transition: 0.5s;
@@ -900,10 +917,10 @@ label {
   width: 150%;
   display: flex;
   flex-wrap: nowrap;
-  margin-left: 10px;
+  margin: 0 25px;
 }
 
-/* line 23, src/css/components/_slider.scss */
+/* line 22, src/css/components/_slider.scss */
 .owl-prev,
 .owl-next {
   text-align: center;
@@ -913,7 +930,7 @@ label {
   width: 20px;
 }
 
-/* line 32, src/css/components/_slider.scss */
+/* line 31, src/css/components/_slider.scss */
 .owl-prev span,
 .owl-next span {
   position: absolute;
@@ -925,17 +942,17 @@ label {
   height: auto;
 }
 
-/* line 42, src/css/components/_slider.scss */
+/* line 41, src/css/components/_slider.scss */
 .owl-prev {
   left: 0;
 }
 
-/* line 45, src/css/components/_slider.scss */
+/* line 44, src/css/components/_slider.scss */
 .owl-next {
   right: 0;
 }
 
-/* line 48, src/css/components/_slider.scss */
+/* line 47, src/css/components/_slider.scss */
 .owl-theme .owl-nav [class*="owl-"] {
   color: #011E41;
   font-size: 39px;
@@ -944,18 +961,18 @@ label {
   padding: 0;
 }
 
-/* line 54, src/css/components/_slider.scss */
+/* line 53, src/css/components/_slider.scss */
 .owl-theme .owl-nav [class*="owl-"]:hover {
   background-color: transparent;
 }
 
-/* line 59, src/css/components/_slider.scss */
+/* line 58, src/css/components/_slider.scss */
 .owl-item > div {
   cursor: pointer;
   transition: margin 0.4s ease;
 }
 
-/* line 63, src/css/components/_slider.scss */
+/* line 62, src/css/components/_slider.scss */
 .owl-item.center > div {
   cursor: auto;
   margin: 0;
@@ -983,7 +1000,9 @@ label {
 
 /* line 13, src/css/components/_category.scss */
 .category__content {
-  height: 64px;
+  margin-right: 20px;
+  height: 70px;
+  border-bottom: 1px solid #011E41;
 }
 
 @media only screen and (min-width: 1024px) {
@@ -993,7 +1012,7 @@ label {
   }
 }
 
-/* line 19, src/css/components/_category.scss */
+/* line 21, src/css/components/_category.scss */
 .category__item {
   font: 400 14px/18px "Electrolux", serif;
   min-width: -webkit-fit-content;
@@ -1010,7 +1029,7 @@ label {
   flex-direction: row;
 }
 
-/* line 26, src/css/components/_category.scss */
+/* line 28, src/css/components/_category.scss */
 .category__item:hover {
   border: 2px solid #011E41;
   border-radius: 2px;
@@ -1018,24 +1037,25 @@ label {
   opacity: 0.8;
 }
 
-/* line 33, src/css/components/_category.scss */
+/* line 35, src/css/components/_category.scss */
 .category__item-type {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  text-align: center;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 33, src/css/components/_category.scss */
+  /* line 35, src/css/components/_category.scss */
   .category__item-type {
     width: 100%;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 19, src/css/components/_category.scss */
+  /* line 21, src/css/components/_category.scss */
   .category__item {
     height: 160px;
     width: 130px;
@@ -1053,7 +1073,7 @@ label {
   }
 }
 
-/* line 52, src/css/components/_category.scss */
+/* line 55, src/css/components/_category.scss */
 .selected {
   border: 2px solid #011E41;
   border-radius: 1px;
@@ -1090,10 +1110,11 @@ label {
   /* line 10, src/css/components/_filter.scss */
   .filter__wrapper {
     height: 40px;
+    margin: 0;
   }
 }
 
-/* line 17, src/css/components/_filter.scss */
+/* line 18, src/css/components/_filter.scss */
 .filter__button {
   width: 120px;
   height: 45px;
@@ -1103,13 +1124,13 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 23, src/css/components/_filter.scss */
+  /* line 24, src/css/components/_filter.scss */
   .filter__button-detail {
     margin: 0 5px;
   }
 }
 
-/* line 28, src/css/components/_filter.scss */
+/* line 29, src/css/components/_filter.scss */
 .filter__button-item {
   display: flex;
   align-items: center;
@@ -1120,13 +1141,13 @@ label {
   position: relative;
 }
 
-/* line 33, src/css/components/_filter.scss */
+/* line 34, src/css/components/_filter.scss */
 .filter__button-reset {
   display: none;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 33, src/css/components/_filter.scss */
+  /* line 34, src/css/components/_filter.scss */
   .filter__button-reset {
     display: flex;
     align-items: flex-start;
@@ -1139,14 +1160,14 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 41, src/css/components/_filter.scss */
+  /* line 42, src/css/components/_filter.scss */
   .filter__button:first-child {
     pointer-events: none;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 46, src/css/components/_filter.scss */
+  /* line 47, src/css/components/_filter.scss */
   .filter__button:last-child {
     text-transform: capitalize;
     justify-content: flex-end;
@@ -1154,25 +1175,26 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 17, src/css/components/_filter.scss */
+  /* line 18, src/css/components/_filter.scss */
   .filter__button {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: row;
+    padding: 0;
     border: none;
     width: 20%;
   }
-  /* line 57, src/css/components/_filter.scss */
+  /* line 58, src/css/components/_filter.scss */
   .filter__button-number {
     padding: 0 30px;
     width: 60%;
     text-transform: capitalize;
   }
-  /* line 61, src/css/components/_filter.scss */
+  /* line 62, src/css/components/_filter.scss */
   .filter__button-number:after {
-    content: ' Products';
+    content: " Products";
     margin-left: 10px;
   }
 }
@@ -1183,18 +1205,18 @@ label {
     position: relative;
     width: 100%;
   }
-  /* line 71, src/css/components/_filter.scss */
+  /* line 72, src/css/components/_filter.scss */
   .filter__button-wrap-reset {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 20%;
+    width: 15%;
   }
 }
 
-/* line 77, src/css/components/_filter.scss */
+/* line 78, src/css/components/_filter.scss */
 .filter-sort-selection {
   position: fixed;
   width: 100%;
@@ -1210,7 +1232,7 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 77, src/css/components/_filter.scss */
+  /* line 78, src/css/components/_filter.scss */
   .filter-sort-selection {
     position: absolute;
     top: 40px;
@@ -1289,8 +1311,10 @@ label {
   /* line 1, src/css/components/_product.scss */
   .product {
     width: 80%;
+    margin: 0;
+    display: flex;
   }
-  /* line 5, src/css/components/_product.scss */
+  /* line 8, src/css/components/_product.scss */
   .product__list {
     display: flex;
     align-items: stretch;
@@ -1300,7 +1324,14 @@ label {
   }
 }
 
-/* line 9, src/css/components/_product.scss */
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  /* line 8, src/css/components/_product.scss */
+  .product__list {
+    gap: 40px;
+  }
+}
+
+/* line 15, src/css/components/_product.scss */
 .product__item {
   position: relative;
   display: flex;
@@ -1312,19 +1343,19 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 9, src/css/components/_product.scss */
+  /* line 15, src/css/components/_product.scss */
   .product__item {
     display: flex;
     align-items: flex-start;
     justify-content: flex-start;
     flex-wrap: wrap;
     flex-direction: column;
-    width: calc(30% - 10px);
-    margin: 0 20px 40px;
+    width: calc((100% - 80px) / 3);
+    margin-bottom: 40px;
   }
 }
 
-/* line 18, src/css/components/_product.scss */
+/* line 25, src/css/components/_product.scss */
 .product__item-heart {
   position: absolute;
   top: 0;
@@ -1332,13 +1363,13 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 18, src/css/components/_product.scss */
+  /* line 25, src/css/components/_product.scss */
   .product__item-heart {
     right: 0;
   }
 }
 
-/* line 26, src/css/components/_product.scss */
+/* line 33, src/css/components/_product.scss */
 .product__item-tag {
   display: flex;
   align-items: flex-start;
@@ -1349,7 +1380,7 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 26, src/css/components/_product.scss */
+  /* line 33, src/css/components/_product.scss */
   .product__item-tag {
     position: absolute;
     flex-direction: column;
@@ -1358,14 +1389,14 @@ label {
   }
 }
 
-/* line 36, src/css/components/_product.scss */
+/* line 43, src/css/components/_product.scss */
 .product__item-img {
   width: 110px;
   height: 110px;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 36, src/css/components/_product.scss */
+  /* line 43, src/css/components/_product.scss */
   .product__item-img {
     margin-top: 28px;
     width: 100%;
@@ -1373,7 +1404,7 @@ label {
   }
 }
 
-/* line 44, src/css/components/_product.scss */
+/* line 51, src/css/components/_product.scss */
 .product__item-img--content {
   height: 100%;
   -o-object-fit: contain;
@@ -1381,38 +1412,39 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 44, src/css/components/_product.scss */
+  /* line 51, src/css/components/_product.scss */
   .product__item-img--content {
     display: block;
     margin: 0 auto;
   }
 }
 
-/* line 53, src/css/components/_product.scss */
+/* line 60, src/css/components/_product.scss */
 .product__item-detail {
   width: calc(100% - 110px);
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 53, src/css/components/_product.scss */
+  /* line 60, src/css/components/_product.scss */
   .product__item-detail {
     width: 100%;
   }
 }
 
-/* line 59, src/css/components/_product.scss */
+/* line 66, src/css/components/_product.scss */
 .product__item-code {
   text-transform: uppercase;
   font: 600 14px/22px "Electrolux", serif;
 }
 
-/* line 63, src/css/components/_product.scss */
+/* line 70, src/css/components/_product.scss */
 .product__item-name {
   font: 600 18px/22px "Electrolux", serif;
+  min-height: 50px;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 63, src/css/components/_product.scss */
+  /* line 70, src/css/components/_product.scss */
   .product__item-name {
     font-size: 20px;
     line-height: 26px;
@@ -1420,7 +1452,7 @@ label {
   }
 }
 
-/* line 71, src/css/components/_product.scss */
+/* line 79, src/css/components/_product.scss */
 .product__item-rate {
   display: flex;
   align-items: baseline;
@@ -1430,7 +1462,7 @@ label {
   gap: 5px;
 }
 
-/* line 74, src/css/components/_product.scss */
+/* line 82, src/css/components/_product.scss */
 .product__item-rate--number {
   font: 400 14px/16.8px "Electrolux", serif;
   width: -webkit-fit-content;
@@ -1438,24 +1470,24 @@ label {
   width: fit-content;
 }
 
-/* line 77, src/css/components/_product.scss */
+/* line 85, src/css/components/_product.scss */
 .product__item-rate--number:before {
   content: "(";
 }
 
-/* line 80, src/css/components/_product.scss */
+/* line 88, src/css/components/_product.scss */
 .product__item-rate--number:after {
   content: ")";
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 74, src/css/components/_product.scss */
+  /* line 82, src/css/components/_product.scss */
   .product__item-rate--number {
     line-height: 24px;
   }
 }
 
-/* line 88, src/css/components/_product.scss */
+/* line 96, src/css/components/_product.scss */
 .product__item-price {
   display: flex;
   align-items: baseline;
@@ -1466,32 +1498,32 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 88, src/css/components/_product.scss */
+  /* line 96, src/css/components/_product.scss */
   .product__item-price {
     margin-top: auto;
     order: 2;
   }
 }
 
-/* line 95, src/css/components/_product.scss */
+/* line 103, src/css/components/_product.scss */
 .product__item-price--old {
   font: 400 14px/28px "Electrolux", serif;
   text-decoration: line-through;
 }
 
-/* line 99, src/css/components/_product.scss */
+/* line 107, src/css/components/_product.scss */
 .product__item-price--new {
   font: 600 18px/28px "Electrolux", serif;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 99, src/css/components/_product.scss */
+  /* line 107, src/css/components/_product.scss */
   .product__item-price--new {
     font-size: 24px;
   }
 }
 
-/* line 106, src/css/components/_product.scss */
+/* line 114, src/css/components/_product.scss */
 .product__item-suggestion {
   display: flex;
   align-items: center;
@@ -1502,13 +1534,13 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 106, src/css/components/_product.scss */
+  /* line 114, src/css/components/_product.scss */
   .product__item-suggestion {
     display: none;
   }
 }
 
-/* line 113, src/css/components/_product.scss */
+/* line 121, src/css/components/_product.scss */
 .product__item-interest {
   width: 15%;
   height: 100%;
@@ -1521,7 +1553,7 @@ label {
   flex-direction: row;
 }
 
-/* line 119, src/css/components/_product.scss */
+/* line 127, src/css/components/_product.scss */
 .product__item-interest--number {
   font: 600 18px "Electrolux", serif;
   display: flex;
@@ -1531,14 +1563,14 @@ label {
   flex-direction: column;
 }
 
-/* line 122, src/css/components/_product.scss */
+/* line 130, src/css/components/_product.scss */
 .product__item-interest--number:after {
   content: "interest";
   text-transform: uppercase;
   font: 600 8px/10px "Electrolux", serif;
 }
 
-/* line 129, src/css/components/_product.scss */
+/* line 137, src/css/components/_product.scss */
 .product__item-payment {
   display: flex;
   align-items: center;
@@ -1551,25 +1583,25 @@ label {
   background-color: #dfe7ea;
 }
 
-/* line 136, src/css/components/_product.scss */
+/* line 144, src/css/components/_product.scss */
 .product__item-description {
   list-style-type: disc;
   padding-left: 15px;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 136, src/css/components/_product.scss */
+  /* line 144, src/css/components/_product.scss */
   .product__item-description {
     order: 1;
   }
 }
 
-/* line 142, src/css/components/_product.scss */
+/* line 150, src/css/components/_product.scss */
 .product__item-description--item {
   font: 400 14px/24px "Electrolux", serif;
 }
 
-/* line 146, src/css/components/_product.scss */
+/* line 154, src/css/components/_product.scss */
 .product__item-action {
   display: flex;
   align-items: flex-start;
@@ -1580,7 +1612,7 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 146, src/css/components/_product.scss */
+  /* line 154, src/css/components/_product.scss */
   .product__item-action {
     flex-direction: row-reverse;
     gap: 10px;
@@ -1588,7 +1620,7 @@ label {
   }
 }
 
-/* line 154, src/css/components/_product.scss */
+/* line 162, src/css/components/_product.scss */
 .product__item-action--add, .product__item-action--research {
   height: 45px;
   width: 100%;
@@ -1596,25 +1628,25 @@ label {
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 154, src/css/components/_product.scss */
+  /* line 162, src/css/components/_product.scss */
   .product__item-action--add, .product__item-action--research {
     width: calc(50% - 5px);
   }
 }
 
-/* line 164, src/css/components/_product.scss */
+/* line 172, src/css/components/_product.scss */
 .product__item-compare {
   width: auto;
 }
 
-/* line 166, src/css/components/_product.scss */
+/* line 174, src/css/components/_product.scss */
 .product__item-compare-label {
   padding-left: 10px;
   font: 400 16px/22px "Electrolux", serif;
 }
 
 @media only screen and (min-width: 1024px) {
-  /* line 164, src/css/components/_product.scss */
+  /* line 172, src/css/components/_product.scss */
   .product__item-compare {
     order: 4;
   }

@@ -2,7 +2,7 @@
   "name": "nstung94.github.io",
   "version": "1.0.0",
   "description": "tung-training",
-  "main": "index.js",
+  "main": "main.js",
   "dependencies": {
     "owl.carousel": "^2.3.4"
   },
