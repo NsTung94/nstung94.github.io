@@ -24,22 +24,24 @@ export function dropdown(button){
     })
 }
 
-let language = document.querySelector('.js-language');
-let languageDropdown = document.querySelector('.js-language-dropdown');
-language.addEventListener('click', function(){
-  if (languageDropdown.style.display == "none"){
-    languageDropdown.style.display = 'flex';
-  }
-  else {
-    languageDropdown.style.display = "none";
-  }
-})
-
-let sliderItems = document.querySelectorAll('.js-slider-item');
-
-sliderItems.forEach(function(item){
-  item.addEventListener('click', function(){
-    sliderItems.forEach(item => item.classList.remove("selected"));
-    item.classList.add('selected');
+export function language(){
+  let language = document.querySelector('.js-language');
+  let languageDropdown = document.querySelector('.js-language-dropdown');
+  language.addEventListener('click', function(){
+    if (languageDropdown.style.display == "none"){
+      languageDropdown.style.display = 'flex';
+    }
+    else {
+      languageDropdown.style.display = "none";
+    }
   })
-})
+  
+  let sliderItems = document.querySelectorAll('.js-slider-item');
+  
+  sliderItems.forEach(function(item){
+    item.addEventListener('click', function(){
+      sliderItems.forEach(item => item.classList.remove("selected"));
+      item.classList.add('selected');
+    })
+  })
+}

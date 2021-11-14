@@ -1,10 +1,21 @@
 import { openMenu } from './modules/menu.js';
 import { wish } from './modules/wish.js';
-import {dropdown} from './modules/dropdown.js';
+import {dropdown, language} from './modules/dropdown.js';
+import reset from './modules/reset.js';
+import {filterSelector, closeFilterSelector, sortSelector, closeSortSelector} from './modules/moveUp.js';
 
 openMenu('.js-open-menu');
 wish('.js-heart-button');
 dropdown('.js-dropdown-menu');
+language();
+reset();
+filterSelector();
+closeFilterSelector();
+sortSelector();
+closeSortSelector();
+// export function changeSortBy(name) {
+//   sortBtn.setAttribute("data-after", name);
+// }
 
 // lazy image using Intersection Observer to check viewport
 document.addEventListener("DOMContentLoaded", function () {

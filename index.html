@@ -29,7 +29,7 @@
     <div class="wrapper">
       <div class="menu">
         <div class="menu__content">
-          <div class="menu__content-heading js-open-submenu ">
+          <div class="menu__content-heading js-open-submenu">
             <div class="menu__content-heading-title js-close-submenu">
               <div class="hasIcon">
                 <img src="./src/images/icon/user.png" alt="" />
@@ -47,7 +47,9 @@
           </div>
           <div class="menu__content-productList">
             <div class="menu__content-heading js-open-submenu">
-              <a class="menu__content-heading-title js-close-submenu" href="#">Laundry</a>
+              <a class="menu__content-heading-title js-close-submenu" href="#"
+                >Laundry</a
+              >
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
@@ -60,7 +62,9 @@
               </div>
             </div>
             <div class="menu__content-heading js-open-submenu">
-              <a class="menu__content-heading-title js-close-submenu" href="#">Floor</a>
+              <a class="menu__content-heading-title js-close-submenu" href="#"
+                >Floor</a
+              >
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
@@ -72,11 +76,12 @@
                 <div class="menu__subMenu-item">Garments steamers</div>
                 <div class="menu__subMenu-item">Refrigeration</div>
                 <div class="menu__subMenu-item">Hobs</div>
-               
               </div>
             </div>
             <div class="menu__content-heading js-open-submenu disable">
-              <a class="menu__content-heading-title js-close-submenu" href="#">Bathroom</a>
+              <a class="menu__content-heading-title js-close-submenu" href="#"
+                >Bathroom</a
+              >
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
@@ -85,7 +90,9 @@
               </div>
             </div>
             <div class="menu__content-heading js-open-submenu disable">
-              <a class="menu__content-heading-title js-close-submenu" href="#">Bathroom</a>
+              <a class="menu__content-heading-title js-close-submenu" href="#"
+                >Bathroom</a
+              >
               <span
                 ><img src="./src/images/icon/chevron-right.png" alt=""
               /></span>
@@ -95,11 +102,9 @@
             </div>
             <div class="menu__content-heading js-open-submenu disable">
               <a class="menu__content-heading-title" href="#">Promotions</a>
-              
             </div>
             <div class="menu__content-heading js-open-submenu disable">
               <a class="menu__content-heading-title" href="#">Blog</a>
-              
             </div>
           </div>
           <div class="menu__footer">
@@ -166,7 +171,9 @@
                     />
                   </div>
                 </li>
-                <li class="header__navigation-icon js-open-menu hide-on-desktop">
+                <li
+                  class="header__navigation-icon js-open-menu hide-on-desktop"
+                >
                   <div class="btn btn-no-border">
                     <img
                       src="./src/images/icon/hamburger.svg"
@@ -182,9 +189,16 @@
                     js-language
                     hide-on-mobile
                   "
-                > EN
+                >
+                  EN
                   <img src="./src/images/icon/chevron-down.png" alt="" />
-                  <ul class="header__navigation-language-dropdown js-language-dropdown hide">
+                  <ul
+                    class="
+                      header__navigation-language-dropdown
+                      js-language-dropdown
+                      hide
+                    "
+                  >
                     <li data-after="EN">English</li>
                     <li data-after="VN">Vietnamese</li>
                   </ul>
@@ -206,10 +220,11 @@
             </button>
             <ul class="header__breadcrumb-desktop hide-on-mobile">
               <li class="header-breadcrumb-desktop--item disable">Home</li>
-              <li class="header-breadcrumb-desktop--item"><a href="#">Promotion</a></li>
+              <li class="header-breadcrumb-desktop--item">
+                <a href="#">Promotion</a>
+              </li>
             </ul>
           </div>
-          
         </div>
         <div class="header__hero">
           <div class="header__hero-wrapper">
@@ -284,16 +299,26 @@
       <section class="container filter">
         <div class="container__row filter__wrapper">
           <div class="filter__button-wrap-reset">
-            <div class="btn center-flex-row filter__button">
-              <img class="hide-on-desktop" src="./src/images/icon/filter-icon.svg" alt="">
+            <div class="btn center-flex-row filter__button js-selector-open">
+              <img
+                class="hide-on-desktop"
+                src="./src/images/icon/filter-icon.svg"
+                alt=""
+              />
               <div class="filter__button-item center-flex-row">Filter</div>
             </div>
-            <div class="filter__button-reset hide-on-mobile">
-              <img src="./src/images/icon/reset-filter.svg" alt="">
+            <div class="filter__button-reset hide-on-mobile js-reset-selector">
+              <img src="./src/images/icon/reset-filter.svg" alt="" />
               <span class="filter__button-reset-name">Reset</span>
             </div>
           </div>
-          <div class="btn btn-no-border filter__button filter__button-number hide-on-mobile">
+          <div
+            class="
+              btn btn-no-border
+              filter__button filter__button-number
+              hide-on-mobile
+            "
+          >
             <span class="filter__button-item">17</span>
           </div>
           <div
@@ -305,39 +330,34 @@
               center-flex-row
             "
           >
-            <div class="filter__button-item"
-              ><span class='filter__button-detail'>Sort By</span>
-              <div class="filter__button-detail hide-on-mobile">
-                : default
+            <div class="filter__button-item js-sort-open">
+              <span class="filter__button-detail">Sort By</span>
+              <div class="filter__button-detail hide-on-mobile">: default</div>
+              <div class="filter__button-detail">
+                <img src="./src/images/icon/chevron-down.png" alt="" />
               </div>
-              <div class="filter__button-detail"><img src="./src/images/icon/chevron-down.png" alt=""></div>
             </div>
-            <div
-              class="filter-sort-selection hide"
-            >
-              <div class="filter-sort-selection--overlay hide-on-desktop"></div>
-              <div class="filter-sort-selection--list">
-                <button
-                  class="selectSort__heading"
-                  onclick="changeSortBy(': Default')"
-                >
-                  Default
-                </button>
-                <button onclick="changeSortBy(': Price Down')">
-                  Price high to low
-                </button>
-                <button onclick="changeSortBy(': Price Up')">
-                  Price low to high
-                </button>
-                <button onClick="changeSortBy(': Rate')">Highest rate</button>
+            <div class="filter-sort-selection js-sort-selector">
+              <div
+                class="
+                  filter-sort-selection--overlay
+                  hide-on-desktop
+                  js-sort-close
+                "
+              ></div>
+              <div class="filter-sort-selection--list js-sort-close">
+                <button>Default</button>
+                <button>Price high to low</button>
+                <button>Price low to high</button>
+                <button>Highest rate</button>
               </div>
             </div>
           </div>
         </div>
       </section>
       <div class="container flex">
-        <section class="selector active__content">
-          <div class="selector__header hide-on-desktop js--close">
+        <section class="selector js-selector">
+          <div class="selector__header hide-on-desktop js-selector-close">
             <div class="selector__header--iconFilter">
               <img src="./src/images/icon/filter-icon.svg" alt="" class="" />
               Filter
@@ -348,22 +368,22 @@
                 alt=""
                 class="selector__header--icon"
               />
-              <div
+              <!-- <div
                 class="
                   btn btn-no-border
                   js-include-active
                   btn-refresh
                   hide-on-mobile
+
                 "
-                onclick="resetCbs()"
               >
                 <img
                   class="selector__header-icon"
                   src="./src/images/icon/reset-filter.svg"
                   alt=""
                 />
-                <span class="">Reset</span>
-              </div>
+                <span class="">Reset</span> -->
+              <!-- </div> -->
             </div>
           </div>
           <div class="selector__container">
@@ -372,21 +392,32 @@
                 <div class="selector__container-title js-dropdown-button">
                   stock status
                 </div>
-                <div
-                  class="selector__container-content js-dropdown-content"
-                >
-                  <div class="selector__container-checkbox js-selector-checkbox">
-                    <label class="checkBox ">
+                <div class="selector__container-content js-dropdown-content">
+                  <div
+                    class="selector__container-checkbox js-selector-checkbox"
+                  >
+                    <label class="checkBox">
                       <input type="checkbox" class="" />
-                      <span class="checkmark checkmark--selector select__container-checkmark"></span>
-                      <span class="checkbox__label selector__container-label">In stock</span>
+                      <span
+                        class="
+                          checkmark checkmark--selector
+                          select__container-checkmark
+                        "
+                      ></span>
+                      <span class="checkbox__label selector__container-label"
+                        >In stock</span
+                      >
                     </label>
                   </div>
-                  <div class="selector__container-checkbox js-selector-checkbox">
-                    <label class="checkBox ">
+                  <div
+                    class="selector__container-checkbox js-selector-checkbox"
+                  >
+                    <label class="checkBox">
                       <input type="checkbox" class="" />
                       <span class="checkmark checkmark--selector"></span>
-                      <span class="checkbox__label selector__container-label">All</span>
+                      <span class="checkbox__label selector__container-label"
+                        >All</span
+                      >
                     </label>
                   </div>
                 </div>
@@ -395,21 +426,23 @@
                 <div class="selector__container-title js-dropdown-button">
                   stock status
                 </div>
-                <div
-                  class="selector__container-content js-dropdown-content"
-                >
+                <div class="selector__container-content js-dropdown-content">
                   <div class="selector__container-checkbox">
                     <label class="checkBox js-selector-checkbox">
                       <input type="checkbox" class="" />
-                      <span class="checkmark checkmark--selector "></span>
-                      <span class="checkbox__label selector__container-label">In stock</span>
+                      <span class="checkmark checkmark--selector"></span>
+                      <span class="checkbox__label selector__container-label"
+                        >In stock</span
+                      >
                     </label>
                   </div>
                   <div class="selector__container-checkbox">
                     <label class="checkBox js-selector-checkbox">
                       <input type="checkbox" class="" />
-                      <span class="checkmark checkmark--selector "></span>
-                      <span class="checkbox__label selector__container-label">All</span>
+                      <span class="checkmark checkmark--selector"></span>
+                      <span class="checkbox__label selector__container-label"
+                        >All</span
+                      >
                     </label>
                   </div>
                 </div>
@@ -417,13 +450,22 @@
             </ul>
           </div>
           <div class="selector__footer hide-on-desktop">
-            <div class="btn center-flex-row selector__footer-button">Reset</div>
+            <div
+              class="
+                btn
+                center-flex-row
+                selector__footer-button
+                js-reset-selector
+              "
+            >
+              Reset
+            </div>
             <div
               class="
                 btn btn--primary
                 center-flex-row
                 selector__footer-button
-                js--close
+                js-selector-close
               "
             >
               Apply Filters
@@ -446,7 +488,6 @@
                 />
               </div>
               <div class="item product__item-tag">
-                
                 <div class="tag tag--discount">sale</div>
                 <div class="tag tag--gift">
                   <img src="./src/images/icon/gift.png" alt="" />
@@ -463,10 +504,13 @@
               <div class="item product__item-detail">
                 <div class="product__item-code">EBE4500B-G</div>
                 <div class="product__item-name">
-                  421L bottom freezer refrigerator 421L bottom freezer refrigerator
+                  421L bottom freezer refrigerator 421L bottom freezer
+                  refrigerator
                 </div>
                 <div class="product__item-rate">
-                  <div class="product__item-rate--star"><img src="./src/images/icon/star.png" alt=""></div>
+                  <div class="product__item-rate--star">
+                    <img src="./src/images/icon/star.png" alt="" />
+                  </div>
                   <div class="product__item-rate--number">102 Reviews</div>
                 </div>
               </div>
@@ -511,7 +555,9 @@
                 <label class="checkBox js-compare-checkbox">
                   <input type="checkbox" class="" />
                   <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label"> Add to Compare</span>
+                  <span class="checkbox__label product__item-compare-label">
+                    Add to Compare</span
+                  >
                 </label>
               </div>
             </div>
@@ -529,9 +575,7 @@
                 />
               </div>
               <div class="item product__item-tag">
-                
                 <div class="tag tag--bundle">bundle</div>
-      
               </div>
               <div class="item product__item-img placeholder">
                 <img
@@ -546,7 +590,9 @@
                   421L bottom freezer refrigerator
                 </div>
                 <div class="product__item-rate">
-                  <div class="product__item-rate--star"><img src="./src/images/icon/star.png" alt=""></div>
+                  <div class="product__item-rate--star">
+                    <img src="./src/images/icon/star.png" alt="" />
+                  </div>
                   <div class="product__item-rate--number">102 Reviews</div>
                 </div>
               </div>
@@ -568,7 +614,7 @@
                 <li class="product__item-description--item">
                   TasteLockPlus keeps vegetables fresh for 7 days*.
                 </li>
-                
+
                 <li class="product__item-description--item">
                   Spacious freezer provides ample storage.
                 </li>
@@ -588,7 +634,9 @@
                 <label class="checkBox js-compare-checkbox">
                   <input type="checkbox" class="" />
                   <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label"> Add to Compare</span>
+                  <span class="checkbox__label product__item-compare-label">
+                    Add to Compare</span
+                  >
                 </label>
               </div>
             </div>
@@ -626,7 +674,9 @@
                   421L bottom freezer refrigerator
                 </div>
                 <div class="product__item-rate">
-                  <div class="product__item-rate--star"><img src="./src/images/icon/star.png" alt=""></div>
+                  <div class="product__item-rate--star">
+                    <img src="./src/images/icon/star.png" alt="" />
+                  </div>
                   <div class="product__item-rate--number">102 Reviews</div>
                 </div>
               </div>
@@ -670,7 +720,9 @@
                 <label class="checkBox js-compare-checkbox">
                   <input type="checkbox" class="" />
                   <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label"> Add to Compare</span>
+                  <span class="checkbox__label product__item-compare-label">
+                    Add to Compare</span
+                  >
                 </label>
               </div>
             </div>
@@ -708,7 +760,9 @@
                   421L bottom freezer refrigerator
                 </div>
                 <div class="product__item-rate">
-                  <div class="product__item-rate--star"><img src="./src/images/icon/star.png" alt=""></div>
+                  <div class="product__item-rate--star">
+                    <img src="./src/images/icon/star.png" alt="" />
+                  </div>
                   <div class="product__item-rate--number">102 Reviews</div>
                 </div>
               </div>
@@ -752,7 +806,9 @@
                 <label class="checkBox js-compare-checkbox">
                   <input type="checkbox" class="" />
                   <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label"> Add to Compare</span>
+                  <span class="checkbox__label product__item-compare-label">
+                    Add to Compare</span
+                  >
                 </label>
               </div>
             </div>
@@ -779,7 +835,9 @@
         <div class="footer__option">
           <div class="container">
             <div class="footer__option-item js-dropdown-menu">
-              <div class="footer__option-item-title js-dropdown-button"> kitchen </div>
+              <div class="footer__option-item-title js-dropdown-button">
+                kitchen
+              </div>
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-selector-checkbox">Cooktops</li>
                 <li class="js-selector-checkbox">Ovens</li>
@@ -793,14 +851,18 @@
               </ul>
             </div>
             <div class="footer__option-item js-dropdown-menu">
-              <div class="footer__option-item-title js-dropdown-button"> Laundry </div>
+              <div class="footer__option-item-title js-dropdown-button">
+                Laundry
+              </div>
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-selector-checkbox">Washing Machine</li>
                 <li class="js-selector-checkbox">Dryers</li>
               </ul>
             </div>
             <div class="footer__option-item js-dropdown-menu">
-              <div class="footer__option-item-title js-dropdown-button"> wellbeing </div>
+              <div class="footer__option-item-title js-dropdown-button">
+                wellbeing
+              </div>
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-selector-checkbox">Vaccum Cleaners</li>
                 <li class="js-selector-checkbox">Air Care</li>
@@ -808,7 +870,9 @@
               </ul>
             </div>
             <div class="footer__option-item js-dropdown-menu">
-              <div class="footer__option-item-title js-dropdown-button"> inspiration </div>
+              <div class="footer__option-item-title js-dropdown-button">
+                inspiration
+              </div>
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-selector-checkbox">Cooker Hoods</li>
                 <li class="js-selector-checkbox">Kettles & Water Filtration</li>
@@ -817,7 +881,9 @@
               </ul>
             </div>
             <div class="footer__option-item js-dropdown-menu">
-              <div class="footer__option-item-title js-dropdown-button"> support </div>
+              <div class="footer__option-item-title js-dropdown-button">
+                support
+              </div>
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-selector-checkbox">Warranty Information</li>
                 <li class="js-selector-checkbox">Product Registration</li>
@@ -836,20 +902,22 @@
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-selector-checkbox">Our Company</li>
                 <li class="js-selector-checkbox">Design Innovation</li>
-                <li class="js-selector-checkbox">Environment & sustainability</li>
+                <li class="js-selector-checkbox">
+                  Environment & sustainability
+                </li>
                 <li class="js-selector-checkbox">Career</li>
                 <li class="js-selector-checkbox">Global Leader</li>
               </ul>
             </div>
             <div class="footer__option-item">
-              <div class="footer__option-item-title"> promotions </div>
+              <div class="footer__option-item-title">promotions</div>
             </div>
             <div class="footer__option-item">
-              <div class="footer__option-item-title"> where to buy </div>
+              <div class="footer__option-item-title">where to buy</div>
             </div>
           </div>
         </div>
-       
+
         <div class="container footer__list">
           <div class="footer__connect">
             <div class="footer__connect-social">

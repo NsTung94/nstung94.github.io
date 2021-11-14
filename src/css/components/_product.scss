@@ -19,6 +19,9 @@
       position: absolute;
       top: 0;
       right: 15px;
+      @include large {
+        right: 0;
+      }
     }
     &-tag {
       @include flexBox();

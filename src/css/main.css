@@ -103,10 +103,11 @@ table {
   position: absolute;
   top: 30px;
   right: 0;
-  width: 100px;
+  width: 150px;
   height: 50px;
   background-color: #fff;
-  box-shadow: 1px 1px #dfe7ea;
+  box-shadow: 1px 1px 1px 1px #dfe7ea;
+  padding: 10px;
 }
 @media only screen and (min-width: 1024px) {
   .header__navigation {
@@ -529,6 +530,10 @@ label {
   width: calc(50% - 5px);
 }
 
+.active {
+  bottom: 0;
+}
+
 .menu {
   position: fixed;
   left: -100%;
@@ -876,9 +881,12 @@ label {
   height: 45px;
   font: 600 16px/19.2px "Electrolux", serif;
   position: relative;
+  cursor: pointer;
 }
-.filter__button-detail {
-  margin: 0 5px;
+@media only screen and (min-width: 1024px) {
+  .filter__button-detail {
+    margin: 0 5px;
+  }
 }
 .filter__button-item {
   display: flex;
@@ -886,10 +894,32 @@ label {
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 5px;
+  position: relative;
+}
+.filter__button-reset {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .filter__button-reset {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 5px;
+    cursor: pointer;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .filter__button:first-child {
+    pointer-events: none;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .filter__button:last-child {
     text-transform: capitalize;
+    justify-content: flex-end;
   }
 }
 @media only screen and (min-width: 1024px) {
@@ -924,6 +954,71 @@ label {
     flex-wrap: wrap;
     flex-direction: row;
     width: 20%;
+  }
+}
+.filter-sort-selection {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  bottom: -100%;
+  left: 0;
+  transition: 0.5s;
+}
+@media only screen and (min-width: 1024px) {
+  .filter-sort-selection {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+  }
+}
+.filter-sort-selection--overlay {
+  width: 100%;
+  height: 80%;
+  background-color: black;
+  opacity: 0.5;
+}
+@media only screen and (min-width: 1024px) {
+  .filter-sort-selection--overlay {
+    display: none;
+  }
+}
+.filter-sort-selection--list {
+  background-color: #fff;
+  width: 100%;
+  height: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.filter-sort-selection--list button {
+  border: none;
+  width: 100%;
+  padding: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
+@media only screen and (min-width: 1024px) {
+  .filter-sort-selection--list {
+    height: 100%;
+    justify-content: unset;
+  }
+}
+
+.active {
+  bottom: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .active {
+    height: 120px;
   }
 }
 
@@ -970,6 +1065,11 @@ label {
   position: absolute;
   top: 0;
   right: 15px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-heart {
+    right: 0;
+  }
 }
 .product__item-tag {
   display: flex;
@@ -1181,6 +1281,7 @@ label {
   position: fixed;
   right: 15px;
   bottom: 80px;
+  z-index: 10;
 }
 
 @keyframes placeHolderShimmer {
