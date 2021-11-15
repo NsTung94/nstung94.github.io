@@ -1,7 +1,9 @@
 // click heart to add wishlist
-export function wish(button){
-    // let hearts = document.querySelectorAll('.js-heart-button');
-    let hearts = document.querySelectorAll(button);
+let wishCount = document.querySelector('.js-number-wish')
+
+export function wish(){
+
+    let hearts = document.querySelectorAll(".js-heart-button");
     hearts.forEach(function(item){
       let unwish = item.querySelector('.outline'
       )

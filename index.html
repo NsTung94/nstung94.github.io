@@ -23,7 +23,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="./dist/css/main.css" />
+    <link rel="stylesheet" href="./src/css/main.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -140,13 +140,14 @@
               </div>
               <ul class="header__navigation-icons">
                 <li class="header__navigation-icon">
-                  <div class="btn btn-no-border">
+                  <div class="btn btn-no-border count__wrapper">
                     <img
                       src="./src/images/icon/search.svg"
                       alt=""
                       li
-                      class="header__navigation-icon--img"
+                      class="header__navigation-icon--img count__icon"
                     />
+                    <span class="count__number js-number-wish">0</span>
                   </div>
                 </li>
                 <li class="header__navigation-icon hide-on-mobile">
@@ -160,13 +161,14 @@
                   </div>
                 </li>
                 <li class="header__navigation-icon">
-                  <div class="btn btn-no-border">
+                  <div class="btn btn-no-border count__wrapper">
                     <img
                       src="./src/images/icon/Cart.svg"
                       alt=""
                       li
-                      class="header__navigation-icon--img"
+                      class="header__navigation-icon--img count__icon"
                     />
+                    <span class="count__number js-number-cart">0</span>
                   </div>
                 </li>
                 <li
@@ -238,12 +240,6 @@
       <section class="container item category">
         <div class="category__header">Categories</div>
         <div class="category__content owl-carousel owl-theme">
-          <!-- <div class="category__item js-slider-item">
-            <div class="category__item-icon hide-on-mobile">
-              <img src="./src/images/logo/all-categories-icon.png" alt="" />
-            </div>
-            <div class="category__item-type">All Categories</div>
-          </div> -->
           <div class="category__item js-slider-item">
             <div class="category__item-icon hide-on-mobile">
               <img src="./src/images/logo/air-fryer.png" alt="" />
@@ -456,7 +452,8 @@
             </div>
           </section>
           <section class="container product">
-            <div class="container__row product__list">
+            <div class="container__row product__list js-product-list">
+              <!-- product_item here -->
               <div class="product__item">
                 <div class="product__item-heart js-heart-button">
                   <img
@@ -480,54 +477,45 @@
                 <div class="item product__item-img placeholder">
                   <img
                     class="product__item-img--content lazy-observer"
-                    data-src="./src/images/product/tulanh3.png"
+                    data-src="./src/images/product/tulanh1.png"
                     alt=""
                   />
                 </div>
                 <div class="item product__item-detail">
-                  <div class="product__item-code">EBE4500B-G</div>
+                  <div class="product__item-code">${product.code}</div>
                   <div class="product__item-name">
-                    421L bottom freezer refrigerator 421L bottom freezer
-                    refrigerator
+                    ${product.name}
                   </div>
                   <div class="product__item-rate">
                     <div class="product__item-rate--star">
                       <img src="./src/images/icon/star.png" alt="" />
                     </div>
-                    <div class="product__item-rate--number">102 Reviews</div>
+                    <div class="product__item-rate--number">${
+                      product.review
+                    } Reviews</div>
                   </div>
                 </div>
                 <div class="item product__item-price">
-                  <div class="product__item-price--old">25.390.000 đ</div>
-                  <div class="product__item-price--new">16.390.000 đ</div>
+                  <div class="product__item-price--old">${product.price.old} đ</div>
+                  <div class="product__item-price--new">${product.price.new} đ</div>
                 </div>
                 <div class="item product__item-suggestion hide-on-desktop">
                   <div class="product__item-interest">
-                    <div class="product__item-interest--number">0%</div>
+                    <div class="product__item-interest--number">${
+                      product.interest
+                    } %</div>
                   </div>
                   <div class="product__item-payment">
                     <div class="product__item-payment--money">
-                      3.331.000 VND/month
+                      ${product.payment} VND/month
                     </div>
                     <div class="product__item-payment--due">for 6 months</div>
                   </div>
                 </div>
                 <ul class="item product__item-description">
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                  <li class="product__item-description--item">
-                    EvenTemp reduces temperature fluctuations.
-                  </li>
-                  <li class="product__item-description--item">
-                    Spacious freezer provides ample storage.
-                  </li>
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
                 </ul>
                 <div class="item product__item-action">
-                  <button class="btn btn--primary product__item-action--add">
+                  <button class="btn btn--primary product__item-action--add js-add-cart">
                     add to cart
                   </button>
                   <button class="btn product__item-action--research">
@@ -543,257 +531,13 @@
                     >
                   </label>
                 </div>
-              </div>
-              <div class="product__item">
-                <div class="product__item-heart js-heart-button">
-                  <img
-                    class="outline"
-                    src="./src/images/icon/heart-outline-icon.svg"
-                    alt=""
-                  />
-                  <img
-                    src="./src/images/icon/heart-filled-icon.svg"
-                    alt=""
-                    class="fill hide"
-                  />
-                </div>
-                <div class="item product__item-tag">
-                  <div class="tag tag--bundle">bundle</div>
-                </div>
-                <div class="item product__item-img placeholder">
-                  <img
-                    class="product__item-img--content lazy-observer"
-                    data-src="./src/images/product/tulanh3.png"
-                    alt=""
-                  />
-                </div>
-                <div class="item product__item-detail">
-                  <div class="product__item-code">EBE4500B-G</div>
-                  <div class="product__item-name">
-                    421L bottom freezer refrigerator
-                  </div>
-                  <div class="product__item-rate">
-                    <div class="product__item-rate--star">
-                      <img src="./src/images/icon/star.png" alt="" />
-                    </div>
-                    <div class="product__item-rate--number">102 Reviews</div>
-                  </div>
-                </div>
-                <div class="item product__item-price">
-                  <div class="product__item-price--new">16.390.000 đ</div>
-                </div>
-                <div class="item product__item-suggestion hide-on-desktop">
-                  <div class="product__item-interest">
-                    <div class="product__item-interest--number">0%</div>
-                  </div>
-                  <div class="product__item-payment">
-                    <div class="product__item-payment--money">
-                      3.331.000 VND/month
-                    </div>
-                    <div class="product__item-payment--due">for 6 months</div>
-                  </div>
-                </div>
-                <ul class="item product__item-description">
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                  <li class="product__item-description--item">
-                    Spacious freezer provides ample storage.
-                  </li>
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                </ul>
-                <div class="item product__item-action">
-                  <button class="btn btn--primary product__item-action--add">
-                    add to cart
-                  </button>
-                  <button class="btn product__item-action--research">
-                    learn more
-                  </button>
-                </div>
-                <div class="product__item-compare hide-on-mobile">
-                  <label class="checkBox js-compare-checkbox">
-                    <input type="checkbox" class="" />
-                    <span class="checkmark checkmark--compare"></span>
-                    <span class="checkbox__label product__item-compare-label">
-                      Add to Compare</span
-                    >
-                  </label>
-                </div>
-              </div>
-              <div class="product__item">
-                <div class="product__item-heart js-heart-button">
-                  <img
-                    class="outline"
-                    src="./src/images/icon/heart-outline-icon.svg"
-                    alt=""
-                  />
-                  <img
-                    src="./src/images/icon/heart-filled-icon.svg"
-                    alt=""
-                    class="fill hide"
-                  />
-                </div>
-                <div class="item product__item-tag">
-                  <div class="tag tag--new">new</div>
-                  <div class="tag tag--discount">sale</div>
-                  <div class="tag tag--gift">
-                    <img src="./src/images/icon/gift.png" alt="" />
-                    <span>free gift</span>
-                  </div>
-                </div>
-                <div class="item product__item-img placeholder">
-                  <img
-                    class="product__item-img--content lazy-observer"
-                    data-src="./src/images/product/tulanh3.png"
-                    alt=""
-                  />
-                </div>
-                <div class="item product__item-detail">
-                  <div class="product__item-code">EBE4500B-G</div>
-                  <div class="product__item-name">
-                    421L bottom freezer refrigerator
-                  </div>
-                  <div class="product__item-rate">
-                    <div class="product__item-rate--star">
-                      <img src="./src/images/icon/star.png" alt="" />
-                    </div>
-                    <div class="product__item-rate--number">102 Reviews</div>
-                  </div>
-                </div>
-                <div class="item product__item-price">
-                  <div class="product__item-price--new">16.390.000 đ</div>
-                </div>
-                <div class="item product__item-suggestion hide-on-desktop">
-                  <div class="product__item-interest">
-                    <div class="product__item-interest--number">0%</div>
-                  </div>
-                  <div class="product__item-payment">
-                    <div class="product__item-payment--money">
-                      3.331.000 VND/month
-                    </div>
-                    <div class="product__item-payment--due">for 6 months</div>
-                  </div>
-                </div>
-                <ul class="item product__item-description">
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                  <li class="product__item-description--item">
-                    EvenTemp reduces temperature fluctuations.
-                  </li>
-                  <li class="product__item-description--item">
-                    Spacious freezer provides ample storage.
-                  </li>
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                </ul>
-                <div class="item product__item-action">
-                  <button class="btn btn--primary product__item-action--add">
-                    add to cart
-                  </button>
-                  <button class="btn product__item-action--research">
-                    learn more
-                  </button>
-                </div>
-                <div class="product__item-compare hide-on-mobile">
-                  <label class="checkBox js-compare-checkbox">
-                    <input type="checkbox" class="" />
-                    <span class="checkmark checkmark--compare"></span>
-                    <span class="checkbox__label product__item-compare-label">
-                      Add to Compare</span
-                    >
-                  </label>
-                </div>
-              </div>
-              <div class="product__item">
-                <div class="product__item-heart js-heart-button">
-                  <img
-                    class="outline"
-                    src="./src/images/icon/heart-outline-icon.svg"
-                    alt=""
-                  />
-                  <img
-                    src="./src/images/icon/heart-filled-icon.svg"
-                    alt=""
-                    class="fill hide"
-                  />
-                </div>
-                <div class="item product__item-tag">
-                  <div class="tag tag--new">new</div>
-                  <div class="tag tag--discount">sale</div>
-                  <div class="tag tag--gift">
-                    <img src="./src/images/icon/gift.png" alt="" />
-                    <span>free gift</span>
-                  </div>
-                </div>
-                <div class="item product__item-img placeholder">
-                  <img
-                    class="product__item-img--content lazy-observer"
-                    data-src="./src/images/product/tulanh3.png"
-                    alt=""
-                  />
-                </div>
-                <div class="item product__item-detail">
-                  <div class="product__item-code">EBE4500B-G</div>
-                  <div class="product__item-name">
-                    421L bottom freezer refrigerator
-                  </div>
-                  <div class="product__item-rate">
-                    <div class="product__item-rate--star">
-                      <img src="./src/images/icon/star.png" alt="" />
-                    </div>
-                    <div class="product__item-rate--number">102 Reviews</div>
-                  </div>
-                </div>
-                <div class="item product__item-price">
-                  <div class="product__item-price--new">16.390.000 đ</div>
-                </div>
-                <div class="item product__item-suggestion hide-on-desktop">
-                  <div class="product__item-interest">
-                    <div class="product__item-interest--number">0%</div>
-                  </div>
-                  <div class="product__item-payment">
-                    <div class="product__item-payment--money">
-                      3.331.000 VND/month
-                    </div>
-                    <div class="product__item-payment--due">for 6 months</div>
-                  </div>
-                </div>
-                <ul class="item product__item-description">
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                  <li class="product__item-description--item">
-                    EvenTemp reduces temperature fluctuations.
-                  </li>
-                  <li class="product__item-description--item">
-                    Spacious freezer provides ample storage.
-                  </li>
-                  <li class="product__item-description--item">
-                    TasteLockPlus keeps vegetables fresh for 7 days*.
-                  </li>
-                </ul>
-                <div class="item product__item-action">
-                  <button class="btn btn--primary product__item-action--add">
-                    add to cart
-                  </button>
-                  <button class="btn product__item-action--research">
-                    learn more
-                  </button>
-                </div>
-                <div class="product__item-compare hide-on-mobile">
-                  <label class="checkBox js-compare-checkbox">
-                    <input type="checkbox" class="" />
-                    <span class="checkmark checkmark--compare"></span>
-                    <span class="checkbox__label product__item-compare-label">
-                      Add to Compare</span
-                    >
-                  </label>
-                </div>
-              </div>
+            </div>
+              
+            </div>
+            <div class="loading">
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="ball"></div>
             </div>
           </section>
         </div>
@@ -963,7 +707,7 @@
       </footer>
     </div>
   </body>
-  <script src="./dist/js/main.js"></script>
+  <script type="module" src="./src/js/main.js"></script>
 
   <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="./node_modules/owl.carousel/dist/owl.carousel.min.js"></script>

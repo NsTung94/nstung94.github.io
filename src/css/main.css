@@ -93,6 +93,11 @@ table {
   border-left: 1px solid #011E41;
   padding-left: 20px;
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
 }
 .header__navigation-language-dropdown {
   display: flex;
@@ -108,6 +113,9 @@ table {
   background-color: #fff;
   box-shadow: 1px 1px 1px 1px #dfe7ea;
   padding: 10px;
+}
+.header__navigation-language img {
+  height: auto;
 }
 @media only screen and (min-width: 1024px) {
   .header__navigation {
@@ -285,6 +293,8 @@ li {
   }
 }
 .container__wrapper {
+  min-height: 500px;
+  width: 100%;
   margin: 0 -20px;
   display: flex;
 }
@@ -445,12 +455,15 @@ label {
   width: 21px;
   height: 21px;
 }
-.selector__header-iconFilter {
+.selector__header--iconFilter {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 5px;
+  font-size: 20px;
+  font-weight: 600;
 }
 @media only screen and (min-width: 1024px) {
   .selector__header {
@@ -1114,16 +1127,22 @@ label {
 }
 .product__item-img {
   width: 110px;
+  position: relative;
   height: 110px;
+  padding-bottom: 100%;
 }
 @media only screen and (min-width: 1024px) {
   .product__item-img {
     margin-top: 28px;
     width: 100%;
-    height: auto;
+    padding-bottom: 100%;
   }
 }
 .product__item-img--content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
   height: 100%;
   object-fit: contain;
 }
@@ -1492,6 +1511,9 @@ label {
   font-size: 1.14286rem;
   display: flex;
 }
+.checkBox__label {
+  font: 400 16px/22px "Electrolux", serif;
+}
 
 .checkBox input {
   position: absolute;
@@ -1541,6 +1563,65 @@ label {
   width: 6px;
   height: 12px;
   top: 3px;
+}
+
+.count__wrapper {
+  position: relative;
+}
+.count__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  position: absolute;
+  color: #fff;
+  bottom: 5px;
+  right: 3px;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: red;
+}
+
+.loading {
+  opacity: 0;
+  display: flex;
+  position: fixed;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease-in;
+}
+
+.loading.show {
+  opacity: 1;
+}
+
+.ball {
+  background-color: #777;
+  border-radius: 50%;
+  margin: 5px;
+  height: 10px;
+  width: 10px;
+  animation: jump 0.5s ease-in infinite;
+}
+
+.ball:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+
+.ball:nth-of-type(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes jump {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

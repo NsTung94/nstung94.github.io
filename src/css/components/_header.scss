@@ -28,6 +28,7 @@
       border-left: 1px solid $primary-color;
       padding-left: 20px;
       margin-left: 20px;
+      @include flexBox(center, center);
       &-dropdown {
         @include flexBox(center, center);
         position: absolute;
@@ -38,6 +39,9 @@
         background-color: #fff;
         box-shadow: 1px 1px 1px 1px $secondary-color;
         padding: 10px;
+      }
+      img {
+        height: auto;
       }
     }
     @include large {

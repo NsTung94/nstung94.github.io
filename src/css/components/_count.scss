@@ -1,0 +1,16 @@
+.count {
+    &__wrapper  {
+        position: relative;
+    }
+    &__number {
+        @include flexBox(center, center);
+        position: absolute;
+        color:#fff;
+        bottom: 5px;
+        right: 3px;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+    }
+}

@@ -3,6 +3,9 @@
     line-height: 22px;
     font-size: 1.14286rem;
     display: flex;
+    &__label{
+      font: 400 16px/22px $font-primary;
+    }
   }
   
   .checkBox input {
