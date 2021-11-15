@@ -1,16 +1,42 @@
-import { wish } from "./modules/wish.js";
+import { wish } from "./wish.js";
+import addCart from './addCart.js';
+import lazyImage from "./lazyImage.js";
 
 export default function displayProduct(product) {
   var productItem = document
-    .createElement("div")
-    .classList.add(".product__item");
+    .createElement("div");
+  productItem.classList.add("product__item");
+
+  var heartBtn = document.createElement("div");
+  heartBtn.classList.add("product__item-heart", "js-heart-button");
+
+  var tag = document.createElement("div");
+  tag.classList.add("item", "product__item-tag");
+
+  var image = document.createElement("div");
+  image.classList.add("item", "product__item-img", "placeholder");
+
+  var image = document.createElement('div');
+  image.classList.add('item', 'product__item-img', "placeholder")
+  document.addEventListener("DOMContentLoaded",lazyImage());
+
+  var detail = document.createElement("div");
+  detail.classList.add("item", "product__item-detail");
+
+  var price = document.createElement("div");
+  price.classList.add("item", "product__item-price");
+
+  var suggestion = document.createElement('div');
+  suggestion.classList.add('item', 'product__item-suggestion', 'hide-on-desktop');
+
+  var description = document.createElement('ul');
+  description.classList.add('item', 'product__item-description');
+
+  var action = document.createElement('div');
+  action.classList.add('item', 'production__item-action');
 
   // create heart button
-  var wish = document
-    .createElement("div")
-    .classList.add("product__item-heart", "js-heart-button");
-  wish();
-  wish.innerHTML = `
+  heartBtn.innerHTML = `
     <img class="outline"
         src="./src/images/icon/heart-outline-icon.svg"
         alt=""
@@ -21,39 +47,31 @@ export default function displayProduct(product) {
         class="fill hide"
     />
     `;
-  //create tag dealType
-  var tag = document
-    .createElement("div")
-    .classList.add("item", "product__item-tag");
+  wish();
+  // create tag dealType
+  var tagString = []
   for (var i = 0; i < product.dealType.length; i++) {
-    if (dealType[i].type == "new") {
-      document.body.appendChild('<div class="tag tag--new">new</div>');
-      if (dealType[i].type == "discount") {
-        document.body.appendChild('<div class="tag tag--discount">sale</div>');
-      }
-      if (dealType[i].type == "bundle") {
-        document.body.appendChild('<div class="tag tag--bundle">bundle</div>');
-      }
-      if (dealType[i].type == "gift") {
-        document.body.appendChild('<div class="tag tag--gift">free gift</div>');
-      }
+    if (product.dealType[i].type == "new") {
+      tagString.push('<div class="tag tag--new">new</div>');
+    }
+    if (product.dealType[i].type == "discount") {
+      tagString.push('<div class="tag tag--discount">sale</div>');
+    }
+    if (product.dealType[i].type == "bundle") {
+      tagString.push('<div class="tag tag--bundle">bundle</div>');
+    }
+    if (product.dealType[i].type == "gift") {
+      tagString.push('<div class="tag tag--gift">free gift</div>');
     }
   }
+
+  tag.innerHTML = tagString.join('');
   // item image
-  var image = document
-    .createElement("div")
-    .classList.add("item", "product__item-img", "placeholder");
-  image.innerHTML = `
-            <img
-                class="product__item-img--content lazy-observer"
-                data-src="${product.picture}"
-                alt=""
-            />
-                `;
+  var itemImage = document.createElement('img');
+  itemImage.classList.add('lazy-observer');
+  itemImage.setAttribute('data-src', product.picture);
+  image.appendChild(itemImage);
   // item detail
-  var detail = document
-    .createElement("div")
-    .classList.add("item", "product__item-detail");
   detail.innerHTML = `      
         <div class="product__item-code">${product.code}</div>
         <div class="product__item-name">
@@ -69,19 +87,17 @@ export default function displayProduct(product) {
         </div>
     `;
   //item price
-  var price = document
-    .createElement("div")
-    .classList.add("item", "product__item-price");
+  var priceNumber = []
   if (product.price.old !== "undefined") {
-    document.body.appendChild(
+    priceNumber.push(
       '<div class="product__item-price--old">' + product.price.old + "</div>"
     );
   }
-  document.body.appendChild(
+  priceNumber.push(
     '<div class="product__item-price--new">' + product.price.new + "</div>"
   );
+
   //item suggestion
-  var suggestion = document.createElement('div').classList.add('item', 'product__item-suggestion', 'hide-on-desktop');
   suggestion.innerHTML = `
         <div class="product__item-interest">
             <div class="product__item-interest--number">${product.interest} %</div>
@@ -94,37 +110,59 @@ export default function displayProduct(product) {
         </div>
   `
   //item description 
-  var description = document.createElement('ul').classList.add('item', 'product__item-description');
-  product.description.map(item => `<li>${item.value}</li>`);
 
+  const listDesciprtion = product.description.map(item =>
+    `<li>${item.value}</li>`);
+  description.innerHTML += listDesciprtion;
   //item action
-  var action = document.createElement('div').classList.add('item','production__item-action');
   action.innerHTML = `
-        <button class="btn btn--primary product__item-action--add">
+        <button class="btn btn--primary product__item-action--add js-add-cart">
             add to cart
         </button>
         <button class="btn product__item-action--research">
             learn more
         </button>
   `
+  addCart()
+  productItem.appendChild(heartBtn);
+  productItem.appendChild(tag);
+  productItem.appendChild(image);
+  productItem.appendChild(detail);
+  productItem.appendChild(price);
+  productItem.appendChild(suggestion);
+  productItem.appendChild(description);
+  productItem.appendChild(action);
 
-  listItem.innerHTML+= wish.outerHTML + 
-  productItem.appendChild(listItem);
- 
-  // listItem.innerHTML+= listItemCheckbox.outerHTML + listItemLabel.outerHTML + editButton.outerHTML + deleteButton.outerHTML;
-  // listElement.appendChild(listItem);
+  return productItem;
 }
 
-// for (var i = 0; i < 5; i++) {
-//   document.body.appendChild('<div class="new-dom">New DOM</div>');
-//   init();
-// }
+export function lazyload() {
+  document.addEventListener("DOMContentLoaded", function () {
+    var lazyObjects = [].slice.call(document.querySelectorAll(".lazy-observer"));
 
-// function init() {
-//   // do something
-//   document
-//     .getElementsByClassName(".js-heart-button")
-//     .addEventListener("click", function () {
-//       // do something
-//     });
-// }
+    if ("IntersectionObserver" in window) {
+      let lazyObjectObserver = new IntersectionObserver(
+        function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              let lazyObject = entry.target;
+              lazyObject.src = lazyObject.dataset.src;
+              lazyObject.style.zIndex = "1";
+              lazyObject.classList.remove("lazy-observer");
+              lazyObject.parentElement.classList.remove("placeholder");
+              lazyObjectObserver.unobserve(lazyObject);
+            }
+          });
+        },
+        {
+          threshold: 0,
+          rootMargin: "500px",
+        }
+      );
+
+      lazyObjects.forEach(function (lazyObject) {
+        lazyObjectObserver.observe(lazyObject);
+      });
+    }
+  });
+}

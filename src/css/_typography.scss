@@ -1,5 +1,5 @@
 body {
-  color: var(--primary-color);
+  color: $primary-color;
   font-family: "Electrolux";
   margin: 0;
 }
@@ -168,4 +168,10 @@ label {
   img {
     height: 100%;
   }
+}
+
+.loadMore{
+  width: 30px;
+  height: 30px;
+  background-color: red;
 }
