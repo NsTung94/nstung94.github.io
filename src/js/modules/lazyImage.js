@@ -7,6 +7,7 @@ export default function lazyImage() {
                 entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         let lazyObject = entry.target;
+                        console.log("lazyObject.dataset.src", lazyObject.dataset.src);
                         lazyObject.src = lazyObject.dataset.src;
                         lazyObject.style.zIndex = "1";
                         lazyObject.classList.remove("lazy-observer");

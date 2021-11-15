@@ -59,13 +59,14 @@ const loadProducts = async () => {
     console.log(err);
   }
 };
-setTimeout(loadProducts(), 3000);
+loadProducts();
 
 
 const productList = document.querySelector(".js-product-list");
 
 const displayProducts = (products) => {
   products.map((product, index) => {
+    console.log("product.id", product.id)
     const currentProduct = displayProduct(product);
     console.log("currentProduct", currentProduct);
     productList.appendChild(currentProduct);
@@ -75,31 +76,31 @@ const displayProducts = (products) => {
 
 
 // lazy image using Intersection Observer to check viewport
-document.addEventListener("DOMContentLoaded", function () {
-  var lazyObjects = [].slice.call(document.querySelectorAll(".lazy-observer"));
+// document.addEventListener("DOMContentLoaded", function () {
+//   var lazyObjects = [].slice.call(document.querySelectorAll(".lazy-observer"));
 
-  if ("IntersectionObserver" in window) {
-    let lazyObjectObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            let lazyObject = entry.target;
-            lazyObject.src = lazyObject.dataset.src;
-            lazyObject.style.zIndex = "1";
-            lazyObject.classList.remove("lazy-observer");
-            lazyObject.parentElement.classList.remove("placeholder");
-            lazyObjectObserver.unobserve(lazyObject);
-          }
-        });
-      },
-      {
-        threshold: 0,
-        rootMargin: "500px",
-      }
-    );
+//   if ("IntersectionObserver" in window) {
+//     let lazyObjectObserver = new IntersectionObserver(
+//       function (entries) {
+//         entries.forEach(function (entry) {
+//           if (entry.isIntersecting) {
+//             let lazyObject = entry.target;
+//             lazyObject.src = lazyObject.dataset.src;
+//             lazyObject.style.zIndex = "1";
+//             lazyObject.classList.remove("lazy-observer");
+//             lazyObject.parentElement.classList.remove("placeholder");
+//             lazyObjectObserver.unobserve(lazyObject);
+//           }
+//         });
+//       },
+//       {
+//         threshold: 0,
+//         rootMargin: "500px",
+//       }
+//     );
 
-    lazyObjects.forEach(function (lazyObject) {
-      lazyObjectObserver.observe(lazyObject);
-    });
-  }
-});
+//     lazyObjects.forEach(function (lazyObject) {
+//       lazyObjectObserver.observe(lazyObject);
+//     });
+//   }
+// });
