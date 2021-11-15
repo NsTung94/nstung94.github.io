@@ -111,9 +111,9 @@ export default function displayProduct(product) {
   `
   //item description 
 
-  const listDesciprtion = product.description.map(item =>
+  const listDescription = product.description.map(item =>
     `<li>${item.value}</li>`);
-  description.innerHTML += listDesciprtion;
+  description.innerHTML += listDescription;
   //item action
   action.innerHTML = `
         <button class="btn btn--primary product__item-action--add js-add-cart">
@@ -136,33 +136,3 @@ export default function displayProduct(product) {
   return productItem;
 }
 
-// export function lazyload() {
-//   document.addEventListener("DOMContentLoaded", function () {
-//     var lazyObjects = [].slice.call(document.querySelectorAll(".lazy-observer"));
-
-//     if ("IntersectionObserver" in window) {
-//       let lazyObjectObserver = new IntersectionObserver(
-//         function (entries) {
-//           entries.forEach(function (entry) {
-//             if (entry.isIntersecting) {
-//               let lazyObject = entry.target;
-//               lazyObject.src = lazyObject.dataset.src;
-//               lazyObject.style.zIndex = "1";
-//               lazyObject.classList.remove("lazy-observer");
-//               lazyObject.parentElement.classList.remove("placeholder");
-//               lazyObjectObserver.unobserve(lazyObject);
-//             }
-//           });
-//         },
-//         {
-//           threshold: 0,
-//           rootMargin: "500px",
-//         }
-//       );
-
-//       lazyObjects.forEach(function (lazyObject) {
-//         lazyObjectObserver.observe(lazyObject);
-//       });
-//     }
-//   });
-// }

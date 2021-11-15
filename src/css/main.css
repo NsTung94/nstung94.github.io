@@ -239,7 +239,7 @@ table {
 }
 
 body {
-  color: var(--primary-color);
+  color: #011E41;
   font-family: "Electrolux";
   margin: 0;
 }
@@ -407,6 +407,12 @@ label {
 
 .full-img img {
   height: 100%;
+}
+
+.loadMore {
+  width: 30px;
+  height: 30px;
+  background-color: red;
 }
 
 .selector {
@@ -1136,6 +1142,9 @@ label {
     margin-top: 28px;
     width: 100%;
     padding-bottom: 100%;
+  }
+  .product__item-img img {
+    width: 100%;
   }
 }
 .product__item-img--content {
