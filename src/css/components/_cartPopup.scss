@@ -2,7 +2,7 @@
   @include flexBox($dir: column);
   position: absolute;
   z-index: 50;
-  height: 500px;
+  height:0;
   width: 474px;
   top: 60px;
   right: 0;
@@ -28,7 +28,7 @@
   &__container {
     @include flexBox($wrap: no-wrap,$dir: column);
     padding-right: 0 15px;
-    display: none;
+    // display: none;
     height: 250px;
     overflow-y: scroll;
     &-detail {
@@ -145,7 +145,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 30px;
+    font-size: 20px;
     &:first-child {
       transform: translateY(-50%);
     }

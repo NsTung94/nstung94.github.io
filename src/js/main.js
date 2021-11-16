@@ -26,17 +26,6 @@ addCart();
 var start = 0;
 var end = 3;
 
-let cartIcon = document.querySelector('.js-cart');
-
-cartIcon.addEventListener('click', function(){
-    if (cartIcon.classList.contains('cart-active')){
-        cartIcon.classList.remove('cart-active')
-    }else {
-        cartIcon.classList.add('cart-active');
-    }
-
-})
-
 function reachLoadMore(destinationClass) {
   let destination = document.querySelector(destinationClass);
 
@@ -91,7 +80,7 @@ loadProducts();
 //       );
 //       promos.forEach((promo) => filterPromoConditions.push(promo.value));
 //       // console.log("promo filter", filterPromoConditions);
-      
+
 //       filterPromo(typeContain, filterPromoConditions)
 //       const prices = document.querySelectorAll(
 //         ".js-filter-price-checkbox input[type=checkbox]:checked"
@@ -101,18 +90,13 @@ loadProducts();
 //       filterPrice(product.price.new, filterPriceConditions);
 //     });
 //   })
-
-
 // }
-
-
-
 const productList = document.querySelector(".js-product-list");
 const displayProducts = (products) => {
   products.map((product, index) => {
     // console.log("product.id", product.id)
     const currentProduct = displayProduct(product);
-    // console.log("currentProduct", currentProduct);
+    console.log("currentProduct", currentProduct);
     productList.appendChild(currentProduct);
   });
 };
@@ -133,15 +117,41 @@ const displayProducts = (products) => {
    display product filtered
 */
 
-function filterPromo(item, conditions) {
-  // console.log('filter item: ', item)
-  if (conditions.every(condition => item.includes(condition))) {
-    return item;
-  };
-}
+// function filterPromo(item, conditions) {
+//   // console.log('filter item: ', item)
+//   if (conditions.every(condition => item.includes(condition))) {
+//     return item;
+//   };
+// }
 
-function filterPrice(item, conditions){
-  console.log('price item', item);
-}
+// function filterPrice(item, conditions){
+//   console.log('price item', item);
+// }
 
+var cart = document.querySelector(".js-cart");
+var hasItem = document.querySelector(".js-hasItem");
+var numberInCart = document.querySelector(".js-number-cart");
+let numberCart = hasItem.getElementsByClassName("cart__item").length;
+numberInCart.innerHTML = `${numberCart}`;
 
+var numberInWish = document.querySelector('.js-number-wish');
+let numberWish = document.querySelectorAll('.heart-active').length;
+numberInWish.innerHTML =`${numberWish}`;
+
+cart.addEventListener("click", function () {
+  if (cart.classList.contains("cart-active")) {
+    cart.classList.remove("cart-active");
+  } else {
+    cart.classList.add("cart-active");
+  }
+});
+
+var buttonOpenCartPage = document.querySelector(".js-open-cartpage");
+var buttonCloseCartPage = document.querySelector(".js-close-cartpage");
+var cartpage = document.querySelector(".js-cartpage");
+buttonOpenCartPage.addEventListener("click", function () {
+  cartpage.classList.add("active-cartpage");
+});
+buttonCloseCartPage.addEventListener("click", function () {
+  cartpage.classList.remove("active-cartpage");
+});

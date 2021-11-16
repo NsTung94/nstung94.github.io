@@ -347,13 +347,13 @@
                         </div>
                       </div>
                     </div>
-                    <div class="item cart__footer js-hide-on-none hide">
+                    <div class="item cart__footer js-hide-on-none hide-on-none">
                       <div class="cart__footer-total">
                         <div class="cart__footer-title">total</div>
                         <div class="cart__footer-number">NT$475.520</div>
                       </div>
                       <div class="cart__footer-action">
-                        <div class="btn cart__footer-action-button">
+                        <div class="btn cart__footer-action-button js-open-cartpage">
                           view cart
                         </div>
                         <div
@@ -447,11 +447,11 @@
           </div>
         </div>
       </header>
-      <section class="cartpage">
-        <div class="cartpage__header">
-          <div class="cartpage__header-return">Back</div>
+      <section class="cartpage js-cartpage">
+        <div class="container cartpage__header">
+          <div class="cartpage__header-return js-close-cartpage">Back</div>
           <div class="cartpage__header-logo">
-            <img src="./src/images/logo/electrolux_logo.png" alt="">
+            <img src="./src/images/logo/electrolux_logo.png" alt="" />
           </div>
         </div>
         <div class="container cartpage__container">
@@ -462,10 +462,12 @@
                 <div class="cartpage__title">product</div>
                 <div class="cartpage__product">
                   <div class="cartpage__product-img">
-                    <img src="./src/images/product/tulanh1.png" alt="">
+                    <img src="./src/images/product/tulanh1.png" alt="" />
                   </div>
                   <div class="cartpage__basic-left">
-                    <div class="cartpage__product-name">Well Q7 Cordless Vacuum Cleaner (Quick Sand Gold)</div>
+                    <div class="cartpage__product-name">
+                      Well Q7 Cordless Vacuum Cleaner (Quick Sand Gold)
+                    </div>
                     <div class="cartpage__product-code">pq92-3bwf</div>
                     <div class="cartpage__product-quantity disable">
                       <div
@@ -495,27 +497,56 @@
                     </div>
                   </div>
                   <div class="cartpage__basic-right">
-                    <img src="./src/images/icon/delete-icon.svg" alt="">
+                    <img src="./src/images/icon/delete-icon.svg" alt="" />
                     <div class="cartpage__product-price">NT$ 225.967</div>
                     <div class="cartpage__product-oldprice">NT$ 425.967</div>
                   </div>
                 </div>
-                <div class="cartpage__title">you might want to add</div>
                 <div class="cartpage__addon">
                   <div class="cartpage__addon-signal"></div>
-                  <div class="cartpage__addon-service"></div>
-                  <div class="cartpage__addon-checkbox">
-
+                  <div class="cartpage__addon-beside-signal">
+                    <div class="cartpage__addon-service">Add-on services</div>
+                    <div class="cartpage__addon-checkbox">
+                      <label class="checkBox cartpage__label">
+                        <input
+                          type="checkbox"
+                          class="cartpage__label-input"
+                          value="new"
+                        />
+                        <span
+                          class="
+                            checkmark
+                            cartpage__label-checkmark
+                            checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >Installation</span
+                        >
+                      </label>
+                      <div class="addon-checkBoxCode">NT$ 0</div>
+                    </div>
                   </div>
                 </div>
-                <div class="cartpage__product-addition">
-                  <div class="cartpage__add">
-                    <div class="cartpage__add-image">
-                      <img src="./src/images/logo/electrolux-warranty.png" alt="">
+                <div class="cartpage__title">you might want to add</div>
+
+                <div class="cartpage__add">
+                  <div class="cartpage__add-image">
+                    <img
+                      src="./src/images/logo/electrolux-warranty.png"
+                      alt=""
+                    />
+                  </div>
+                  <div class="cartpage__add-content">
+                    <div class="cartpage__add-above">
+                      <div class="cartpage__add-title">
+                        2 years extended warranty
+                      </div>
+                      <img src="./src/images/icon/delete-icon.svg" alt="" />
                     </div>
-                    <div class="cartpage__add-left">
-                      <div class="cartpage__add-title">2 years extended warranty</div>
-                      <div class="cartpage__product-quantity disable">
+                    <div class="cartpage__add-below">
+                      <div class="cartpage__product-quantity">
                         <div
                           class="
                             quantity-button
@@ -541,68 +572,232 @@
                           <span>+</span>
                         </div>
                       </div>
-                    </div>
-                    <div class="cartpage__add-right">
-                      <img src="./src/images/icon/delete-icon.svg" alt="">
-                      <div class="cartpage__add-cost">NT$ 20.000</div>
+                      <div class="cartpage__add-tax">NT$ 22,000</div>
+                      <div class="btn cartpage__add-btn">add</div>
                     </div>
                   </div>
-                  <div class="cartpage__add"></div>
-                  <div class="cartpage__add"></div>
+                </div>
+                <div class="cartpage__product">
+                  <div class="cartpage__product-img">
+                    <img src="./src/images/product/vacuum.png" alt="" />
+                  </div>
+                  <div class="cartpage__basic-left">
+                    <div class="cartpage__product-name">
+                      Well Q7 Cordless Vacuum Cleaner (Quick Sand Gold)
+                    </div>
+                    <div class="cartpage__product-code">pq92-3bwf</div>
+                    <div class="cartpage__product-quantity disable">
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--button
+                        "
+                      >
+                        <span>-</span>
+                      </div>
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--number
+                        "
+                      >
+                        1
+                      </div>
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--button
+                        "
+                      >
+                        <span>+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cartpage__basic-right">
+                    <img src="./src/images/icon/delete-icon.svg" alt="" />
+                    <div class="cartpage__product-price">NT$ 225.967</div>
+                    <div class="cartpage__product-oldprice">NT$ 425.967</div>
+                  </div>
+                  <div class="cartpage__basic-under">
+                    <div class="cartpage__basic-nothing"></div>
+                    <div class="cartpage__outstock">Out of stock</div>
+                    <div class="cartpage__chooseanother">Please remove to choose another</div>
+                  </div>
+                </div>
+                <div class="cartpage__product">
+                  <div class="cartpage__product-img">
+                    <img src="./src/images/product/tulanh1.png" alt="" />
+                  </div>
+                  <div class="cartpage__basic-left">
+                    <div class="cartpage__product-name">
+                      Well Q7 Cordless Vacuum Cleaner (Quick Sand Gold)
+                    </div>
+                    <div class="cartpage__product-code">pq92-3bwf</div>
+                    <div class="cartpage__product-quantity disable">
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--button
+                        "
+                      >
+                        <span>-</span>
+                      </div>
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--number
+                        "
+                      >
+                        1
+                      </div>
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--button
+                        "
+                      >
+                        <span>+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cartpage__basic-right">
+                    <img src="./src/images/icon/delete-icon.svg" alt="" />
+                    <div class="cartpage__product-price">NT$ 225.967</div>
+                    <div class="cartpage__product-oldprice">NT$ 425.967</div>
+                  </div>
+                </div>
+                <div class="cartpage__gift">
+                  <div class="cartpage__gift-img">
+                    <img src="./src/images/product/tulanh1.png" alt="" />
+                  </div>
+                  <div class="cartpage__gift-left">
+                    <div class="cartpage__gift-name">
+                      2-in-1 Ergorapido PowerPro with Bedpro
+                    </div>
+                    <div class="cartpage__product-code">EWF1042BDWA</div>
+                    <div class="cartpage__gift-quantity">Quantity: 1</div>
+                  </div>
+                  <div class="cartpage__gift-right">
+                    <div class="btn btn--primary">
+                      <img src="./src/images/icon/white-gift.png" alt="" />
+                      <span>free gift</span>
+                    </div>
+                    <div class="cartpage__gift-cost">
+                      <div class="cartpage__gift-oldprice">NT$ 225.967</div>
+                      <div class="cartpage__product-price">NT$ 0</div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="cartpage__recommendation">
-                recommendation accessories
+              <div class="cartpage__title">recommendation accessories</div>
+              <div class="cartpage__more">
+                <div class="cartpage__more-item">
+                  <div class="cartpage__more-img">
+                    <img src="./src/images/product/bag.png" alt="" />
+                  </div>
+                  <div class="cartpage__more-code">EBB2802H-H</div>
+                  <div class="cartpage__more-name">2 Laundry bag</div>
+                  <div class="cartpage__more-cost">NT$ 2,740</div>
+                  <div class="btn cartpage__more-button">Add to cart</div>
+                </div>
               </div>
+              <div class="cartpage__title">Buy together to save money</div>
               <div class="cartpage__more">
                 <div class="cartpage__more-list">
-                    <div class="cartpage__more-img"></div>
+                  <div class="cartpage__more-item">
+                    <div class="cartpage__more-img">
+                      <img src="./src/images/product/bag.png" alt="" />
+                    </div>
                     <div class="cartpage__more-code">EBB2802H-H</div>
                     <div class="cartpage__more-name">2 Laundry bag</div>
                     <div class="cartpage__more-cost">NT$ 2,740</div>
-                    <div class="btn cartpage__more-button">Add to cart</div>
+                  </div>
+                  <div class="cartpage__more-item">
+                    <div class="cartpage__more-img">
+                      <img src="./src/images/product/bag.png" alt="" />
+                    </div>
+                    <div class="cartpage__more-code">EBB2802H-H</div>
+                    <div class="cartpage__more-name">2 Laundry bag</div>
+                    <div class="cartpage__more-cost">NT$ 2,740</div>
+                  </div>
+                  <div class="cartpage__more-item cartpage__more-special">
+                      <div class="cartpage__more-bundle">Special Bundle</div>
+                      <div class="cartpage__more-save">Save 20%</div>
+                      <div class="cartpage__more-only">ONLY</div>
+                      <div class="cartpage__more-price">NT$ 168,432</div>
+                      <div class="cartpage__more-oldprice">NT$ 210,540</div>
+                      <div class="btn cartpage__more-button cartpage__more-button--bundle">Add to cart</div>
+                  </div>
                 </div>
               </div>
               <div class="cartpage__footer">
-                <div class="cartpage__footer-header">accetped payment methods</div>
-                <ul class="cartage__footer-list">
-                  <li class="cartage__footer-method">ATM domestic cards</li>
-                  <li class="cartage__footer-method">Credit card</li>
-                  <li class="cartage__footer-method">E-Wallet</li>
+                <div class="cartpage__title cartpage__footer-header">
+                  accepted payment methods
+                </div>
+                <ul class="cartpage__footer-list">
+                  <li class="cartpage__footer-method">ATM domestic cards</li>
+                  <li class="cartpage__footer-method">Credit card</li>
+                  <li class="cartpage__footer-method">E-Wallet</li>
                 </ul>
                 <div class="cartpage__footer-logos">
-                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
-                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
-                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
-                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
-                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
-                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
-                  
+                  <div class="cartpage__footer-logo">
+                    <img src="./src/images/logo/visa.png" alt="" />
+                  </div>
+                  <div class="cartpage__footer-logo">
+                    <img src="./src/images/logo/mastercard.png" alt="" />
+                  </div>
+                  <div class="cartpage__footer-logo">
+                    <img src="./src/images/logo/union pay.png" alt="" />
+                  </div>
+                  <div class="cartpage__footer-logo">
+                    <img src="./src/images/logo/jcb.png" alt="" />
+                  </div>
+                  <div class="cartpage__footer-logo">
+                    <img src="./src/images/logo/gg pay.png" alt="" />
+                  </div>
+                  <div class="cartpage__footer-logo">
+                    <img src="./src/images/logo/apple pay.png" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
             <div class="cartpage__price">
-              <div class="cartpage__title">product</div>
-              <div class="cartpage__sub">
-                <div class="cartpage__word">sub-total</div>
-                <div class="cartpage__number">NT$ 225.967</div>
-              </div>
-              <div class="cartpage__sub">
-                <div class="cartpage__word">shipping</div>
-                <div class="cartpage__number">NT$ 5.583</div>
-              </div>
-              <div class="cartpage__sub">
-                <div class="cartpage__word">You have saved</div>
-                <div class="cartpage__number"> - NT$ 0</div>
-              </div>
-              <div class="cartpage__noted">your order inclues NT$ 1,200 tax</div>
-            
-              <div class="btn btn--primary cartpage__checkout">checkout</div>
-              <div class="cartpage__free">* Free Shipping on all orders over NT$ 5.000</div>
-              <div class="cartpage__underCheckout">Your transaction is safe and secure</div>
-              <div class="cartpage__promotion">
-                <input type="text">
-                <div class="btn btn--primary cartpage__apply">apply</div>
+              <div class="cartpage__price-container">
+                <div class="cartpage__title">product</div>
+                <div class="cartpage__sub">
+                  <div class="cartpage__word">sub-total</div>
+                  <div class="cartpage__number">NT$ 225.967</div>
+                </div>
+                <div class="cartpage__sub">
+                  <div class="cartpage__word">shipping</div>
+                  <div class="cartpage__number">NT$ 5.583</div>
+                </div>
+                <div class="cartpage__sub">
+                  <div class="cartpage__word">You have saved</div>
+                  <div class="cartpage__number">- NT$ 0</div>
+                </div>
+                <div class="cartpage__total">
+                  <div class="cartpage__total-title">total</div>
+                  <div class="cartpage__total-number">NT$ 367.932</div>
+                </div>
+                <div class="cartpage__noted">
+                  Your order includes NT$ 1,200 tax
+                </div>
+                <div class="btn btn--primary cartpage__checkout">checkout</div>
+                <div class="cartpage__free">
+                  * Free Shipping on all orders over NT$ 5.000
+                </div>
+                <div class="cartpage__underCheckout">
+                  Your transaction is safe and secure
+                </div>
+                <div class="cartpage__promotion">
+                  <input
+                    class="cartpage__promotion-input"
+                    type="text"
+                    placeholder="Enter promotion code"
+                  />
+                  <div class="btn btn--primary cartpage__apply">apply</div>
+                </div>
               </div>
             </div>
           </div>
