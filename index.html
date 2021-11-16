@@ -1,659 +1,1134 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Training</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Training</title>
+    <link
+      rel="stylesheet"
+      href="./node_modules/owl.carousel/dist/assets/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css"
+    />
 
-  <link rel="stylesheet" href="./node_modules/owl.carousel/dist/assets/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+      integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
-    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./src/css/main.css" />
+  </head>
 
-  <link rel="stylesheet" href="./src/css/main.css" />
-</head>
-
-<body>
-  <div class="wrapper">
-    <div class="menu">
-      <div class="menu__content">
-        <div class="menu__content-heading js-open-submenu">
-          <div class="menu__content-heading-title">
-            <img src="./src/images/icon/user.png" alt="" />
-            <span>Sign in</span>
-          </div>
-          <span><img src="" alt="" /> </span>
-          <div class="menu__subMenu js-submenu">
-            <div class="menu__subMenu-heading js-close-submenu">Account</div>
-            <div class="menu__subMenu-item">Washing machines</div>
-            <div class="menu__subMenu-item">Dryers</div>
-            <div class="menu__subMenu-item">Irons</div>
-            <div class="menu__subMenu-item">Garments steamers</div>
-          </div>
-        </div>
-        <div class="menu__content-productList">
+  <body>
+    <div class="wrapper">
+      <div class="menu">
+        <div class="menu__content">
           <div class="menu__content-heading js-open-submenu">
-            <a class="menu__content-heading-title" href="#">Laundry</a>
-            <span><img src="./src/images/icon/chevron-right.png" alt="" /></span>
+            <div class="menu__content-heading-title">
+              <img src="./src/images/icon/user.png" alt="" />
+              <span>Sign in</span>
+            </div>
+            <span><img src="" alt="" /> </span>
             <div class="menu__subMenu js-submenu">
-              <div class="menu__subMenu-heading js-close-submenu">
-                Laundry
-              </div>
+              <div class="menu__subMenu-heading js-close-submenu">Account</div>
               <div class="menu__subMenu-item">Washing machines</div>
               <div class="menu__subMenu-item">Dryers</div>
               <div class="menu__subMenu-item">Irons</div>
               <div class="menu__subMenu-item">Garments steamers</div>
             </div>
           </div>
-          <div class="menu__content-heading js-open-submenu">
-            <a class="menu__content-heading-title" href="#">Floor</a>
-            <span><img src="./src/images/icon/chevron-right.png" alt="" /></span>
-            <div class="menu__subMenu js-submenu">
-              <div class="menu__subMenu-heading js-close-submenu">
-                Laundry
-              </div>
-              <div class="menu__subMenu-item">Washing machines</div>
-              <div class="menu__subMenu-item">Dryers</div>
-              <div class="menu__subMenu-item">Irons</div>
-              <div class="menu__subMenu-item">Garments steamers</div>
-              <div class="menu__subMenu-item">Refrigeration</div>
-              <div class="menu__subMenu-item">Hobs</div>
-            </div>
-          </div>
-          <div class="menu__content-heading js-open-submenu disable">
-            <a class="menu__content-heading-title" href="#">Bathroom</a>
-            <span><img src="./src/images/icon/chevron-right.png" alt="" /></span>
-            <div class="menu__subMenu js-submenu">
-              <div class="menu__subMenu-heading js-close-submenu">
-                Laundry
+          <div class="menu__content-productList">
+            <div class="menu__content-heading js-open-submenu">
+              <a class="menu__content-heading-title" href="#">Laundry</a>
+              <span
+                ><img src="./src/images/icon/chevron-right.png" alt=""
+              /></span>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
+                <div class="menu__subMenu-item">Washing machines</div>
+                <div class="menu__subMenu-item">Dryers</div>
+                <div class="menu__subMenu-item">Irons</div>
+                <div class="menu__subMenu-item">Garments steamers</div>
               </div>
             </div>
-          </div>
-          <div class="menu__content-heading js-open-submenu disable">
-            <a class="menu__content-heading-title" href="#">Bathroom</a>
-            <span><img src="./src/images/icon/chevron-right.png" alt="" /></span>
-            <div class="menu__subMenu js-submenu">
-              <div class="menu__subMenu-heading js-close-submenu">
-                Laundry
+            <div class="menu__content-heading js-open-submenu">
+              <a class="menu__content-heading-title" href="#">Floor</a>
+              <span
+                ><img src="./src/images/icon/chevron-right.png" alt=""
+              /></span>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
+                <div class="menu__subMenu-item">Washing machines</div>
+                <div class="menu__subMenu-item">Dryers</div>
+                <div class="menu__subMenu-item">Irons</div>
+                <div class="menu__subMenu-item">Garments steamers</div>
+                <div class="menu__subMenu-item">Refrigeration</div>
+                <div class="menu__subMenu-item">Hobs</div>
               </div>
             </div>
+            <div class="menu__content-heading js-open-submenu disable">
+              <a class="menu__content-heading-title" href="#">Bathroom</a>
+              <span
+                ><img src="./src/images/icon/chevron-right.png" alt=""
+              /></span>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
+              </div>
+            </div>
+            <div class="menu__content-heading js-open-submenu disable">
+              <a class="menu__content-heading-title" href="#">Bathroom</a>
+              <span
+                ><img src="./src/images/icon/chevron-right.png" alt=""
+              /></span>
+              <div class="menu__subMenu js-submenu">
+                <div class="menu__subMenu-heading js-close-submenu">
+                  Laundry
+                </div>
+              </div>
+            </div>
+            <div class="menu__content-heading menu__content-heading--noSub">
+              <a class="menu__content-heading-title" href="#">Promotions</a>
+            </div>
+            <div class="menu__content-heading menu__content-heading--nosub">
+              <a class="menu__content-heading-title" href="#">Blog</a>
+            </div>
           </div>
-          <div class="menu__content-heading menu__content-heading--noSub">
-            <a class="menu__content-heading-title" href="#">Promotions</a>
+          <div class="menu__footer">
+            <a href="#" class="link">
+              <img src="./src/images/icon/heart-outline-icon.svg" alt="" />
+              <span>Wistlist</span>
+            </a>
           </div>
-          <div class="menu__content-heading menu__content-heading--nosub">
-            <a class="menu__content-heading-title" href="#">Blog</a>
+          <div class="menu__footer">
+            <a href="#" class="link">
+              <img src="./src/images/icon/user.png" alt="" />
+              <span>Language</span>
+            </a>
           </div>
         </div>
-        <div class="menu__footer">
-          <a href="#" class="link">
-            <img src="./src/images/icon/heart-outline-icon.svg" alt="" />
-            <span>Wistlist</span>
-          </a>
-        </div>
-        <div class="menu__footer">
-          <a href="#" class="link">
-            <img src="./src/images/icon/user.png" alt="" />
-            <span>Language</span>
-          </a>
+        <div class="menu__overlay js-close-menu">
+          <div class="overlay__heading">
+            <span class="icon">
+              <img src="./src/images/icon/close-light-icon.svg" alt="" />
+            </span>
+          </div>
         </div>
       </div>
-      <div class="menu__overlay js-close-menu">
-        <div class="overlay__heading">
-          <span class="icon">
-            <img src="./src/images/icon/close-light-icon.svg" alt="" />
-          </span>
-        </div>
-      </div>
-    </div>
-    <header>
-      <div class="container header" id="header">
-        <div class="header__wrapper">
-          <div class="header__logo">
-            <img src="./src/images/logo/electrolux_logo.png" />
-          </div>
-          <div class="header__navigation">
-            <div class="header__navigation-link hide-on-mobile">
-              <div class="header__navigation-button">Appliances</div>
-              <div class="header__navigation-button">Support</div>
-              <div class="header__navigation-button">Promotions</div>
+      <header>
+        <div class="container header" id="header">
+          <div class="header__wrapper">
+            <div class="header__logo">
+              <img src="./src/images/logo/electrolux_logo.png" />
             </div>
-            <ul class="header__navigation-icons">
-              <li class="header__navigation-icon">
-                <div class="btn btn-no-border count__wrapper">
-                  <img src="./src/images/icon/search.svg" alt="" li class="header__navigation-icon--img count__icon" />
-                  <span class="count__number js-number-wish">0</span>
-                </div>
-              </li>
-              <li class="header__navigation-icon hide-on-mobile">
-                <div class="btn btn-no-border">
-                  <img src="./src/images/icon/user.png" alt="" li class="header__navigation-icon--img" />
-                </div>
-              </li>
-              <li class="header__navigation-icon">
-                <div class="btn btn-no-border count__wrapper">
-                  <img src="./src/images/icon/Cart.svg" alt="" li class="header__navigation-icon--img count__icon" />
-                  <span class="count__number js-number-cart">0</span>
-                </div>
-              </li>
-              <li class="header__navigation-icon js-open-menu hide-on-desktop">
-                <div class="btn btn-no-border">
-                  <img src="./src/images/icon/hamburger.svg" alt="" li class="header__navigation-icon--img" />
-                </div>
-              </li>
-              <li class="
+            <div class="header__navigation">
+              <div class="header__navigation-link hide-on-mobile">
+                <div class="header__navigation-button">Appliances</div>
+                <div class="header__navigation-button">Support</div>
+                <div class="header__navigation-button">Promotions</div>
+              </div>
+              <ul class="header__navigation-icons">
+                <li class="header__navigation-icon">
+                  <div class="btn btn-no-border count__wrapper">
+                    <img
+                      src="./src/images/icon/search.svg"
+                      alt=""
+                      li
+                      class="header__navigation-icon--img count__icon"
+                    />
+                    <span class="count__number js-number-wish">0</span>
+                  </div>
+                </li>
+                <li class="header__navigation-icon hide-on-mobile">
+                  <div class="btn btn-no-border">
+                    <img
+                      src="./src/images/icon/user.png"
+                      alt=""
+                      li
+                      class="header__navigation-icon--img"
+                    />
+                  </div>
+                </li>
+                <li class="header__navigation-icon js-cart">
+                  <div class="btn btn-no-border count__wrapper js-cart-open">
+                    <img
+                      src="./src/images/icon/Cart.svg"
+                      alt=""
+                      li
+                      class="header__navigation-icon--img count__icon"
+                    />
+                    <span class="count__number js-number-cart">0</span>
+                  </div>
+                  <div class="cart cart-active__item">
+                    <div class="item cart__header">
+                      <div class="cart__header-title">Your cart</div>
+                      <div class="cart__header-number">7 products</div>
+                    </div>
+                    <div
+                      class="
+                        container
+                        cart__container
+                        js-hasItem js-hide-on-none
+                      "
+                    >
+                      <div class="cart__item">
+                        <div class="cart__item-img">
+                          <img src="./src/images/product/tulanh1.png" alt="" />
+                        </div>
+                        <div class="cart__container-detail">
+                          <div class="cart__item-name">
+                            Well Q7 cordless Vacuum Cleaner
+                          </div>
+                          <div class="cart__item-code">pq92-3bwf</div>
+                          <div class="cart__item-quantity disable">
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--button
+                              "
+                            >
+                              <span>-</span>
+                            </div>
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--number
+                              "
+                            >
+                              1
+                            </div>
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--button
+                              "
+                            >
+                              <span>+</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart__container-decision">
+                          <div class="cart__item-price price-out-stock">
+                            Out of stock
+                          </div>
+                          <div class="cart__item-delete--big">
+                            <img
+                              src="./src/images/icon/delete-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cart__item-delete--small">
+                            <img
+                              src="./src/images/icon/delete-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart__item">
+                        <div class="cart__item-img">
+                          <img src="./src/images/product/tulanh1.png" alt="" />
+                        </div>
+                        <div class="cart__container-detail">
+                          <div class="cart__item-name">
+                            Pure 19.2 New generation Mobile Robot
+                          </div>
+                          <div class="cart__item-code">pq19-6dgm</div>
+                          <div class="cart__item-quantity">
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--button
+                              "
+                            >
+                              <span>-</span>
+                            </div>
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--number
+                              "
+                            >
+                              1
+                            </div>
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--button
+                              "
+                            >
+                              <span>+</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart__container-decision">
+                          <div class="cart__item-price">NT$ 227,500</div>
+                          <div class="cart__item-price price-old">
+                            NT$ 569,740
+                          </div>
+                          <div class="cart__item-delete--big">
+                            <img
+                              src="./src/images/icon/delete-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cart__item-delete--small">
+                            <img
+                              src="./src/images/icon/delete-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="cart__item">
+                        <div class="cart__item-img">
+                          <img src="./src/images/product/tulanh1.png" alt="" />
+                        </div>
+                        <div class="cart__container-detail">
+                          <div class="cart__item-name">
+                            Well Q7 cordless Vacuum Cleaner
+                          </div>
+                          <div class="cart__item-code">pq92-3bwf</div>
+                          <div class="cart__item-quantity disable">
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--button
+                              "
+                            >
+                              <span>-</span>
+                            </div>
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--number
+                              "
+                            >
+                              1
+                            </div>
+                            <div
+                              class="
+                                quantity-button
+                                cart__item-quantity--button
+                              "
+                            >
+                              <span>+</span>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="cart__container-decision">
+                          <div class="cart__item-price price-out-stock">
+                            Out of stock
+                          </div>
+                          <div class="cart__item-delete--big">
+                            <img
+                              src="./src/images/icon/delete-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                          <div class="cart__item-delete--small">
+                            <img
+                              src="./src/images/icon/delete-icon.svg"
+                              alt=""
+                            />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="item cart__footer js-hide-on-none hide">
+                      <div class="cart__footer-total">
+                        <div class="cart__footer-title">total</div>
+                        <div class="cart__footer-number">NT$475.520</div>
+                      </div>
+                      <div class="cart__footer-action">
+                        <div class="btn cart__footer-action-button">
+                          view cart
+                        </div>
+                        <div
+                          class="btn btn--primary cart__footer-action-button"
+                        >
+                          check out
+                        </div>
+                      </div>
+                      <div class="cart__footer-extra">
+                        <img
+                          class="cart__footer-extra-icon"
+                          src="./src/images/icon/gift.png"
+                          alt=""
+                        />
+                        <div class="cart__footer-extra-content">
+                          Free Gift on all orderes over NT$ 550,000
+                        </div>
+                      </div>
+                    </div>
+                    <div class="cart__empty">
+                      <img src="./src/images/logo/empty-box.png" alt="" />
+                      <div class="cart__empty-content">
+                        There are no items in your bag
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                <li
+                  class="header__navigation-icon js-open-menu hide-on-desktop"
+                >
+                  <div class="btn btn-no-border">
+                    <img
+                      src="./src/images/icon/hamburger.svg"
+                      alt=""
+                      li
+                      class="header__navigation-icon--img"
+                    />
+                  </div>
+                </li>
+                <li
+                  class="
                     header__navigation-icon header__navigation-language
                     js-language
                     hide-on-mobile
-                  ">
-                EN
-                <img src="./src/images/icon/chevron-down.png" alt="" />
-                <ul class="
+                  "
+                >
+                  EN
+                  <img src="./src/images/icon/chevron-down.png" alt="" />
+                  <ul
+                    class="
                       header__navigation-language-dropdown
                       js-language-dropdown
                       hide
-                    ">
-                  <li data-after="EN">English</li>
-                  <li data-after="VN">Vietnamese</li>
-                </ul>
+                    "
+                  >
+                    <li data-after="EN">English</li>
+                    <li data-after="VN">Vietnamese</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="header__breadcrumb">
+            <button
+              class="
+                header__breadcrumb-mobile
+                hide-on-desktop
+                btn btn-no-border
+              "
+            >
+              <a class="header__breadcrumb-mobile--item" href="#"
+                >Back to Homepage</a
+              >
+            </button>
+            <ul class="header__breadcrumb-desktop hide-on-mobile">
+              <li class="header-breadcrumb-desktop--item disable">Home</li>
+              <li class="header-breadcrumb-desktop--item">
+                <a href="#">Promotion</a>
               </li>
             </ul>
           </div>
         </div>
-        <div class="header__breadcrumb">
-          <button class="
-                header__breadcrumb-mobile
-                hide-on-desktop
-                btn btn-no-border
-              ">
-            <a class="header__breadcrumb-mobile--item" href="#">Back to Homepage</a>
-          </button>
-          <ul class="header__breadcrumb-desktop hide-on-mobile">
-            <li class="header-breadcrumb-desktop--item disable">Home</li>
-            <li class="header-breadcrumb-desktop--item">
-              <a href="#">Promotion</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div class="header__hero">
-        <div class="header__hero-wrapper">
-          <img src="./src/images/product/hero.png" alt="" class="header__hero-img" />
-          <div class="header__hero-inner">promotion</div>
-        </div>
-      </div>
-    </header>
-    <section class="container item category">
-      <div class="category__header">Categories</div>
-      <div class="category__content owl-carousel owl-theme">
-        <div class="category__item js-slider-item">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">All categories</div>
-        </div>
-        <div class="category__item js-slider-item">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Hobs</div>
-        </div>
-        <div class="category__item js-slider-item">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Hobs</div>
-        </div>
-        <div class="category__item js-slider-item">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Air fryers</div>
-        </div>
-        <div class="category__item js-slider-item">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Coffee machine</div>
-        </div>
-        <div class="category__item js-slider-item disable">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Rice cookers</div>
-        </div>
-        <div class="category__item js-slider-item">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Vacuum Cleaners</div>
-        </div>
-        <div class="category__item js-slider-item disable">
-          <div class="category__item-icon hide-on-mobile">
-            <img src="./src/images/logo/air-fryer.png" alt="" />
-          </div>
-          <div class="category__item-type">Vacuum Cleaners</div>
-        </div>
-      </div>
-    </section>
-    <section class="container filter">
-      <div class="container__row filter__wrapper">
-        <div class="filter__button-wrap-reset">
-          <div class="btn center-flex-row filter__button js-selector-open">
-            <img class="hide-on-desktop" src="./src/images/icon/filter-icon.svg" alt="" />
-            <div class="filter__button-item center-flex-row">Filter</div>
-          </div>
-          <div class="filter__button-reset hide-on-mobile js-reset-selector">
-            <img src="./src/images/icon/reset-filter.svg" alt="" />
-            <span class="filter__button-reset-name">Reset</span>
+        <div class="header__hero">
+          <div class="header__hero-wrapper">
+            <img
+              src="./src/images/product/hero.png"
+              alt=""
+              class="header__hero-img"
+            />
+            <div class="header__hero-inner">promotion</div>
           </div>
         </div>
-        <div class="
+      </header>
+      <section class="cartpage">
+        <div class="cartpage__header">
+          <div class="cartpage__header-return">Back</div>
+          <div class="cartpage__header-logo">
+            <img src="./src/images/logo/electrolux_logo.png" alt="">
+          </div>
+        </div>
+        <div class="container cartpage__container">
+          <div class="cartpage__row">
+            <div class="cartpage__info">
+              <div class="cartpage__info-header">Your cart</div>
+              <div class="cartpage__basic">
+                <div class="cartpage__title">product</div>
+                <div class="cartpage__product">
+                  <div class="cartpage__product-img">
+                    <img src="./src/images/product/tulanh1.png" alt="">
+                  </div>
+                  <div class="cartpage__basic-left">
+                    <div class="cartpage__product-name">Well Q7 Cordless Vacuum Cleaner (Quick Sand Gold)</div>
+                    <div class="cartpage__product-code">pq92-3bwf</div>
+                    <div class="cartpage__product-quantity disable">
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--button
+                        "
+                      >
+                        <span>-</span>
+                      </div>
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--number
+                        "
+                      >
+                        1
+                      </div>
+                      <div
+                        class="
+                          quantity-button
+                          cartpage__product-quantity--button
+                        "
+                      >
+                        <span>+</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="cartpage__basic-right">
+                    <img src="./src/images/icon/delete-icon.svg" alt="">
+                    <div class="cartpage__product-price"></div>
+                    <div class="cartpage__product-oldprice"></div>
+                  </div>
+                </div>
+                <div class="cartpage__addon">
+                  <div class="cartpage__addon-signal"></div>
+                  <div class="cartpage__addon-service"></div>
+                  <div class="cartpage__addon-checkbox">
+
+                  </div>
+                </div>
+                <div class="cartpage__product-addition">
+                  <div class="cartpage__add">
+                    <div class="cartpage__add-image">
+                      <img src="./src/images/logo/electrolux-warranty.png" alt="">
+                    </div>
+                    <div class="cartpage__add-left">
+                      <div class="cartpage__add-title"></div>
+                      <div class="cartpage__add-quantity">
+                        <div class="cartpage__add-quantity--button">-</div>
+                        <div class="cartpage__add-quantity--number">1</div>
+                        <div class="cartpage__add-quantity--button">+</div>
+                      </div>
+                    </div>
+                    <div class="cartpage__add-right">
+                      <img src="./src/images/icon/delete-icon.svg" alt="">
+                      <div class="cartpage__add-cost">NT$ 20.000</div>
+                    </div>
+                  </div>
+                  <div class="cartpage__add"></div>
+                  <div class="cartpage__add"></div>
+                </div>
+              </div>
+              <div class="cartpage__recommendation">
+                recommendation accessories
+              </div>
+              <div class="cartpage__more">
+                <div class="cartpage__more-list">
+                    <div class="cartpage__more-img"></div>
+                    <div class="cartpage__more-code">EBB2802H-H</div>
+                    <div class="cartpage__more-name">2 Laundry bag</div>
+                    <div class="cartpage__more-cost">NT$ 2,740</div>
+                    <div class="btn cartpage__more-button">Add to cart</div>
+                </div>
+              </div>
+              <div class="cartpage__footer">
+                <div class="cartpage__footer-header">accetped payment methods</div>
+                <ul class="cartage__footer-list">
+                  <li class="cartage__footer-method">ATM domestic cards</li>
+                  <li class="cartage__footer-method">Credit card</li>
+                  <li class="cartage__footer-method">E-Wallet</li>
+                </ul>
+                <div class="cartpage__footer-logos">
+                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
+                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
+                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
+                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
+                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
+                  <div class="cartpage__footer-logos"><img src="" alt=""></div>
+                  
+                </div>
+              </div>
+            </div>
+            <div class="cartpage__price">
+              <div class="cartpage__title">product</div>
+              <div class="cartpage__sub">
+                <div class="cartpage__word">sub-total</div>
+                <div class="cartpage__number">NT$ 225.967</div>
+              </div>
+              <div class="cartpage__sub">
+                <div class="cartpage__word">shipping</div>
+                <div class="cartpage__number">NT$ 5.583</div>
+              </div>
+              <div class="cartpage__sub">
+                <div class="cartpage__word">You have saved</div>
+                <div class="cartpage__number"> - NT$ 0</div>
+              </div>
+              <div class="cartpage__noted">your order inclues NT$ 1,200 tax</div>
+            
+              <div class="btn btn--primary cartpage__checkout">checkout</div>
+              <div class="cartpage__free">* Free Shipping on all orders over NT$ 5.000</div>
+              <div class="cartpage__underCheckout">Your transaction is safe and secure</div>
+              <div class="cartpage__promotion">
+                <input type="text">
+                <div class="btn btn--primary cartpage__apply">apply</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container item category">
+        <div class="category__header">Categories</div>
+        <div class="category__content owl-carousel owl-theme">
+          <div class="category__item js-slider-item">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">All categories</div>
+          </div>
+          <div class="category__item js-slider-item">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Hobs</div>
+          </div>
+          <div class="category__item js-slider-item">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Hobs</div>
+          </div>
+          <div class="category__item js-slider-item">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Air fryers</div>
+          </div>
+          <div class="category__item js-slider-item">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Coffee machine</div>
+          </div>
+          <div class="category__item js-slider-item disable">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Rice cookers</div>
+          </div>
+          <div class="category__item js-slider-item">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Vacuum Cleaners</div>
+          </div>
+          <div class="category__item js-slider-item disable">
+            <div class="category__item-icon hide-on-mobile">
+              <img src="./src/images/logo/air-fryer.png" alt="" />
+            </div>
+            <div class="category__item-type">Vacuum Cleaners</div>
+          </div>
+        </div>
+      </section>
+      <section class="container filter">
+        <div class="container__row filter__wrapper">
+          <div class="filter__button-wrap-reset">
+            <div class="btn center-flex-row filter__button js-selector-open">
+              <img
+                class="hide-on-desktop"
+                src="./src/images/icon/filter-icon.svg"
+                alt=""
+              />
+              <div class="filter__button-item center-flex-row">Filter</div>
+            </div>
+            <div class="filter__button-reset hide-on-mobile js-reset-selector">
+              <img src="./src/images/icon/reset-filter.svg" alt="" />
+              <span class="filter__button-reset-name">Reset</span>
+            </div>
+          </div>
+          <div
+            class="
               btn btn-no-border
               filter__button filter__button-number
               hide-on-mobile
-            ">
-          <span class="filter__button-item">17</span>
-        </div>
-        <div class="
+            "
+          >
+            <span class="filter__button-item">17</span>
+          </div>
+          <div
+            class="
               btn
               center-flex-row
               filter__button
               js-include-active
               center-flex-row
-            ">
-          <div class="filter__button-item js-sort-open">
-            <span class="filter__button-detail">Sort By</span>
-            <div class="filter__button-detail hide-on-mobile">: default</div>
-            <div class="filter__button-detail">
-              <img src="./src/images/icon/chevron-down.png" alt="" />
+            "
+          >
+            <div class="filter__button-item js-sort-open">
+              <span class="filter__button-detail">Sort By</span>
+              <div class="filter__button-detail hide-on-mobile">: default</div>
+              <div class="filter__button-detail">
+                <img src="./src/images/icon/chevron-down.png" alt="" />
+              </div>
             </div>
-          </div>
-          <div class="filter-sort-selection js-sort-selector">
-            <div class="
+            <div class="filter-sort-selection js-sort-selector">
+              <div
+                class="
                   filter-sort-selection--overlay
                   hide-on-desktop
                   js-sort-close
-                "></div>
-            <div class="filter-sort-selection--list js-sort-close">
-              <button>Default</button>
-              <button>Price high to low</button>
-              <button>Price low to high</button>
-              <button>Highest rate</button>
+                "
+              ></div>
+              <div class="filter-sort-selection--list js-sort-close">
+                <button>Default</button>
+                <button>Price high to low</button>
+                <button>Price low to high</button>
+                <button>Highest rate</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-    <div class="container flex">
-      <div class="container__wrapper">
-        <section class="selector js-selector">
-          <div class="selector__header hide-on-desktop js-selector-close">
-            <div class="selector__header--iconFilter">
-              <img src="./src/images/icon/filter-icon.svg" alt="" class="" />
-              Filter
+      </section>
+      <div class="container product-container flex">
+        <div class="container__wrapper">
+          <section class="selector js-selector">
+            <div class="selector__header hide-on-desktop js-selector-close">
+              <div class="selector__header--iconFilter">
+                <img src="./src/images/icon/filter-icon.svg" alt="" class="" />
+                Filter
+              </div>
+              <div>
+                <img
+                  src="./src/images/icon/close-icon.svg"
+                  alt=""
+                  class="selector__header--icon"
+                />
+              </div>
             </div>
-            <div>
-              <img src="./src/images/icon/close-icon.svg" alt="" class="selector__header--icon" />
-            </div>
-          </div>
-          <div class="selector__container">
-            <ul class="selector__container-list">
-              <li class="selector__container-filter js-dropdown-menu">
-                <div class="selector__container-title js-dropdown-button">
-                  Promotions
-                </div>
-                <div class="selector__container-content js-dropdown-content">
-                  <div class="selector__container-checkbox js-filter-promo-checkbox js-checkbox">
-                    <label class="checkBox">
-                      <input type="checkbox" class="js-filter-check" value="new" />
-                      <span class="
+            <div class="selector__container">
+              <ul class="selector__container-list">
+                <li class="selector__container-filter js-dropdown-menu">
+                  <div class="selector__container-title js-dropdown-button">
+                    Promotions
+                  </div>
+                  <div class="selector__container-content js-dropdown-content">
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-filter-promo-checkbox js-checkbox
+                      "
+                    >
+                      <label class="checkBox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-check"
+                          value="new"
+                        />
+                        <span
+                          class="
                             checkmark checkmark--selector
                             select__container-checkmark
-                          " 
+                          "
                         ></span>
-                      <span class="checkbox__label selector__container-label">new</span>
-                    </label>
+                        <span class="checkbox__label selector__container-label"
+                          >new</span
+                        >
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-filter-promo-checkbox js-checkbox
+                      "
+                    >
+                      <label class="checkBox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-checkbox"
+                          value="discount"
+                        />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >sale</span
+                        >
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-filter-promo-checkbox js-checkbox
+                      "
+                    >
+                      <label class="checkBox js-selector-checkbox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-checkbox"
+                          value="bundle"
+                        />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >bundle</span
+                        >
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-filter-promo-checkbox js-checkbox
+                      "
+                    >
+                      <label class="checkBox js-selector-checkbox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-checkbox"
+                          value="gift"
+                        />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >free gift</span
+                        >
+                      </label>
+                    </div>
                   </div>
-                  <div class="selector__container-checkbox js-filter-promo-checkbox js-checkbox">
-                    <label class="checkBox">
-                      <input type="checkbox" class="js-filter-checkbox" value="discount" />
-                      <span class="checkmark checkmark--selector select__container-checkmark"></span>
-                      <span class="checkbox__label selector__container-label">sale</span>
-                    </label>
+                </li>
+                <li class="selector__container-filter js-dropdown-menu">
+                  <div class="selector__container-title js-dropdown-button">
+                    prices
                   </div>
-                  <div class="selector__container-checkbox js-filter-promo-checkbox js-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="js-filter-checkbox" value="bundle"/>
-                      <span class="checkmark checkmark--selector select__container-checkmark "></span>
-                      <span class="checkbox__label selector__container-label">bundle</span>
-                    </label>
+                  <div class="selector__container-content js-dropdown-content">
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-checkbox js-filter-price-checkbox
+                      "
+                    >
+                      <label class="checkBox js-selector-checkbox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-checkbox"
+                          value="low"
+                        />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label">
+                          < 5millions</span
+                        >
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-checkbox js-filter-price-checkbox
+                      "
+                    >
+                      <label class="checkBox js-selector-checkbox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-checkbox"
+                          value="medium"
+                        />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >5 - 10 million</span
+                        >
+                      </label>
+                    </div>
+                    <div
+                      class="
+                        selector__container-checkbox
+                        js-checkbox js-filter-price-checkbox
+                      "
+                    >
+                      <label class="checkBox js-selector-checkbox">
+                        <input
+                          type="checkbox"
+                          class="js-filter-checkbox"
+                          value="high"
+                        />
+                        <span
+                          class="
+                            checkmark checkmark--selector
+                            select__container-checkmark
+                          "
+                        ></span>
+                        <span class="checkbox__label selector__container-label"
+                          >10 - 20 million</span
+                        >
+                      </label>
+                    </div>
                   </div>
-                  <div class="selector__container-checkbox js-filter-promo-checkbox js-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="js-filter-checkbox" value="gift" />
-                      <span class="checkmark checkmark--selector select__container-checkmark"></span>
-                      <span class="checkbox__label selector__container-label">free gift</span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-              <li class="selector__container-filter js-dropdown-menu">
-                <div class="selector__container-title js-dropdown-button">
-                  prices
-                </div>
-                <div class="selector__container-content js-dropdown-content">
-                  <div class="selector__container-checkbox js-checkbox js-filter-price-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="js-filter-checkbox" value="gift" />
-                      <span class="checkmark checkmark--selector select__container-checkmark"></span>
-                      <span class="checkbox__label selector__container-label">< 5millions</span>
-                    </label>
-                  </div>
-                  <div class="selector__container-checkbox js-checkbox js-filter-price-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="js-filter-checkbox" value="gift" />
-                      <span class="checkmark checkmark--selector select__container-checkmark"></span>
-                      <span class="checkbox__label selector__container-label">5 - 10 million</span>
-                    </label>
-                  </div>
-                  <div class="selector__container-checkbox js-checkbox js-filter-price-checkbox">
-                    <label class="checkBox js-selector-checkbox">
-                      <input type="checkbox" class="js-filter-checkbox" value="gift" />
-                      <span class="checkmark checkmark--selector select__container-checkmark"></span>
-                      <span class="checkbox__label selector__container-label">10 - 20 million</span>
-                    </label>
-                  </div>
-                </div>
-              </li>
-            </ul>
-          </div>
-          <div class="selector__footer hide-on-desktop">
-            <div class="
+                </li>
+              </ul>
+            </div>
+            <div class="selector__footer hide-on-desktop">
+              <div
+                class="
                   btn
                   center-flex-row
                   selector__footer-button
                   js-reset-selector
-                ">
-              Reset
-            </div>
-            <div class="
+                "
+              >
+                Reset
+              </div>
+              <div
+                class="
                   btn btn--primary
                   center-flex-row
                   selector__footer-button
-                  js-selector-close
-                  js-apply-filter
-                ">
-              Apply Filters
+                  js-selector-close js-apply-filter
+                "
+              >
+                Apply Filters
+              </div>
             </div>
-          </div>
-        </section>
-        <section class="container product">
-          <div class="container__row product__list js-product-list">
-          </div>
-          <!-- product_item here -->
-          <!-- <div class="product__item">
-              <div class="product__item-heart js-heart-button">
-                <img
-                  class="outline"
-                  src="./src/images/icon/heart-outline-icon.svg"
-                  alt=""
-                />
-                <img
-                  src="./src/images/icon/heart-filled-icon.svg"
-                  alt=""
-                  class="fill hide"
-                />
+          </section>
+          <section class="container product">
+            <div class="container__row product__list js-product-list"></div>
+            <!-- product_item here -->
+
+            <div class="loadMore"></div>
+            <div class="loading">
+              <div class="ball"></div>
+              <div class="ball"></div>
+              <div class="ball"></div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="contact-icon">
+        <a href="tel:123-456-7890">
+          <img
+            class="contact-icon--mobile hide-on-desktop"
+            src="./src/images/logo/contact-mobile.png"
+            alt=""
+          />
+        </a>
+        <a href="tel:123-456-7890">
+          <img
+            class="contact-icon--desktop hide-on-mobile"
+            src="./src/images/logo/contact.png"
+            alt=""
+          />
+        </a>
+      </div>
+      <footer id="footer">
+        <div class="footer__option">
+          <div class="container">
+            <div class="footer__option-item js-dropdown-menu">
+              <div class="footer__option-item-title js-dropdown-button">
+                kitchen
               </div>
-              <div class="item product__item-tag">
-                <div class="tag tag--discount">sale</div>
-                <div class="tag tag--gift">
-                  <img src="./src/images/icon/gift.png" alt="" />
-                  <span>free gift</span>
-                </div>
-              </div>
-              <div class="item product__item-img placeholder">
-                <img
-                  class="product__item-img--content lazy-observer"
-                  data-src="./src/images/product/tulanh1.png"
-                  alt=""
-                />
-              </div>
-              <div class="item product__item-detail">
-                <div class="product__item-code">${product.code}</div>
-                <div class="product__item-name">
-                  ${product.name}
-                </div>
-                <div class="product__item-rate">
-                  <div class="product__item-rate--star">
-                    <img src="./src/images/icon/star.png" alt="" />
-                  </div>
-                  <div class="product__item-rate--number">${
-                    product.review
-                  } Reviews</div>
-                </div>
-              </div>
-              <div class="item product__item-price">
-                <div class="product__item-price--old">${product.price.old} đ</div>
-                <div class="product__item-price--new">${product.price.new} đ</div>
-              </div>
-              <div class="item product__item-suggestion hide-on-desktop">
-                <div class="product__item-interest">
-                  <div class="product__item-interest--number">${
-                    product.interest
-                  } %</div>
-                </div>
-                <div class="product__item-payment">
-                  <div class="product__item-payment--money">
-                    ${product.payment} VND/month
-                  </div>
-                  <div class="product__item-payment--due">for 6 months</div>
-                </div>
-              </div>
-              <ul class="item product__item-description">
+              <ul class="footer__option-item-content js-dropdown-content">
+                <li class="js-selector-checkbox">Cooktops</li>
+                <li class="js-selector-checkbox">Ovens</li>
+                <li class="js-selector-checkbox">Freestanding Cookers</li>
+                <li class="js-selector-checkbox">Hoods</li>
+                <li class="js-selector-checkbox">Refrigerators</li>
+                <li class="js-selector-checkbox">Dishwashers</li>
+                <li class="js-selector-checkbox">MicroWaves</li>
+                <li class="js-selector-checkbox">Table Top Ovens</li>
+                <li class="js-selector-checkbox">Small Appliances</li>
               </ul>
-              <div class="item product__item-action">
-                <button class="btn btn--primary product__item-action--add js-add-cart">
-                  add to cart
-                </button>
-                <button class="btn product__item-action--research">
-                  learn more
-                </button>
+            </div>
+            <div class="footer__option-item js-dropdown-menu">
+              <div class="footer__option-item-title js-dropdown-button">
+                Laundry
               </div>
-              <div class="product__item-compare hide-on-mobile">
-                <label class="checkBox js-compare-checkbox">
-                  <input type="checkbox" class="" />
-                  <span class="checkmark checkmark--compare"></span>
-                  <span class="checkbox__label product__item-compare-label">
-                    Add to Compare</span
-                  >
-                </label>
-              </div> -->
-
-          <div class="loadMore"></div>
-          <div class="loading">
-            <div class="ball"></div>
-            <div class="ball"></div>
-            <div class="ball"></div>
+              <ul class="footer__option-item-content js-dropdown-content">
+                <li class="js-selector-checkbox">Washing Machine</li>
+                <li class="js-selector-checkbox">Dryers</li>
+              </ul>
+            </div>
+            <div class="footer__option-item js-dropdown-menu">
+              <div class="footer__option-item-title js-dropdown-button">
+                wellbeing
+              </div>
+              <ul class="footer__option-item-content js-dropdown-content">
+                <li class="js-selector-checkbox">Vaccum Cleaners</li>
+                <li class="js-selector-checkbox">Air Care</li>
+                <li class="js-selector-checkbox">Water Heaters</li>
+              </ul>
+            </div>
+            <div class="footer__option-item js-dropdown-menu">
+              <div class="footer__option-item-title js-dropdown-button">
+                inspiration
+              </div>
+              <ul class="footer__option-item-content js-dropdown-content">
+                <li class="js-selector-checkbox">Cooker Hoods</li>
+                <li class="js-selector-checkbox">Kettles & Water Filtration</li>
+                <li class="js-selector-checkbox">Cooker Hoods</li>
+                <li class="js-selector-checkbox">Kettles & Water Filtration</li>
+              </ul>
+            </div>
+            <div class="footer__option-item js-dropdown-menu">
+              <div class="footer__option-item-title js-dropdown-button">
+                support
+              </div>
+              <ul class="footer__option-item-content js-dropdown-content">
+                <li class="js-selector-checkbox">Warranty Information</li>
+                <li class="js-selector-checkbox">Product Registration</li>
+                <li class="js-selector-checkbox">Extended Warranty</li>
+                <li class="js-selector-checkbox">Service Centres</li>
+                <li class="js-selector-checkbox">User Manuals</li>
+                <li class="js-selector-checkbox">Download Brochures</li>
+                <li class="js-selector-checkbox">How-to Videos</li>
+                <li class="js-selector-checkbox">FAQ</li>
+              </ul>
+            </div>
+            <div class="footer__option-item js-dropdown-menu">
+              <div class="footer__option-item-title js-dropdown-button">
+                about electrolux
+              </div>
+              <ul class="footer__option-item-content js-dropdown-content">
+                <li class="js-selector-checkbox">Our Company</li>
+                <li class="js-selector-checkbox">Design Innovation</li>
+                <li class="js-selector-checkbox">
+                  Environment & sustainability
+                </li>
+                <li class="js-selector-checkbox">Career</li>
+                <li class="js-selector-checkbox">Global Leader</li>
+              </ul>
+            </div>
+            <div class="footer__option-item">
+              <div class="footer__option-item-title">promotions</div>
+            </div>
+            <div class="footer__option-item">
+              <div class="footer__option-item-title">where to buy</div>
+            </div>
           </div>
-        </section>
-      </div>
+        </div>
+
+        <div class="container footer__list">
+          <div class="footer__connect">
+            <div class="footer__connect-social">
+              <div class="footer__connect-social-icons">
+                <img
+                  src="./src/images/logo/facebook.png"
+                  alt=""
+                  class="footer__connect-icon"
+                />
+                <img
+                  src="./src/images/icon/icon-p.png"
+                  alt=""
+                  class="footer__connect-icon"
+                />
+                <img
+                  src="./src/images/logo/youtube.png"
+                  alt=""
+                  class="footer__connect-icon"
+                />
+                <img
+                  src="./src/images/icon/twitter.png"
+                  alt=""
+                  class="footer__connect-icon"
+                />
+              </div>
+              <div class="footer__connect-infor">
+                Electroluxgroup.com | Electrolux Professional | Newsroom |
+                Financial Information
+              </div>
+            </div>
+            <div class="footer__connect-download">
+              <div class="footer__connect-download--button">
+                Download Electrolux Life App
+              </div>
+              <div class="footer__connect-download--option">
+                <div class="footer__connect-download--store placeholder">
+                  <img
+                    class="lazy-observer"
+                    src="./src/images/logo/App Store.png"
+                  />
+                </div>
+                <div class="footer__connect-download--store">
+                  <img
+                    class="lazy-observer"
+                    src="./src/images/logo/Play Store.png"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer__connect-term">
+            Terms & Conditions | Data Protection Policy | Cookie Guideline |
+            Sitemap
+          </div>
+
+          <div class="footer__connect-copyright">
+            Copyright 2020 Electrolux - All Rights Reserved.
+          </div>
+        </div>
+      </footer>
     </div>
-    <div class="contact-icon">
-      <a href="tel:123-456-7890">
-        <img class="contact-icon--mobile hide-on-desktop" src="./src/images/logo/contact-mobile.png" alt="" />
-      </a>
-      <a href="tel:123-456-7890">
-        <img class="contact-icon--desktop hide-on-mobile" src="./src/images/logo/contact.png" alt="" />
-      </a>
-    </div>
-    <footer id="footer">
-      <div class="footer__option">
-        <div class="container">
-          <div class="footer__option-item js-dropdown-menu">
-            <div class="footer__option-item-title js-dropdown-button">
-              kitchen
-            </div>
-            <ul class="footer__option-item-content js-dropdown-content">
-              <li class="js-selector-checkbox">Cooktops</li>
-              <li class="js-selector-checkbox">Ovens</li>
-              <li class="js-selector-checkbox">Freestanding Cookers</li>
-              <li class="js-selector-checkbox">Hoods</li>
-              <li class="js-selector-checkbox">Refrigerators</li>
-              <li class="js-selector-checkbox">Dishwashers</li>
-              <li class="js-selector-checkbox">MicroWaves</li>
-              <li class="js-selector-checkbox">Table Top Ovens</li>
-              <li class="js-selector-checkbox">Small Appliances</li>
-            </ul>
-          </div>
-          <div class="footer__option-item js-dropdown-menu">
-            <div class="footer__option-item-title js-dropdown-button">
-              Laundry
-            </div>
-            <ul class="footer__option-item-content js-dropdown-content">
-              <li class="js-selector-checkbox">Washing Machine</li>
-              <li class="js-selector-checkbox">Dryers</li>
-            </ul>
-          </div>
-          <div class="footer__option-item js-dropdown-menu">
-            <div class="footer__option-item-title js-dropdown-button">
-              wellbeing
-            </div>
-            <ul class="footer__option-item-content js-dropdown-content">
-              <li class="js-selector-checkbox">Vaccum Cleaners</li>
-              <li class="js-selector-checkbox">Air Care</li>
-              <li class="js-selector-checkbox">Water Heaters</li>
-            </ul>
-          </div>
-          <div class="footer__option-item js-dropdown-menu">
-            <div class="footer__option-item-title js-dropdown-button">
-              inspiration
-            </div>
-            <ul class="footer__option-item-content js-dropdown-content">
-              <li class="js-selector-checkbox">Cooker Hoods</li>
-              <li class="js-selector-checkbox">Kettles & Water Filtration</li>
-              <li class="js-selector-checkbox">Cooker Hoods</li>
-              <li class="js-selector-checkbox">Kettles & Water Filtration</li>
-            </ul>
-          </div>
-          <div class="footer__option-item js-dropdown-menu">
-            <div class="footer__option-item-title js-dropdown-button">
-              support
-            </div>
-            <ul class="footer__option-item-content js-dropdown-content">
-              <li class="js-selector-checkbox">Warranty Information</li>
-              <li class="js-selector-checkbox">Product Registration</li>
-              <li class="js-selector-checkbox">Extended Warranty</li>
-              <li class="js-selector-checkbox">Service Centres</li>
-              <li class="js-selector-checkbox">User Manuals</li>
-              <li class="js-selector-checkbox">Download Brochures</li>
-              <li class="js-selector-checkbox">How-to Videos</li>
-              <li class="js-selector-checkbox">FAQ</li>
-            </ul>
-          </div>
-          <div class="footer__option-item js-dropdown-menu">
-            <div class="footer__option-item-title js-dropdown-button">
-              about electrolux
-            </div>
-            <ul class="footer__option-item-content js-dropdown-content">
-              <li class="js-selector-checkbox">Our Company</li>
-              <li class="js-selector-checkbox">Design Innovation</li>
-              <li class="js-selector-checkbox">
-                Environment & sustainability
-              </li>
-              <li class="js-selector-checkbox">Career</li>
-              <li class="js-selector-checkbox">Global Leader</li>
-            </ul>
-          </div>
-          <div class="footer__option-item">
-            <div class="footer__option-item-title">promotions</div>
-          </div>
-          <div class="footer__option-item">
-            <div class="footer__option-item-title">where to buy</div>
-          </div>
-        </div>
-      </div>
+  </body>
+  <script type="module" src="./src/js/main.js"></script>
 
-      <div class="container footer__list">
-        <div class="footer__connect">
-          <div class="footer__connect-social">
-            <div class="footer__connect-social-icons">
-              <img src="./src/images/logo/facebook.png" alt="" class="footer__connect-icon" />
-              <img src="./src/images/icon/icon-p.png" alt="" class="footer__connect-icon" />
-              <img src="./src/images/logo/youtube.png" alt="" class="footer__connect-icon" />
-              <img src="./src/images/icon/twitter.png" alt="" class="footer__connect-icon" />
-            </div>
-            <div class="footer__connect-infor">
-              Electroluxgroup.com | Electrolux Professional | Newsroom |
-              Financial Information
-            </div>
-          </div>
-          <div class="footer__connect-download">
-            <div class="footer__connect-download--button">
-              Download Electrolux Life App
-            </div>
-            <div class="footer__connect-download--option">
-              <div class="footer__connect-download--store placeholder">
-                <img class="lazy-observer" src="./src/images/logo/App Store.png" />
-              </div>
-              <div class="footer__connect-download--store">
-                <img class="lazy-observer" src="./src/images/logo/Play Store.png" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="footer__connect-term">
-          Terms & Conditions | Data Protection Policy | Cookie Guideline |
-          Sitemap
-        </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="./node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
 
-        <div class="footer__connect-copyright">
-          Copyright 2020 Electrolux - All Rights Reserved.
-        </div>
-      </div>
-    </footer>
-  </div>
-</body>
-<script type="module" src="./src/js/main.js"></script>
+  <script>
+    var owl = $(".owl-carousel");
+    owl.children().each(function (index) {
+      $(this).attr("data-position", index);
+    });
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="./node_modules/owl.carousel/dist/owl.carousel.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js"></script>
-
-<script>
-  var owl = $(".owl-carousel");
-  owl.children().each(function (index) {
-    $(this).attr("data-position", index);
-  });
-
-  owl.owlCarousel({
-    navText: [
-      "<span><img src='./src/images/icon/chevron-left.png'/></span>",
-      "<span><img src='./src/images/icon/chevron-right.png'/></span>",
-    ],
-    lazyLoad: true,
-    dots: false,
-    responsiveClass: true,
-    autoWidth: true,
-    responsive: {
-      0: {
-        center: true,
-        item: 2,
+    owl.owlCarousel({
+      navText: [
+        "<span><img src='./src/images/icon/chevron-left.png'/></span>",
+        "<span><img src='./src/images/icon/chevron-right.png'/></span>",
+      ],
+      lazyLoad: true,
+      dots: false,
+      responsiveClass: true,
+      autoWidth: true,
+      responsive: {
+        0: {
+          center: true,
+          item: 2,
+        },
+        600: {
+          item: 8,
+          center: false,
+          nav: true,
+        },
       },
-      600: {
-        item: 8,
-        center: false,
-        nav: true,
-      },
-    },
-  });
-  $(document).on("click", ".owl-item>div", function () {
-    owl.trigger("to.owl.carousel", [$(this).data("position"), 300]);
-  });
-</script>
-
+    });
+    $(document).on("click", ".owl-item>div", function () {
+      owl.trigger("to.owl.carousel", [$(this).data("position"), 300]);
+    });
+  </script>
 </html>

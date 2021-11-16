@@ -12,16 +12,20 @@
   }
   &__navigation {
     @include flexBox();
+    height: 100%;
     width: auto;
     &-icons {
       @include flexBox(center, flex-end, wrap, row);
+      margin-bottom: 10px;
       width: 100%;
+      height: 100%;
       @include large {
         width: auto;
       }
     }
     &-icon {
       margin-left: 15px;
+      position: relative;
     }
     &-language {
       position: relative;
@@ -138,3 +142,4 @@
     opacity: 1;
   }
 }
+

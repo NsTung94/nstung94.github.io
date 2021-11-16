@@ -1,0 +1,83 @@
+.cartpage {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  padding: 0 130px;
+  background: #fff;
+  z-index: 99;
+  &__header {
+    @include flexBox(center, flex-start);
+    position: relative;
+    height: 65px;
+    border-bottom: 1px solid $secondary-color;
+    &-return {
+      position: relative;
+      padding-left: 20px;
+      font: 600 14px $font-primary;
+      &:before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border: solid $primary-color;
+        padding: 3px;
+        position: absolute;
+        transform: rotate(-45deg);
+        top: 0;
+        border-width: 2px 0 0 2px;
+        left: 0;
+      }
+    }
+    &-logo {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__container {
+    width: 100%;
+    display: flex;
+
+  }
+  &__row {
+      display: flex;
+      width: 100%;
+  }
+  &__info {
+    width: 65%;
+    &-header {
+        padding: 50px 0 30px;
+        font: 600 40px/48px $font-primary;
+    }
+  }
+  &__price {
+    width: 35%;
+  }
+  &__title {
+      text-transform: uppercase;
+      font: 600 16px/26px $font-primary;
+      margin-bottom: 10px;
+      width: 100%;
+  }
+  &__product {
+      border-top: 1px solid $secondary-color;
+      height: 180px;
+      @include flexBox(center);
+      &-img {
+          width: 14%;
+          height: 100px;
+          img {
+              width: 100%;
+          }
+      }
+  }
+  &__basic {
+    @include flexBox(center);
+    &-left {
+        width: 56%;
+    }
+  }
+}

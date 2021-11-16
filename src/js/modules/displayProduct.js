@@ -13,12 +13,9 @@ export default function displayProduct(product) {
   var tag = document.createElement("div");
   tag.classList.add("item", "product__item-tag");
 
-  var image = document.createElement("div");
-  image.classList.add("item", "product__item-img", "placeholder");
-
   var image = document.createElement('div');
-  image.classList.add('item', 'product__item-img', "placeholder")
-  document.addEventListener("DOMContentLoaded",lazyImage());
+  image.classList.add('item', 'product__item-img')
+  // document.addEventListener("DOMContentLoaded",lazyImage());
 
   var detail = document.createElement("div");
   detail.classList.add("item", "product__item-detail");
@@ -33,21 +30,20 @@ export default function displayProduct(product) {
   description.classList.add('item', 'product__item-description');
 
   var action = document.createElement('div');
-  action.classList.add('item', 'production__item-action');
-
-  // create heart button
-  heartBtn.innerHTML = `
-    <img class="outline"
-        src="./src/images/icon/heart-outline-icon.svg"
-        alt=""
-    />
-    <img
-        src="./src/images/icon/heart-filled-icon.svg"
-        alt=""
-        class="fill hide"
-    />
-    `;
+  action.classList.add('item', 'product__item-action');
   wish();
+  var compare = document.createElement('div');
+  compare.classList.add('product__item-compare','hide-on-mobile')
+  compare.innerHTML = `
+      <label class="checkBox js-compare-checkbox">
+        <input type="checkbox" class="" />
+        <span class="checkmark checkmark--compare"></span>
+        <span class="checkbox__label product__item-compare-label">
+          Add to Compare</span
+        >
+      </label>
+  `
+
   // create tag dealType
   var tagString = []
   for (var i = 0; i < product.dealType.length; i++) {
@@ -68,8 +64,8 @@ export default function displayProduct(product) {
   tag.innerHTML = tagString.join('');
   // item image
   var itemImage = document.createElement('img');
-  itemImage.classList.add('lazy-observer');
-  itemImage.setAttribute('data-src', product.picture);
+  // itemImage.classList.add('lazy-observer');
+  itemImage.setAttribute('src', product.picture);
   image.appendChild(itemImage);
   // item detail
   detail.innerHTML = `      
@@ -88,15 +84,20 @@ export default function displayProduct(product) {
     `;
   //item price
   var priceNumber = []
-  if (product.price.old !== "undefined") {
+  if (product.price.old == undefined) {
+    console.log("trigger")
+    '<div class="product__item-price--old" style="display:none;">' + product.price.old + "</div>"
+  }
+  else {
     priceNumber.push(
-      '<div class="product__item-price--old">' + product.price.old + "</div>"
+      '<div class="price-number product__item-price--old">' + product.price.old.toLocaleString('de') + "</div>"
     );
   }
   priceNumber.push(
-    '<div class="product__item-price--new">' + product.price.new + "</div>"
+    '<div class=" price-number product__item-price--new">' + product.price.new.toLocaleString('de') + "</div>"
   );
-
+  const htmlString = priceNumber.join("")
+  price.innerHTML = htmlString;
   //item suggestion
   suggestion.innerHTML = `
         <div class="product__item-interest">
@@ -112,7 +113,7 @@ export default function displayProduct(product) {
   //item description 
 
   const listDescription = product.description.map(item =>
-    `<li>${item.value}</li>`);
+    `<li>${item.value}</li>`).join("");
   description.innerHTML += listDescription;
   //item action
   action.innerHTML = `
@@ -132,6 +133,7 @@ export default function displayProduct(product) {
   productItem.appendChild(suggestion);
   productItem.appendChild(description);
   productItem.appendChild(action);
+  productItem.appendChild(compare);
 
   return productItem;
 }

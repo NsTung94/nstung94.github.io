@@ -8,7 +8,7 @@
     "review": 102,
     "dealType": [
         { "type": "new"},
-        { "type": "discount" }
+        { "type": "bundle" }
     ],
     "price": {
       "old": 7505000,
@@ -30,7 +30,7 @@
     "category": "refrigeration",
     "review": 102,
     "dealType": [
-        { "type": "new"},
+        { "type": "gift"},
         { "type": "discount" }
     ],
 
@@ -53,7 +53,7 @@
     "category": "refrigeration",
     "review": 102,
     "dealType": [
-        { "type": "new"},
+        { "type": "bundle"},
         { "type": "discount" }
     ],
     "price": {
@@ -75,7 +75,7 @@
     "category": "refrigeration",
     "review": 102,
     "dealType": [
-        { "type": "new"},
+        { "type": "gift"},
         { "type": "discount" }
     ],
     "price": {
@@ -121,7 +121,187 @@
     "review": 102,
     "dealType": [
         { "type": "new"},
+        { "type": "gift" }
+    ],
+    "price": {
+      "new": 42990000
+    },
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
+        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
+        {"value":"WaterStream for chilled water through the door."}
+      ]
+  },
+  {
+    "id": 7,
+    "picture": "./src/images/product/tulanh7.png",
+    "code": "EME3700H-H",
+    "name": "337L three-door refrigerator ",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
         { "type": "discount" }
+    ],
+    "price": {
+      "new": 11990000
+    },
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
+        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
+        {"value":"WaterStream for chilled water through the door."}
+      ]
+  },
+  {
+    "id": 8,
+    "picture": "./src/images/product/tulanh8.png",
+    "code": "EQE6909A-B",
+    "name": "622L black Quattro French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "old": 32989999,
+      "new": 16495000
+    },
+
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {"value":"Preserve the texture of your meat and seafood for longer."},
+      {"value":"Ideal conditions for all of you food and drinks."}
+    ]
+  },
+  {
+    "id": 9,
+    "picture": "./src/images/product/tulanh9.png",
+    "code": "EQE6909A-B",
+    "name": "622L black Quattro French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "old": 32989999,
+      "new": 16495000
+    },
+
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {"value":"Preserve the texture of your meat and seafood for longer."},
+      {"value":"Ideal conditions for all of you food and drinks."}
+    ]
+  },
+  {
+    "id": 6,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "gift" }
+    ],
+    "price": {
+      "new": 42990000
+    },
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
+        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
+        {"value":"WaterStream for chilled water through the door."}
+      ]
+  },
+  {
+    "id": 7,
+    "picture": "./src/images/product/tulanh7.png",
+    "code": "EME3700H-H",
+    "name": "337L three-door refrigerator ",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "new": 11990000
+    },
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
+        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
+        {"value":"WaterStream for chilled water through the door."}
+      ]
+  },
+  {
+    "id": 8,
+    "picture": "./src/images/product/tulanh8.png",
+    "code": "EQE6909A-B",
+    "name": "622L black Quattro French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "old": 32989999,
+      "new": 16495000
+    },
+
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {"value":"Preserve the texture of your meat and seafood for longer."},
+      {"value":"Ideal conditions for all of you food and drinks."}
+    ]
+  },
+  {
+    "id": 9,
+    "picture": "./src/images/product/tulanh9.png",
+    "code": "EQE6909A-B",
+    "name": "622L black Quattro French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "old": 32989999,
+      "new": 16495000
+    },
+
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {"value":"Preserve the texture of your meat and seafood for longer."},
+      {"value":"Ideal conditions for all of you food and drinks."}
+    ]
+  },
+  {
+    "id": 6,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "gift" }
     ],
     "price": {
       "new": 42990000
@@ -202,4 +382,5 @@
       {"value":"Ideal conditions for all of you food and drinks."}
     ]
   }
+
 ]

@@ -50,10 +50,10 @@ li {
     }
   }
   &__wrapper {
+    display: flex;
     min-height: 500px;
     width: 100%;
-    margin: 0 -20px;
-    display: flex;
+    // margin: 0 -20px;
   }
 }
 
@@ -133,6 +133,11 @@ label {
     width: 0;
     height: 0;
   }
+}
+
+.product-container {
+  width: 100%;
+  padding: 0 20px;
 }
 
 .hide {

@@ -1,9 +1,9 @@
 .product {
   @include flexBox();
   @include large {
-    width: 80%;
     margin: 0;
     display: flex;
+    margin-left:  20px;
     
     &__list {
       @include flexBox(stretch);
@@ -25,7 +25,10 @@
     &-heart {
       position: absolute;
       top: 0;
+      width: 30px;
+      height: 30px;
       right: 15px;
+      background-image: url(/src/images/icon/heart-outline-icon.svg);
       @include large {
         right: 0;
       }
@@ -37,21 +40,19 @@
         position: absolute;
         flex-direction: column;
         width: auto;
-        height: 90px;
+        height: 100px;
       }
     }
     &-img {
       width: 110px;
       position: relative;
-      height: 110px;
-      padding-bottom: 100%;
+      img {
+        width: 100%;
+      }
       @include large {
         margin-top: 28px;
         width: 100%;
-        padding-bottom: 100%;
-        img {
-          width: 100%;
-        }
+        
       }
       &--content {
         position: absolute;
@@ -153,6 +154,10 @@
     &-description {
       list-style-type: disc;
       padding-left: 15px;
+      li {
+        margin-bottom: 6px;
+        font: 400 14px/24px $font-primary;
+      }
       @include large {
         order: 1;
       }
@@ -188,5 +193,15 @@
         order: 4;
       }
     }
+  }
+}
+
+.heart-active {
+  background-image: url(/src/images/icon/heart-filled-icon.svg);
+}
+
+.price-number {
+  &:after {
+    content: ' đ';
   }
 }
