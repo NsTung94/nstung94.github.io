@@ -1,6 +1,6 @@
 export default function lazyImage() {
     var lazyObjects = [].slice.call(document.querySelectorAll(".lazy-observer"));
- 
+
     if ("IntersectionObserver" in window) {
         let lazyObjectObserver = new IntersectionObserver(
             function (entries) {
