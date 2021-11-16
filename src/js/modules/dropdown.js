@@ -15,8 +15,7 @@ export function dropdown(button){
         }
         else {
           item.classList.add('show');
-          let number = content.querySelectorAll('.js-selector-checkbox').length;
-          console.log("number is ", number);
+          let number = content.querySelectorAll('.js-checkbox').length;
           let displayHeight = number * 40;
           content.style.height = displayHeight + "px";
         }
