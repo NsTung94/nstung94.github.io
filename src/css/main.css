@@ -420,7 +420,6 @@ label {
 .loadMore {
   width: 30px;
   height: 30px;
-  background-color: red;
 }
 
 .selector {
@@ -499,7 +498,7 @@ label {
   }
 }
 .selector__container-list {
-  padding: 0 0 0 20px;
+  padding: 0 20px;
 }
 .selector__container-filter {
   border-bottom: 1px solid #dfe7ea;
@@ -750,6 +749,12 @@ label {
 .owl-carousel.owl-loaded {
   display: flex;
 }
+@media only screen and (min-width: 1024px) {
+  .no-js .owl-carousel,
+.owl-carousel.owl-loaded {
+    padding: 25px 0;
+  }
+}
 
 .owl-carousel .owl-nav {
   margin: 0;
@@ -998,7 +1003,7 @@ label {
     justify-content: space-between;
     flex-wrap: wrap;
     flex-direction: row;
-    width: 20%;
+    width: 15%;
   }
 }
 .filter-sort-selection {
@@ -1065,6 +1070,10 @@ label {
   .active {
     height: 120px;
   }
+}
+
+.hide {
+  display: none;
 }
 
 .product {
@@ -1443,8 +1452,8 @@ label {
 }
 .footer__connect {
   display: flex;
-  align-items: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
   margin-top: 16px;
@@ -1456,17 +1465,241 @@ label {
   margin-bottom: 15px;
 }
 .footer__connect-download {
+  width: 40%;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
 }
+.footer__connect-download--option {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
 .footer__connect-download--button {
-  width: 100%;
   padding: 5px 0;
 }
+.footer__connect-term, .footer__connect-copyright {
+  margin: 10px;
+  margin-left: 0;
+}
 
+footer .option__list {
+  background-color: #011E41;
+}
+footer .option__list .container {
+  padding: 30px 10px 20px;
+  position: relative;
+}
+footer .option__item {
+  position: relative;
+  padding: 5px;
+}
+footer .option__item .heading {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  line-height: 24px;
+}
+footer .option__item .heading a,
+footer .option__item .heading .icon {
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
+footer .option__item .heading .icon {
+  position: absolute;
+  right: 0;
+  font-size: 30px;
+}
+footer .option__item .heading:after {
+  content: "";
+  display: block;
+  height: 1 px;
+  width: 100%;
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+footer .option__item .content {
+  position: absolute;
+  display: none;
+  color: white;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+}
+footer .option__item:after {
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  content: "";
+  bottom: 0;
+  background-color: white;
+}
+footer .container {
+  display: flex;
+  align-items: stretch;
+  justify-content: auto;
+  flex-wrap: auto;
+  flex-direction: column;
+}
+footer .container .connect {
+  margin-bottom: 50px;
+}
+footer .container .connect .social {
+  margin: 30px 0;
+}
+footer .container .connect .social .icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+footer .container .connect .social .icons img {
+  height: 28px;
+  margin-right: 30px;
+}
+footer .container .connect .social .infor {
+  color: var(--primary-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 26px;
+}
+footer .container .connect .download .heading {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 21.6px;
+  margin: 10px 0;
+}
+footer .container .connect .download__option {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 40px;
+}
+footer .container .connect .download__option .store {
+  margin-right: 15px;
+  border-radius: 2px;
+}
+footer .container .term {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 1200px) {
+  footer .option__list {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    overflow: hidden;
+    height: 375px;
+    padding: 30px 140px;
+  }
+  footer .option__list .container {
+    position: relative;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  footer .option__item .content {
+    position: relative;
+    display: block;
+    color: white;
+    height: auto;
+    margin-bottom: 0;
+  }
+  footer .option__item ul {
+    margin-top: auto;
+    padding: 0;
+  }
+  footer .option__item ul li {
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 400;
+  }
+  footer .option__item .heading {
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  footer .option__item .heading .icon {
+    display: none;
+  }
+  footer .option__item:after {
+    display: none;
+  }
+  footer .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin: 0 auto;
+  }
+  footer .container .connect {
+    display: flex;
+    align-items: auto;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+  }
+  footer .container .connect .social {
+    width: 65%;
+  }
+  footer .container .connect .social .icons {
+    margin-bottom: 10px;
+  }
+  footer .container .connect .download {
+    width: 35%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+  footer .container .connect .download .heading {
+    width: 100%;
+  }
+  footer .container .connect .download .option {
+    height: 50px;
+  }
+  footer .container .term,
+footer .container .copyright {
+    width: 50%;
+    margin-top: 15px;
+  }
+  footer .container .term {
+    order: 2;
+  }
+  footer .container .copyright {
+    order: 1;
+  }
+  footer .container__desktop-option {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+}
 .tag {
   border: 1px solid #011E41;
   padding: 0 8px;
@@ -1619,6 +1852,7 @@ label {
   position: relative;
   padding-left: 20px;
   font: 600 14px "Electrolux", serif;
+  cursor: pointer;
 }
 .cartpage__header-return:before {
   content: "";
@@ -2437,8 +2671,9 @@ input::placeholder {
 }
 
 .cart-active .cart {
-  overflow: auto;
+  overflow-y: auto;
   height: 500px;
+  overflow-x: hidden;
 }
 
 .price-old {

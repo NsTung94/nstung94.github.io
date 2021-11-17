@@ -4,7 +4,7 @@ export default function reset() {
       item.addEventListener("click", function () {
         document
           .querySelectorAll(
-            ".js-selector-checkbox input[type=checkbox]:checked"
+            ".js-checkbox input[type=checkbox]:checked"
           )
           .forEach(
             function(checkBox) {

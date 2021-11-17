@@ -9,7 +9,6 @@ import {
   closeSortSelector,
 } from "./modules/moveUp.js";
 import displayProduct from "./modules/displayProduct.js";
-import addCart from "./modules/addCart.js";
 
 openMenu(".js-open-menu");
 openSubMenu();
@@ -21,7 +20,6 @@ filterSelector();
 closeFilterSelector();
 sortSelector();
 closeSortSelector();
-addCart();
 
 var start = 0;
 var end = 3;
@@ -62,6 +60,27 @@ const loadProducts = async () => {
   }
 };
 loadProducts();
+
+let filter = document.querySelector(".filter");
+
+function hideFilter(destinationClass) {
+  let destination = document.querySelector(destinationClass);
+  console.log("hideFilter", destination)
+  let observer = new IntersectionObserver(function (entries) {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        filter.classList.add("hide");
+      } else {
+        filter.classList.remove("hide");
+      }
+    });
+  });
+
+  observer.observe(destination);
+}
+
+hideFilter("#header");
+hideFilter("#footer");
 
 // function filteringProduct(products) {
 //   // console.log('all products', products);

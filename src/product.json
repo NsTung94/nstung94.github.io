@@ -14,7 +14,8 @@
       "old": 7505000,
       "new": 3757000
     },
-
+    
+    "quantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -36,7 +37,9 @@
 
     "price": {
       "new": 14789999
+      
     },
+    "quantity": 2,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -58,7 +61,9 @@
     ],
     "price": {
       "new": 16390000
+      
     },
+    "quantity": 9,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -80,7 +85,9 @@
     ],
     "price": {
       "new": 16590000
+      
     },
+    "quantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -105,6 +112,8 @@
       "new": 25890000
     },
 
+    
+    "quantity":0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -121,11 +130,13 @@
     "review": 102,
     "dealType": [
         { "type": "new"},
-        { "type": "gift" }
+        { "type": "discount" }
     ],
     "price": {
       "new": 42990000
+      
     },
+    "quantity": 10,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -147,7 +158,9 @@
     ],
     "price": {
       "new": 11990000
+      
     },
+    "quantity": 2,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -172,6 +185,8 @@
       "new": 16495000
     },
 
+    
+    "quantity": 8,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -195,6 +210,8 @@
       "new": 16495000
     },
 
+    
+    "quantity": 1,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -203,7 +220,105 @@
     ]
   },
   {
-    "id": 6,
+    "id":10,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "gift"},
+        { "type": "bundle" }
+    ],
+    "price": {
+      "new": 42990000
+      
+    },
+    "quantity":5,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
+        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
+        {"value":"WaterStream for chilled water through the door."}
+      ]
+  },
+  {
+    "id": 11,
+    "picture": "./src/images/product/tulanh7.png",
+    "code": "EME3700H-H",
+    "name": "337L three-door refrigerator ",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "new": 11990000
+      
+    },
+    "quantity": 3,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
+        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
+        {"value":"WaterStream for chilled water through the door."}
+      ]
+  },
+  {
+    "id": 12,
+    "picture": "./src/images/product/tulanh8.png",
+    "code": "EQE6909A-B",
+    "name": "622L black Quattro French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "old": 32989999,
+      "new": 16495000
+    },
+
+    
+    "quantity": 6,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {"value":"Preserve the texture of your meat and seafood for longer."},
+      {"value":"Ideal conditions for all of you food and drinks."}
+    ]
+  },
+  {
+    "id":13,
+    "picture": "./src/images/product/tulanh9.png",
+    "code": "EQE6909A-B",
+    "name": "622L black Quattro French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [
+        { "type": "new"},
+        { "type": "discount" }
+    ],
+    "price": {
+      "old": 32989999,
+      "new": 16495000
+    },
+
+    
+    "quantity": 5,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {"value":"Preserve the texture of your meat and seafood for longer."},
+      {"value":"Ideal conditions for all of you food and drinks."}
+    ]
+  },
+  {
+    "id":14,
     "picture": "./src/images/product/tulanh6.png",
     "code": "EHE6879A-B",
     "name": "617L French door refrigerator",
@@ -211,11 +326,13 @@
     "review": 102,
     "dealType": [
         { "type": "new"},
-        { "type": "gift" }
+        { "type": "bundle" }
     ],
     "price": {
       "new": 42990000
+      
     },
+    "quantity":0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -225,7 +342,7 @@
       ]
   },
   {
-    "id": 7,
+    "id": 15,
     "picture": "./src/images/product/tulanh7.png",
     "code": "EME3700H-H",
     "name": "337L three-door refrigerator ",
@@ -237,7 +354,9 @@
     ],
     "price": {
       "new": 11990000
+      
     },
+    "quantity": 2,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -247,7 +366,7 @@
       ]
   },
   {
-    "id": 8,
+    "id": 16,
     "picture": "./src/images/product/tulanh8.png",
     "code": "EQE6909A-B",
     "name": "622L black Quattro French door refrigerator",
@@ -262,6 +381,8 @@
       "new": 16495000
     },
 
+    
+    "quantity": 4,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -270,7 +391,7 @@
     ]
   },
   {
-    "id": 9,
+    "id": 17,
     "picture": "./src/images/product/tulanh9.png",
     "code": "EQE6909A-B",
     "name": "622L black Quattro French door refrigerator",
@@ -285,96 +406,8 @@
       "new": 16495000
     },
 
-    "interest": 0,
-    "payment": 3300000,
-    "description": [
-      {"value":"Preserve the texture of your meat and seafood for longer."},
-      {"value":"Ideal conditions for all of you food and drinks."}
-    ]
-  },
-  {
-    "id": 6,
-    "picture": "./src/images/product/tulanh6.png",
-    "code": "EHE6879A-B",
-    "name": "617L French door refrigerator",
-    "category": "refrigeration",
-    "review": 102,
-    "dealType": [
-        { "type": "new"},
-        { "type": "gift" }
-    ],
-    "price": {
-      "new": 42990000
-    },
-    "interest": 0,
-    "payment": 3300000,
-    "description": [
-        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
-        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
-        {"value":"WaterStream for chilled water through the door."}
-      ]
-  },
-  {
-    "id": 7,
-    "picture": "./src/images/product/tulanh7.png",
-    "code": "EME3700H-H",
-    "name": "337L three-door refrigerator ",
-    "category": "refrigeration",
-    "review": 102,
-    "dealType": [
-        { "type": "new"},
-        { "type": "discount" }
-    ],
-    "price": {
-      "new": 11990000
-    },
-    "interest": 0,
-    "payment": 3300000,
-    "description": [
-        {"value":"TasteSeal keeps fish for 7 days* without freezing."},
-        {"value":"TasteLockAuto keeps vegetables fresh for 7 days*."},
-        {"value":"WaterStream for chilled water through the door."}
-      ]
-  },
-  {
-    "id": 8,
-    "picture": "./src/images/product/tulanh8.png",
-    "code": "EQE6909A-B",
-    "name": "622L black Quattro French door refrigerator",
-    "category": "refrigeration",
-    "review": 102,
-    "dealType": [
-        { "type": "new"},
-        { "type": "discount" }
-    ],
-    "price": {
-      "old": 32989999,
-      "new": 16495000
-    },
-
-    "interest": 0,
-    "payment": 3300000,
-    "description": [
-      {"value":"Preserve the texture of your meat and seafood for longer."},
-      {"value":"Ideal conditions for all of you food and drinks."}
-    ]
-  },
-  {
-    "id": 9,
-    "picture": "./src/images/product/tulanh9.png",
-    "code": "EQE6909A-B",
-    "name": "622L black Quattro French door refrigerator",
-    "category": "refrigeration",
-    "review": 102,
-    "dealType": [
-        { "type": "new"},
-        { "type": "discount" }
-    ],
-    "price": {
-      "old": 32989999,
-      "new": 16495000
-    },
-
+    
+    "quantity": 5,
     "interest": 0,
     "payment": 3300000,
     "description": [

@@ -1,5 +1,4 @@
 import { wish } from "./wish.js";
-import addCart from './addCart.js';
 import lazyImage from "./lazyImage.js";
 
 export default function displayProduct(product) {
@@ -124,7 +123,6 @@ export default function displayProduct(product) {
             learn more
         </button>
   `
-  addCart()
   productItem.appendChild(heartBtn);
   productItem.appendChild(tag);
   productItem.appendChild(image);

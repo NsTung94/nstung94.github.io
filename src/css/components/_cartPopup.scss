@@ -158,8 +158,9 @@
 .cart-active {
  
   .cart {
-      overflow: auto;
+      overflow-y: auto;
       height: 500px;
+      overflow-x:  hidden;
   }
 }
 

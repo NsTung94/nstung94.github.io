@@ -18,6 +18,7 @@
       position: relative;
       padding-left: 20px;
       font: 600 14px $font-primary;
+      cursor: pointer;
       &:before {
         content: "";
         width: 10px;

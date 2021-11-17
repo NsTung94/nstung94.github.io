@@ -42,40 +42,240 @@
         //   }
         // }
       }
-      &-content{
-          padding: 0;
-          height: 0;
-          overflow: hidden;
-          transition: 0.5s;
-          li{
-            padding: 5px;
-          }
-          // @include large {
-          //   display: flex;
-          //   height: 100px;
-          // }
+      &-content {
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        li {
+          padding: 5px;
+        }
+        // @include large {
+        //   display: flex;
+        //   height: 100px;
+        // }
       }
     }
     @include large {
-      @include flexBox($dir: column)
+      @include flexBox($dir: column);
     }
   }
 
-  &__connect{
-      @include flexBox();
-      margin-top: 16px;
-    &-icon{
-        margin:0 15px 15px 0;
+  &__connect {
+    @include flexBox(center, space-between);
+    margin-top: 16px;
+    &-icon {
+      margin: 0 15px 15px 0;
     }
-    &-infor{
-        margin-bottom: 15px;
+    &-infor {
+      margin-bottom: 15px;
     }
-    &-download{
+    &-download {
+      width: 40%;
+      &--option {
         @include flexBox();
-        &--button {
-            width: 100%;
-            padding: 5px 0;
+        gap: 10px;
+      }
+      @include flexBox();
+      &--button {
+        padding: 5px 0;
+      }
+      &--store {
+      }
+    }
+    &-term, &-copyright {
+      margin: 10px;
+      margin-left: 0;
+    }
+  }
+}
+
+footer {
+  .option {
+    &__list {
+      background-color: $primary-color;
+      .container {
+        padding: 30px 10px 20px;
+        position: relative;
+      }
+    }
+    &__item {
+      position: relative;
+      padding: 5px;
+      .heading {
+        position: relative;
+        box-sizing: border-box;
+        @include flexBox(center);
+        line-height: 24px;
+        a,
+        .icon {
+          text-transform: uppercase;
+          text-decoration: none;
+          font-size: 14px;
+          color: white;
+          font-weight: 500;
         }
+        .icon {
+          position: absolute;
+          right: 0;
+          font-size: 30px;
+        }
+        &:after {
+          content: "";
+          display: block;
+          height: 1 px;
+          width: 100%;
+          background-color: white;
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+        }
+      }
+      .content {
+        position: absolute;
+        display: none;
+        color: white;
+        width: 100%;
+        height: 0;
+        overflow: hidden;
+      }
+      &:after {
+        position: absolute;
+        height: 1px;
+        width: 100%;
+        content: "";
+        bottom: 0;
+        background-color: white;
+      }
+    }
+  }
+  .container {
+    @include flexBox(stretch, auto, auto, column);
+    .connect {
+      margin-bottom: 50px;
+      .social {
+        margin: 30px 0;
+        .icons {
+          @include flexBox(center);
+          margin-bottom: 30px;
+          img {
+            height: 28px;
+            margin-right: 30px;
+          }
+        }
+        .infor {
+          color: var(--primary-color);
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 26px;
+        }
+      }
+      .download {
+        .heading {
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 21.6px;
+          margin: 10px 0;
+        }
+        &__option {
+          @include flexBox(center);
+          height: 40px;
+          .store {
+            margin-right: 15px;
+            border-radius: 2px;
+          }
+        }
+      }
+    }
+    .term {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  footer {
+    .option__list {
+      // @include flexBox(center, flex-start, wrap, column);
+      @include flexBox();
+      overflow: hidden;
+      height: 375px;
+
+      padding: 30px 140px;
+      .container {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .option__item {
+      .content {
+        position: relative;
+        display: block;
+        color: white;
+        height: auto;
+        margin-bottom: 0;
+      }
+      ul {
+        margin-top: auto;
+        padding: 0;
+        li {
+          font-size: 14px;
+          line-height: 26px;
+          font-weight: 400;
+        }
+      }
+      .heading {
+        margin-bottom: 10px;
+        font-weight: 600;
+        .icon {
+          display: none;
+        }
+      }
+      &:after {
+        display: none;
+      }
+    }
+    .container {
+      @include flexBox();
+      margin: 0 auto;
+      
+      .connect {
+        @include flexBox(auto, space-between);
+        width: 100%;
+        margin: 0;
+        .social {
+          width: 65%;
+          .icons {
+            margin-bottom: 10px;
+          }
+        }
+        .download {
+          width: 35%;
+          @include flexBox(flex-start, center, wrap, column);
+          .heading {
+            width: 100%;
+          }
+          .option {
+            height: 50px;
+          }
+        }
+      }
+      .term,
+      .copyright {
+        width: 50%;
+        margin-top: 15px;
+      }
+      .term {
+        order: 2;
+      }
+      .copyright {
+        order: 1;
+      }
+      &__desktop-option {
+        @include flexBox(flex-start, space-between, wrap, column);
+    }
     }
   }
 }

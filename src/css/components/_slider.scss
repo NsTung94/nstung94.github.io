@@ -6,6 +6,10 @@
 .no-js .owl-carousel,
 .owl-carousel.owl-loaded {
   display: flex;
+  // padding: 25px 0;
+  @include large {
+    padding: 25px 0;
+  }
 }
 .owl-carousel .owl-nav {
   margin: 0;

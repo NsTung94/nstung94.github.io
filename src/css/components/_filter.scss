@@ -71,7 +71,7 @@
     width: 100%;
     &__button-wrap-reset {
       @include flexBox(center, space-between);
-      width: 20%;
+      width: 15%;
     }
   }
 
@@ -124,4 +124,8 @@
   @include large {
     height: 120px;
   }
+}
+
+.hide {
+  display: none;
 }
