@@ -13,7 +13,7 @@ export default function displayProduct(product) {
   tag.classList.add("item", "product__item-tag");
 
   var image = document.createElement('div');
-  image.classList.add('item', 'product__item-img')
+  image.classList.add('product__item-img');
   // document.addEventListener("DOMContentLoaded",lazyImage());
 
   var detail = document.createElement("div");
@@ -56,7 +56,7 @@ export default function displayProduct(product) {
       tagString.push('<div class="tag tag--bundle">bundle</div>');
     }
     if (product.dealType[i].type == "gift") {
-      tagString.push('<div class="tag tag--gift">free gift</div>');
+      tagString.push('<div class="tag tag--gift"><img src="./src/images/icon/gift.png"/>free gift</div>');
     }
   }
 

@@ -1,0 +1,142 @@
+.cartpage {
+  
+  &__header {
+    @include flexBox(center, center);
+    height: 65px;
+    border-bottom: 1px solid $secondary-color;
+    margin: 0 auto;
+  }
+  &__heading {
+    font: 600 40px/48px $font-primary;
+    padding: 20px 0;
+  }
+  &__product {
+    @include flexBox(stretch);
+
+    &-checkbox{
+        @include flexBox(flex-end);
+        gap: 10px;
+        &--checkmark {
+            margin-right: 10px;
+        }
+
+    }
+    &-code {
+      text-transform: uppercase;
+      font: 400 14px/21px $font-primary;
+    }
+    &-cost {
+        text-align: center;
+    }
+    &-detail {
+      @include flexBox(baseline, space-between);
+      width: 100%;
+      &--install {
+          align-items: flex-end;
+      }
+    }
+    &-imgsrc {
+      width: 100%;
+    }
+    &-left {
+      @include flexBox(center, center, wrap, column);
+      width: 20%;
+    }
+    &-link {
+      position: relative;
+      width: 20%;
+      height: 50px;
+      &:before {
+        content: "";
+        width: 50px;
+        height: 30px;
+        border: solid $primary-color;
+        padding: 3px;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        border-width: 0 0 1px 1px;
+      }
+    }
+    &-name {
+      font: 600 18px/26px $font-primary;
+      padding-bottom: 10px;
+      width: calc(100% - 20px);
+    }
+
+    &-price {
+        text-align: end;
+      &--new {
+        font: 600 16px/22px $font-primary;
+      }
+      &--old {
+        font: 400 14px/19px $font-primary;
+        text-decoration: line-through;
+      }
+    }
+    &-quantity {
+      @include flexBox(stretch);
+      padding: 15px 0;
+      &--decrease,
+      &--increase {
+        position: relative;
+        &:before {
+          content: "";
+          width: 14px;
+          height: 2px;
+          position: absolute;
+          top: calc(50% - 1px);
+          background-color: #011e41;
+          left: calc(50% - 7px);
+        }
+      }
+      &--increase {
+        &:after {
+          content: "";
+          width: 2px;
+          height: 14px;
+          position: absolute;
+          top: calc(50% - 7px);
+          background-color: #011e41;
+          left: calc(50% - 1px);
+        }
+      }
+      &--number {
+          font-size: 16px;
+      }
+    }
+    &-right {
+      @include flexBox();
+      width: 80% ;
+    }
+  }
+  &__title {
+    font: 600 16px/26px $font-primary;
+    text-transform: uppercase;
+    border-bottom: 1px solid $secondary-color;
+    margin-bottom: 20px;
+  }
+  &__return {
+    position: relative;
+    margin: 10px 20px;
+    padding-left: 20px;
+    font: 600 14px $font-primary;
+    cursor: pointer;
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: solid $primary-color;
+      padding: 3px;
+      position: absolute;
+      transform: rotate(-45deg);
+      top: 4px;
+      border-width: 2px 0 0 2px;
+      left: 0;
+    }
+  }
+  &-box {
+    width: 40px;
+    height: 40px;
+  }
+}

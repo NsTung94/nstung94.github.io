@@ -69,9 +69,9 @@ function hideFilter(destinationClass) {
   let observer = new IntersectionObserver(function (entries) {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        filter.classList.add("hide");
+        filter.classList.add("hide-on-mobile");
       } else {
-        filter.classList.remove("hide");
+        filter.classList.remove("hide-on-mobile");
       }
     });
   });

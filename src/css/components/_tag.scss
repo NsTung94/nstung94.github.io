@@ -16,7 +16,17 @@
     border: none;
   }
   &--gift {
-    // margin-bottom: 5px;
+    position: relative;
+    
+    &:before {
+      position: absolute;
+      background-image: url(/src/images/icon/gift.png);
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+
+    }
   }
   &--bundle,
   &--discount {

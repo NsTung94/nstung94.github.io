@@ -30,11 +30,13 @@ export function sortSelector() {
 }
 
 export function closeSortSelector() {
+  console.log('close?')
   let btns = document.querySelectorAll(".js-sort-close");
   let sortPopup = document.querySelector(".js-sort-selector");
   btns.forEach(function (btn) {
       btn.addEventListener("click", function () {
         sortPopup.classList.remove("active");
+        console.log('closed')
       });
   });
 }
