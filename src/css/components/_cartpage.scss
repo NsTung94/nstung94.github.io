@@ -453,27 +453,24 @@
   }
 }
 
-.quantity-button {
-  border: 1px solid $secondary-color;
-  width: 30px;
-  height: 100%;
-  position: relative;
-  @include flexBox(center, center, wrap, column);
-  span {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 30px;
-    &:first-child {
-      transform: translateY(-50%);
-    }
-  }
-}
-
-input::placeholder {
-  padding-left: 10px;
-}
-
-// .active-cartpage {
-//   left: 0;
+// .quantity-button {
+//   border: 1px solid $secondary-color;
+//   width: 30px;
+//   height: 100%;
+//   position: relative;
+//   @include flexBox(center, center, wrap, column);
+//   span {
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     font-size: 30px;
+//     &:first-child {
+//       transform: translateY(-50%);
+//     }
+//   }
 // }
+
+
+.active-sub {
+  height: 100%;
+}

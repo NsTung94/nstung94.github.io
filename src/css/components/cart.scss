@@ -1,45 +1,226 @@
 .cartpage {
-  
+  &__add {
+    margin: 15px 0;
+    @include flexBox(stretch);
+    background-color: $secondary-color;
+    padding: 10px 15px;
+    &-btn {
+      padding: 8px 30px;
+    }
+    &-left {
+      width: 20%;
+      @include large {
+        margin-right: 10px;
+      }
+    }
+    &-right {
+      @include flexBox(center);
+      width: 80%;
+      @include large {
+        width: calc( 80% - 10px);
+      }
+    }
+    &-increase,
+    &-number,
+    &-decrease {
+      width: 35px;
+      height: 35px;
+    }
+
+    &-img {
+      @include flexBox(center, center);
+      padding: 0 10px 10px 0;
+      width: 100%;
+      @include large {
+        padding: 15px;
+      }
+    }
+  }
   &__header {
     @include flexBox(center, center);
     height: 65px;
     border-bottom: 1px solid $secondary-color;
-    margin: 0 auto;
+    @include large {
+      justify-content: flex-start;
+      width: 75%;
+      margin: 0 auto;
+      position: relative;
+    }
+    &-logo {
+      @include large {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+  &__left {
+    @include large {
+
+      width: calc(56%);
+    }
+  }
+  &__right {
+    @include large {
+      width: calc(100% / 3);
+    }
   }
   &__heading {
     font: 600 40px/48px $font-primary;
     padding: 20px 0;
+    @include large {
+      padding: 40px 0;
+    }
+  }
+  &__gift {
+    @include flexBox(stretch);
+    border: 1px solid $primary-color;
+    margin: 5px 0;
+    padding-bottom: 10px;
+    &-button {
+      width: 100%;
+      @include flexBox(center, center);
+      gap: 10px;
+      border-radius: 0px;
+      border: none;
+      pointer-events: none;
+    }
+
+    &-cost {
+      @include flexBox();
+      width: fit-content;
+      gap: 12px;
+      margin-right: 20px;
+    }
+    &-img {
+      @include flexBox(center, center);
+      height: 100%;
+    }
+    &-left {
+      width: 40%;
+    }
+    &-name {
+      padding-top: 10px;
+      font: 600 14px $font-primary;
+    }
+    &-quantity {
+      font: 600 14px $font-primary;
+    }
+    &-right {
+      width: 60%;
+    }
+  }
+  &__more {
+    @include flexBox(stretch);
+    margin-bottom: 40px;
+    &--buy {
+      border: 1px solid $secondary-color;
+    }
+    &-item {
+      @include flexBox(center, center, wrap, column);
+      width: 50%;
+      @include large {
+        width: calc(100% / 3);
+      }
+      &--bundle {
+        background-color: $primary-color;
+        @include flexBox(stretch, $dir: column);
+      }
+    }
+    &-button {
+      width: 100%;
+      font: 600 14px $font-primary;
+      &--bundle {
+        margin: auto;
+        width: 80%;
+      }
+    }
+    &-code {
+      font: 600 14px $font-primary;
+      margin-bottom: 4px;
+    }
+    &-cost {
+      font: 600 24px $font-primary;
+      margin: 16px;
+      &--tax {
+        font-size: 16px;
+        &:after {
+          content: "(tax included)";
+          font: 400 14px $font-primary;
+        }
+      }
+    }
+    &-title,
+    &-save,
+    &-price,
+    &-oldprice,
+    &-name {
+      @include flexBox(center, center);
+      color: #fff;
+    }
+    &-title {
+      @include flexBox(center, center);
+      text-transform: capitalize;
+      height: 57px;
+    }
+    &-save {
+      background-color: red;
+      border: none;
+      border-radius: 0;
+    }
+    &-name {
+      font: 600 14px $font-primary;
+      margin: 15px 0 8px;
+    }
+    &-price {
+      font: 600 32px $font-primary;
+    }
+    &-oldprice {
+      font: 400 14px $font-primary;
+      margin-bottom: 25px;
+    }
   }
   &__product {
     @include flexBox(stretch);
-
-    &-checkbox{
-        @include flexBox(flex-end);
-        gap: 10px;
-        &--checkmark {
-            margin-right: 10px;
-        }
-
+    margin: 20px 0 40px;
+    &-checkbox {
+      @include flexBox(flex-end);
+      gap: 10px;
+      &--checkmark {
+        margin-right: 10px;
+      }
     }
     &-code {
       text-transform: uppercase;
       font: 400 14px/21px $font-primary;
     }
     &-cost {
-        text-align: center;
+      text-align: center;
+    }
+    &-delete {
+      align-self: flex-start;
     }
     &-detail {
-      @include flexBox(baseline, space-between);
+      @include flexBox(center, space-between);
+      margin-bottom: 10px;
       width: 100%;
       &--install {
-          align-items: flex-end;
+        align-items: flex-end;
       }
     }
     &-imgsrc {
       width: 100%;
     }
+    &-outstock {
+      font: 600 14px $font-primary;
+      &-note {
+        font-weight: 400;
+      }
+    }
     &-left {
-      @include flexBox(center, center, wrap, column);
+      @include flexBox(center, flex-start, wrap, column);
       width: 20%;
     }
     &-link {
@@ -48,35 +229,31 @@
       height: 50px;
       &:before {
         content: "";
-        width: 50px;
-        height: 30px;
+        width: 35px;
+        height: 50px;
         border: solid $primary-color;
         padding: 3px;
         position: absolute;
-        top: -10px;
+        top: 15px;
         left: 50%;
         border-width: 0 0 1px 1px;
       }
     }
     &-name {
       font: 600 18px/26px $font-primary;
-      padding-bottom: 10px;
       width: calc(100% - 20px);
     }
-
     &-price {
-        text-align: end;
+      text-align: end;
       &--new {
         font: 600 16px/22px $font-primary;
       }
       &--old {
         font: 400 14px/19px $font-primary;
-        text-decoration: line-through;
       }
     }
     &-quantity {
       @include flexBox(stretch);
-      padding: 15px 0;
       &--decrease,
       &--increase {
         position: relative;
@@ -102,12 +279,111 @@
         }
       }
       &--number {
-          font-size: 16px;
+        font-size: 16px;
       }
     }
     &-right {
       @include flexBox();
-      width: 80% ;
+      width: 80%;
+    }
+  }
+  &__promotion {
+    @include flexBox(stretch);
+    margin: 20px 0;
+    &-input{
+      flex-grow: 1;
+    }
+  }
+  &__apply {
+    width: 120px;
+  }
+  &__price {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    @include large {
+      position: relative;
+      background-color: transparent;
+    }
+    &-container {
+      padding: 15px;
+      @include large {
+        padding: 0 0 40px 30px;
+      }
+    }
+    &-total {
+      @include flexBox(center, space-between);
+      margin-bottom: 10px;
+      @include large {
+        margin: 40px 0 0 0;
+      }
+      &--title {
+        text-transform: uppercase;
+        font: 600 12px/20px $font-primary;
+        @include large {
+          font-size: 22px;
+        }
+      }
+      &--icon {
+        transform: rotate(-90deg);
+        width: 10px;
+        height: 10px;
+      }
+      &--number {
+        @include flexBox(center, center);
+        gap: 10px;
+        span {
+          font: 600 18px/26px $font-primary;
+          position: relative;
+        }
+      }
+    }
+    &-noted {
+      @include large {
+        opacity: 0.5;
+        @include flexBox(flex-end, flex-end);
+        margin-bottom: 20px;
+        font: 400 14px $font-primary;
+      }
+    }
+    &-free {
+      font: 400 14px $font-primary;
+    }
+    &-secure {
+      font: 600 14px $font-primary;
+    }
+  }
+  &__sub {
+    display: none;
+    height: 0;
+    @include large {
+      @include flexBox(stretch, $dir: column);
+      height: auto;
+    }
+    &-overlay {
+      background-color: #011e41;
+      opacity: 0.5;
+      flex-grow: 1;
+    }
+    &-item {
+      @include flexBox(center, space-between);
+      font: 600 12px/26px $font-primary;
+      text-transform: uppercase;
+    }
+    &-header {
+      height: 30px;
+      @include flexBox(center, space-between);
+      border-bottom: 1px solid $secondary-color;
+      &-title {
+        font: 600 16px $font-primary;
+        text-transform: uppercase;
+      }
+
+      img {
+        transform: rotate(90deg);
+      }
     }
   }
   &__title {
@@ -117,8 +393,9 @@
     margin-bottom: 20px;
   }
   &__return {
+    width: 150px;
     position: relative;
-    margin: 10px 20px;
+    margin: 15px 0px;
     padding-left: 20px;
     font: 600 14px $font-primary;
     cursor: pointer;
@@ -138,5 +415,52 @@
   &-box {
     width: 40px;
     height: 40px;
+  }
+  &__footer {
+    margin-bottom: 200px;
+    &-header {
+      border: none;
+    }
+    &-list {
+      list-style: none;
+    }
+    &-method {
+      position: relative;
+      padding-left: 25px;
+      &:before {
+        content: "";
+        width: 7px;
+        height: 15px;
+        border: solid $primary-color;
+        padding: 3px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: -5px;
+        border-width: 0 3px 3px 0;
+        left: 0;
+      }
+    }
+    &-logos {
+      @include flexBox();
+      gap: 10px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.row {
+  @include flexBox($jc: space-between);
+}
+
+.expand {
+  @include flexBox(stretch, $dir: column);
+  height: auto;
+}
+
+.wrapper {
+  @include large {
+    height: 100%;
+    background: linear-gradient(90deg, #fff 60%, #f2f5f7 40%);
+
   }
 }

@@ -99,6 +99,14 @@ label {
   align-items: center;
   // margin-bottom: 16px;
 }
+
+.oldprice {
+  text-decoration: line-through;
+}
+
+.danger {
+  color: red;
+}
 .disable {
   opacity: 0.5;
   pointer-events: none;

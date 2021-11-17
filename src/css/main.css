@@ -349,6 +349,14 @@ label {
   align-items: center;
 }
 
+.oldprice {
+  text-decoration: line-through;
+}
+
+.danger {
+  color: red;
+}
+
 .disable {
   opacity: 0.5;
   pointer-events: none;
@@ -1703,6 +1711,58 @@ label {
   top: 3px;
 }
 
+.cartpage__add {
+  margin: 15px 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  background-color: #dfe7ea;
+  padding: 10px 15px;
+}
+.cartpage__add-btn {
+  padding: 8px 30px;
+}
+.cartpage__add-left {
+  width: 20%;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__add-left {
+    margin-right: 10px;
+  }
+}
+.cartpage__add-right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 80%;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__add-right {
+    width: calc(80% - 10px);
+  }
+}
+.cartpage__add-increase, .cartpage__add-number, .cartpage__add-decrease {
+  width: 35px;
+  height: 35px;
+}
+.cartpage__add-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 0 10px 10px 0;
+  width: 100%;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__add-img {
+    padding: 15px;
+  }
+}
 .cartpage__header {
   display: flex;
   align-items: center;
@@ -1711,11 +1771,183 @@ label {
   flex-direction: row;
   height: 65px;
   border-bottom: 1px solid #dfe7ea;
-  margin: 0 auto;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__header {
+    justify-content: flex-start;
+    width: 75%;
+    margin: 0 auto;
+    position: relative;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__header-logo {
+    width: fit-content;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__left {
+    width: 56%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__right {
+    width: 33.3333333333%;
+  }
 }
 .cartpage__heading {
   font: 600 40px/48px "Electrolux", serif;
   padding: 20px 0;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__heading {
+    padding: 40px 0;
+  }
+}
+.cartpage__gift {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: 1px solid #011E41;
+  margin: 5px 0;
+  padding-bottom: 10px;
+}
+.cartpage__gift-button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  border-radius: 0px;
+  border: none;
+  pointer-events: none;
+}
+.cartpage__gift-cost {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: fit-content;
+  gap: 12px;
+  margin-right: 20px;
+}
+.cartpage__gift-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 100%;
+}
+.cartpage__gift-left {
+  width: 40%;
+}
+.cartpage__gift-name {
+  padding-top: 10px;
+  font: 600 14px "Electrolux", serif;
+}
+.cartpage__gift-quantity {
+  font: 600 14px "Electrolux", serif;
+}
+.cartpage__gift-right {
+  width: 60%;
+}
+.cartpage__more {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 40px;
+}
+.cartpage__more--buy {
+  border: 1px solid #dfe7ea;
+}
+.cartpage__more-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 50%;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-item {
+    width: 33.3333333333%;
+  }
+}
+.cartpage__more-item--bundle {
+  background-color: #011E41;
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+.cartpage__more-button {
+  width: 100%;
+  font: 600 14px "Electrolux", serif;
+}
+.cartpage__more-button--bundle {
+  margin: auto;
+  width: 80%;
+}
+.cartpage__more-code {
+  font: 600 14px "Electrolux", serif;
+  margin-bottom: 4px;
+}
+.cartpage__more-cost {
+  font: 600 24px "Electrolux", serif;
+  margin: 16px;
+}
+.cartpage__more-cost--tax {
+  font-size: 16px;
+}
+.cartpage__more-cost--tax:after {
+  content: "(tax included)";
+  font: 400 14px "Electrolux", serif;
+}
+.cartpage__more-title, .cartpage__more-save, .cartpage__more-price, .cartpage__more-oldprice, .cartpage__more-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  color: #fff;
+}
+.cartpage__more-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  text-transform: capitalize;
+  height: 57px;
+}
+.cartpage__more-save {
+  background-color: red;
+  border: none;
+  border-radius: 0;
+}
+.cartpage__more-name {
+  font: 600 14px "Electrolux", serif;
+  margin: 15px 0 8px;
+}
+.cartpage__more-price {
+  font: 600 32px "Electrolux", serif;
+}
+.cartpage__more-oldprice {
+  font: 400 14px "Electrolux", serif;
+  margin-bottom: 25px;
 }
 .cartpage__product {
   display: flex;
@@ -1723,6 +1955,7 @@ label {
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
+  margin: 20px 0 40px;
 }
 .cartpage__product-checkbox {
   display: flex;
@@ -1742,12 +1975,16 @@ label {
 .cartpage__product-cost {
   text-align: center;
 }
+.cartpage__product-delete {
+  align-self: flex-start;
+}
 .cartpage__product-detail {
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   flex-direction: row;
+  margin-bottom: 10px;
   width: 100%;
 }
 .cartpage__product-detail--install {
@@ -1756,10 +1993,16 @@ label {
 .cartpage__product-imgsrc {
   width: 100%;
 }
+.cartpage__product-outstock {
+  font: 600 14px "Electrolux", serif;
+}
+.cartpage__product-outstock-note {
+  font-weight: 400;
+}
 .cartpage__product-left {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
   width: 20%;
@@ -1771,18 +2014,17 @@ label {
 }
 .cartpage__product-link:before {
   content: "";
-  width: 50px;
-  height: 30px;
+  width: 35px;
+  height: 50px;
   border: solid #011E41;
   padding: 3px;
   position: absolute;
-  top: -10px;
+  top: 15px;
   left: 50%;
   border-width: 0 0 1px 1px;
 }
 .cartpage__product-name {
   font: 600 18px/26px "Electrolux", serif;
-  padding-bottom: 10px;
   width: calc(100% - 20px);
 }
 .cartpage__product-price {
@@ -1793,7 +2035,6 @@ label {
 }
 .cartpage__product-price--old {
   font: 400 14px/19px "Electrolux", serif;
-  text-decoration: line-through;
 }
 .cartpage__product-quantity {
   display: flex;
@@ -1801,7 +2042,6 @@ label {
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
-  padding: 15px 0;
 }
 .cartpage__product-quantity--decrease, .cartpage__product-quantity--increase {
   position: relative;
@@ -1835,6 +2075,142 @@ label {
   flex-direction: row;
   width: 80%;
 }
+.cartpage__promotion {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 20px 0;
+}
+.cartpage__promotion-input {
+  flex-grow: 1;
+}
+.cartpage__apply {
+  width: 120px;
+}
+.cartpage__price {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price {
+    position: relative;
+    background-color: transparent;
+  }
+}
+.cartpage__price-container {
+  padding: 15px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-container {
+    padding: 0 0 40px 30px;
+  }
+}
+.cartpage__price-total {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 10px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-total {
+    margin: 40px 0 0 0;
+  }
+}
+.cartpage__price-total--title {
+  text-transform: uppercase;
+  font: 600 12px/20px "Electrolux", serif;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-total--title {
+    font-size: 22px;
+  }
+}
+.cartpage__price-total--icon {
+  transform: rotate(-90deg);
+  width: 10px;
+  height: 10px;
+}
+.cartpage__price-total--number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+}
+.cartpage__price-total--number span {
+  font: 600 18px/26px "Electrolux", serif;
+  position: relative;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-noted {
+    opacity: 0.5;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 20px;
+    font: 400 14px "Electrolux", serif;
+  }
+}
+.cartpage__price-free {
+  font: 400 14px "Electrolux", serif;
+}
+.cartpage__price-secure {
+  font: 600 14px "Electrolux", serif;
+}
+.cartpage__sub {
+  display: none;
+  height: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__sub {
+    display: flex;
+    align-items: stretch;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: auto;
+  }
+}
+.cartpage__sub-overlay {
+  background-color: #011e41;
+  opacity: 0.5;
+  flex-grow: 1;
+}
+.cartpage__sub-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  font: 600 12px/26px "Electrolux", serif;
+  text-transform: uppercase;
+}
+.cartpage__sub-header {
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  border-bottom: 1px solid #dfe7ea;
+}
+.cartpage__sub-header-title {
+  font: 600 16px "Electrolux", serif;
+  text-transform: uppercase;
+}
+.cartpage__sub-header img {
+  transform: rotate(90deg);
+}
 .cartpage__title {
   font: 600 16px/26px "Electrolux", serif;
   text-transform: uppercase;
@@ -1842,8 +2218,9 @@ label {
   margin-bottom: 20px;
 }
 .cartpage__return {
+  width: 150px;
   position: relative;
-  margin: 10px 20px;
+  margin: 15px 0px;
   padding-left: 20px;
   font: 600 14px "Electrolux", serif;
   cursor: pointer;
@@ -1863,6 +2240,64 @@ label {
 .cartpage-box {
   width: 40px;
   height: 40px;
+}
+.cartpage__footer {
+  margin-bottom: 200px;
+}
+.cartpage__footer-header {
+  border: none;
+}
+.cartpage__footer-list {
+  list-style: none;
+}
+.cartpage__footer-method {
+  position: relative;
+  padding-left: 25px;
+}
+.cartpage__footer-method:before {
+  content: "";
+  width: 7px;
+  height: 15px;
+  border: solid #011E41;
+  padding: 3px;
+  position: absolute;
+  transform: rotate(45deg);
+  top: -5px;
+  border-width: 0 3px 3px 0;
+  left: 0;
+}
+.cartpage__footer-logos {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.expand {
+  display: flex;
+  align-items: stretch;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+  .wrapper {
+    height: 100%;
+    background: linear-gradient(90deg, #fff 60%, #f2f5f7 40%);
+  }
 }
 
 .count__wrapper {
