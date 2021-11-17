@@ -100,7 +100,7 @@
       }
     }
     &--list {
-      background-color: #fff;
+      background-color: $secondary-color;
       width: 100%;
       height: 20%;
       @include flexBox(center, center, wrap, column);
@@ -108,12 +108,19 @@
         border: none;
         width: 100%;
         padding: 5px;
+        
         cursor: pointer;
         background-color: #fff;
+        &:hover {
+          opacity: 1;
+        }
       }
       @include large {
         height: 100%;
         justify-content: unset;
+      }
+      &:hover {
+        opacity: 1;
       }
     }
   }
@@ -121,6 +128,7 @@
 
 .active {
   bottom: 0;
+  opacity: 1;
   @include large {
     height: 120px;
   }
