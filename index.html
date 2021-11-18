@@ -32,8 +32,8 @@
         <div class="menu__content">
           <div class="menu__content-heading js-open-submenu">
             <div class="menu__content-heading-title">
-              <img src="./src/images/icon/user.png" alt="" />
-              <span>Sign in</span>
+              <img class="menu__content-heading-img" src="./src/images/icon/user.png" alt="" />
+              <span class="menu__content-heading-span">Sign in</span>
             </div>
             <span><img src="" alt="" /> </span>
             <div class="menu__subMenu js-submenu">
@@ -107,13 +107,13 @@
             </div>
           </div>
           <div class="menu__footer">
-            <a href="#" class="link">
+            <a class="menu__footer-a" href="#" class="link">
               <img src="./src/images/icon/heart-outline-icon.svg" alt="" />
               <span>Wistlist</span>
             </a>
           </div>
           <div class="menu__footer">
-            <a href="#" class="link">
+            <a class="menu__footer-a" href="#" class="link">
               <img src="./src/images/icon/user.png" alt="" />
               <span>Language</span>
             </a>
@@ -121,7 +121,7 @@
         </div>
         <div class="menu__overlay js-close-menu">
           <div class="overlay__heading">
-            <span class="icon">
+            <span class="overlay__heading-icon" class="icon">
               <img src="./src/images/icon/close-light-icon.svg" alt="" />
             </span>
           </div>
@@ -174,7 +174,7 @@
                   <div class="cart cart-active__item">
                     <div class="item cart__header">
                       <div class="cart__header-title">Your cart</div>
-                      <div class="cart__header-number">7 products</div>
+                      <div class="cart__header-number js-number-cart-item">7 products</div>
                     </div>
                     <div
                       class="
@@ -183,7 +183,7 @@
                         js-hasItem js-hide-on-none
                       "
                     >
-                      <div class="cart__item">
+                      <!-- <div class="cart__item">
                         <div class="cart__item-img">
                           <img src="./src/images/product/tulanh1.png" alt="" />
                         </div>
@@ -330,7 +330,7 @@
                           </div>
                           
                         </div>
-                      </div>
+                      </div> -->
                     </div>
                     <div class="item cart__footer js-hide-on-none hide-on-none">
                       <div class="cart__footer-total">
@@ -386,7 +386,7 @@
                   "
                 >
                   EN
-                  <img src="./src/images/icon/chevron-down.png" alt="" />
+                  <img class="header__navigation-language--icon" src="./src/images/icon/chevron-down.png" alt="" />
                   <ul
                     class="
                       header__navigation-language-dropdown
@@ -486,60 +486,62 @@
           </div>
         </div>
       </section>
-      <section class="container filter">
-        <div class="container__row filter__wrapper">
-          <div class="filter__button-wrap-reset">
-            <div class="btn center-flex-row filter__button js-selector-open">
-              <img
-                class="hide-on-desktop"
-                src="./src/images/icon/filter-icon.svg"
-                alt=""
-              />
-              <div class="filter__button-item center-flex-row">Filter</div>
-            </div>
-            <div class="filter__button-reset hide-on-mobile js-reset-selector">
-              <img src="./src/images/icon/reset-filter.svg" alt="" />
-              <span class="filter__button-reset-name">Reset</span>
-            </div>
-          </div>
-          <div
-            class="
-              btn btn-no-border
-              filter__button filter__button-number
-              hide-on-mobile
-            "
-          >
-            <span class="filter__button-item">17</span>
-          </div>
-          <div
-            class="
-              btn
-              center-flex-row
-              filter__button
-              js-include-active
-              center-flex-row
-            "
-          >
-            <div class="filter__button-item js-sort-open">
-              <span class="filter__button-detail">Sort By</span>
-              <div class="filter__button-detail hide-on-mobile">: default</div>
-              <div class="filter__button-detail">
-                <img src="./src/images/icon/chevron-down.png" alt="" />
+      <section class="filter">
+        <div class="container filter__container">
+          <div class="container__row filter__wrapper">
+            <div class="filter__button-wrap-reset">
+              <div class="btn center-flex-row filter__button js-selector-open">
+                <img
+                  class="hide-on-desktop"
+                  src="./src/images/icon/filter-icon.svg"
+                  alt=""
+                />
+                <div class="filter__button-item center-flex-row">Filter</div>
+              </div>
+              <div class="filter__button-reset hide-on-mobile js-reset-selector">
+                <img src="./src/images/icon/reset-filter.svg" alt="" />
+                <span class="filter__button-reset-name">Reset</span>
               </div>
             </div>
-            <div class="filter-sort-selection js-sort-selector">
-              <div
-                class="
-                  filter-sort-selection--overlay
-                  hide-on-desktop
-                  js-sort-close
-                "
-              ></div>
-              <div class="filter-sort-selection--list js-sort-close">
-                <button class="filter-sort-selection--button">Default</button>
-                <button class="filter-sort-selection--button">Price high to low</button>
-                <button class="filter-sort-selection--button">Price low to high</button>
-                <button class="filter-sort-selection--button">Highest rate</button>
+            <div
+              class="
+                btn btn-no-border
+                filter__button filter__button-number
+                hide-on-mobile
+              "
+            >
+              <span class="filter__button-item">17</span>
+            </div>
+            <div
+              class="
+                btn
+                center-flex-row
+                filter__button
+                js-include-active
+                center-flex-row
+              "
+            >
+              <div class="filter__button-item js-sort-open">
+                <span class="filter__button-detail">Sort By</span>
+                <div class="filter__button-detail hide-on-mobile">: default</div>
+                <div class="filter__button-detail">
+                  <img src="./src/images/icon/chevron-down.png" alt="" />
+                </div>
+              </div>
+              <div class="filter-sort-selection js-sort-selector">
+                <div
+                  class="
+                    filter-sort-selection--overlay
+                    hide-on-desktop
+                    js-sort-close
+                  "
+                ></div>
+                <div class="filter-sort-selection--list js-sort-close">
+                  <button class="filter-sort-selection--button">Default</button>
+                  <button class="filter-sort-selection--button">Price high to low</button>
+                  <button class="filter-sort-selection--button">Price low to high</button>
+                  <button class="filter-sort-selection--button">Highest rate</button>
+                </div>
               </div>
             </div>
           </div>
@@ -964,7 +966,7 @@
       autoWidth: true,
       responsive: {
         0: {
-          center: true,
+          center: false,
           item: 2,
         },
         600: {

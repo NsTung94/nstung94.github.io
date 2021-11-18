@@ -21,15 +21,16 @@
     overflow-x: hidden;
     &-heading {
       @include flexBox(center, flex-end);
-      span {
+      &-span {
         height: 18px;
         font-weight: 600;
         display: block;
         position: relative;
         cursor: pointer;
-        img {
-          height: 100%;
-        }
+       
+      }
+      &-img {
+        height: 100%;
       }
       &-title {
         font-weight: 600;
@@ -102,7 +103,7 @@
   }
   &__footer {
     position: relative;
-    a {
+    &-a {
       @include flexBox(center);
       gap: 10px;
       text-decoration: none;
@@ -128,30 +129,33 @@
   &__overlay {
     flex-grow: 1;
     background-color: rgba(0, 0, 0, 0.5);
-    .overlay__heading {
-      position: relative;
-      height: 60px;
-      min-width: 50px;
-      background-color: var(--primary-color);
-      .icon {
-        position: absolute;
-        right: 0;
-        height: 100%;
-        display: flex;
-        top: 50%;
-        transform: translateY(-50%);
-        cursor: pointer;
-      }
+    
+  }
+  .overlay__heading {
+    position: relative;
+    height: 60px;
+    min-width: 50px;
+    background-color: var(--primary-color);
+    &-icon {
+      position: absolute;
+      right: 0;
+      height: 100%;
+      display: flex;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
     }
   }
-}
-
-.active {
+  .active {
   @include flexBox(auto, flex-start, auto, column);
   transform: translateX(0);
   transition: transform 0.4s;
 }
+  
+}
+
 .showMenu {
   left: 0;
   transition: 0.5s;
 }
+

@@ -1,11 +1,13 @@
 .filter {
-  @include flexBox(center, space-between);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  background-color: #fff;
-  height: 80px;
-  z-index: 10;
+  &__container {
+    @include flexBox(center, space-between);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    height: 80px;
+    z-index: 10;
+  }
   &__wrapper {
     width: 100%;
     @include flexBox(center, space-between);
@@ -23,7 +25,6 @@
     &-detail {
       @include large {
         margin: 0 5px;
-        
       }
     }
     &-item {
@@ -42,7 +43,6 @@
     &:first-child {
       @include large {
         pointer-events: none;
-        
       }
     }
     &:last-child {
@@ -85,6 +85,8 @@
     position: fixed;
     width: 100%;
     height: 100%;
+    box-shadow: -1px 1px 0 $secondary-color;
+
     @include flexBox(center, center, wrap, column);
     bottom: -100%;
     left: 0;
@@ -114,7 +116,7 @@
         border: none;
         width: 100%;
         padding: 5px;
-        
+
         cursor: pointer;
         background-color: #fff;
         &:hover {
@@ -130,23 +132,20 @@
       }
     }
     &--button {
-        font: 400 16px/30px $font-primary;
-        
+      font: 400 16px/30px $font-primary;
     }
   }
-}
-
-.active {
-  bottom: 0;
-  opacity: 1;
-  @include large {
-    height: 120px;
+  .active {
+    bottom: 0;
+    opacity: 1;
+    @include large {
+      height: 120px;
+    }
   }
-}
-
-.hide {
-  display: none;
-  @include large {
-    display: block;
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
   }
 }

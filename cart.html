@@ -17,8 +17,8 @@
           <img src="./src/images/logo/electrolux_logo.png" alt="" />
         </div>
       </div>
-      <div class="wrapper">
-        <div class="container cartpage__container">
+      <div class="wrapper-cart">
+        <div class="cartpage__container">
           <div class="cartpage__return hide-on-desktop">
             <a href="index.html">Back</a>
           </div>
@@ -109,7 +109,7 @@
                     </div>
                   </div>
                   <div class="cartpage__product-detail">
-                    <div class="cartpage__product-quantity">
+                    <div class="cartpage__product-quantity cartpage__product-quantity--add">
                       <div
                         class="
                           btn
@@ -152,7 +152,7 @@
                     <img src="./src/images/icon/delete-icon.svg" alt="" />
                   </div>
                   <div class="cartpage__product-detail">
-                    <div class="cartpage__product-quantity">
+                    <div class="cartpage__product-quantity cartpage__product-quantity--add">
                       <div
                         class="
                           btn
@@ -254,7 +254,7 @@
                     <div class="cartpage__gift-quantity">Quantity: 1</div>
                     <div class="cartpage__gift-cost">
                       <div class="cartpage__gift-oldprice oldprice">NT$ 225.967</div>
-                      <div class="cartpage__product-price">NT$ 0</div>
+                      <div class="cartpage__product-price--new">NT$ 0</div>
                     </div>
                   </div>
                 </div>
@@ -273,12 +273,22 @@
               </div>
               <div class="cartpage__title">Buy together to save money</div>
               <div class="cartpage__more cartpage__more--buy">
-                <div class="cartpage__more-item">
+                <div class="cartpage__more-item cartpage__more-item--buy">
                   <div class="cartpage__more-img">
                     <img src="./src/images/product/bag.png" alt="" />
                   </div>
-                  <div class="cartpage__more-code">EBB2802H-H</div>
-                  <div class="cartpage__more-name">2 Laundry bag</div>
+                  <div class="cartpage__more-code">PQ923BWF</div>
+                  <div class="cartpage__more-name">Pure Q9</div>
+                  <div class="cartpage__more-cost cartpage__more-cost--tax">
+                    NT$ 69.740
+                  </div>
+                </div>
+                <div class="cartpage__more-item cartpage__more-item--buy">
+                  <div class="cartpage__more-img">
+                    <img src="./src/images/product/bag.png" alt="" />
+                  </div>
+                  <div class="cartpage__more-code">PQ923BWF</div>
+                  <div class="cartpage__more-name">Pure Q9</div>
                   <div class="cartpage__more-cost cartpage__more-cost--tax">
                     NT$ 69.740
                   </div>
@@ -342,10 +352,10 @@
                 <div class="cartpage__price-container">
                   <div class="cartpage__title hide-on-mobile">product</div>
                   <div class="cartpage__sub js-sub">
-                    <div class="cartpage__sub-overlay"></div>
+                    <div class="cartpage__sub-overlay hide-on-desktop"></div>
                     <div class="cartpage__sub-header hide-on-desktop">
                       <div class="cartpage__sub-header-title hide-on-desktop">cart total</div>
-                      <img class="js-close-sub" src="./src/images/icon/chevron-left.svg" alt="">
+                      <img class="cartpage__sub-header-icon js-close-sub" src="./src/images/icon/chevron-left.svg" alt="">
                     </div>
                     <div class="cartpage__sub-item">
                       <div class="cartpage__word">sub-total</div>
@@ -370,7 +380,7 @@
                   <div class="cartpage__price-noted hide-on-mobile">
                     Your order includes NT$ 1,200 tax
                   </div>
-                  <div class="btn btn--primary cartpage__checkout ">
+                  <div class="btn btn--primary cartpage__checkout">
                     Proceed to secure checkout
                   </div>
                   <div class="cartpage__price-free hide-on-mobile">
@@ -390,6 +400,7 @@
                 </div>
               </div>
             </div>
+            <div class="wrapper-cart-background"></div>
           </div>
         </div>
       </div>

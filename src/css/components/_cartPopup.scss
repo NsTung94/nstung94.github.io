@@ -8,6 +8,7 @@
   right: 0;
   background: #fff;
   overflow: hidden;
+  box-shadow: -1px 1px 0px #dfe7ea;
   &__header {
     @include flexBox(center, $dir: row);
     gap: 5px;
@@ -133,38 +134,33 @@
     @include flexBox(center, center, wrap, column);
     gap: 20px;
   }
-}
 
-.quantity-button {
-  border: 1px solid $secondary-color;
-  width: 30px;
-  height: 100%;
-  position: relative;
-  @include flexBox(center, center, wrap, column);
-  span {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    &:first-child {
-      transform: translateY(-50%);
-    }
-  }
-}
-.price-out-stock {
-  color: #fe392f;
-}
-
-.cart-active {
  
-  .cart {
-      overflow-y: auto;
-      height: 500px;
-      overflow-x:  hidden;
+  .quantity-button {
+    border: 1px solid $secondary-color;
+    width: 30px;
+    height: 100%;
+    position: relative;
+    @include flexBox(center, center, wrap, column);
+    span {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      &:first-child {
+        transform: translateY(-50%);
+      }
+    }
+    
   }
-}
-
-.price-old {
-  text-decoration: line-through;
-  font: 400 12px/18px $font-primary;
+  .price-out-stock {
+    color: #fe392f;
+  }
+ 
+ 
+  
+  .hide {
+    display: none;
+  }
+  
 }

@@ -1,4 +1,3 @@
-@import './slider';
 
 .category {
     margin-top: 20px;
@@ -52,9 +51,9 @@
     @include large {
         margin-top: 40px;
     }
-}
-.selected {
-    border: 2px solid $primary-color;
-    border-radius: 1px;
-    font-weight: 600;
+    .selected {
+        border: 2px solid $primary-color;
+        border-radius: 1px;
+        font-weight: 600;
+    }
 }

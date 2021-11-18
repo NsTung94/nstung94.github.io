@@ -3,9 +3,16 @@
     margin: 15px 0;
     @include flexBox(stretch);
     background-color: $secondary-color;
-    padding: 10px 15px;
+    padding: 15px;
+    @include large {
+      padding: 10px 20px;
+    }
     &-btn {
+      order: 3;
       padding: 8px 30px;
+      @include large {
+        order: 2;
+      }
     }
     &-left {
       width: 20%;
@@ -17,7 +24,7 @@
       @include flexBox(center);
       width: 80%;
       @include large {
-        width: calc( 80% - 10px);
+        width: calc(80% - 10px);
       }
     }
     &-increase,
@@ -26,7 +33,6 @@
       width: 35px;
       height: 35px;
     }
-
     &-img {
       @include flexBox(center, center);
       padding: 0 10px 10px 0;
@@ -35,14 +41,24 @@
         padding: 15px;
       }
     }
+    &-tax {
+      order: 1;
+      width: 100%;
+      text-align: end;
+      @include large {
+        order: 2;
+        width: auto;
+      }
+    }
   }
   &__header {
     @include flexBox(center, center);
     height: 65px;
     border-bottom: 1px solid $secondary-color;
+    padding: 0 20px;
     @include large {
       justify-content: flex-start;
-      width: 75%;
+      width: 82%;
       margin: 0 auto;
       position: relative;
     }
@@ -58,20 +74,27 @@
   }
   &__left {
     @include large {
-
-      width: calc(56%);
+      width: calc(100% * 7 / 12);
+      padding: 0 20px;
     }
   }
   &__right {
+    z-index: 10;
     @include large {
-      width: calc(100% / 3);
+      max-width: calc(100% / 3);
+      flex: 0 0 calc(100% / 3);
+      margin-left: calc(100% / 12);
     }
+  }
+  &__middle {
+    // width: calc(100% / 12);
+    margin-left: calc(100% / 12);
   }
   &__heading {
     font: 600 40px/48px $font-primary;
     padding: 20px 0;
     @include large {
-      padding: 40px 0;
+      padding: 40px 20px;
     }
   }
   &__gift {
@@ -79,6 +102,7 @@
     border: 1px solid $primary-color;
     margin: 5px 0;
     padding-bottom: 10px;
+    position: relative;
     &-button {
       width: 100%;
       @include flexBox(center, center);
@@ -86,10 +110,15 @@
       border-radius: 0px;
       border: none;
       pointer-events: none;
+      @include large {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: fit-content;
+      }
     }
-
     &-cost {
-      @include flexBox();
+      @include flexBox(center);
       width: fit-content;
       gap: 12px;
       margin-right: 20px;
@@ -100,26 +129,34 @@
     }
     &-left {
       width: 40%;
+      @include large {
+        width: 20%;
+      }
     }
     &-name {
       padding-top: 10px;
       font: 600 14px $font-primary;
+      max-width: 70%;
     }
     &-quantity {
       font: 600 14px $font-primary;
     }
     &-right {
       width: 60%;
+      @include large {
+        width: 80%;
+      }
     }
   }
   &__more {
     @include flexBox(stretch);
     margin-bottom: 40px;
     &--buy {
+      padding-left: 20px;
       border: 1px solid $secondary-color;
     }
     &-item {
-      @include flexBox(center, center, wrap, column);
+      @include flexBox(flex-start, flex-start, wrap, column);
       width: 50%;
       @include large {
         width: calc(100% / 3);
@@ -127,11 +164,25 @@
       &--bundle {
         background-color: $primary-color;
         @include flexBox(stretch, $dir: column);
+        color: #fff;
+        padding-bottom: 20px;
+        @include large {
+          padding: 0;
+        }
       }
+      &--buy {
+        padding: 0 20px;
+      }
+    }
+    &-img {
+      margin: 0 auto;
     }
     &-button {
       width: 100%;
+      height: 45px;
       font: 600 14px $font-primary;
+      border: 1px solid $primary-color;
+      border-radius: 0;
       &--bundle {
         margin: auto;
         width: 80%;
@@ -143,7 +194,7 @@
     }
     &-cost {
       font: 600 24px $font-primary;
-      margin: 16px;
+      margin: 16px 0;
       &--tax {
         font-size: 16px;
         &:after {
@@ -158,7 +209,7 @@
     &-oldprice,
     &-name {
       @include flexBox(center, center);
-      color: #fff;
+      // color: #fff;
     }
     &-title {
       @include flexBox(center, center);
@@ -169,13 +220,17 @@
       background-color: red;
       border: none;
       border-radius: 0;
+      color: #fff;
     }
     &-name {
-      font: 600 14px $font-primary;
-      margin: 15px 0 8px;
+      font: 600 20px $font-primary;
+      margin: 4px 0 8px;
     }
     &-price {
-      font: 600 32px $font-primary;
+      font: 600 30px $font-primary;
+      @include large {
+        font: 600 30px $font-primary;
+      }
     }
     &-oldprice {
       font: 400 14px $font-primary;
@@ -242,6 +297,9 @@
     &-name {
       font: 600 18px/26px $font-primary;
       width: calc(100% - 20px);
+      @include large {
+        max-width: 70%;
+      }
     }
     &-price {
       text-align: end;
@@ -254,6 +312,14 @@
     }
     &-quantity {
       @include flexBox(stretch);
+      &--add {
+        margin-bottom: 10px;
+        order: 3;
+        @include large {
+          margin: 0;
+          order: 1;
+        }
+      }
       &--decrease,
       &--increase {
         position: relative;
@@ -290,7 +356,7 @@
   &__promotion {
     @include flexBox(stretch);
     margin: 20px 0;
-    &-input{
+    &-input {
       flex-grow: 1;
     }
   }
@@ -303,21 +369,26 @@
     left: 0;
     right: 0;
     background-color: #fff;
+    z-index: 9999;
     @include large {
       position: relative;
       background-color: transparent;
+      padding: 0 20px;
     }
     &-container {
       padding: 15px;
+      box-shadow: -1px -1px $secondary-color;
+      background-color: #fff;
       @include large {
         padding: 0 0 40px 30px;
+        box-shadow: none;
       }
     }
     &-total {
       @include flexBox(center, space-between);
       margin-bottom: 10px;
       @include large {
-        margin: 40px 0 0 0;
+        margin: 10px 0 0 0;
       }
       &--title {
         text-transform: uppercase;
@@ -330,6 +401,9 @@
         transform: rotate(-90deg);
         width: 10px;
         height: 10px;
+        @include large {
+          display: none;
+        }
       }
       &--number {
         @include flexBox(center, center);
@@ -350,6 +424,7 @@
     }
     &-free {
       font: 400 14px $font-primary;
+      margin-bottom: 16px;
     }
     &-secure {
       font: 600 14px $font-primary;
@@ -358,14 +433,20 @@
   &__sub {
     display: none;
     height: 0;
+    background-color: #fff;
     @include large {
       @include flexBox(stretch, $dir: column);
       height: auto;
     }
     &-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background-color: #011e41;
-      opacity: 0.5;
-      flex-grow: 1;
+      opacity: .85;
+      z-index: -10;
     }
     &-item {
       @include flexBox(center, space-between);
@@ -373,24 +454,30 @@
       text-transform: uppercase;
     }
     &-header {
-      height: 30px;
+      height: 50px;
       @include flexBox(center, space-between);
       border-bottom: 1px solid $secondary-color;
+      margin-bottom: 15px;
       &-title {
         font: 600 16px $font-primary;
         text-transform: uppercase;
       }
 
-      img {
+      &-icon {
         transform: rotate(90deg);
       }
     }
+  }
+  &__checkout {
+    height: 45px;
+    margin-bottom: 8px;
   }
   &__title {
     font: 600 16px/26px $font-primary;
     text-transform: uppercase;
     border-bottom: 1px solid $secondary-color;
-    margin-bottom: 20px;
+    margin: 20px 0;
+    padding-bottom: 10px;
   }
   &__return {
     width: 150px;
@@ -412,6 +499,11 @@
       left: 0;
     }
   }
+  &__container {
+    max-width: 82%;
+    display: block;
+    margin: 0 auto;
+  }
   &-box {
     width: 40px;
     height: 40px;
@@ -419,7 +511,10 @@
   &__footer {
     margin-bottom: 200px;
     &-header {
-      border: none;
+      border-top: 1px solid $secondary-color;
+      border-bottom: none;
+      padding: 40px 0 20px;
+      margin: 0;
     }
     &-list {
       list-style: none;
@@ -446,21 +541,34 @@
       margin: 20px 0;
     }
   }
-}
+  .row {
+    @include flexBox($jc: space-between);
+  }
 
-.row {
-  @include flexBox($jc: space-between);
-}
+  .expand {
+    @include flexBox(stretch, $dir: column);
+    height: auto;
+    z-index: 9999;
+    
+  }
 
-.expand {
-  @include flexBox(stretch, $dir: column);
-  height: auto;
-}
+  .wrapper-cart {
+    @include large {
+      height: 100%;
+      background: linear-gradient(90deg, #fff calc( 61.6%), #f2f5f7 calc(38.4%));
+      position: relative;
+    }
+  }
 
-.wrapper {
-  @include large {
-    height: 100%;
-    background: linear-gradient(90deg, #fff 60%, #f2f5f7 40%);
-
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
+  }
+  .hide-on-desktop {
+    @include large {
+      display: none;
+    }
   }
 }

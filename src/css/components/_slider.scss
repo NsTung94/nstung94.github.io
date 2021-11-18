@@ -23,6 +23,10 @@
   flex-wrap: nowrap;
   margin: 0 25px;
 }
+
+.owl-carousel .owl-stage-outer {
+  height: 160px;
+}
 .owl-prev,
 .owl-next {
   text-align: center;

@@ -1,8 +1,20 @@
-function purchaseProduct(e) {
-  if (e.target.classList.contains("js-add-cart")) {
-    let product = e.target.parentElement.parentElement;
-    getProductInfo(product);
+function Cart(){
+  
+  this.purchaseProduct = function(){
+    if (e.target.classList.contains("js-add-cart")) {
+      let product = e.target.parentElement.parentElement;
+      getProductInfo(product);
+    }
   }
+  
+}
+
+var cart = Cart();
+
+cart.purchaseProduct();
+
+function purchaseProduct(e) {
+ 
 }
 
 // get product info after add to cart button click

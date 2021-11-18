@@ -28,7 +28,6 @@
       width: 30px;
       height: 30px;
       right: 15px;
-      z-index: 10;
       background-image: url(/src/images/icon/heart-outline-icon.svg);
       @include large {
         right: 0;
@@ -195,14 +194,17 @@
       }
     }
   }
-}
-
-.heart-active {
-  background-image: url(/src/images/icon/heart-filled-icon.svg);
-}
-
-.price-number {
-  &:after {
-    content: ' đ';
+  .heart-active {
+    background-image: url(/src/images/icon/heart-filled-icon.svg);
+  }
+  
+  .price-number {
+    &:after {
+      content: ' đ';
+    }
+  }
+  .active {
+    bottom: 0;
   }
 }
+

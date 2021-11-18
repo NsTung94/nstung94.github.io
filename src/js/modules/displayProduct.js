@@ -1,5 +1,4 @@
 import { wish } from "./wish.js";
-import lazyImage from "./lazyImage.js";
 
 export default function displayProduct(product) {
   var productItem = document

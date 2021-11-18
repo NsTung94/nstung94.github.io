@@ -81,7 +81,6 @@
       @include flexBox($dir: column);
     }
   }
-
   &__connect {
     @include flexBox(center, space-between);
     margin-top: 16px;
@@ -110,4 +109,5 @@
     }
   }
 }
+
 

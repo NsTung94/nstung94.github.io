@@ -24,16 +24,18 @@ a {
     opacity: 0.8;
     transition: all 0.3 ease-in-out;
   }
+  &--primary {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+  &-no-border {
+    border: none;
+  }
 }
-
-.btn--primary {
-  background-color: $primary-color;
-  color: #ffffff;
+.showMenu {
+  left: 0;
+  transition: 0.5s;
 }
-.btn-no-border {
-  border: none;
-}
-
 ul,
 li {
   padding: 0;
@@ -51,7 +53,6 @@ li {
   &__row {
     @include large {
       margin: 0 -20px;
-      
     }
   }
   &__wrapper {
@@ -155,7 +156,6 @@ label {
   padding: 0 20px;
 }
 
-
 .show {
   display: block;
 }
@@ -163,22 +163,14 @@ label {
 .hideDropDown {
   display: none;
 }
+
 .dropDown {
   display: block;
-  &__header {
-  }
-
-  &__container {
-  }
 }
 
-.active {
-  &__content {
-    bottom: 0;
-  }
-  @include large {
-    bottom: auto;
-  }
+.price-old {
+  text-decoration: line-through;
+  font: 400 12px/18px $font-primary;
 }
 
 .full-img {
@@ -187,7 +179,19 @@ label {
   }
 }
 
-.loadMore{
+.loadMore {
   width: 30px;
   height: 30px;
+}
+.cart-active .cart {
+  overflow-y: auto;
+  height: 500px;
+  overflow-x: hidden;
+}
+
+.contact-icon {
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+  z-index: 10;
 }

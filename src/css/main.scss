@@ -5,19 +5,15 @@
 @import './components/header';
 @import './typography';
 
-
-@import './components/selector';
+@import './components/slider';
 @import './components/menu';
 @import './components/category';
 @import './components/filter';
+@import './components/selector';
 @import './components/product';
-@import './components/contact';
 @import './placeholder';
 @import './components/footer';
 @import './components/tag';
 @import './components/checkbox';
-// @import './components/cartpage';
-@import './components/cart.scss';
-@import "./components/count";
-@import './components/loading';
+@import './components/cart';
 @import './components/cartPopup';
