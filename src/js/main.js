@@ -2,24 +2,25 @@
 var start = 0;
 var end = 3;
 
-import './modules/FilterSortFunction.js';
+import './modules/Cart.js';
 import './modules/Dropdown.js';
+import './modules/FilterSortFunction.js';
 import './modules/LazyFunction.js';
 import './modules/Menu.js';
 import './modules/Product.js';
 
-const loadProducts = async () => {
-  try {
-    const res = await fetch("src/product.json");
-    let products = await res.json();
-    var sliced = products.slice(start, end);
-    // displayProducts(sliced);
-    // filteringProduct(products);
-  } catch (err) {
-    console.log(err);
-  }
-};
-loadProducts();
+// const loadProducts = async () => {
+//   try {
+//     const res = await fetch("src/product.json");
+//     let products = await res.json();
+//     var sliced = products.slice(start, end);
+//     // displayProducts(sliced);
+//     // filteringProduct(products);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// };
+// loadProducts();
 
 
 
@@ -33,11 +34,7 @@ const displayProducts = (products) => {
   });
 };
 
-var cart = document.querySelector(".js-cart");
-var hasItem = document.querySelector(".js-hasItem");
-var numberInCart = document.querySelector(".js-number-cart");
-let numberCart = hasItem.getElementsByClassName("cart__item").length;
-numberInCart.innerHTML = `${numberCart}`;
+
 
 var numberInWish = document.querySelector(".js-number-wish");
 let numberWish = document.querySelectorAll(".heart-active").length;

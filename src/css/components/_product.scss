@@ -113,11 +113,19 @@
       &--old {
         font: 400 14px/28px $font-primary;
         text-decoration: line-through;
+        &:after {
+          content: ' đ';
+          margin-left: 2px;
+        }
       }
       &--new {
         font: 600 18px/28px $font-primary;
         @include large {
           font-size: 24px;
+        }
+        &:after {
+          margin-left: 2px;
+          content: ' đ';
         }
       }
     }

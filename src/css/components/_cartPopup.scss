@@ -2,13 +2,28 @@
   @include flexBox($dir: column);
   position: absolute;
   z-index: 50;
-  height:0;
+  height: 0;
   width: 474px;
-  top: 60px;
-  right: 0;
+  top: 50px;
+  right: -40px;
   background: #fff;
   overflow: hidden;
   box-shadow: -1px 1px 0px #dfe7ea;
+  border: 1px solid rgba(223, 231, 243, 0.4);
+  &:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    top: 0px;
+    right: 50px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $secondary-color;
+    position: absolute;
+    margin: auto;
+    z-index: 9999;
+  }
   &__header {
     @include flexBox(center, $dir: row);
     gap: 5px;
@@ -27,7 +42,7 @@
     }
   }
   &__container {
-    @include flexBox($wrap: no-wrap,$dir: column);
+    @include flexBox($wrap: no-wrap, $dir: column);
     padding-right: 0 15px;
     // display: none;
     height: 250px;
@@ -106,26 +121,26 @@
       font: 400 16px/24px $font-primary;
     }
     &-action {
-        @include flexBox();
-        gap: 8px;
-        padding:  0 15px;
-        margin-bottom: 15px;
-        &-button {
-            @include flexBox(center, center);
-            height: 45px;
-            width: calc( (100% - 8px) / 2);
-        }
+      @include flexBox();
+      gap: 8px;
+      padding: 0 15px;
+      margin-bottom: 15px;
+      &-button {
+        @include flexBox(center, center);
+        height: 45px;
+        width: calc((100% - 8px) / 2);
+      }
     }
     &-extra {
-        height: 41px;
-        background-color: $secondary-color;
-        padding: 0 15px;
+      height: 41px;
+      background-color: $secondary-color;
+      padding: 0 15px;
+      @include flexBox(center);
+      gap: 10px;
+      &-content {
         @include flexBox(center);
-        gap: 10px;
-        &-content {
-            @include flexBox(center);
-            font: 400 14px/22px $font-primary;
-        }
+        font: 400 14px/22px $font-primary;
+      }
     }
   }
   &__empty {
@@ -135,32 +150,28 @@
     gap: 20px;
   }
 
- 
-  .quantity-button {
-    border: 1px solid $secondary-color;
-    width: 30px;
-    height: 100%;
-    position: relative;
-    @include flexBox(center, center, wrap, column);
-    span {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      font-size: 20px;
-      &:first-child {
-        transform: translateY(-50%);
-      }
-    }
-    
-  }
+  // .quantity-button {
+  //   border: 1px solid $secondary-color;
+  //   width: 30px;
+  //   height: 100%;
+  //   position: relative;
+  //   @include flexBox(center, center, wrap, column);
+  //   span {
+  //     position: absolute;
+  //     top: 50%;
+  //     transform: translateY(-50%);
+  //     font-size: 20px;
+  //     &:first-child {
+  //       transform: translateY(-50%);
+  //     }
+  //   }
+
+  // }
   .price-out-stock {
     color: #fe392f;
   }
- 
- 
-  
+
   .hide {
     display: none;
   }
-  
 }

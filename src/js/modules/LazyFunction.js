@@ -9,8 +9,8 @@ class LazyFuntion {
           entries.forEach(function (entry) {
             if (entry.isIntersecting) {
               let lazyObject = entry.target;
-              console.log("lazyObject.dataset.src", lazyObject.dataset.src);
-              lazyObject.src = lazyObject.dataset.src;
+              // console.log("lazyObject.dataset.src", lazyObject.dataset.src);
+              // lazyObject.src = lazyObject.dataset.src;
               lazyObject.style.zIndex = "1";
               lazyObject.classList.remove("lazy-observer");
               lazyObject.parentElement.classList.remove("placeholder");
@@ -35,7 +35,6 @@ class LazyFuntion {
    
     let observer = new IntersectionObserver(function (entries) {
       entries.forEach((entry) => {
-        console.log("bar", bar);
         if (entry.isIntersecting) {
           bar.classList.add("hide-on-mobile");
         } else {

@@ -1,17 +1,39 @@
 // click heart to add wishlist
 
-let wishCount = document.querySelector('.js-number-wish');
+class Wish {
+  wish() {
+    // let wishCount = document.querySelector(".js-number-wish");
+    let hearts = document.querySelectorAll(".js-heart-button");
+    hearts.forEach(function (item) {
+      item.addEventListener("click", function () {
+        if (item.classList.contains("heart-active")) {
+          item.classList.remove("heart-active");
+        } else {
+          item.classList.add("heart-active");
+        }
+      });
+    });
+  }
+  countWish() {
+    var numberInWish = document.querySelector(".js-number-wish");
+    let numberWish = document.querySelectorAll(".heart-active").length;
+    numberInWish.innerHTML = `${numberWish}`;
 
-export function wish() {
-  
-  let hearts = document.querySelectorAll(".js-heart-button");
-  hearts.forEach(function (item) {
-    item.addEventListener('click', function () {
-      if (item.classList.contains('heart-active')) {
-        item.classList.remove('heart-active');
+    if (numberCart == 0) {
+      document.querySelectorAll(".js-hide-on-none").forEach(function (item) {
+        item.classList.add("hide");
+      });
+    }
+
+    cart.addEventListener("click", function () {
+      if (cart.classList.contains("cart-active")) {
+        cart.classList.remove("cart-active");
       } else {
-        item.classList.add('heart-active');
+        cart.classList.add("cart-active");
       }
-    })
-  })
+    });
+  }
 }
+
+const wish = new Wish();
+wish.wish();

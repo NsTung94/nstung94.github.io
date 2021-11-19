@@ -38,8 +38,19 @@ export default class Dropdown {
       });
     });
   }
+  cartPopUp(){
+    var cartIcon = document.querySelector('.js-cart');
+    cartIcon.addEventListener('click', function(){
+      if (cartIcon.classList.contains('cart-active')){
+        cartIcon.classList.remove('cart-active')
+      }else{
+        cartIcon.classList.add('cart-active');
+      }
+    })
+  }
 }
 
 const dropdown = new Dropdown();
 dropdown.dropdown();
 dropdown.language();
+dropdown.cartPopUp();

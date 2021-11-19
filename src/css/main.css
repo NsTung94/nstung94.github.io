@@ -614,6 +614,9 @@ label {
 .menu__content-heading--nosub {
   pointer-events: none;
 }
+.menu__content-heading-icon {
+  padding-right: 20px;
+}
 .menu__content-productList {
   padding: 0 20px 25px 0;
   margin-top: 25px;
@@ -817,6 +820,20 @@ label {
   height: 80px;
   z-index: 10;
 }
+@media only screen and (min-width: 1024px) {
+  .filter__container {
+    position: relative;
+    width: 100%;
+  }
+  .filter__container__button-wrap-reset {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    width: 15%;
+  }
+}
 .filter__wrapper {
   width: 100%;
   display: flex;
@@ -832,7 +849,7 @@ label {
   }
 }
 .filter__button {
-  width: 120px;
+  min-width: 120px;
   height: 45px;
   font: 600 16px/19.2px "Electrolux", serif;
   position: relative;
@@ -846,7 +863,7 @@ label {
 .filter__button-item {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 5px;
@@ -901,19 +918,13 @@ label {
 .filter__button:hover {
   opacity: 1;
 }
-@media only screen and (min-width: 1024px) {
-  .filter {
-    position: relative;
-    width: 100%;
-  }
-  .filter__button-wrap-reset {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    flex-direction: row;
-    width: 15%;
-  }
+.filter__button-wrap-reset {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 17%;
 }
 .filter-sort-selection {
   z-index: 70;
@@ -941,7 +952,7 @@ label {
 }
 .filter-sort-selection--overlay {
   width: 100%;
-  height: 80%;
+  height: 75%;
   background-color: black;
   opacity: 0.5;
 }
@@ -1308,6 +1319,10 @@ label {
   font: 400 14px/28px "Electrolux", serif;
   text-decoration: line-through;
 }
+.product__item-price--old:after {
+  content: " đ";
+  margin-left: 2px;
+}
 .product__item-price--new {
   font: 600 18px/28px "Electrolux", serif;
 }
@@ -1315,6 +1330,10 @@ label {
   .product__item-price--new {
     font-size: 24px;
   }
+}
+.product__item-price--new:after {
+  margin-left: 2px;
+  content: " đ";
 }
 .product__item-suggestion {
   display: flex;
@@ -2466,11 +2485,26 @@ label {
   z-index: 50;
   height: 0;
   width: 474px;
-  top: 60px;
-  right: 0;
+  top: 50px;
+  right: -40px;
   background: #fff;
   overflow: hidden;
   box-shadow: -1px 1px 0px #dfe7ea;
+  border: 1px solid rgba(223, 231, 243, 0.4);
+}
+.cart:before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  top: 0px;
+  right: 50px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #dfe7ea;
+  position: absolute;
+  margin: auto;
+  z-index: 9999;
 }
 .cart__header {
   display: flex;
@@ -2651,26 +2685,6 @@ label {
   flex-wrap: wrap;
   flex-direction: column;
   gap: 20px;
-}
-.cart .quantity-button {
-  border: 1px solid #dfe7ea;
-  width: 30px;
-  height: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-direction: column;
-}
-.cart .quantity-button span {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 20px;
-}
-.cart .quantity-button span:first-child {
-  transform: translateY(-50%);
 }
 .cart .price-out-stock {
   color: #fe392f;
