@@ -450,11 +450,6 @@ label {
   height: 100%;
 }
 
-.loadMore {
-  width: 30px;
-  height: 30px;
-}
-
 .cart-active .cart {
   overflow-y: auto;
   height: 500px;
@@ -2166,12 +2161,10 @@ label {
   flex-direction: row;
 }
 .cartpage__product-quantity--add {
-  margin-bottom: 10px;
   order: 3;
 }
 @media only screen and (min-width: 1024px) {
   .cartpage__product-quantity--add {
-    margin: 0;
     order: 1;
   }
 }
@@ -2243,6 +2236,7 @@ label {
 }
 @media only screen and (min-width: 1024px) {
   .cartpage__price-container {
+    background-color: transparent;
     padding: 0 0 40px 30px;
     box-shadow: none;
   }
@@ -2317,6 +2311,7 @@ label {
 }
 @media only screen and (min-width: 1024px) {
   .cartpage__sub {
+    background-color: transparent;
     display: flex;
     align-items: stretch;
     justify-content: flex-start;

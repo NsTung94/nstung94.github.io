@@ -41,12 +41,16 @@ export default class Dropdown {
   cartPopUp(){
     var cartIcon = document.querySelector('.js-cart');
     cartIcon.addEventListener('click', function(){
+      console.log('clicked', cartIcon.classList.add('cart-active'));
       if (cartIcon.classList.contains('cart-active')){
-        cartIcon.classList.remove('cart-active')
+        cartIcon.classList.remove('cart-active');
+        // console.log('removed')
       }else{
         cartIcon.classList.add('cart-active');
+        // console.log("add", cartIcon);
       }
     })
+    
   }
 }
 

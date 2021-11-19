@@ -1,27 +1,50 @@
-import "./wish.js";
+import "./Wish.js";
 
-class Product {
-  loadProducts = async () => {
+const pageSize = 3;
+let currentProductItems = [];
+// let productItems = []
+const _productItemsKey = "_productKeyItem";
+const _cartItemsKey = "_cartItemsKey";
+let startIndex = 0;
+export function Product(){
+  var productItems = [];
+  this.loadProducts = async () => {
     try {
-      var productList = document.querySelector(".js-product-list");
       const res = await fetch("src/product.json");
-      let products = await res.json();
-      // var sliced = products.slice(start, end);
-      // displayProducts(products);
-      console.log("products id", products[0].id);
-      products.map((product) => {
-        productList.append(displayProduct(product));
-      });
+      // productItems = await res.json();
+      const productFetch = await res.json();
+      // console.log(productFetch);
+      productItems = productFetch;
+      // console.log('waaaaa',productItems);
+      this.loadMore(productItems)
+      // this.loadMore(this.productItems)
     } catch (err) {
       console.log(err);
     }
   };
+ 
+  this.loadMore = function(products) {
+    //TODO: load more products
+    let size = startIndex + pageSize
+    // Start size
+    currentProductItems = products.slice(startIndex, size);
+    // displayProduct(currentProductItems);
+    console.log("currentProductItems", currentProductItems)
+    currentProductItems.map(item => displayProduct(item));
+    var loadMoreButton = document.querySelector(".js-load-more");
+    loadMoreButton.addEventListener("click", function () {
+      startIndex += pageSize;
+      productLoadMore = products[(startIndex, size)];
+      currentProductItems.push(productLoadMore);
+    });
+    return this.currentProductItems
+  }
+
 }
 
 const product = new Product();
-
 product.loadProducts();
-// product.purchaseProduct();
+product.loadMore;
 
 function displayProduct(product) {
   // console.log(product);
@@ -59,7 +82,7 @@ function displayProduct(product) {
   // Product Image
   var image = document.createElement("div");
   image.classList.add("product__item-img");
-  image.setAttribute("data-picture", product.price);
+  image.setAttribute("data-picture", product.picture);
   var itemImage = document.createElement("img");
   itemImage.setAttribute("src", product.picture);
   image.appendChild(itemImage);
@@ -178,24 +201,35 @@ function displayProduct(product) {
   return productItem;
 }
 
-// var addFunction = document.querySelectorAll('.js-add-cart');
-// addFunction.forEach(function(e){
-//   e.addEventListener('click', function(){
-//     console.log('add');
-//     let product = e.target.parentElement.parentElement;
-//     getProductInfo(product);
-//   })
-
-// })
-
 function purchaseProduct(e) {
   var button = document.querySelectorAll(".js-add-cart");
   button.forEach(function (addBtn) {
-    // console.log('add ne', addBtn)
     addBtn.addEventListener("click", function (e) {
-      let product = e.target.parentElement.parentElement;
-      getProductInfo(product);
-      loadCartPopup();
+      console.log("event", e);
+      e.preventDefault();
+      const productId = e.target.getAttribute("data-id");
+      const productItems = localStorage.getItem(_productItemsKey);
+      const productItem = productItems.find(
+        (product) => product.id === productId
+      );
+
+      const existingCartItems = localStorage.getItem(_cartItemsKey);
+
+      const existingProductIndex = existingCartItems.findIndex(
+        (product) => product.id === productId
+      );
+      const newProductItemsToCart = [...existingCartItems];
+      if (existingProductIndex !== -1) {
+        //TODO update current product quantity
+      } else {
+        newProductItemsToCart.push(productItem);
+      }
+
+      localStorage.setItem(_cartItemsKey, newProductItemsToCart);
+
+      // let product = e.target.parentElement.parentElement;
+      // getProductInfo(product);
+      // loadCartPopup();
     });
   });
 }
@@ -211,11 +245,12 @@ function loadCartPopup() {
 
 // get product info after add to cart button click
 function getProductInfo(product) {
-  console.log("product", product);
+  // console.log("product", product);
 
   let productInfo = {
+    cartId: product.getAttribute("data-id", product.id),
     imgSrc: product
-      .querySelector(".product__item-img img")
+      .querySelector(".product__item-img")
       .getAttribute("data-picture"),
     name: product
       .querySelector(".product__item-name")
@@ -227,73 +262,109 @@ function getProductInfo(product) {
       .querySelector(".product__item-price--new")
       .getAttribute("data-new-price"),
   };
-  console.log("what this", product.querySelector(".product__item-price--old"));
 
   if (product.querySelector(".product__item-price--old") !== null) {
-    productInfo.oldprice = product
+    productInfo.oldPrice = product
       .querySelector(".product__item-price--old")
       .getAttribute("data-old-price");
   }
-  console.log(productInfo);
+
+  // console.log("new product to cart", productInfo);
   addToCartList(productInfo);
   saveProductInStorage(productInfo);
 }
 
 // add the selected product to the cart list
 function addToCartList(product) {
+  // console.log("product", product)
   const cartList = document.querySelector(".cart__container");
   const cartItem = document.createElement("div");
   cartItem.classList.add("cart__item");
   cartItem.setAttribute("data-id", `${product.id}`);
-  cartItem.innerHTML = `
-    <div class="cart__item-img">
-    <img src="${product.imgSrc}" alt="" />
-  </div>
-  <div class="cart__container-detail">
-    <div class="cart__item-name">
-      ${product.name}
-    </div>
-    <div class="cart__item-code">${product.code}</div>
-    <div class="cart__item-quantity disable">
-    <div class="cartpage__product-quantity">
-    <div
-      class="btn cartpage-box cartpage__product-quantity--decrease"
-    ></div>
-    <div
-      class="btn cartpage-box cartpage__product-quantity--number"
-    >
-      1
-    </div>
-    <div
-      class="btn cartpage-box cartpage__product-quantity--increase"
-    ></div>
-  </div>
-      
-      
-    </div>
-  </div>
-  <div class="cart__container-decision">
-    <div class="cart__item-price">
-      ${product.price}
-    </div>
-    <div class="cart__item-price price-old">
-        ${product.oldPrice}
-    </div>
-    <div class="cart__item-delete--big">
+
+  const cartImage = document.createElement("div");
+  cartImage.classList.add("cart__item-img");
+  const cartImageSrc = document.createElement("img");
+  cartImageSrc.setAttribute("src", product.imgSrc);
+  // item image
+  cartImage.appendChild(cartImageSrc);
+
+  const cartItemDetail = document.createElement("div");
+  cartItemDetail.classList.add("cart__container-detail");
+
+  // item name
+  const cartItemName = document.createElement("div");
+  cartItemName.classList.add("cart__item-name");
+  cartItemName.innerHTML = `${product.name}`;
+
+  // item code
+  const cartItemCode = document.createElement("div");
+  cartItemCode.classList.add("cart__item-code");
+  cartItemCode.innerHTML = `${product.code}`;
+
+  // cart item quantity
+  const cartItemQuantity = document.createElement("div");
+  cartItemQuantity.classList.add("cartpage__product-quantity");
+  const cartItemQuantityDec = document.createElement("div");
+  cartItemQuantityDec.classList.add(
+    "btn",
+    "cartpage-box",
+    "cartpage__product-quantity--decrease"
+  );
+  const cartItemQuantityInc = document.createElement("div");
+  cartItemQuantityInc.classList.add(
+    "btn",
+    "cartpage-box",
+    "cartpage__product-quantity--increase"
+  );
+  const cartItemQuantityNumber = document.createElement("div");
+  cartItemQuantityNumber.classList.add(
+    "btn",
+    "cartpage-box",
+    "cartpage__product-quantity--number"
+  );
+  // need change to number of product same id
+  cartItemQuantityNumber.innerHTML = `${1}`;
+
+  cartItemQuantity.appendChild(cartItemQuantityDec);
+  cartItemQuantity.appendChild(cartItemQuantityNumber);
+  cartItemQuantity.appendChild(cartItemQuantityInc);
+
+  cartItemDetail.appendChild(cartItemName);
+  cartItemDetail.appendChild(cartItemCode);
+  cartItemDetail.appendChild(cartItemQuantity);
+
+  // cart decision
+  const cartItemDecision = document.createElement("div");
+  cartItemDecision.classList.add("cart__container-decision");
+  const cartPriceNew = document.createElement("div");
+  cartPriceNew.classList.add("cart__item-price");
+  // console.log('product.price', product.price.toLocaleString("de"))
+
+  cartPriceNew.innerHTML = `${product.price.toLocaleString("de")}`;
+  const cartPriceOld = document.createElement("div");
+  cartPriceOld.classList.add("cart__item-price", "price-old");
+  if (product.oldPrice !== undefined) {
+    cartPriceOld.innerHTML = `${product.oldPrice}`;
+  }
+  const cartDelete = document.createElement("div");
+  cartDelete.classList.add("cart__item-delete--big");
+  cartDelete.innerHTML = `
       <img
         src="./src/images/icon/delete-icon.svg"
         alt=""
-      />
-    </div>
-    <div class="cart__item-delete--small">
-      <img
-        src="./src/images/icon/delete-icon.svg"
-        alt=""
-      />
-    </div>
-  </div>
-    `;
+      />`;
+
+  cartItemDecision.appendChild(cartPriceNew);
+  cartItemDecision.appendChild(cartPriceOld);
+  cartItemDecision.appendChild(cartDelete);
+
+  cartItem.appendChild(cartImage);
+  cartItem.appendChild(cartItemDetail);
+  cartItem.appendChild(cartItemDecision);
+
   cartList.appendChild(cartItem);
+  return cartList;
 }
 
 // save the product in the local storage
@@ -315,37 +386,9 @@ function getProductFromStorage() {
 function loadCart() {
   let products = getProductFromStorage();
   if (products.length < 1) {
-    cartItemID = 1; // if there is no any product in the local storage
+    console.log("okie"); // if there is no any product in the local storage
   } else {
-    cartItemID = products[products.length - 1].id;
-    cartItemID++;
-    // else get the id of the last product and increase it by 1
+    console.log("...");
   }
   products.forEach((product) => addToCartList(product));
-}
-
-// get number of item
-function findCartInfo() {
-  let products = getProductFromStorage();
-  return {
-    productCount: products.length,
-  };
-}
-
-// delete product from cart list and local storage
-function deleteProduct(e) {
-  let cartItem;
-  if (e.target.tagName === "BUTTON") {
-    cartItem = e.target.parentElement;
-    cartItem.remove(); // this removes from the DOM only
-  } else if (e.target.tagName === "I") {
-    cartItem = e.target.parentElement.parentElement;
-    cartItem.remove(); // this removes from the DOM only
-  }
-
-  let products = getProductFromStorage();
-  let updatedProducts = products.filter((product) => {
-    return product.id !== parseInt(cartItem.dataset.id);
-  });
-  localStorage.setItem("products", JSON.stringify(updatedProducts));
 }

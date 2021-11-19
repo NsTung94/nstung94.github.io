@@ -1,6 +1,5 @@
 class Menu {
   toggleMenu() {
-    console.log('toggle')
     // var menuBtn = document.querySelector(".js-open-menu");
     var menuBtn = document.querySelector('.js-open-menu');
     var menu = document.querySelector(".menu");

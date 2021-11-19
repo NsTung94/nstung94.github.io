@@ -313,10 +313,8 @@
     &-quantity {
       @include flexBox(stretch);
       &--add {
-        margin-bottom: 10px;
         order: 3;
         @include large {
-          margin: 0;
           order: 1;
         }
       }
@@ -380,6 +378,7 @@
       box-shadow: -1px -1px $secondary-color;
       background-color: #fff;
       @include large {
+        background-color: transparent;
         padding: 0 0 40px 30px;
         box-shadow: none;
       }
@@ -435,6 +434,7 @@
     height: 0;
     background-color: #fff;
     @include large {
+      background-color: transparent;
       @include flexBox(stretch, $dir: column);
       height: auto;
     }
