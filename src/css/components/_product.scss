@@ -132,6 +132,7 @@
     &-suggestion {
       @include flexBox(center);
       height: 46px;
+      // gap: 2px;
       @include large {
           display: none;
       }
@@ -154,6 +155,7 @@
     }
     &-payment {
       @include flexBox(center);
+      gap: 2px;
       height: 100%;
       width: 85%;
       padding: 5px;
@@ -216,3 +218,6 @@
   }
 }
 
+.design {
+  @include flexBox($dir: column);
+}

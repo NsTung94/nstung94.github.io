@@ -450,11 +450,6 @@ label {
   height: 100%;
 }
 
-.loadMore {
-  width: 30px;
-  height: 30px;
-}
-
 .cart-active .cart {
   overflow-y: auto;
   height: 500px;
@@ -1378,6 +1373,7 @@ label {
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 2px;
   height: 100%;
   width: 85%;
   padding: 5px;
@@ -1444,6 +1440,14 @@ label {
 }
 .product .active {
   bottom: 0;
+}
+
+.design {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 @keyframes placeHolderShimmer {
