@@ -14,12 +14,14 @@ class CartPopup {
   increaseQuantity(item) {
     let button = document.querySelector('.js-cart-increase');
     if ( item.cartQuantity < item.quantity){
+      console.log("item.id",item.id)
+      const index = currentCartItems.findIndex(cartItem => cartItem.id === item.id)
+      console.log("index", index)
       button.addEventListener('click', function(){
         item.cartQuantity += 1;
-        console.log("item", item)
-        // const index = currentCartItems.findIndex(cartItem => cartItem.id === item.id);
-        console.log("index", index)
-        // localStorage.setItem('_cartItemKey', JSON.stringify(item));
+        console.log("item", item);
+        currentCartItems[index] = item;
+        // localStorage.setItem('_cartItemKey', currentCartItems);
       })
     }else {
       button.classList.add("disable");
@@ -31,12 +33,10 @@ class CartPopup {
     let button = document.querySelector('.js-cart-decrease');
     if (item.cartQuantity > 0){
       item.cartQuantity -= 1;
-      localStorage.setItem('_cartItemKey', JSON.stringify(item))
     }else{
       button.classList.add('disable');
     }
   }
-
   displayNumberInCart() {
     let totalNumberItem = 0;
     currentCartItems.map(

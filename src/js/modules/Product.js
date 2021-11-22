@@ -20,18 +20,21 @@ class Product {
   };
   purchaseProduct() {
     let button = productList.querySelectorAll(".js-add-cart");
-    button.forEach(function (addBtn) {
+
+    button.forEach(function(addBtn) {
       addBtn.addEventListener("click", function (e) {
         e.preventDefault();
-        console.log("clicked", e.currentTarget);
-        let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = productItems.find(
-          (target) => target.id === productId
+        console.log('clicked',e.currentTarget);
+        let productId = Number(
+          e.currentTarget.getAttribute("data-id")
         );
-        
-        saveProductInStorage(targetProduct);
+        const targetProduct = productItems.find(
+          (target) =>
+              target.id === productId
+        );
+        product.saveProductInStorage(targetProduct);
       });
-    });
+    });  
   }
   display() {
     // setTimeout(function () {
@@ -63,8 +66,6 @@ class Product {
   // save the product in the local storage
   saveProductInStorage(item) {
     let existedItems = getProductFromStorage();
-    console.log("hello", existedItems);
-    console.log("item", item)
     // check if target is existed
     const found = existedItems.some((product) => product.id === item.id);
     if (found) {
