@@ -1,4 +1,4 @@
-import { getProductFromStorage, saveProductInStorage } from "./Product.js";
+import { getProductFromStorage } from "./Product.js";
 import { cartTemplate } from "./cart-template.js";
 let currentCartItems = getProductFromStorage();
 class CartPopup {
@@ -16,7 +16,10 @@ class CartPopup {
     if ( item.cartQuantity < item.quantity){
       button.addEventListener('click', function(){
         item.cartQuantity += 1;
-        cartPopup.displayCart();
+        console.log("item", item)
+        // const index = currentCartItems.findIndex(cartItem => cartItem.id === item.id);
+        console.log("index", index)
+        // localStorage.setItem('_cartItemKey', JSON.stringify(item));
       })
     }else {
       button.classList.add("disable");
@@ -28,10 +31,12 @@ class CartPopup {
     let button = document.querySelector('.js-cart-decrease');
     if (item.cartQuantity > 0){
       item.cartQuantity -= 1;
+      localStorage.setItem('_cartItemKey', JSON.stringify(item))
     }else{
       button.classList.add('disable');
     }
   }
+
   displayNumberInCart() {
     let totalNumberItem = 0;
     currentCartItems.map(

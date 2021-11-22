@@ -20,21 +20,18 @@ class Product {
   };
   purchaseProduct() {
     let button = productList.querySelectorAll(".js-add-cart");
-
-    button.forEach(function(addBtn) {
+    button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
         e.preventDefault();
-        console.log('clicked',e.currentTarget);
-        let productId = Number(
-          e.currentTarget.getAttribute("data-id")
-        );
+        console.log("clicked", e.currentTarget);
+        let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = productItems.find(
-          (target) =>
-              target.id === productId
+          (target) => target.id === productId
         );
-        product.saveProductInStorage(targetProduct);
+        
+        saveProductInStorage(targetProduct);
       });
-    });  
+    });
   }
   display() {
     // setTimeout(function () {
@@ -66,6 +63,8 @@ class Product {
   // save the product in the local storage
   saveProductInStorage(item) {
     let existedItems = getProductFromStorage();
+    console.log("hello", existedItems);
+    console.log("item", item)
     // check if target is existed
     const found = existedItems.some((product) => product.id === item.id);
     if (found) {
@@ -79,7 +78,7 @@ class Product {
         existedItems[index].cartQuantity = existedItems[index].quantity;
       } else {
         // cart amount +1 every click
-        existedItems[index].cartQuantity += 1;
+        existedItems[index].cartQuantity = 1;
       }
       localStorage.setItem(_cartItemKey, JSON.stringify(existedItems));
     }

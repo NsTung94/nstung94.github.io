@@ -81,14 +81,12 @@ export const productItemTemplate = (product) => {
 
   // Product Suggestion
   let suggestion = document.createElement("div");
-  suggestion.classList.add(
-    "item",
-    "product__item-suggestion",
-    "hide-on-desktop"
-  );
+  suggestion.classList.add("item","product__item-suggestion","hide-on-desktop");
   suggestion.innerHTML = `
           <div class="product__item-interest">
-              <div class="product__item-interest--number">${product.interest} %</div>
+              <div class="product__item-interest--number">${
+                product.interest
+              } %</div>
           </div>
           <div class="product__item-payment">
               <div class="product__item-payment--money">
@@ -110,12 +108,12 @@ export const productItemTemplate = (product) => {
   let action = document.createElement("div");
   action.classList.add("item", "product__item-action");
   let add = document.createElement("div");
-  add.classList.add('btn', 'btn--primary', 'product__item-action--add', 'js-add-cart');
-  add.setAttribute('data-id', product.id);
-    add.innerHTML = `add to cart`
-  let research = document.createElement('div');
-  research.classList.add('btn','product__item-action--research')
-  research.innerHTML = `learn more`
+  add.classList.add("btn","btn--primary","product__item-action--add","js-add-cart");
+  add.setAttribute("data-id", product.id);
+  add.innerHTML = `add to cart`;
+  let research = document.createElement("div");
+  research.classList.add("btn", "product__item-action--research");
+  research.innerHTML = `learn more`;
   action.appendChild(add);
   action.appendChild(research);
   // product.purchaseProduct();
@@ -142,17 +140,19 @@ export const productItemTemplate = (product) => {
   productItem.appendChild(description);
   productItem.appendChild(action);
   productItem.appendChild(compare);
-  
+
   // console.log("productItem", productItem);
   // document.addEventListener('DOMContentLoaded', function(){
   //   console.log('DOM fully loaded and parsed');
   //   purchaseProduct()
   // });
-  setTimeout(function(){
-    purchaseProduct()
-  }, 100)
-    
+  // productItem.addEventListener('DOMContentLoaded', function(){
+  //   console.log('DOM fully loaded and parsed');
+  //   purchaseProduct()
+  // });
+  setTimeout(function () {
+    purchaseProduct();
+  }, 100);
+
   return productItem;
 };
-
-
