@@ -216,8 +216,9 @@
   .active {
     bottom: 0;
   }
+  .design {
+    @include flexBox($dir: column);
+    margin: 0 auto;
+  }
 }
 
-.design {
-  @include flexBox($dir: column);
-}

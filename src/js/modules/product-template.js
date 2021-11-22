@@ -1,19 +1,19 @@
-import { productItems, purchaseProduct } from "./Product.js";
+import { purchaseProduct } from "./Product.js";
 // console.log ( Product)
-export const displayProduct = (product) => {
+export const productItemTemplate = (product) => {
   // Product Item Container
-  var productItem = document.createElement("div");
+  let productItem = document.createElement("div");
   productItem.classList.add("product__item");
   productItem.setAttribute("data-id", product.id);
   // Heart Button
-  var heartBtn = document.createElement("div");
+  let heartBtn = document.createElement("div");
   heartBtn.classList.add("product__item-heart", "js-heart-button");
 
   // List Tag DealType
-  var tag = document.createElement("div");
+  let tag = document.createElement("div");
   tag.classList.add("item", "product__item-tag");
-  var tagString = [];
-  for (var i = 0; i < product.dealType.length; i++) {
+  let tagString = [];
+  for (let i = 0; i < product.dealType.length; i++) {
     if (product.dealType[i].type == "new") {
       tagString.push('<div class="tag tag--new">new</div>');
     }
@@ -32,22 +32,22 @@ export const displayProduct = (product) => {
   tag.innerHTML = tagString.join("");
 
   // Product Image
-  var image = document.createElement("div");
+  let image = document.createElement("div");
   image.classList.add("product__item-img");
-  var itemImage = document.createElement("img");
+  let itemImage = document.createElement("img");
   itemImage.setAttribute("src", product.picture);
   image.appendChild(itemImage);
 
   // Product Detail
-  var detail = document.createElement("div");
+  let detail = document.createElement("div");
   detail.classList.add("item", "product__item-detail");
-  var code = document.createElement("div");
+  let code = document.createElement("div");
   code.classList.add("product__item-code");
   code.innerHTML = `${product.code}`;
-  var name = document.createElement("div");
+  let name = document.createElement("div");
   name.classList.add("product__item-name");
   name.innerHTML = `${product.name}`;
-  var review = document.createElement("div");
+  let review = document.createElement("div");
   review.classList.add("product__item-rate");
   review.innerHTML = `
         <div class="product__item-rate--star">
@@ -63,27 +63,24 @@ export const displayProduct = (product) => {
   detail.appendChild(review);
 
   // Product Price
-  var price = document.createElement("div");
+  let price = document.createElement("div");
   price.classList.add("item", "product__item-price");
-  var priceNumber = [];
+  let oldPrice = document.createElement("div");
   if (product.price.old == undefined) {
-    var oldPrice = document.createElement("div");
     oldPrice.style.display = "none";
   } else {
-    var oldPrice = document.createElement("div");
     oldPrice.classList.add("product__item-price--old");
     oldPrice.innerHTML = `${product.price.old.toLocaleString("de")}`;
   }
-  var newPrice = document.createElement("div");
+  let newPrice = document.createElement("div");
   newPrice.classList.add("product__item-price--new");
   newPrice.innerHTML = `${product.price.new.toLocaleString("de")}`;
-  priceNumber.push(oldPrice, newPrice);
 
   price.appendChild(oldPrice);
   price.appendChild(newPrice);
 
   // Product Suggestion
-  var suggestion = document.createElement("div");
+  let suggestion = document.createElement("div");
   suggestion.classList.add(
     "item",
     "product__item-suggestion",
@@ -102,7 +99,7 @@ export const displayProduct = (product) => {
         `;
 
   // Product Description
-  var description = document.createElement("ul");
+  let description = document.createElement("ul");
   description.classList.add("item", "product__item-description");
   const listDescription = product.description
     .map((item) => `<li>${item.value}</li>`)
@@ -110,19 +107,20 @@ export const displayProduct = (product) => {
   description.innerHTML += listDescription;
 
   // Product Action
-  var action = document.createElement("div");
+  let action = document.createElement("div");
   action.classList.add("item", "product__item-action");
-  action.innerHTML = `
-    <div class="btn btn--primary product__item-action--add js-add-cart">
-        add to cart
-    </div>
-    <div class="btn product__item-action--research">
-        learn more
-    </div>
-    `;
+  let add = document.createElement("div");
+  add.classList.add('btn', 'btn--primary', 'product__item-action--add', 'js-add-cart');
+  add.setAttribute('data-id', product.id);
+    add.innerHTML = `add to cart`
+  let research = document.createElement('div');
+  research.classList.add('btn','product__item-action--research')
+  research.innerHTML = `learn more`
+  action.appendChild(add);
+  action.appendChild(research);
   // product.purchaseProduct();
 
-  var compare = document.createElement("div");
+  let compare = document.createElement("div");
   compare.classList.add("product__item-compare", "hide-on-mobile");
   compare.innerHTML = `
             <label class="checkBox js-compare-checkbox">
@@ -146,7 +144,14 @@ export const displayProduct = (product) => {
   productItem.appendChild(compare);
   
   // console.log("productItem", productItem);
-  purchaseProduct();
+  // document.addEventListener('DOMContentLoaded', function(){
+  //   console.log('DOM fully loaded and parsed');
+  //   purchaseProduct()
+  // });
+  setTimeout(function(){
+    purchaseProduct()
+  }, 100)
+    
   return productItem;
 };
 

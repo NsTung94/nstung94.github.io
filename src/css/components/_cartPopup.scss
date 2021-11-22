@@ -63,16 +63,16 @@
   }
   &__item {
     @include flexBox(center, $dir: row);
-    height: 100%;
+    // height: 100%;
     width: 100%;
     padding: 10px 0;
     border-bottom: 1px solid $secondary-color;
     &-img {
       width: 70px;
-      height: 110px;
+      height: 150px;
       @include flexBox(center, center);
-      img {
-        width: 50%;
+      &--imgSrc { 
+        width: 100%;
         object-fit: contain;
       }
     }
@@ -94,6 +94,9 @@
     }
     &-price {
       font: 600 14px/22px $font-primary;
+      &:after {
+        content: ' đ';
+      }
     }
     &-delete {
       @include flexBox(flex-end, flex-end, wrap, column);

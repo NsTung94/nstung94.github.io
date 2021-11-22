@@ -1,6 +1,6 @@
 export default class Dropdown {
   dropdown() {
-    let dropdown = document.querySelectorAll('.js-dropdown-menu');
+    let dropdown = document.querySelectorAll(".js-dropdown-menu");
     dropdown.forEach(function (item) {
       let button = item.querySelector(".js-dropdown-button");
       let content = item.querySelector(".js-dropdown-content");
@@ -38,21 +38,30 @@ export default class Dropdown {
       });
     });
   }
-  cartPopUp(){
-    var cartIcon = document.querySelector('.js-cart');
-    cartIcon.addEventListener('click', function(){
-      console.log('clicked', cartIcon.classList.add('cart-active'));
-      if (cartIcon.classList.contains('cart-active')){
-        cartIcon.classList.remove('cart-active');
-        // console.log('removed')
+  cartPopUp() {
+    let cartPopup = document.querySelector('.js-cart');
+    let cartButton = document.querySelector('.js-cart-open');
+   
+    cartButton.addEventListener('click', function(){
+      if (cartPopup.classList.contains('cart-active')){
+        cartPopup.classList.remove('cart-active');
       }else{
-        cartIcon.classList.add('cart-active');
-        // console.log("add", cartIcon);
+        cartPopup.classList.add('cart-active');
       }
     })
-    
   }
 }
+
+// const cartPopups = [...document.getElementsByClassName('.js-cart')];
+
+// window.addEventListener('click', ({ target }) => {
+//   const popup = target.closest('.js-cart');
+//   const clickedOnClosedPopup = popup && !popup.classList.contains('cart-active');
+  
+//   cartPopups.forEach(p => p.classList.remove('cart-active'));
+  
+//   if (clickedOnClosedPopup) popup.classList.add('cart-active');  
+// });
 
 const dropdown = new Dropdown();
 dropdown.dropdown();

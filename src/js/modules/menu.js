@@ -27,21 +27,8 @@ class Menu {
       });
     });
   }
- 
-  openCartPopUp(){
-    var cartIcon = document.querySelector('.js-cart')
-    var button = document.querySelector('.js-cart-open');
-    cartIcon.addEventListener('click', function(){
-      if (cartIcon.classList.contains('cart-active')){
-        cartIcon.classList.remove('cart-active');
-      }else{
-        cartIcon.classList.add('cart-active');
-      }
-    })
-  }
 }
 
 const menu = new Menu();
 menu.toggleMenu();
 menu.openSubMenu();
-menu.openCartPopUp();

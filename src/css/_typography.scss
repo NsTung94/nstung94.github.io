@@ -108,6 +108,7 @@ label {
 .danger {
   color: red;
 }
+
 .disable {
   opacity: 0.5;
   pointer-events: none;
@@ -194,4 +195,8 @@ label {
   right: 15px;
   bottom: 80px;
   z-index: 10;
+}
+
+.hide-before:before, .hide-after:after { 
+  display:none; 
 }

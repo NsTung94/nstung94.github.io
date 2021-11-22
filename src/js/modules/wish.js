@@ -14,25 +14,7 @@ class Wish {
       });
     });
   }
-  countWish() {
-    var numberInWish = document.querySelector(".js-number-wish");
-    let numberWish = document.querySelectorAll(".heart-active").length;
-    numberInWish.innerHTML = `${numberWish}`;
-
-    if (numberCart == 0) {
-      document.querySelectorAll(".js-hide-on-none").forEach(function (item) {
-        item.classList.add("hide");
-      });
-    }
-
-    cart.addEventListener("click", function () {
-      if (cart.classList.contains("cart-active")) {
-        cart.classList.remove("cart-active");
-      } else {
-        cart.classList.add("cart-active");
-      }
-    });
-  }
+ 
 }
 
 const wish = new Wish();

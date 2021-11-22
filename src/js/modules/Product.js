@@ -1,12 +1,12 @@
 import "./Wish.js";
-import { displayProduct } from "./product-template.js";
-export const productItems = [];
+import { productItemTemplate } from "./product-template.js";
+const productItems = [];
 let startIndex = 0;
 let pageSize = 3;
-const _productItemKey = "_productItemKey";
 const _cartItemKey = "_cartItemKey";
+const productList = document.querySelector(".js-product-list");
+
 class Product {
-  // productItems = [];
   loadProducts = async () => {
     try {
       const res = await fetch("src/product.json");
@@ -18,13 +18,30 @@ class Product {
       console.log(err);
     }
   };
+  purchaseProduct() {
+    let button = productList.querySelectorAll(".js-add-cart");
+
+    button.forEach(function(addBtn) {
+      addBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        console.log('clicked',e.currentTarget);
+        let productId = Number(
+          e.currentTarget.getAttribute("data-id")
+        );
+        const targetProduct = productItems.find(
+          (target) =>
+              target.id === productId
+        );
+        product.saveProductInStorage(targetProduct);
+      });
+    });  
+  }
   display() {
-    let productList = document.querySelector(".js-product-list");
     // setTimeout(function () {
     let size = startIndex + pageSize;
     let currentProducts = productItems.slice(startIndex, size);
     currentProducts.map((product) =>
-      productList.appendChild(displayProduct(product))
+      productList.appendChild(productItemTemplate(product))
     );
 
     // }, 1000);
@@ -39,54 +56,43 @@ class Product {
       product.display();
     });
   }
-  purchaseProduct() {
-    var button = document.querySelectorAll(".js-add-cart");
-    // console.log("button", button);
-    button.forEach(function (addBtn) {
-      // console.log('add ne', addBtn)
-      addBtn.addEventListener("click", function (e) {
-        e.preventDefault();
-        console.log("detail of e", e);
-        let productId = Number(
-          e.target.parentElement.parentElement.getAttribute("data-id")
-        );
-        const targetProduct = productItems.find(
-          (target) =>
-            function () {
-              target.id === productId;
-            }
-        );
-        console.log("targeted", targetProduct);
-        product.saveProductInStorage(targetProduct);
-      });
-    });
-  }
-
   // get all the products info if there is any in the local storage
   getProductFromStorage() {
-    return localStorage.getItem("products")
-      ? JSON.parse(localStorage.getItem("products"))
+    return localStorage.getItem(_cartItemKey)
+      ? JSON.parse(localStorage.getItem(_cartItemKey))
       : [];
     // returns empty array if there isn't any product info
   }
-
   // save the product in the local storage
   saveProductInStorage(item) {
-    let products = product.getProductFromStorage();
+    let existedItems = getProductFromStorage();
     // check if target is existed
-    const found = products.some((product) => product.id === item.id);
+    const found = existedItems.some((product) => product.id === item.id);
     if (found) {
-      const index = products.findIndex((product) => product.id === item.id);
-      console.log("products[index]", products[index]);
-      products[index].cartQuantity += 1;
-      localStorage.setItem("products", JSON.stringify(products));
+      const index = existedItems.findIndex((product) => product.id === item.id);
+
+      // storage quantity is cart maximum amount => return storage number
+      if (
+        existedItems[index].cartQuantity > existedItems[index].quantity ||
+        existedItems[index].cartQuantity === existedItems[index].quantity
+      ) {
+        existedItems[index].cartQuantity = existedItems[index].quantity;
+      } else {
+        // cart amount +1 every click
+        existedItems[index].cartQuantity += 1;
+      }
+      localStorage.setItem(_cartItemKey, JSON.stringify(existedItems));
     }
     // done exist then push more
     else {
       console.log("item", item);
-      item.cartQuantity = 1;
-      products.push(item);
-      localStorage.setItem("products", JSON.stringify(products));
+      if (item.quantity === 0) {
+        item.cartQuantity = 0;
+      } else {
+        item.cartQuantity = 1;
+      }
+      existedItems.push(item);
+      localStorage.setItem(_cartItemKey, JSON.stringify(existedItems));
     }
   }
 }
@@ -95,4 +101,5 @@ const product = new Product();
 product.loadProducts();
 product.loadMore();
 // product.purchaseProduct();
-export const { purchaseProduct } = new Product();
+export const { purchaseProduct, getProductFromStorage, saveProductInStorage } =
+  new Product();
