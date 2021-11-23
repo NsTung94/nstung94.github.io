@@ -33,12 +33,12 @@ class CartPopup {
   increaseCartItemQuantity(item, button, index) {
     const self = this;
     if (item.cartQuantity < item.quantity) {
-      button.classList.remove('disable');
+      button.classList.remove("disable");
       item.cartQuantity += 1;
       console.log("item cart quantity", item.cartQuantity);
       this.currentCartProduct[index] = item;
       updateCartProduct(this.currentCartProduct);
-      self.loadCartProducts()
+      self.debounce(self.loadCartProducts(), 100);
     } else {
       button.classList.add("disable");
     }
@@ -46,10 +46,10 @@ class CartPopup {
   decreaseCartItemQuantity(item, button, index) {
     const self = this;
     if (item.cartQuantity > 0) {
-      button.classList.remove('disable')
+      button.classList.remove("disable");
       item.cartQuantity -= 1;
       console.log("item cart quantity", item.cartQuantity);
-      
+
       this.currentCartProduct[index] = item;
       updateCartProduct(this.currentCartProduct);
       self.loadCartProducts();
@@ -137,6 +137,15 @@ class CartPopup {
         self.deleteCart(targetProduct, index);
       });
     });
+  }
+  debounce(fn, ms) {
+    let timer;
+    return () => {
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        fn.apply(this, arguments);
+      }, ms);
+    };
   }
 }
 

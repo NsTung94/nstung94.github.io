@@ -1,4 +1,3 @@
-import "./Wish.js";
 import { productItemTemplate } from "./product-template.js";
 const productItems = [];
 
@@ -23,10 +22,11 @@ class Product {
     try {
       const res = await fetch("src/product.json");
       let products = await res.json();
-      products.map((product, id) => {
+      products.map((product) => {
         productItems.push(product);
       });
       this.loadNewProductsToRender();
+
     } catch (err) {
       console.log(err);
     }
@@ -45,15 +45,16 @@ class Product {
     const lastIndex = startIndex + pageSize;
     const loadedProducts = productItems.slice(startIndex, lastIndex);
     this.currentProducts = [...this.currentProducts, ...loadedProducts];
-    this.startIndex = lastIndex;
+    console.log('currentProduct', this.currentProducts)
     // save new products
     saveProducts(this.currentProducts);
     // Display products
-    this.displayProducts(this.currentProducts);
+    this.displayProducts(loadedProducts);
   }
 
   newLoadMore() {
     // Change page index
+    this.startIndex = this.startIndex + this.pageSize;
     this.loadNewProductsToRender(this.startIndex);
   }
 
