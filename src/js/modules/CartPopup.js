@@ -3,20 +3,23 @@ import {
   getCartProducts,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
+
 class CartPopup {
   cartListElement = document.getElementById("cart-list");
   currentCartProduct = getCartProducts();
-
+  contentHided = document.querySelectorAll(".js-hide-on-none");
+  numberInCart = document.querySelector(".js-number-cart");
+  numberInCartItem = document.querySelector(".js-number-cart-item");
   constructor() {
     this.loadCartProducts();
-    this.displayNumberInCart();
-    this.totalPrice();
   }
 
   loadCartProducts() {
     const currentCartProduct = getCartProducts();
     console.log("this.currentCartProduct in load cart", currentCartProduct);
     this.displayCartProducts(currentCartProduct);
+    this.displayNumberInCart(currentCartProduct);
+    this.totalPrice(currentCartProduct);
   }
 
   displayCartProducts(products = []) {
@@ -30,6 +33,32 @@ class CartPopup {
     }, 100);
   }
 
+  displayNumberInCart(products) {
+    let totalNumberItem = 0;
+    products.forEach((item) => (totalNumberItem += item.cartQuantity));
+    this.contentHided.forEach((content) => {
+      if (totalNumberItem === 0) {
+        content.classList.add("hide");
+      } else {
+        content.classList.remove("hide");
+        this.numberInCart.innerHTML = `${totalNumberItem}`;
+        this.numberInCartItem.innerHTML = `${totalNumberItem} Products`;
+        console.log("totalNumberItem", totalNumberItem);
+      }
+    });
+  }
+
+  totalPrice(products) {
+    let totalPrice = document.querySelector(".js-totalPrice");
+    let totalCost = 0;
+    products.forEach((item) => {
+      let cost = item.price.new * item.cartQuantity;
+      totalCost += cost;
+    });
+    totalPrice.innerHTML = `${totalCost.toLocaleString("de")} đ`;
+    return totalPrice;
+  }
+
   increaseCartItemQuantity(item, button, index) {
     const self = this;
     if (item.cartQuantity < item.quantity) {
@@ -38,7 +67,7 @@ class CartPopup {
       console.log("item cart quantity", item.cartQuantity);
       this.currentCartProduct[index] = item;
       updateCartProduct(this.currentCartProduct);
-      self.debounce(self.loadCartProducts(), 100);
+      self.loadCartProducts()
     } else {
       button.classList.add("disable");
     }
@@ -59,34 +88,13 @@ class CartPopup {
   }
   deleteCart(item, index) {
     console.log("before delete", this.currentCartProduct);
+    console.log('target', item);
     console.log("item in delete", item, "index", index);
-    this.currentCartProduct = this.currentCartProduct.splice(index, 1);
-    console.log("after delete", this.currentCartProduct);
+    this.currentCartProduct = this.currentCartProduct.filter(item => item.id !== index);
+    console.log('after', this.currentCartProduct)
+    updateCartProduct(this.currentCartProduct);
     this.loadCartProducts();
   }
-
-  displayNumberInCart() {
-    let totalNumberItem = 0;
-    this.currentCartProduct.map(
-      (current) => (totalNumberItem += current.cartQuantity)
-    );
-    let numberInCart = document.querySelector(".js-number-cart");
-    let numberInCartItem = document.querySelector(".js-number-cart-item");
-    numberInCart.innerHTML = `${totalNumberItem}`;
-    numberInCartItem.innerHTML = `${totalNumberItem} Products`;
-    console.log("totalNumberItem", totalNumberItem);
-  }
-  totalPrice() {
-    let totalPrice = document.querySelector(".js-totalPrice");
-    let totalCost = 0;
-    this.currentCartProduct.map((item) => {
-      let cost = item.price.new * item.cartQuantity;
-      totalCost += cost;
-    });
-    totalPrice.innerHTML = `${totalCost.toLocaleString("de")} đ`;
-    return totalPrice;
-  }
-
   async initIncreaseCartEvent() {
     let buttons = document.querySelectorAll(".js-cart-increase");
     const self = this;
@@ -104,7 +112,7 @@ class CartPopup {
       });
     });
   }
-  initDecreaseCartEvent() {
+  async initDecreaseCartEvent() {
     let buttons = document.querySelectorAll(".js-cart-decrease");
     const self = this;
     buttons.forEach(function (button) {
@@ -121,7 +129,7 @@ class CartPopup {
       });
     });
   }
-  initDeleteCartEvent() {
+  async initDeleteCartEvent() {
     let deleteCartButton = document.querySelectorAll(".js-cart-delete");
     const self = this;
     deleteCartButton.forEach(function (deleteBtn) {
@@ -147,6 +155,19 @@ class CartPopup {
       }, ms);
     };
   }
+
+  // cartLogic() {
+  //   this.cartListElement.addEventListener("click", (event) => {
+  //     if (event.target.classList.contains("js-cart-increase")) {
+  //       let increaseButton = event.target;
+  //       let id = increaseButton.getAttribute("data-id");
+  //       let tempItem = this.currentCartProduct.find((item) => item.id === id);
+  //       tempItem.cartQuantity += 1;
+  //       saveToCartProducts(this.currentCartProduct);
+  //       increaseButton.prevElementSibling.innerText = tempItem.cartQuantity;
+  //     }
+  //   });
+  // }
 }
 
 export default new CartPopup();

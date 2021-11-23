@@ -1,22 +1,21 @@
 import { productItemTemplate } from "./product-template.js";
-const productItems = [];
-
-const productList = document.querySelector(".js-product-list");
 import {
   getCartProducts,
   saveProducts,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
 
+const productItems = [];
+
 class Product {
   startIndex = 0;
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
-  constructor() {
-    this.loadProducts();
-    this.initEvents();
-  }
+  // constructor() {
+  //   this.loadProducts();
+  //   this.initEvents();
+  // }
 
   loadProducts = async () => {
     try {
@@ -26,7 +25,6 @@ class Product {
         productItems.push(product);
       });
       this.loadNewProductsToRender();
-
     } catch (err) {
       console.log(err);
     }
@@ -45,7 +43,7 @@ class Product {
     const lastIndex = startIndex + pageSize;
     const loadedProducts = productItems.slice(startIndex, lastIndex);
     this.currentProducts = [...this.currentProducts, ...loadedProducts];
-    console.log('currentProduct', this.currentProducts)
+    console.log("currentProduct", this.currentProducts);
     // save new products
     saveProducts(this.currentProducts);
     // Display products
@@ -59,7 +57,7 @@ class Product {
   }
 
   initAddToCartEvent() {
-    let button = productList.querySelectorAll(".js-add-cart");
+    let button = this.productListElement.querySelectorAll(".js-add-cart");
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
@@ -68,7 +66,6 @@ class Product {
         const targetProduct = productItems.find(
           (target) => target.id === productId
         );
-        // self.saveProductInStorage(targetProduct);
         self.addToCartProducts(targetProduct);
       });
     });
@@ -100,6 +97,7 @@ class Product {
       // saveToCartProducts(item)
       cartProducts.push(item);
       updateCartProduct(cartProducts);
+      // CartPopup.loadCartProducts();
     }
   }
 
@@ -110,4 +108,11 @@ class Product {
   }
 }
 
-export default new Product();
+// export default new Product();
+
+document.addEventListener("DOMContentLoaded", () => {
+  const product = new Product();
+  product.loadProducts();
+  product.initEvents();
+  
+});
