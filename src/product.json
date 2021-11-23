@@ -13,6 +13,7 @@
     },
 
     "quantity": 0,
+    "cartQuantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -35,6 +36,7 @@
       "new": 14789999
     },
     "quantity": 3,
+    "cartQuantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -55,6 +57,7 @@
       "new": 16390000
     },
     "quantity": 9,
+    "cartQuantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -75,6 +78,7 @@
       "new": 16590000
     },
     "quantity": 0,
+    "cartQuantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -97,6 +101,7 @@
     },
 
     "quantity": 0,
+    "cartQuantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [
@@ -120,6 +125,49 @@
       "new": 42990000
     },
     "quantity": 10,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 6,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "discount" }],
+    "price": {
+      "new": 42990000
+    },
+    "quantity": 10,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 6,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "discount" }],
+    "price": {
+      "new": 42990000
+    },
+    "quantity": 10,
+    "cartQuantity": 0,
     "interest": 0,
     "payment": 3300000,
     "description": [

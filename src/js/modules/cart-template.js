@@ -1,4 +1,3 @@
-import { increaseQuantity, decreaseQuantity } from "./CartPopup.js";
 export const cartTemplate = (product) => {
   const cartItem = document.createElement("div");
   cartItem.classList.add("cart__item");
@@ -25,6 +24,7 @@ export const cartTemplate = (product) => {
   cartQuantity.classList.add("cartpage__product-quantity");
 
   const cartDecrease = document.createElement("div");
+  cartDecrease.setAttribute('data-id', product.id);
   cartDecrease.classList.add(
     "btn",
     "cartpage-box",
@@ -41,6 +41,7 @@ export const cartTemplate = (product) => {
   cartQuantityNumber.innerHTML = `${product.cartQuantity}`;
 
   const cartIncrease = document.createElement("div");
+  cartIncrease.setAttribute('data-id', product.id);
   cartIncrease.classList.add(
     "btn",
     "cartpage-box",
@@ -83,7 +84,8 @@ export const cartTemplate = (product) => {
     cartQuantityNumber.innerHTML = 0;
   }
   const cartDelete = document.createElement("div");
-  cartDelete.classList.add("cart__item-delete--big");
+  cartDelete.classList.add("cart__item-delete--big", "js-cart-delete");
+  cartDelete.setAttribute('data-id', product.id);
   cartDelete.innerHTML = `
     <img
       src="./src/images/icon/delete-icon.svg"
@@ -96,8 +98,6 @@ export const cartTemplate = (product) => {
   cartItem.appendChild(cartImage);
   cartItem.appendChild(cartDetail);
   cartItem.appendChild(cartDecision);
-  setTimeout(function () {
-    increaseQuantity(product), decreaseQuantity(product);
-  }, 100);
+ 
   return cartItem;
 };

@@ -1,4 +1,3 @@
-import { purchaseProduct } from "./Product.js";
 // console.log ( Product)
 export const productItemTemplate = (product) => {
   // Product Item Container
@@ -140,19 +139,6 @@ export const productItemTemplate = (product) => {
   productItem.appendChild(description);
   productItem.appendChild(action);
   productItem.appendChild(compare);
-
-  // console.log("productItem", productItem);
-  // document.addEventListener('DOMContentLoaded', function(){
-  //   console.log('DOM fully loaded and parsed');
-  //   purchaseProduct()
-  // });
-  // productItem.addEventListener('DOMContentLoaded', function(){
-  //   console.log('DOM fully loaded and parsed');
-  //   purchaseProduct()
-  // });
-  setTimeout(function () {
-    purchaseProduct();
-  }, 100);
 
   return productItem;
 };

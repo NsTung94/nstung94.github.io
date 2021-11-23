@@ -1,12 +1,24 @@
 import "./Wish.js";
 import { productItemTemplate } from "./product-template.js";
 const productItems = [];
-let startIndex = 0;
-let pageSize = 3;
-const _cartItemKey = "_cartItemKey";
+
 const productList = document.querySelector(".js-product-list");
+import {
+  getCartProducts,
+  saveProducts,
+  updateCartProduct,
+} from "../services/sharedproduct.service.js";
 
 class Product {
+  startIndex = 0;
+  pageSize = 3;
+  currentProducts = [];
+  productListElement = document.getElementById("product-list");
+  constructor() {
+    this.loadProducts();
+    this.initEvents();
+  }
+
   loadProducts = async () => {
     try {
       const res = await fetch("src/product.json");
@@ -14,92 +26,87 @@ class Product {
       products.map((product, id) => {
         productItems.push(product);
       });
+      this.loadNewProductsToRender();
     } catch (err) {
       console.log(err);
     }
   };
-  purchaseProduct() {
-    let button = productList.querySelectorAll(".js-add-cart");
 
-    button.forEach(function(addBtn) {
+  displayProducts(products = []) {
+    products.forEach((product) => {
+      this.productListElement.appendChild(productItemTemplate(product));
+    });
+    setTimeout(() => {
+      this.initAddToCartEvent();
+    }, 100);
+  }
+
+  loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
+    const lastIndex = startIndex + pageSize;
+    const loadedProducts = productItems.slice(startIndex, lastIndex);
+    this.currentProducts = [...this.currentProducts, ...loadedProducts];
+    this.startIndex = lastIndex;
+    // save new products
+    saveProducts(this.currentProducts);
+    // Display products
+    this.displayProducts(this.currentProducts);
+  }
+
+  newLoadMore() {
+    // Change page index
+    this.loadNewProductsToRender(this.startIndex);
+  }
+
+  initAddToCartEvent() {
+    let button = productList.querySelectorAll(".js-add-cart");
+    const self = this;
+    button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
         e.preventDefault();
-        console.log('clicked',e.currentTarget);
-        let productId = Number(
-          e.currentTarget.getAttribute("data-id")
-        );
+        let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = productItems.find(
-          (target) =>
-              target.id === productId
+          (target) => target.id === productId
         );
-        product.saveProductInStorage(targetProduct);
+        // self.saveProductInStorage(targetProduct);
+        self.addToCartProducts(targetProduct);
       });
-    });  
-  }
-  display() {
-    // setTimeout(function () {
-    let size = startIndex + pageSize;
-    let currentProducts = productItems.slice(startIndex, size);
-    currentProducts.map((product) =>
-      productList.appendChild(productItemTemplate(product))
-    );
-
-    // }, 1000);
-  }
-  loadMore() {
-    setTimeout(function () {
-      product.display();
-    }, 2000);
-    let button = document.querySelector(".loadMore");
-    button.addEventListener("click", function () {
-      startIndex += pageSize;
-      product.display();
     });
   }
-  // get all the products info if there is any in the local storage
-  getProductFromStorage() {
-    return localStorage.getItem(_cartItemKey)
-      ? JSON.parse(localStorage.getItem(_cartItemKey))
-      : [];
-    // returns empty array if there isn't any product info
-  }
-  // save the product in the local storage
-  saveProductInStorage(item) {
-    let existedItems = getProductFromStorage();
-    // check if target is existed
-    const found = existedItems.some((product) => product.id === item.id);
-    if (found) {
-      const index = existedItems.findIndex((product) => product.id === item.id);
 
+  addToCartProducts(item) {
+    let cartProducts = getCartProducts();
+    const found = cartProducts.some((product) => product.id === item.id);
+    if (found) {
+      const index = cartProducts.findIndex((product) => product.id === item.id);
       // storage quantity is cart maximum amount => return storage number
       if (
-        existedItems[index].cartQuantity > existedItems[index].quantity ||
-        existedItems[index].cartQuantity === existedItems[index].quantity
+        cartProducts[index].cartQuantity > cartProducts[index].quantity ||
+        cartProducts[index].cartQuantity === cartProducts[index].quantity
       ) {
-        existedItems[index].cartQuantity = existedItems[index].quantity;
+        cartProducts[index].cartQuantity = cartProducts[index].quantity;
       } else {
         // cart amount +1 every click
-        existedItems[index].cartQuantity = 1;
+        cartProducts[index].cartQuantity += 1;
       }
-      localStorage.setItem(_cartItemKey, JSON.stringify(existedItems));
-    }
-    // done exist then push more
-    else {
+      updateCartProduct(cartProducts);
+    } else {
       console.log("item", item);
       if (item.quantity === 0) {
         item.cartQuantity = 0;
       } else {
-        item.cartQuantity = 1;
+        item.cartQuantity += 1;
       }
-      existedItems.push(item);
-      localStorage.setItem(_cartItemKey, JSON.stringify(existedItems));
+      // saveToCartProducts(item)
+      cartProducts.push(item);
+      updateCartProduct(cartProducts);
     }
+  }
+
+  async initEvents() {
+    document
+      .getElementById("load-more")
+      .addEventListener("click", this.newLoadMore.bind(this));
   }
 }
 
-const product = new Product();
-product.loadProducts();
-product.loadMore();
-// product.purchaseProduct();
-export const { purchaseProduct, getProductFromStorage, saveProductInStorage } =
-  new Product();
+export default new Product();

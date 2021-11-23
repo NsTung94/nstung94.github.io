@@ -32,11 +32,16 @@
         <div class="menu__content">
           <div class="menu__content-heading js-open-submenu">
             <div class="menu__content-heading-title">
-              <img class="menu__content-heading-img" src="./src/images/icon/user.png" alt="" />
+              <img
+                class="menu__content-heading-img"
+                src="./src/images/icon/user.png"
+                alt=""
+              />
               <span class="menu__content-heading-span">Sign in</span>
             </div>
             <span class="menu__content-heading-icon">
-              <img src="./src/images/icon/chevron-right.png" alt="" /> </span>
+              <img src="./src/images/icon/chevron-right.png" alt="" />
+            </span>
             <div class="menu__subMenu js-submenu">
               <div class="menu__subMenu-heading js-close-submenu">Account</div>
               <div class="menu__subMenu-item">Washing machines</div>
@@ -175,24 +180,31 @@
                   <div class="cart cart-active__item">
                     <div class="item cart__header">
                       <div class="cart__header-title">Your cart</div>
-                      <div class="cart__header-number js-number-cart-item">7 products</div>
+                      <div
+                        class="cart__header-number js-number-cart-item"
+                      ></div>
                     </div>
                     <div
+                      id="cart-list"
                       class="
                         container
                         cart__container
                         js-cart-list js-hide-on-none
                       "
-                    >
-                      
-                    </div>
+                    ></div>
                     <div class="item cart__footer js-hide-on-none">
                       <div class="cart__footer-total">
                         <div class="cart__footer-title">total</div>
                         <div class="cart__footer-number js-totalPrice"></div>
                       </div>
                       <div class="cart__footer-action">
-                        <div class="btn cart__footer-action-button js-open-cartpage">
+                        <div
+                          class="
+                            btn
+                            cart__footer-action-button
+                            js-open-cartpage
+                          "
+                        >
                           <a href="cart.html">view cart</a>
                         </div>
                         <div
@@ -240,7 +252,11 @@
                   "
                 >
                   EN
-                  <img class="header__navigation-language--icon" src="./src/images/icon/chevron-down.png" alt="" />
+                  <img
+                    class="header__navigation-language--icon"
+                    src="./src/images/icon/chevron-down.png"
+                    alt=""
+                  />
                   <ul
                     class="
                       header__navigation-language-dropdown
@@ -286,7 +302,7 @@
           </div>
         </div>
       </header>
-      
+
       <section class="container item category">
         <div class="category__header">Categories</div>
         <div class="category__content owl-carousel owl-theme">
@@ -352,7 +368,9 @@
                 />
                 <div class="filter__button-item center-flex-row">Filter</div>
               </div>
-              <div class="filter__button-reset hide-on-mobile js-reset-selector">
+              <div
+                class="filter__button-reset hide-on-mobile js-reset-selector"
+              >
                 <img src="./src/images/icon/reset-filter.svg" alt="" />
                 <span class="filter__button-reset-name">Reset</span>
               </div>
@@ -377,7 +395,9 @@
             >
               <div class="filter__button-item js-sort-open">
                 <span class="filter__button-detail">Sort By</span>
-                <div class="filter__button-detail hide-on-mobile">: default</div>
+                <div class="filter__button-detail hide-on-mobile">
+                  : default
+                </div>
                 <div class="filter__button-detail">
                   <img src="./src/images/icon/chevron-down.png" alt="" />
                 </div>
@@ -392,9 +412,15 @@
                 ></div>
                 <div class="filter-sort-selection--list js-sort-close">
                   <button class="filter-sort-selection--button">Default</button>
-                  <button class="filter-sort-selection--button">Price high to low</button>
-                  <button class="filter-sort-selection--button">Price low to high</button>
-                  <button class="filter-sort-selection--button">Highest rate</button>
+                  <button class="filter-sort-selection--button">
+                    Price high to low
+                  </button>
+                  <button class="filter-sort-selection--button">
+                    Price low to high
+                  </button>
+                  <button class="filter-sort-selection--button">
+                    Highest rate
+                  </button>
                 </div>
               </div>
             </div>
@@ -620,11 +646,20 @@
             </div>
           </section>
           <section class="container product">
-            <div class="container__row product__list js-product-list"></div>
+            <div
+              id="product-list"
+              class="container__row product__list js-product-list"
+            ></div>
             <!-- product_item here -->
 
             <div class="design">
-              <div class="btn btn--primary loadMore">Load More</div>
+              <button
+                id="load-more"
+                type="button"
+                class="btn btn--primary loadMore"
+              >
+                Load More
+              </button>
             </div>
           </section>
         </div>
@@ -716,9 +751,7 @@
               <ul class="footer__option-item-content js-dropdown-content">
                 <li class="js-checkbox">Our Company</li>
                 <li class="js-checkbox">Design Innovation</li>
-                <li class="js-checkbox">
-                  Environment & sustainability
-                </li>
+                <li class="js-checkbox">Environment & sustainability</li>
                 <li class="js-checkbox">Career</li>
                 <li class="js-checkbox">Global Leader</li>
               </ul>
@@ -727,10 +760,8 @@
               <div class="footer__option-item-title">promotions</div>
               <div class="footer__option-item-title">where to buy</div>
             </div>
-           
           </div>
         </div>
-      
 
         <div class="container footer__list">
           <div class="footer__connect">

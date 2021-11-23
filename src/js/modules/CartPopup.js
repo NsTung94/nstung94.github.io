@@ -1,64 +1,143 @@
-import { getProductFromStorage } from "./Product.js";
 import { cartTemplate } from "./cart-template.js";
-let currentCartItems = getProductFromStorage();
+import {
+  getCartProducts,
+  updateCartProduct,
+} from "../services/sharedproduct.service.js";
 class CartPopup {
-  displayCart() {
-    let cartList = document.querySelector(".js-cart-list");
-    console.log("currentCartItems", currentCartItems);
-    currentCartItems.map((item) => {
-      cartList.appendChild(cartTemplate(item));
-      cartPopup.displayNumberInCart();
-    });
+  cartListElement = document.getElementById("cart-list");
+  currentCartProduct = getCartProducts();
+
+  constructor() {
+    this.loadCartProducts();
+    this.displayNumberInCart();
     this.totalPrice();
   }
-  increaseQuantity(item) {
-    let button = document.querySelector('.js-cart-increase');
-    if ( item.cartQuantity < item.quantity){
-      console.log("item.id",item.id)
-      const index = currentCartItems.findIndex(cartItem => cartItem.id === item.id)
-      console.log("index", index)
-      button.addEventListener('click', function(){
-        item.cartQuantity += 1;
-        console.log("item", item);
-        currentCartItems[index] = item;
-        // localStorage.setItem('_cartItemKey', currentCartItems);
-      })
-    }else {
+
+  loadCartProducts() {
+    const currentCartProduct = getCartProducts();
+    console.log("this.currentCartProduct in load cart", currentCartProduct);
+    this.displayCartProducts(currentCartProduct);
+  }
+
+  displayCartProducts(products = []) {
+    products.forEach((product) => {
+      this.cartListElement.appendChild(cartTemplate(product));
+    });
+    setTimeout(() => {
+      this.initDecreaseCartEvent();
+      this.initDeleteCartEvent();
+      this.initIncreaseCartEvent();
+    }, 100);
+  }
+
+  increaseCartItemQuantity(item, button, index) {
+    const self = this;
+    if (item.cartQuantity < item.quantity) {
+      button.classList.remove('disable');
+      item.cartQuantity += 1;
+      console.log("item cart quantity", item.cartQuantity);
+      this.currentCartProduct[index] = item;
+      updateCartProduct(this.currentCartProduct);
+      self.loadCartProducts()
+    } else {
       button.classList.add("disable");
     }
-
-
   }
-  decreaseQuantity(item) {
-    let button = document.querySelector('.js-cart-decrease');
-    if (item.cartQuantity > 0){
+  decreaseCartItemQuantity(item, button, index) {
+    const self = this;
+    if (item.cartQuantity > 0) {
+      button.classList.remove('disable')
       item.cartQuantity -= 1;
-    }else{
-      button.classList.add('disable');
+      console.log("item cart quantity", item.cartQuantity);
+      
+      this.currentCartProduct[index] = item;
+      updateCartProduct(this.currentCartProduct);
+      self.loadCartProducts();
+    } else {
+      button.classList.add("disable");
     }
   }
+  deleteCart(item, index) {
+    console.log("before delete", this.currentCartProduct);
+    console.log("item in delete", item, "index", index);
+    this.currentCartProduct = this.currentCartProduct.splice(index, 1);
+    console.log("after delete", this.currentCartProduct);
+    this.loadCartProducts();
+  }
+
   displayNumberInCart() {
     let totalNumberItem = 0;
-    currentCartItems.map(
+    this.currentCartProduct.map(
       (current) => (totalNumberItem += current.cartQuantity)
     );
     let numberInCart = document.querySelector(".js-number-cart");
+    let numberInCartItem = document.querySelector(".js-number-cart-item");
     numberInCart.innerHTML = `${totalNumberItem}`;
+    numberInCartItem.innerHTML = `${totalNumberItem} Products`;
     console.log("totalNumberItem", totalNumberItem);
-
   }
   totalPrice() {
     let totalPrice = document.querySelector(".js-totalPrice");
     let totalCost = 0;
-    currentCartItems.map((item) => {
+    this.currentCartProduct.map((item) => {
       let cost = item.price.new * item.cartQuantity;
       totalCost += cost;
     });
     totalPrice.innerHTML = `${totalCost.toLocaleString("de")} đ`;
     return totalPrice;
   }
+
+  async initIncreaseCartEvent() {
+    let buttons = document.querySelectorAll(".js-cart-increase");
+    const self = this;
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        let productId = Number(e.currentTarget.getAttribute("data-id"));
+        const targetProduct = self.currentCartProduct.find(
+          (target) => target.id === productId
+        );
+        const index = self.currentCartProduct.findIndex(
+          (target) => target.id === productId
+        );
+        self.increaseCartItemQuantity(targetProduct, button, index);
+      });
+    });
+  }
+  initDecreaseCartEvent() {
+    let buttons = document.querySelectorAll(".js-cart-decrease");
+    const self = this;
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+        let productId = Number(e.currentTarget.getAttribute("data-id"));
+        const targetProduct = self.currentCartProduct.find(
+          (target) => target.id === productId
+        );
+        const index = self.currentCartProduct.findIndex(
+          (target) => target.id === productId
+        );
+        self.decreaseCartItemQuantity(targetProduct, button, index);
+      });
+    });
+  }
+  initDeleteCartEvent() {
+    let deleteCartButton = document.querySelectorAll(".js-cart-delete");
+    const self = this;
+    deleteCartButton.forEach(function (deleteBtn) {
+      deleteBtn.addEventListener("click", function (e) {
+        e.preventDefault();
+        let productId = Number(e.currentTarget.getAttribute("data-id"));
+        const targetProduct = self.currentCartProduct.find(
+          (target) => target.id === productId
+        );
+        const index = self.currentCartProduct.findIndex(
+          (target) => target.id === productId
+        );
+        self.deleteCart(targetProduct, index);
+      });
+    });
+  }
 }
 
-const cartPopup = new CartPopup();
-cartPopup.displayCart();
-export const {increaseQuantity, decreaseQuantity} = new CartPopup();
+export default new CartPopup();
