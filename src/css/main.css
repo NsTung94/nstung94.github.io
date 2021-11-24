@@ -465,6 +465,7 @@ label {
   overflow-y: auto;
   height: 500px;
   overflow-x: hidden;
+  border: 1px solid rgba(223, 231, 243, 0.4);
 }
 
 .contact-icon {
@@ -474,7 +475,8 @@ label {
   z-index: 10;
 }
 
-.hide-before:before, .hide-after:after {
+.hide-before:before,
+.hide-after:after {
   display: none;
 }
 
@@ -2509,7 +2511,6 @@ label {
   background: #fff;
   overflow: hidden;
   box-shadow: -1px 1px 0px #dfe7ea;
-  border: 1px solid rgba(223, 231, 243, 0.4);
 }
 .cart__header {
   display: flex;

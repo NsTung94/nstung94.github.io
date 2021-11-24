@@ -106,11 +106,11 @@ export const productItemTemplate = (product) => {
   // Product Action
   let action = document.createElement("div");
   action.classList.add("item", "product__item-action");
-  let add = document.createElement("div");
+  let add = document.createElement("button");
   add.classList.add("btn","btn--primary","product__item-action--add","js-add-cart");
   add.setAttribute("data-id", product.id);
   add.innerHTML = `add to cart`;
-  let research = document.createElement("div");
+  let research = document.createElement("button");
   research.classList.add("btn", "product__item-action--research");
   research.innerHTML = `learn more`;
   action.appendChild(add);

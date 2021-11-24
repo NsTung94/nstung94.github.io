@@ -1,4 +1,5 @@
-export const cartTemplate = (product) => {
+export const cartTemplate = ( product) => {
+  // const cartListElement = document.querySelector('.cart-list')
   const cartItem = document.createElement("div");
   cartItem.classList.add("cart__item");
 
@@ -98,6 +99,6 @@ export const cartTemplate = (product) => {
   cartItem.appendChild(cartImage);
   cartItem.appendChild(cartDetail);
   cartItem.appendChild(cartDecision);
- 
+  
   return cartItem;
 };

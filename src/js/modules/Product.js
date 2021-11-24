@@ -4,6 +4,7 @@ import {
   saveProducts,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
+import CartPopup from "./CartPopup.js";
 
 const productItems = [];
 
@@ -12,10 +13,10 @@ class Product {
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
-  // constructor() {
-  //   this.loadProducts();
-  //   this.initEvents();
-  // }
+  constructor() {
+    this.loadProducts();
+    this.initEvents();
+  }
 
   loadProducts = async () => {
     try {
@@ -43,7 +44,6 @@ class Product {
     const lastIndex = startIndex + pageSize;
     const loadedProducts = productItems.slice(startIndex, lastIndex);
     this.currentProducts = [...this.currentProducts, ...loadedProducts];
-    console.log("currentProduct", this.currentProducts);
     // save new products
     saveProducts(this.currentProducts);
     // Display products
@@ -114,5 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const product = new Product();
   product.loadProducts();
   product.initEvents();
-  
+  // const cart = CartPopup;
+  // product.then(() => {
+  //   cart.loadCartProducts();
+  // })
 });
