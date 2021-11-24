@@ -41,7 +41,7 @@ export default class Dropdown {
   cartPopUp() {
     let cartPopup = document.querySelector('.js-cart');
     let cartButton = document.querySelector('.js-cart-open');
-   
+    
     cartButton.addEventListener('click', function(){
       if (cartPopup.classList.contains('cart-active')){
         cartPopup.classList.remove('cart-active');

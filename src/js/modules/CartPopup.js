@@ -10,29 +10,35 @@ class CartPopup {
   contentHided = document.querySelectorAll(".js-hide-on-none");
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
-  currentCartProduct = getCartProducts();
 
   constructor() {
     this.loadCartProducts();
   }
 
   loadCartProducts() {
-    console.log('currentCartProduct ', this.currentCartProduct);
-    this.renderCartProduct(this.currentCartProduct);
-    this.displayNumberInCart(this.currentCartProduct);
-    this.totalPrice(this.currentCartProduct);
+    const currentCartProduct = getCartProducts();
+    console.log(currentCartProduct)
+
+    this.renderCartProduct(currentCartProduct);
+    this.displayNumberInCart(currentCartProduct);
+    this.totalPrice(currentCartProduct);
   }
 
   renderCartProduct(products = []) {
-    this.cartListElement.innerHTML ='';
-    // products.forEach((product) => { cartTemplate(product) });
-    products.forEach((product) => { this.cartListElement.appendChild(cartTemplate(product)) });
+    this.cartListElement.innerHTML = ``
+    products.forEach((product) =>
+      this.cartListElement.appendChild(cartTemplate(product))
+    );
+    // this.cartListElement.appendChild(products)
     setTimeout(() => {
+      //init something
       this.initDecreaseCartEvent();
       this.initDeleteCartEvent();
       this.initIncreaseCartEvent();
     }, 100);
   }
+
+ 
 
   displayNumberInCart(products) {
     let totalNumberItem = 0;
@@ -45,7 +51,6 @@ class CartPopup {
         this.numberInCart.innerHTML = `${totalNumberItem}`;
       }
       this.numberInCartItem.innerHTML = `${totalNumberItem} Products`;
-
     });
   }
 
@@ -59,7 +64,7 @@ class CartPopup {
     totalPrice.innerHTML = `${totalCost.toLocaleString("de")} đ`;
     return totalPrice;
   }
-
+  
   increaseCartItemQuantity(item, button, index) {
     if (item.cartQuantity < item.quantity) {
       button.classList.remove("disable");
@@ -133,7 +138,7 @@ class CartPopup {
     deleteCartButton.forEach(function (deleteBtn) {
       deleteBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-       
+
         self.deleteCart(productId);
       });
     });
@@ -147,7 +152,6 @@ class CartPopup {
       }, ms);
     };
   }
-
 }
 
 export default new CartPopup();

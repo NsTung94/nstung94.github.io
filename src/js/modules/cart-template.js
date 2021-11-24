@@ -88,7 +88,7 @@ export const cartTemplate = ( product) => {
   cartDelete.classList.add("cart__item-delete--big", "js-cart-delete");
   cartDelete.setAttribute('data-id', product.id);
   cartDelete.innerHTML = `
-    <img
+    <img class="js-cart-delete" data-id=${product.id}
       src="./src/images/icon/delete-icon.svg"
       alt=""
     />

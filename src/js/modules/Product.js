@@ -2,9 +2,9 @@ import { productItemTemplate } from "./product-template.js";
 import {
   getCartProducts,
   saveProducts,
+  setCartValues,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
-import CartPopup from "./CartPopup.js";
 
 const productItems = [];
 
@@ -61,7 +61,6 @@ class Product {
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
-        e.preventDefault();
         let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = productItems.find(
           (target) => target.id === productId
@@ -87,6 +86,7 @@ class Product {
         cartProducts[index].cartQuantity += 1;
       }
       updateCartProduct(cartProducts);
+      setCartValues(cartProducts);
     } else {
       console.log("item", item);
       if (item.quantity === 0) {
@@ -97,7 +97,7 @@ class Product {
       // saveToCartProducts(item)
       cartProducts.push(item);
       updateCartProduct(cartProducts);
-      // CartPopup.loadCartProducts();
+      setCartValues(cartProducts);
     }
   }
 
@@ -108,14 +108,4 @@ class Product {
   }
 }
 
-// export default new Product();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const product = new Product();
-  product.loadProducts();
-  product.initEvents();
-  // const cart = CartPopup;
-  // product.then(() => {
-  //   cart.loadCartProducts();
-  // })
-});
+export default new Product();
