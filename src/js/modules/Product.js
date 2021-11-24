@@ -5,7 +5,6 @@ import {
   setCartValues,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
-import CartPopup from "./CartPopup.js";
 const productItems = [];
 
 class Product {
@@ -13,6 +12,7 @@ class Product {
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
+  existedCart = getCartProducts();
   constructor() {
     this.loadProducts();
     this.initEvents();
@@ -37,6 +37,7 @@ class Product {
     });
     setTimeout(() => {
       this.initAddToCartEvent();
+      setCartValues(this.existedCart)
     }, 100);
   }
 
@@ -88,7 +89,7 @@ class Product {
       console.log('new', cartProducts)
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
-      CartPopup.loadCartProducts()
+      // CartPopup.loadCartProducts()
     } else {
       console.log("item", item);
       if (item.quantity === 0) {
@@ -102,7 +103,7 @@ class Product {
 
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
-      CartPopup.loadCartProducts()
+      // CartPopup.loadCartProducts()
     }
 
   }

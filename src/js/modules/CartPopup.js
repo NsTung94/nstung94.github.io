@@ -11,15 +11,13 @@ class CartPopup {
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
 
-  constructor() {
-    this.loadCartProducts();
-  }
+  // constructor() {
+  //   this.loadCartProducts();
+  // }
 
   loadCartProducts() {
     let currentCartProduct= getCartProducts();
-
     this.renderCartProduct(currentCartProduct);
-
     console.log("in load cart", currentCartProduct);
     this.displayNumberInCart(currentCartProduct);
     this.totalPrice(currentCartProduct);

@@ -1,4 +1,4 @@
-class LazyFuntion {
+class LazyFunction {
   constructor(){
     this.lazyImage();
     this.lazyFilterBar();
@@ -73,4 +73,4 @@ class LazyFuntion {
   }
 }
 
-export default new LazyFuntion();
+export default new LazyFunction();

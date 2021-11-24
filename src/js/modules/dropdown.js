@@ -1,3 +1,5 @@
+import CartPopup from "./CartPopup.js";
+
 class Dropdown {
   constructor() {
     this.dropdown();
@@ -52,6 +54,7 @@ class Dropdown {
         cartPopup.classList.remove('cart-active');
       }else{
         cartPopup.classList.add('cart-active');
+        CartPopup.loadCartProducts()
       }
     })
   }
