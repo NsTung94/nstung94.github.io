@@ -5,7 +5,7 @@ import {
   setCartValues,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
-
+import CartPopup from "./CartPopup.js";
 const productItems = [];
 
 class Product {
@@ -16,6 +16,7 @@ class Product {
   constructor() {
     this.loadProducts();
     this.initEvents();
+    CartPopup.loadCartProducts();
   }
 
   loadProducts = async () => {
@@ -85,8 +86,10 @@ class Product {
         // cart amount +1 every click
         cartProducts[index].cartQuantity += 1;
       }
+      console.log('new', cartProducts)
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
+      CartPopup.loadCartProducts(cartProducts)
     } else {
       console.log("item", item);
       if (item.quantity === 0) {
@@ -96,8 +99,11 @@ class Product {
       }
       // saveToCartProducts(item)
       cartProducts.push(item);
+      console.log('new', cartProducts)
+
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
+      CartPopup.loadCartProducts(cartProducts)
     }
   }
 
@@ -107,5 +113,6 @@ class Product {
       .addEventListener("click", this.newLoadMore.bind(this));
   }
 }
+
 
 export default new Product();

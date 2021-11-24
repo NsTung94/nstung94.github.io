@@ -15,17 +15,18 @@ class CartPopup {
     this.loadCartProducts();
   }
 
-  loadCartProducts() {
-    const currentCartProduct = getCartProducts();
-    console.log(currentCartProduct)
+  loadCartProducts(currentCartProduct) {
+    // let currentCartProduct= getCartProducts();
 
     this.renderCartProduct(currentCartProduct);
-    this.displayNumberInCart(currentCartProduct);
-    this.totalPrice(currentCartProduct);
+
+    console.log("in load cart", currentCartProduct);
+    // this.displayNumberInCart(currentCartProduct);
+    // this.totalPrice(currentCartProduct);
   }
 
   renderCartProduct(products = []) {
-    this.cartListElement.innerHTML = ``
+    this.cartListElement.innerHTML = ``;
     products.forEach((product) =>
       this.cartListElement.appendChild(cartTemplate(product))
     );
@@ -37,8 +38,6 @@ class CartPopup {
       this.initIncreaseCartEvent();
     }, 100);
   }
-
- 
 
   displayNumberInCart(products) {
     let totalNumberItem = 0;
@@ -64,7 +63,7 @@ class CartPopup {
     totalPrice.innerHTML = `${totalCost.toLocaleString("de")} đ`;
     return totalPrice;
   }
-  
+
   increaseCartItemQuantity(item, button, index) {
     if (item.cartQuantity < item.quantity) {
       button.classList.remove("disable");
@@ -88,15 +87,14 @@ class CartPopup {
     } else {
       button.classList.add("disable");
     }
-    this.loadCartProducts()
+    this.loadCartProducts();
   }
-  deleteCart(index) {
+  deleteCart(item) {
     console.log("before delete", this.currentCartProduct);
-    this.currentCartProduct = this.currentCartProduct.filter((item) => {
-      item.id !== index
-      console.log("item.id", item.id, ' index', index, ":", item.id !== index)
-    });
-    console.log(this.currentCartProduct);
+    this.currentCartProduct = this.currentCartProduct.filter(
+      (product) => product !== item
+    );
+    console.log("after delete", this.currentCartProduct);
     updateCartProduct(this.currentCartProduct);
     this.loadCartProducts();
   }
@@ -112,7 +110,10 @@ class CartPopup {
         const index = self.currentCartProduct.findIndex(
           (target) => target.id === productId
         );
-        self.debounce(self.increaseCartItemQuantity(targetProduct, button, index),100);
+        self.debounce(
+          self.increaseCartItemQuantity(targetProduct, button, index),
+          100
+        );
       });
     });
   }
@@ -128,7 +129,10 @@ class CartPopup {
         const index = self.currentCartProduct.findIndex(
           (target) => target.id === productId
         );
-        self.debounce(self.decreaseCartItemQuantity(targetProduct, button, index), 100);
+        self.debounce(
+          self.decreaseCartItemQuantity(targetProduct, button, index),
+          100
+        );
       });
     });
   }
@@ -138,8 +142,11 @@ class CartPopup {
     deleteCartButton.forEach(function (deleteBtn) {
       deleteBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
+        const targetProduct = self.currentCartProduct.find(
+          (target) => target.id === productId
+        );
 
-        self.deleteCart(productId);
+        self.deleteCart(targetProduct);
       });
     });
   }
