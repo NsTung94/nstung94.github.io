@@ -16,7 +16,6 @@ class Product {
   constructor() {
     this.loadProducts();
     this.initEvents();
-    CartPopup.loadCartProducts();
   }
 
   loadProducts = async () => {
@@ -89,7 +88,6 @@ class Product {
       console.log('new', cartProducts)
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
-      CartPopup.loadCartProducts(cartProducts)
     } else {
       console.log("item", item);
       if (item.quantity === 0) {
@@ -103,8 +101,9 @@ class Product {
 
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
-      CartPopup.loadCartProducts(cartProducts)
+      CartPopup.loadCartProducts()
     }
+
   }
 
   async initEvents() {

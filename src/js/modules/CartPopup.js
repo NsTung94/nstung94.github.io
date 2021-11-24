@@ -15,14 +15,14 @@ class CartPopup {
     this.loadCartProducts();
   }
 
-  loadCartProducts(currentCartProduct) {
-    // let currentCartProduct= getCartProducts();
+  loadCartProducts() {
+    let currentCartProduct= getCartProducts();
 
     this.renderCartProduct(currentCartProduct);
 
     console.log("in load cart", currentCartProduct);
-    // this.displayNumberInCart(currentCartProduct);
-    // this.totalPrice(currentCartProduct);
+    this.displayNumberInCart(currentCartProduct);
+    this.totalPrice(currentCartProduct);
   }
 
   renderCartProduct(products = []) {
