@@ -10,19 +10,20 @@ class CartPopup {
   contentHided = document.querySelectorAll(".js-hide-on-none");
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
-  constructor() {
-    this.loadCartProducts();
-  }
+  currentCartProduct = getCartProducts(); 
+
+  // constructor() {
+  //   this.loadCartProducts();
+  // }
 
   loadCartProducts() {
-    const currentCartProduct = getCartProducts();
-    console.log("this.currentCartProduct in load cart", currentCartProduct);
-    this.displayCartProducts(currentCartProduct);
-    this.displayNumberInCart(currentCartProduct);
-    this.totalPrice(currentCartProduct);
+    console.log("this.currentCartProduct in load cart", this.currentCartProduct);
+    this.renderCartProduct(this.currentCartProduct);
+    this.displayNumberInCart(this.currentCartProduct);
+    this.totalPrice(this.currentCartProduct);
   }
 
-  displayCartProducts(products = []) {
+  renderCartProduct(products = []) {
     products.forEach((product) => {
       this.cartListElement.appendChild(cartTemplate(product));
     });
@@ -100,7 +101,7 @@ class CartPopup {
     const self = this;
     buttons.forEach(function (button) {
       button.addEventListener("click", function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = self.currentCartProduct.find(
           (target) => target.id === productId
@@ -117,7 +118,7 @@ class CartPopup {
     const self = this;
     buttons.forEach(function (button) {
       button.addEventListener("click", function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = self.currentCartProduct.find(
           (target) => target.id === productId
@@ -134,7 +135,7 @@ class CartPopup {
     const self = this;
     deleteCartButton.forEach(function (deleteBtn) {
       deleteBtn.addEventListener("click", function (e) {
-        e.preventDefault();
+        // e.preventDefault();
         let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = self.currentCartProduct.find(
           (target) => target.id === productId
@@ -170,4 +171,9 @@ class CartPopup {
   // }
 }
 
-export default new CartPopup();
+// export default new CartPopup();
+
+document.addEventListener("DOMContentLoaded", ()=>{
+  const cartPopup = new CartPopup();
+  cartPopup.loadCartProducts();
+})
