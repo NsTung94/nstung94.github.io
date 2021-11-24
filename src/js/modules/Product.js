@@ -30,7 +30,7 @@ class Product {
       console.log(err);
     }
   };
-
+  
   displayProducts(products = []) {
     products.forEach((product) => {
       this.productListElement.appendChild(productItemTemplate(product));
@@ -88,6 +88,7 @@ class Product {
       console.log('new', cartProducts)
       updateCartProduct(cartProducts);
       setCartValues(cartProducts);
+      CartPopup.loadCartProducts()
     } else {
       console.log("item", item);
       if (item.quantity === 0) {

@@ -1,8 +1,4 @@
 
-var start = 0;
-var end = 3;
-
-// import './modules/Cart.js';
 import './modules/Dropdown.js';
 import './modules/FilterSortFunction.js';
 import './modules/LazyFunction.js';

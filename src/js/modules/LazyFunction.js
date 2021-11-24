@@ -1,4 +1,9 @@
 class LazyFuntion {
+  constructor(){
+    this.lazyImage();
+    this.lazyFilterBar();
+    
+  }
   lazyImage() {
     var lazyObjects = [].slice.call(
         document.querySelectorAll(".lazy-observer")
@@ -46,7 +51,6 @@ class LazyFuntion {
     observer.observe(header);
     observer.observe(footer);
   }
-
   reachLoadMore() {
     let destination = document.querySelector(".loadMore");
   
@@ -69,6 +73,4 @@ class LazyFuntion {
   }
 }
 
-const lazyFunction = new LazyFuntion();
-lazyFunction.lazyImage();
-lazyFunction.lazyFilterBar();
+export default new LazyFuntion();

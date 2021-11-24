@@ -1,5 +1,4 @@
-export const cartTemplate = ( product) => {
-  // const cartListElement = document.querySelector('.cart-list')
+export const cartTemplate = (product) => {
   const cartItem = document.createElement("div");
   cartItem.classList.add("cart__item");
 

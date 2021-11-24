@@ -1,4 +1,9 @@
-export default class Dropdown {
+class Dropdown {
+  constructor() {
+    this.dropdown();
+    this.language();
+    this.cartPopUp();
+  }
   dropdown() {
     let dropdown = document.querySelectorAll(".js-dropdown-menu");
     dropdown.forEach(function (item) {
@@ -52,18 +57,5 @@ export default class Dropdown {
   }
 }
 
-// const cartPopups = [...document.getElementsByClassName('.js-cart')];
+export default new Dropdown();
 
-// window.addEventListener('click', ({ target }) => {
-//   const popup = target.closest('.js-cart');
-//   const clickedOnClosedPopup = popup && !popup.classList.contains('cart-active');
-  
-//   cartPopups.forEach(p => p.classList.remove('cart-active'));
-  
-//   if (clickedOnClosedPopup) popup.classList.add('cart-active');  
-// });
-
-const dropdown = new Dropdown();
-dropdown.dropdown();
-dropdown.language();
-dropdown.cartPopUp();

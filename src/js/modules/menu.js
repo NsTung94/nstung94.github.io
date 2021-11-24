@@ -1,4 +1,8 @@
 class Menu {
+  constructor(){
+    this.toggleMenu()
+    this.openSubMenu()
+  }
   toggleMenu() {
     // var menuBtn = document.querySelector(".js-open-menu");
     var menuBtn = document.querySelector('.js-open-menu');
@@ -29,6 +33,4 @@ class Menu {
   }
 }
 
-const menu = new Menu();
-menu.toggleMenu();
-menu.openSubMenu();
+export default new Menu();

@@ -5,8 +5,8 @@ import {
 } from "../services/sharedproduct.service.js";
 
 class CartPopup {
-  cartListElement = document.getElementById("cart-list");
   currentCartProduct = getCartProducts();
+  cartListElement = document.getElementById("cart-list");
   contentHided = document.querySelectorAll(".js-hide-on-none");
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
