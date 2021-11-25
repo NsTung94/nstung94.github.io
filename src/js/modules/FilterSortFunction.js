@@ -57,10 +57,3 @@ class FilterSortFunction {
 }
 
 export default new FilterSortFunction();
-
-// const filterSort  = new FilterSortFunction();
-// filterSort.filterSelector();
-// filterSort.closeFilterSelector();
-// filterSort.sortSelector();
-// filterSort.closeSortSelector();
-// filterSort.resetFilterSelection();

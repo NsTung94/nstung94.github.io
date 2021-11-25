@@ -1707,7 +1707,7 @@ label {
   background-color: #011E41;
 }
 .tag--bundle:before {
-  left: -0.5px;
+  left: -3.5px;
   border-left: 29px solid #011E41;
 }
 .tag--bundle:after {

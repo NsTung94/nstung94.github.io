@@ -46,14 +46,16 @@ class Dropdown {
     });
   }
   cartPopUp() {
-    let cartPopup = document.querySelector('.js-cart');
+    let cartDisplay = document.querySelector('.js-cart');
     let cartButton = document.querySelector('.js-cart-open');
-    
+    let addToCart = document.querySelectorAll('.js-add-cart');
     cartButton.addEventListener('click', function(){
-      if (cartPopup.classList.contains('cart-active')){
-        cartPopup.classList.remove('cart-active');
+      if (cartDisplay.classList.contains('cart-active')){
+        cartDisplay.classList.remove('cart-active');
+        CartPopup.loadCartProducts()
       }else{
-        cartPopup.classList.add('cart-active');
+        cartDisplay.classList.add('cart-active');
+        addToCart.forEach(button => button.style.pointerEvents = "none")
         CartPopup.loadCartProducts()
       }
     })

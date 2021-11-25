@@ -5,7 +5,7 @@ class LazyFunction {
     
   }
   lazyImage() {
-    var lazyObjects = [].slice.call(
+    let lazyObjects = [].slice.call(
         document.querySelectorAll(".lazy-observer")
       );
     if ("IntersectionObserver" in window) {
@@ -34,9 +34,9 @@ class LazyFunction {
     }
   }
   lazyFilterBar() {
-    var bar = document.querySelector(".filter");
-    var header = document.querySelector("#header");
-    var footer = document.querySelector("#footer");
+    let bar = document.querySelector(".filter");
+    let header = document.querySelector("#header");
+    let footer = document.querySelector("#footer");
    
     let observer = new IntersectionObserver(function (entries) {
       entries.forEach((entry) => {

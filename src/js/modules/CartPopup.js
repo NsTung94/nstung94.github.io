@@ -5,12 +5,11 @@ import {
 } from "../services/sharedproduct.service.js";
 
 class CartPopup {
-  currentCartProduct = getCartProducts();
+  // currentCartProduct = getCartProducts();
   cartListElement = document.getElementById("cart-list");
   contentHided = document.querySelectorAll(".js-hide-on-none");
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
-
   // constructor() {
   //   this.loadCartProducts();
   // }
@@ -31,9 +30,9 @@ class CartPopup {
     // this.cartListElement.appendChild(products)
     setTimeout(() => {
       //init something
-      this.initDecreaseCartEvent();
-      this.initDeleteCartEvent();
-      this.initIncreaseCartEvent();
+      this.initIncreaseCartEvent(products);
+      this.initDecreaseCartEvent(products);
+      this.initDeleteCartEvent(products);
     }, 100);
   }
 
@@ -41,7 +40,7 @@ class CartPopup {
     let totalNumberItem = 0;
     products.forEach((item) => (totalNumberItem += item.cartQuantity));
     this.contentHided.forEach((content) => {
-      if (totalNumberItem === 0) {
+      if (products.length === 0) {
         content.classList.add("hide");
       } else {
         content.classList.remove("hide");
@@ -62,89 +61,94 @@ class CartPopup {
     return totalPrice;
   }
 
-  increaseCartItemQuantity(item, button, index) {
+  increaseCartItemQuantity(products, item, button, index) {
+    console.log("button", button)
+    const self= this;
     if (item.cartQuantity < item.quantity) {
       button.classList.remove("disable");
       item.cartQuantity += 1;
       console.log("item cart quantity", item.cartQuantity);
-      this.currentCartProduct[index] = item;
-      updateCartProduct(this.currentCartProduct);
+      products[index] = item;
+      updateCartProduct(products);
     } else {
       button.classList.add("disable");
+      self.loadCartProducts();
     }
     this.loadCartProducts();
   }
-  decreaseCartItemQuantity(item, button, index) {
+  decreaseCartItemQuantity(products, item, button, index) {
+    const self = this;
     if (item.cartQuantity > 0) {
       button.classList.remove("disable");
       item.cartQuantity -= 1;
       console.log("item cart quantity", item.cartQuantity);
 
-      this.currentCartProduct[index] = item;
-      updateCartProduct(this.currentCartProduct);
+      products[index] = item;
+      updateCartProduct(products);
     } else {
-      button.classList.add("disable");
+      self.deleteCart(products, item);
+
     }
     this.loadCartProducts();
   }
-  deleteCart(item) {
-    console.log("before delete", this.currentCartProduct);
-    this.currentCartProduct = this.currentCartProduct.filter(
+  deleteCart(products, item) {
+    console.log("before delete", products);
+    products = products.filter(
       (product) => product !== item
     );
-    console.log("after delete", this.currentCartProduct);
-    updateCartProduct(this.currentCartProduct);
+    console.log("after delete", products);
+    updateCartProduct(products);
     this.loadCartProducts();
   }
-  async initIncreaseCartEvent() {
+  async initIncreaseCartEvent(products) {
     let buttons = document.querySelectorAll(".js-cart-increase");
     const self = this;
     buttons.forEach(function (button) {
       button.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = self.currentCartProduct.find(
+        const targetProduct = products.find(
           (target) => target.id === productId
         );
-        const index = self.currentCartProduct.findIndex(
+        const index = products.findIndex(
           (target) => target.id === productId
         );
         self.debounce(
-          self.increaseCartItemQuantity(targetProduct, button, index),
+          self.increaseCartItemQuantity(products, targetProduct, button, index),
           100
         );
       });
     });
   }
-  async initDecreaseCartEvent() {
+  async initDecreaseCartEvent(products) {
     let buttons = document.querySelectorAll(".js-cart-decrease");
     const self = this;
     buttons.forEach(function (button) {
       button.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = self.currentCartProduct.find(
+        const targetProduct = products.find(
           (target) => target.id === productId
         );
-        const index = self.currentCartProduct.findIndex(
+        const index = products.findIndex(
           (target) => target.id === productId
         );
         self.debounce(
-          self.decreaseCartItemQuantity(targetProduct, button, index),
+          self.decreaseCartItemQuantity(products, targetProduct, button, index),
           100
         );
       });
     });
   }
-  async initDeleteCartEvent() {
+  async initDeleteCartEvent(products) {
     let deleteCartButton = document.querySelectorAll(".js-cart-delete");
     const self = this;
     deleteCartButton.forEach(function (deleteBtn) {
       deleteBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = self.currentCartProduct.find(
+        const targetProduct = products.find(
           (target) => target.id === productId
         );
 
-        self.deleteCart(targetProduct);
+        self.deleteCart(products,targetProduct);
       });
     });
   }

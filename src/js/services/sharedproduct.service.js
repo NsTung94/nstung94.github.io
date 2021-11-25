@@ -31,8 +31,5 @@ export function setCartValues(cart) {
   cart.map(item => {
     itemsTotal += item.cartQuantity;
   });
-  // if (itemsTotal === 0){
-    
-  // }
   numberCartItem.innerText = itemsTotal;
 }
