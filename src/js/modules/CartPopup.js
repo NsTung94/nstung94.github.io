@@ -112,10 +112,10 @@ class CartPopup {
         const index = products.findIndex(
           (target) => target.id === productId
         );
-        self.debounce(
+        // self.debounce(
           self.increaseCartItemQuantity(products, targetProduct, button, index),
           100
-        );
+        // );
       });
     });
   }
@@ -131,10 +131,10 @@ class CartPopup {
         const index = products.findIndex(
           (target) => target.id === productId
         );
-        self.debounce(
+        // self.debounce(
           self.decreaseCartItemQuantity(products, targetProduct, button, index),
           100
-        );
+        // );
       });
     });
   }
