@@ -1,10 +1,7 @@
-import CartPopup from "./CartPopup.js";
-
 class Dropdown {
   constructor() {
     this.dropdown();
     this.language();
-    this.cartPopUp();
   }
   dropdown() {
     let dropdown = document.querySelectorAll(".js-dropdown-menu");
@@ -45,21 +42,7 @@ class Dropdown {
       });
     });
   }
-  cartPopUp() {
-    let cartDisplay = document.querySelector('.js-cart');
-    let cartButton = document.querySelector('.js-cart-open');
-    let addToCart = document.querySelectorAll('.js-add-cart');
-    cartButton.addEventListener('click', function(){
-      if (cartDisplay.classList.contains('cart-active')){
-        cartDisplay.classList.remove('cart-active');
-        CartPopup.loadCartProducts()
-      }else{
-        cartDisplay.classList.add('cart-active');
-        addToCart.forEach(button => button.style.pointerEvents = "none")
-        CartPopup.loadCartProducts()
-      }
-    })
-  }
+  
 }
 
 export default new Dropdown();

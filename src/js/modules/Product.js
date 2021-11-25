@@ -1,4 +1,6 @@
-import { productItemTemplate } from "./product-template.js";
+import { template } from "./product-template.js";
+import Wish from './wish.js'
+
 import {
   getCartProducts,
   saveProducts,
@@ -12,7 +14,7 @@ class Product {
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
-  existedCart = getCartProducts();
+  existingCart = getCartProducts();
   constructor() {
     this.loadProducts();
     this.initEvents();
@@ -30,23 +32,31 @@ class Product {
       console.log(err);
     }
   };
-  
+
   displayProducts(products = []) {
     products.forEach((product) => {
-      this.productListElement.appendChild(productItemTemplate(product));
+      this.productListElement.appendChild(template(product));
     });
     setTimeout(() => {
       this.initAddToCartEvent();
-      setCartValues(this.existedCart)
+      setCartValues(this.existingCart);
+      Wish.initWish();
     }, 100);
   }
 
   loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
     const lastIndex = startIndex + pageSize;
     const loadedProducts = productItems.slice(startIndex, lastIndex);
-    this.currentProducts = [...this.currentProducts, ...loadedProducts];
+    if (loadedProducts.length === 0 || loadedProducts.length < pageSize){
+        const button = document.querySelector('#load-more');
+        button.classList.add('hide');
+    }else {
+      this.currentProducts = [...this.currentProducts, ...loadedProducts];
+    }
     // save new products
+    
     saveProducts(this.currentProducts);
+
     // Display products
     this.displayProducts(loadedProducts);
   }
@@ -73,39 +83,33 @@ class Product {
 
   addToCartProducts(item) {
     let cartProducts = getCartProducts();
-    const found = cartProducts.some((product) => product.id === item.id);
-    if (found) {
-      const index = cartProducts.findIndex((product) => product.id === item.id);
+    const index = cartProducts.findIndex((product) => product.id === item.id);
+
+    if (index !== -1) {
       // storage quantity is cart maximum amount => return storage number
-      if (
-        cartProducts[index].cartQuantity > cartProducts[index].quantity ||
-        cartProducts[index].cartQuantity === cartProducts[index].quantity
-      ) {
-        cartProducts[index].cartQuantity = cartProducts[index].quantity;
-      } else {
-        // cart amount +1 every click
+      if(cartProducts[index].cartQuantity < item.quantity){
         cartProducts[index].cartQuantity += 1;
+        item.isOutOfStock = cartProducts[index].cartQuantity === item.quantity ? true : false;
       }
-      console.log('new', cartProducts)
-      updateCartProduct(cartProducts);
-      setCartValues(cartProducts);
+      console.log("new", cartProducts);
       // CartPopup.loadCartProducts()
     } else {
-      console.log("item", item);
       if (item.quantity === 0) {
-        item.cartQuantity = 0;
-      } else {
-        item.cartQuantity += 1;
+        return; //Do not add item into cart
       }
-      // saveToCartProducts(item)
-      cartProducts.push(item);
-      console.log('new', cartProducts)
 
-      updateCartProduct(cartProducts);
-      setCartValues(cartProducts);
+      // Add to cart
+      item.isOutOfStock = item.quantity === 1 ? true : false;
+      cartProducts.push({ ...item, cartQuantity: 1 });
+
+      // saveToCartProducts(item)
+      console.log("new", cartProducts);
+
       // CartPopup.loadCartProducts()
     }
 
+    updateCartProduct(cartProducts);
+    setCartValues(cartProducts);
   }
 
   async initEvents() {
@@ -114,6 +118,5 @@ class Product {
       .addEventListener("click", this.newLoadMore.bind(this));
   }
 }
-
 
 export default new Product();

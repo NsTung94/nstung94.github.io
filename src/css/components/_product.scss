@@ -184,13 +184,17 @@
         order: 3;
       }
       &--add,
-      &--research {
+      &--research,
+      &--out {
         height: 45px;
         width: 100%;
         font: 600 14px/16.8px $font-primary;
         @include large {
           width: calc(50% - 5px);
         }
+      }
+      &--out {
+        color: red;
       }
     }
     &-compare {

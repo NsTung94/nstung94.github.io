@@ -1,11 +1,14 @@
 // click heart to add wishlist
 
 class Wish {
+  numberWish = 0;
+  numberInWish = document.querySelector('.js-number-wish');
   constructor(){
-    this.wish()
+    this.initWish()
   }
-  wish() {
-    // let wishCount = document.querySelector(".js-number-wish");
+
+  initWish() {
+   
     let hearts = document.querySelectorAll(".js-heart-button");
     hearts.forEach(function (item) {
       item.addEventListener("click", function () {

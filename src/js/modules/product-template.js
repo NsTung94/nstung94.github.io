@@ -1,10 +1,9 @@
-import { Card } from "./cart-template.js";
-
-export const productItemTemplate = (product) => {
-  // Product Item Container
+export const template = (product) => {
+  
   let productItem = document.createElement("div");
   productItem.classList.add("product__item");
   productItem.setAttribute("data-id", product.id);
+
   // Heart Button
   let heartBtn = document.createElement("div");
   heartBtn.classList.add("product__item-heart", "js-heart-button");
@@ -41,26 +40,19 @@ export const productItemTemplate = (product) => {
   // Product Detail
   let detail = document.createElement("div");
   detail.classList.add("item", "product__item-detail");
-  let code = document.createElement("div");
-  code.classList.add("product__item-code");
-  code.innerHTML = `${product.code}`;
-  let name = document.createElement("div");
-  name.classList.add("product__item-name");
-  name.innerHTML = `${product.name}`;
-  let review = document.createElement("div");
-  review.classList.add("product__item-rate");
-  review.innerHTML = `
-        <div class="product__item-rate--star">
-            <img src="./src/images/icon/star.png" alt="" />
-        </div>
-        <div class="product__item-rate--number">
-            ${product.review} Reviews
-        </div>
-        `;
-
-  detail.appendChild(code);
-  detail.appendChild(name);
-  detail.appendChild(review);
+  detail.innerHTML =`
+    <div class="product__item-code">${product.code}</div>
+    <div class="product__item-name">${product.name}</div>
+    <div class="product__item-rate">
+      <div class="product__item-rate--star">
+        <img src="./src/images/icon/star.png" alt="" />
+      </div>
+      <div class="product__item-rate--number">
+        ${product.review} Reviews
+      </div>  
+    </div>
+    
+  `
 
   // Product Price
   let price = document.createElement("div");
@@ -81,11 +73,7 @@ export const productItemTemplate = (product) => {
 
   // Product Suggestion
   let suggestion = document.createElement("div");
-  suggestion.classList.add(
-    "item",
-    "product__item-suggestion",
-    "hide-on-desktop"
-  );
+  suggestion.classList.add("item","product__item-suggestion","hide-on-desktop");
   suggestion.innerHTML = `
           <div class="product__item-interest">
               <div class="product__item-interest--number">${
@@ -111,20 +99,19 @@ export const productItemTemplate = (product) => {
   // Product Action
   let action = document.createElement("div");
   action.classList.add("item", "product__item-action");
-  let add = document.createElement("button");
-  add.classList.add(
-    "btn",
-    "btn--primary",
-    "product__item-action--add",
-    "js-add-cart"
-  );
-  add.setAttribute("data-id", product.id);
-  add.innerHTML = `add to cart`;
-  let research = document.createElement("button");
-  research.classList.add("btn", "product__item-action--research");
-  research.innerHTML = `learn more`;
-  action.appendChild(add);
-  action.appendChild(research);
+  action.innerHTML = `
+
+      ${product.quantity > 0
+        ? `<button class="btn btn--primary product__item-action--add js-add-cart" data-id="${product.id}">
+        add to cart
+        </button>`
+        : `<button class="btn product__item-action--out danger disable">out of stock </button>`
+      }
+      
+      <button class="btn product__item-action--research" data-id="${product.id}">
+        learn more
+      </button>
+  `
   // product.purchaseProduct();
 
   let compare = document.createElement("div");
@@ -149,97 +136,5 @@ export const productItemTemplate = (product) => {
   productItem.appendChild(description);
   productItem.appendChild(action);
   productItem.appendChild(compare);
-
   return productItem;
-};
-
-const productItem = Object.create(Card)
-  .init("div", ["product__item"])
-  .createCard();
-const productHeart = Object.create(Card)
-  .init("div", ["product__item-heart", "js-heart-button"])
-  .createCard();
-const productTag = Object.create(Card)
-  .init("div", ["item", "product__item-tag"])
-  .createCard();
-const productImage = Object.create(Card)
-  .init("div", ["product__item-img"])
-  .createCard();
-const productImageSrc = Object.create(Card)
-  .init("img", ["product__item-img--imgSrc"])
-  .createCard();
-productImageSrc.setAttribute("src", "");
-productImage.appendChild(productImageSrc);
-const productDetail = Object.create(Card)
-  .init("div", ["item", "product__item"])
-  .createCard();
-const name = Object.create(Card)
-  .init("div", ["product__item-name"])
-  .createCard();
-const code = Object.create(Card)
-  .init("div", ["product__item-code"])
-  .createCard();
-const review = Object.create(Card)
-  .init("div", ["product__item-rate"])
-  .createCard();
-review.innerHTML = `
-<div class="product__item-rate--star">
-            <img src="./src/images/icon/star.png" alt="" />
-        </div>
-        <div class="product__item-rate--number">
-            ${""} Reviews
-        </div>
-`;
-productDetail.appendChild(name);
-productDetail.appendChild(code);
-productDetail.appendChild(review);
-const productPrice = Object.create(Card)
-  .init("div", ["product__item-price"])
-  .createCard();
-const productNewPrice = Object.create(Card)
-  .init("div", ["product__item-price--new"])
-  .createCard();
-const productOldPrice = Object.create(Card)
-  .init("div", ["product__item-price--old"])
-  .createCard();
-
-productPrice.appendChild(productNewPrice);
-productPrice.appendChild(productOldPrice);
-const productSuggestion = Object.create(Card)
-  .init("div", ["item", "product__item-suggestion", "hide-on-desktop"])
-  .createCard();
-const productDescription = Object.create(Card)
-  .init("ul", ["item", "product__item-description"])
-  .createCard();
-const productAction = Object.create(Card)
-  .init("div", ["product__item-action"])
-  .createCard();
-const add = Object.create(Card)
-  .init("button", [
-    "btn",
-    "btn--primary",
-    "product__item-action--add",
-    "js-add-cart",
-  ])
-  .createCard();
-const research = Object.create(Card)
-  .init("button", ["btn", "product__item-action--research"])
-  .createCard();
-
-productAction.appendChild(add);
-productAction.appendChild(research);
-const productCompare = Object.create(Card)
-  .init("div", ["product__item-compare", "hide-on-mobile"])
-  .createCard();
-
-productItem.appendChild(productHeart);
-productItem.appendChild(productTag);
-productItem.appendChild(productImage);
-productItem.appendChild(productDetail);
-productItem.appendChild(productPrice);
-productItem.appendChild(productSuggestion);
-productItem.appendChild(productDescription);
-productItem.appendChild(productAction);
-productItem.appendChild(productCompare);
-
-console.log(productItem);
+}
