@@ -1,5 +1,5 @@
 import { template } from "./product-template.js";
-import Wish from './wish.js'
+import Wish from "./wish.js";
 
 import {
   getCartProducts,
@@ -16,11 +16,10 @@ class Product {
   productListElement = document.getElementById("product-list");
   existingCart = getCartProducts();
   numberProducts = 0;
-  numberProductsContainer = document.querySelector('#numberProducts')
+  numberProductsContainer = document.getElementById("numberProducts");
   constructor() {
     this.loadProducts();
     this.initEvents();
-    
   }
 
   loadProducts = async () => {
@@ -32,7 +31,7 @@ class Product {
       });
       this.numberProducts = productItems.length;
       this.loadNewProductsToRender();
-      this.numberProductsContainer.innerHTML = this.numberProducts
+      this.numberProductsContainer.innerHTML = this.numberProducts;
     } catch (err) {
       console.log(err);
     }
@@ -42,20 +41,18 @@ class Product {
     products.forEach((product) => {
       this.productListElement.appendChild(template(product));
     });
-    setTimeout(() => {
-      this.initAddToCartEvent();
-      setCartValues(this.existingCart);
-      Wish.initWish();
-    }, 100);
+    this.initAddToCartEvent();
+    setCartValues(this.existingCart);
+    Wish.initWish();
   }
 
   loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
     const lastIndex = startIndex + pageSize;
     const loadedProducts = productItems.slice(startIndex, lastIndex);
-    if (loadedProducts.length === 0 || loadedProducts.length < pageSize){
-        const button = document.querySelector('#load-more');
-        button.classList.add('hide');
-    }else {
+    if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
+      const button = document.getElementById("load-more");
+      button.classList.add("hide");
+    } else {
       this.currentProducts = [...this.currentProducts, ...loadedProducts];
     }
     // save new products
@@ -64,7 +61,7 @@ class Product {
     this.displayProducts(loadedProducts);
   }
 
-  newLoadMore() {
+  loadMore() {
     // Change page index
     this.startIndex = this.startIndex + this.pageSize;
     this.loadNewProductsToRender(this.startIndex);
@@ -91,9 +88,10 @@ class Product {
 
     if (index !== -1) {
       // storage quantity is cart maximum amount => return storage number
-      if(cartProducts[index].cartQuantity < item.quantity){
+      if (cartProducts[index].cartQuantity < item.quantity) {
         // cartProducts[index].cartQuantity += 1;
-        item.isOutOfStock = cartProducts[index].cartQuantity === item.quantity ? true : false;
+        item.isOutOfStock =
+          cartProducts[index].cartQuantity === item.quantity ? true : false;
       }
       // CartPopup.loadCartProducts()
     } else {
@@ -104,17 +102,16 @@ class Product {
       // Add to cart
       item.isOutOfStock = item.quantity === 1 ? true : false;
       cartProducts.push({ ...item, cartQuantity: 1 });
-
     }
 
     updateCartProduct(cartProducts);
     setCartValues(cartProducts);
   }
 
-  async initEvents() {
+  initEvents() {
     document
       .getElementById("load-more")
-      .addEventListener("click", this.newLoadMore.bind(this));
+      .addEventListener("click", this.loadMore.bind(this));
   }
 }
 

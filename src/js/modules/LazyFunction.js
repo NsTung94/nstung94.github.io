@@ -35,8 +35,8 @@ class LazyFunction {
   }
   lazyFilterBar() {
     let bar = document.querySelector(".filter");
-    let header = document.querySelector("#header");
-    let footer = document.querySelector("#footer");
+    let header = document.getElementById("header");
+    let footer = document.getElementById("footer");
    
     let observer = new IntersectionObserver(function (entries) {
       entries.forEach((entry) => {
