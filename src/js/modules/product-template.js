@@ -1,3 +1,5 @@
+import Wish from "./Wish.js";
+
 export const template = (product) => {
   let productItem = document.createElement("div");
   productItem.classList.add("product__item");

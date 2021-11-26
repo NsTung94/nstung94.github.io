@@ -1,57 +1,59 @@
 import { template } from "./product-template.js";
 import Wish from "./wish.js";
-
-import { allProducts } from "../services/sharedproduct.service.js";
-import Services from '../services/sharedproduct.service.js';
+import ProductServices from "../services/sharedproduct.service.js";
 
 class Product {
   startIndex = 0;
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
-  existingCart = Services.getCartProducts();
   numberProducts = 0;
   numberProductsContainer = document.getElementById("numberProducts");
+
   constructor() {
     this.loadProducts();
     this.initEvents();
   }
 
-  
   loadProducts = async () => {
     try {
-      const products = await Services.fetchProducts();
-      console.log("products", Services.fetchProducts())     
-      this.numberProductsContainer.innerHTML = Services.productsCount;
+      await ProductServices.fetchProducts();
+      this.numberProductsContainer.innerHTML = ProductServices.productsCount;
       this.loadNewProductsToRender();
     } catch (err) {
       console.log(err);
     }
   };
 
- 
-
   displayProducts(products = []) {
-    products.forEach((product) => {
-      this.productListElement.appendChild(template(product));
-    });
-    this.initAddToCartEvent();
-    Services.setCartValues(this.existingCart);
-    Wish.initWish();
+    let existingCart = ProductServices.getCartProducts();
+  
+    const promise = new Promise((resolve, reject) => {
+        products.forEach((product) => {
+        this.productListElement.appendChild(template(product));
+        });
+        this.initAddToCartEvent();
+        ProductServices.setCartValues(existingCart);
+        resolve(true);
+    })
+    promise.then(()=>{
+      Wish.initWish()
+    })
   }
-
   loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
-    const loadedProducts = Services.getProducts(startIndex, pageSize);
+    const loadedProducts = ProductServices.getProducts(startIndex, pageSize);
     if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
       const button = document.getElementById("load-more");
       button.classList.add("hide");
     } else {
       this.currentProducts = [...this.currentProducts, ...loadedProducts];
     }
+
     // save new products
-    Services.saveProducts(this.currentProducts);
+    ProductServices.saveProducts(this.currentProducts);
     // Display products
     this.displayProducts(loadedProducts);
+    //
   }
 
   loadMore() {
@@ -61,13 +63,12 @@ class Product {
   }
 
   initAddToCartEvent() {
-    
     let button = this.productListElement.querySelectorAll(".js-add-cart");
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = allProducts.find(
+        const targetProduct = ProductServices.allProducts.find(
           (target) => target.id === productId
         );
         self.addToCartProducts(targetProduct);
@@ -76,7 +77,7 @@ class Product {
   }
 
   addToCartProducts(item) {
-    let cartProducts = Services.getCartProducts();
+    let cartProducts = ProductServices.getCartProducts();
     const index = cartProducts.findIndex((product) => product.id === item.id);
 
     if (index !== -1) {
@@ -86,7 +87,6 @@ class Product {
         item.isOutOfStock =
           cartProducts[index].cartQuantity === item.quantity ? true : false;
       }
-      // CartPopup.loadCartProducts()
     } else {
       if (item.quantity === 0) {
         return; //Do not add item into cart
@@ -97,8 +97,8 @@ class Product {
       cartProducts.push({ ...item, cartQuantity: 1 });
     }
 
-    Services.updateCartProduct(cartProducts);
-    Services.setCartValues(cartProducts);
+    ProductServices.updateCartProduct(cartProducts);
+    ProductServices.setCartValues(cartProducts);
   }
 
   initEvents() {

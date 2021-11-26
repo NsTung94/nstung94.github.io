@@ -2,16 +2,16 @@ let _currentProducts = [];
 let _cartProducts = [];
 const _cartItemKey = '_cartItemKey';
 let numberCartItem = document.querySelector('.js-number-cart');
-export let allProducts = []
-export let productsCount = 0;
 
-class Services {
+class ProductServices {
+  allProducts = [];
+  productsCount = 0;
   async fetchProducts(){
     try {
       const res = await fetch("src/product.json");
-      allProducts = await res.json();
-      productsCount = allProducts.length;
-      return allProducts
+      this.allProducts = await res.json();
+      this.productsCount = this.allProducts.length;
+      return this.allProducts
       } catch (err) {
       console.log(err);
     }
@@ -51,10 +51,10 @@ class Services {
   // get products according to pageIndex & paseSize
   getProducts(startIndex = 0, pageSize = 3){
     const lastIndex = startIndex + pageSize;
-    const loadedProducts = allProducts.slice(startIndex, lastIndex);
+    const loadedProducts = this.allProducts.slice(startIndex, lastIndex);
     return loadedProducts;
   } 
 }
 
-export default new Services();
+export default new ProductServices();
 
