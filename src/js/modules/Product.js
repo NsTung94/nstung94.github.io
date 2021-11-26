@@ -1,13 +1,14 @@
 import { template } from "./product-template.js";
 import Wish from "./wish.js";
-
 import {
+  allProducts,
+  fetchProducts,
   getCartProducts,
   saveProducts,
   setCartValues,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
-const productItems = [];
+let productItems = [];
 
 class Product {
   startIndex = 0;
@@ -22,13 +23,14 @@ class Product {
     this.initEvents();
   }
 
+  
   loadProducts = async () => {
     try {
-      const res = await fetch("src/product.json");
-      let products = await res.json();
-      products.map((product) => {
+      const products = await fetchProducts();
+      products.map((product)=>{
         productItems.push(product);
-      });
+      })
+      // console.log("productItems", productItems)
       this.numberProducts = productItems.length;
       this.loadNewProductsToRender();
       this.numberProductsContainer.innerHTML = this.numberProducts;
@@ -36,6 +38,8 @@ class Product {
       console.log(err);
     }
   };
+
+ 
 
   displayProducts(products = []) {
     products.forEach((product) => {
