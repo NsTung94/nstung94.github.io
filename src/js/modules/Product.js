@@ -1,22 +1,15 @@
 import { template } from "./product-template.js";
 import Wish from "./wish.js";
-import {
-  productsCount,
-  fetchProducts,
-  getCartProducts,
-  saveProducts,
-  setCartValues,
-  updateCartProduct,
-  getProducts,
-} from "../services/sharedproduct.service.js";
+
 import { allProducts } from "../services/sharedproduct.service.js";
+import Services from '../services/sharedproduct.service.js';
 
 class Product {
   startIndex = 0;
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
-  existingCart = getCartProducts();
+  existingCart = Services.getCartProducts();
   numberProducts = 0;
   numberProductsContainer = document.getElementById("numberProducts");
   constructor() {
@@ -27,9 +20,9 @@ class Product {
   
   loadProducts = async () => {
     try {
-      const products = await fetchProducts();
-      console.log("products", productsCount)     
-      this.numberProductsContainer.innerHTML = productsCount;
+      const products = await Services.fetchProducts();
+      console.log("products", Services.fetchProducts())     
+      this.numberProductsContainer.innerHTML = Services.productsCount;
       this.loadNewProductsToRender();
     } catch (err) {
       console.log(err);
@@ -43,12 +36,12 @@ class Product {
       this.productListElement.appendChild(template(product));
     });
     this.initAddToCartEvent();
-    setCartValues(this.existingCart);
+    Services.setCartValues(this.existingCart);
     Wish.initWish();
   }
 
   loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
-    const loadedProducts = getProducts(startIndex, pageSize);
+    const loadedProducts = Services.getProducts(startIndex, pageSize);
     if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
       const button = document.getElementById("load-more");
       button.classList.add("hide");
@@ -56,7 +49,7 @@ class Product {
       this.currentProducts = [...this.currentProducts, ...loadedProducts];
     }
     // save new products
-    saveProducts(this.currentProducts);
+    Services.saveProducts(this.currentProducts);
     // Display products
     this.displayProducts(loadedProducts);
   }
@@ -83,7 +76,7 @@ class Product {
   }
 
   addToCartProducts(item) {
-    let cartProducts = getCartProducts();
+    let cartProducts = Services.getCartProducts();
     const index = cartProducts.findIndex((product) => product.id === item.id);
 
     if (index !== -1) {
@@ -104,8 +97,8 @@ class Product {
       cartProducts.push({ ...item, cartQuantity: 1 });
     }
 
-    updateCartProduct(cartProducts);
-    setCartValues(cartProducts);
+    Services.updateCartProduct(cartProducts);
+    Services.setCartValues(cartProducts);
   }
 
   initEvents() {

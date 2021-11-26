@@ -1,9 +1,10 @@
 import { cartTemplate } from "./cart-template.js";
-import {
-  getCartProducts,
-  setCartValues,
-  updateCartProduct,
-} from "../services/sharedproduct.service.js";
+// import {
+//   getCartProducts,
+//   setCartValues,
+//   Services.updateCartProduct,
+// } from "../services/sharedproduct.service.js";
+import Services from '../services/sharedproduct.service.js';
 class CartMini {
   cartListElement = document.getElementById("cart-list");
   contentHided = document.querySelectorAll(".js-hide-on-none");
@@ -32,7 +33,7 @@ class CartMini {
   }
 
   loadCartProducts() {
-    let currentCartProducts = getCartProducts();
+    let currentCartProducts = Services.getCartProducts();
     this.renderCartProduct(currentCartProducts);
     this.displayNumberInCart(currentCartProducts);
     this.totalPrice(currentCartProducts);
@@ -55,7 +56,7 @@ class CartMini {
     this.contentHided.forEach((content) => {
       if (products.length === 0) {
         content.classList.add("hide");
-        setCartValues([]);
+        Services.setCartValues([]);
       } else {
         content.classList.remove("hide");
         this.numberInCart.innerHTML = `${totalNumberItem}`;
@@ -83,7 +84,7 @@ class CartMini {
       button.classList.remove("disable");
       item.cartQuantity += 1;
       products[index] = item;
-      updateCartProduct(products);
+      Services.updateCartProduct(products);
     } else {
       button.classList.add("disable");
       self.loadCartProducts();
@@ -98,7 +99,7 @@ class CartMini {
       button.classList.remove("disable");
       item.cartQuantity -= 1;
       products[index] = item;
-      updateCartProduct(products);
+      Services.updateCartProduct(products);
     } else {
       self.deleteCart(products, productId);
     }
@@ -107,7 +108,7 @@ class CartMini {
   deleteCart(products, productId) {
     const item = products.find((target) => target.id === productId);
     products = products.filter((product) => product !== item);
-    updateCartProduct(products);
+    Services.updateCartProduct(products);
     this.loadCartProducts();
   }
   initIncreaseCartEvent(products) {
