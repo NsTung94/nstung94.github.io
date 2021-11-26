@@ -1,14 +1,14 @@
 import { template } from "./product-template.js";
 import Wish from "./wish.js";
 import {
-  allProducts,
+  productsCount,
   fetchProducts,
   getCartProducts,
   saveProducts,
   setCartValues,
   updateCartProduct,
+  getProducts,
 } from "../services/sharedproduct.service.js";
-let productItems = [];
 
 class Product {
   startIndex = 0;
@@ -27,13 +27,9 @@ class Product {
   loadProducts = async () => {
     try {
       const products = await fetchProducts();
-      products.map((product)=>{
-        productItems.push(product);
-      })
-      // console.log("productItems", productItems)
-      this.numberProducts = productItems.length;
+      console.log("products", productsCount)     
+      this.numberProductsContainer.innerHTML = productsCount;
       this.loadNewProductsToRender();
-      this.numberProductsContainer.innerHTML = this.numberProducts;
     } catch (err) {
       console.log(err);
     }
@@ -51,8 +47,7 @@ class Product {
   }
 
   loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
-    const lastIndex = startIndex + pageSize;
-    const loadedProducts = productItems.slice(startIndex, lastIndex);
+    const loadedProducts = getProducts(startIndex, pageSize);
     if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
       const button = document.getElementById("load-more");
       button.classList.add("hide");
