@@ -15,9 +15,12 @@ class Product {
   currentProducts = [];
   productListElement = document.getElementById("product-list");
   existingCart = getCartProducts();
+  numberProducts = 0;
+  numberProductsContainer = document.querySelector('#numberProducts')
   constructor() {
     this.loadProducts();
     this.initEvents();
+    
   }
 
   loadProducts = async () => {
@@ -27,7 +30,9 @@ class Product {
       products.map((product) => {
         productItems.push(product);
       });
+      this.numberProducts = productItems.length;
       this.loadNewProductsToRender();
+      this.numberProductsContainer.innerHTML = this.numberProducts
     } catch (err) {
       console.log(err);
     }
@@ -54,9 +59,7 @@ class Product {
       this.currentProducts = [...this.currentProducts, ...loadedProducts];
     }
     // save new products
-    
     saveProducts(this.currentProducts);
-
     // Display products
     this.displayProducts(loadedProducts);
   }
@@ -76,6 +79,7 @@ class Product {
         const targetProduct = productItems.find(
           (target) => target.id === productId
         );
+        // addBtn.classList.add('disable');
         self.addToCartProducts(targetProduct);
       });
     });
@@ -88,10 +92,9 @@ class Product {
     if (index !== -1) {
       // storage quantity is cart maximum amount => return storage number
       if(cartProducts[index].cartQuantity < item.quantity){
-        cartProducts[index].cartQuantity += 1;
+        // cartProducts[index].cartQuantity += 1;
         item.isOutOfStock = cartProducts[index].cartQuantity === item.quantity ? true : false;
       }
-      console.log("new", cartProducts);
       // CartPopup.loadCartProducts()
     } else {
       if (item.quantity === 0) {
@@ -102,10 +105,6 @@ class Product {
       item.isOutOfStock = item.quantity === 1 ? true : false;
       cartProducts.push({ ...item, cartQuantity: 1 });
 
-      // saveToCartProducts(item)
-      console.log("new", cartProducts);
-
-      // CartPopup.loadCartProducts()
     }
 
     updateCartProduct(cartProducts);

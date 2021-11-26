@@ -1,5 +1,4 @@
 export const template = (product) => {
-  
   let productItem = document.createElement("div");
   productItem.classList.add("product__item");
   productItem.setAttribute("data-id", product.id);
@@ -51,7 +50,6 @@ export const template = (product) => {
         ${product.review} Reviews
       </div>  
     </div>
-    
   `
 
   // Product Price
@@ -101,7 +99,7 @@ export const template = (product) => {
   action.classList.add("item", "product__item-action");
   action.innerHTML = `
 
-      ${product.quantity > 0
+      ${product.quantity > 0 || product.isOutOfStock === true
         ? `<button class="btn btn--primary product__item-action--add js-add-cart" data-id="${product.id}">
         add to cart
         </button>`

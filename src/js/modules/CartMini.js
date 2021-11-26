@@ -34,7 +34,6 @@ class CartMini {
   loadCartProducts() {
     let currentCartProducts= getCartProducts();
     this.renderCartProduct(currentCartProducts);
-    console.log("in load cart", currentCartProducts);
     this.displayNumberInCart(currentCartProducts);
     this.totalPrice(currentCartProducts);
   }
@@ -44,7 +43,6 @@ class CartMini {
     products.forEach((product) =>
       this.cartListElement.appendChild(cartTemplate(product))
     );
-    // this.cartListElement.appendChild(products)
     setTimeout(() => {
       //init something
       this.initIncreaseCartEvent(products);
@@ -80,7 +78,6 @@ class CartMini {
   }
 
   increaseCartItemQuantity(products, button, productId) {
-    console.log("button", button)
     const item = products.find(
       (target) => target.id === productId
     );
@@ -91,7 +88,6 @@ class CartMini {
     if (item.cartQuantity < item.quantity) {
       button.classList.remove("disable");
       item.cartQuantity += 1;
-      console.log("item cart quantity", item.cartQuantity);
       products[index] = item;
       updateCartProduct(products);
     } else {
@@ -111,24 +107,20 @@ class CartMini {
     if (item.cartQuantity > 1) {
       button.classList.remove("disable");
       item.cartQuantity -= 1;
-      console.log("item cart quantity", item.cartQuantity);
       products[index] = item;
       updateCartProduct(products);
     } else {
       self.deleteCart(products, productId);
-      // setCartValues(item);
     }
     this.loadCartProducts();
   }
   deleteCart(products, productId) {
-    console.log("before delete", products);
     const item = products.find(
       (target) => target.id === productId
     );
     products = products.filter(
       (product) => product !== item
     );
-    console.log("after delete", products);
     updateCartProduct(products);
     this.loadCartProducts();
   }
@@ -162,15 +154,6 @@ class CartMini {
         self.deleteCart(products, productId);
       });
     });
-  }
-  debounce(fn, ms) {
-    let timer;
-    return () => {
-      clearTimeout(timer);
-      timer = setTimeout(() => {
-        fn.apply(this, arguments);
-      }, ms);
-    };
   }
 }
 
