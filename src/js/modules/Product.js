@@ -9,6 +9,7 @@ import {
   updateCartProduct,
   getProducts,
 } from "../services/sharedproduct.service.js";
+import { allProducts } from "../services/sharedproduct.service.js";
 
 class Product {
   startIndex = 0;
@@ -67,15 +68,15 @@ class Product {
   }
 
   initAddToCartEvent() {
+    
     let button = this.productListElement.querySelectorAll(".js-add-cart");
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = productItems.find(
+        const targetProduct = allProducts.find(
           (target) => target.id === productId
         );
-        // addBtn.classList.add('disable');
         self.addToCartProducts(targetProduct);
       });
     });
