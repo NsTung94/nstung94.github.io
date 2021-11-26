@@ -1,10 +1,12 @@
-import { productItemTemplate } from "./product-template.js";
+import { template } from "./product-template.js";
+import Wish from "./wish.js";
+
 import {
   getCartProducts,
   saveProducts,
+  setCartValues,
   updateCartProduct,
 } from "../services/sharedproduct.service.js";
-
 const productItems = [];
 
 class Product {
@@ -12,10 +14,13 @@ class Product {
   pageSize = 3;
   currentProducts = [];
   productListElement = document.getElementById("product-list");
-  // constructor() {
-  //   this.loadProducts();
-  //   this.initEvents();
-  // }
+  existingCart = getCartProducts();
+  numberProducts = 0;
+  numberProductsContainer = document.getElementById("numberProducts");
+  constructor() {
+    this.loadProducts();
+    this.initEvents();
+  }
 
   loadProducts = async () => {
     try {
@@ -24,7 +29,9 @@ class Product {
       products.map((product) => {
         productItems.push(product);
       });
+      this.numberProducts = productItems.length;
       this.loadNewProductsToRender();
+      this.numberProductsContainer.innerHTML = this.numberProducts;
     } catch (err) {
       console.log(err);
     }
@@ -32,25 +39,29 @@ class Product {
 
   displayProducts(products = []) {
     products.forEach((product) => {
-      this.productListElement.appendChild(productItemTemplate(product));
+      this.productListElement.appendChild(template(product));
     });
-    setTimeout(() => {
-      this.initAddToCartEvent();
-    }, 100);
+    this.initAddToCartEvent();
+    setCartValues(this.existingCart);
+    Wish.initWish();
   }
 
   loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
     const lastIndex = startIndex + pageSize;
     const loadedProducts = productItems.slice(startIndex, lastIndex);
-    this.currentProducts = [...this.currentProducts, ...loadedProducts];
-    console.log("currentProduct", this.currentProducts);
+    if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
+      const button = document.getElementById("load-more");
+      button.classList.add("hide");
+    } else {
+      this.currentProducts = [...this.currentProducts, ...loadedProducts];
+    }
     // save new products
     saveProducts(this.currentProducts);
     // Display products
     this.displayProducts(loadedProducts);
   }
 
-  newLoadMore() {
+  loadMore() {
     // Change page index
     this.startIndex = this.startIndex + this.pageSize;
     this.loadNewProductsToRender(this.startIndex);
@@ -61,11 +72,11 @@ class Product {
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
-        e.preventDefault();
         let productId = Number(e.currentTarget.getAttribute("data-id"));
         const targetProduct = productItems.find(
           (target) => target.id === productId
         );
+        // addBtn.classList.add('disable');
         self.addToCartProducts(targetProduct);
       });
     });
@@ -73,46 +84,35 @@ class Product {
 
   addToCartProducts(item) {
     let cartProducts = getCartProducts();
-    const found = cartProducts.some((product) => product.id === item.id);
-    if (found) {
-      const index = cartProducts.findIndex((product) => product.id === item.id);
+    const index = cartProducts.findIndex((product) => product.id === item.id);
+
+    if (index !== -1) {
       // storage quantity is cart maximum amount => return storage number
-      if (
-        cartProducts[index].cartQuantity > cartProducts[index].quantity ||
-        cartProducts[index].cartQuantity === cartProducts[index].quantity
-      ) {
-        cartProducts[index].cartQuantity = cartProducts[index].quantity;
-      } else {
-        // cart amount +1 every click
-        cartProducts[index].cartQuantity += 1;
+      if (cartProducts[index].cartQuantity < item.quantity) {
+        // cartProducts[index].cartQuantity += 1;
+        item.isOutOfStock =
+          cartProducts[index].cartQuantity === item.quantity ? true : false;
       }
-      updateCartProduct(cartProducts);
+      // CartPopup.loadCartProducts()
     } else {
-      console.log("item", item);
       if (item.quantity === 0) {
-        item.cartQuantity = 0;
-      } else {
-        item.cartQuantity += 1;
+        return; //Do not add item into cart
       }
-      // saveToCartProducts(item)
-      cartProducts.push(item);
-      updateCartProduct(cartProducts);
-      // CartPopup.loadCartProducts();
+
+      // Add to cart
+      item.isOutOfStock = item.quantity === 1 ? true : false;
+      cartProducts.push({ ...item, cartQuantity: 1 });
     }
+
+    updateCartProduct(cartProducts);
+    setCartValues(cartProducts);
   }
 
-  async initEvents() {
+  initEvents() {
     document
       .getElementById("load-more")
-      .addEventListener("click", this.newLoadMore.bind(this));
+      .addEventListener("click", this.loadMore.bind(this));
   }
 }
 
-// export default new Product();
-
-document.addEventListener("DOMContentLoaded", () => {
-  const product = new Product();
-  product.loadProducts();
-  product.initEvents();
-  
-});
+export default new Product();

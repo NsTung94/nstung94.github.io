@@ -25,7 +25,9 @@
 }
 
 .owl-carousel .owl-stage-outer {
-  height: 160px;
+  @include large {
+    height: 160px;
+  }
 }
 .owl-prev,
 .owl-next {

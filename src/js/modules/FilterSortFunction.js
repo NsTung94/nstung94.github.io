@@ -1,7 +1,10 @@
-
 class FilterSortFunction {
-  constructor(){
-    // this.name = name
+  constructor() {
+    this.filterSelector();
+    this.closeFilterSelector();
+    this.sortSelector();
+    this.closeSortSelector();
+    this.resetFilterSelection();
   }
 
   filterSelector() {
@@ -10,7 +13,7 @@ class FilterSortFunction {
     button.addEventListener("click", function () {
       selectorPopup.classList.add("active-selector");
     });
-  };
+  }
   closeFilterSelector() {
     let buttons = document.querySelectorAll(".js-selector-close");
     let selectorPopup = document.querySelector(".js-selector");
@@ -19,7 +22,7 @@ class FilterSortFunction {
         selectorPopup.classList.remove("active-selector");
       });
     });
-  };
+  }
   sortSelector() {
     let btn = document.querySelector(".js-sort-open");
     let sortPopup = document.querySelector(".js-sort-selector");
@@ -30,7 +33,7 @@ class FilterSortFunction {
         sortPopup.classList.add("active");
       }
     });
-  };
+  }
   closeSortSelector() {
     let btns = document.querySelectorAll(".js-sort-close");
     let sortPopup = document.querySelector(".js-sort-selector");
@@ -39,7 +42,7 @@ class FilterSortFunction {
         sortPopup.classList.remove("active");
       });
     });
-  };
+  }
   resetFilterSelection() {
     document.querySelectorAll(".js-reset-selector").forEach(function (item) {
       item.addEventListener("click", function () {
@@ -50,14 +53,7 @@ class FilterSortFunction {
           });
       });
     });
-  };
+  }
 }
 
-export default FilterSortFunction;
-
-const filterSort  = new FilterSortFunction();
-filterSort.filterSelector();
-filterSort.closeFilterSelector();
-filterSort.sortSelector();
-filterSort.closeSortSelector();
-filterSort.resetFilterSelection();
+export default new FilterSortFunction();
