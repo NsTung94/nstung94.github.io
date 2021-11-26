@@ -10,8 +10,8 @@
   background-color: #fff;
   transition: bottom 0.8s ease-in-out;
   @include large {
-    position: relative;
-    width: 20%;
+    position: static;
+    width: 25%;
     margin-left: -20px;
   }
   &__header {
@@ -19,7 +19,7 @@
     text-transform: uppercase;
     position: relative;
     display: flex;
-    padding: 15px;
+    padding: 15px 15px 15px 30px;
     width: 100%;
     text-align: left;
     border: none;
@@ -32,8 +32,11 @@
       width: 21px;
       height: 21px;
     }
-    &-iconFilter{
+    &--iconFilter{
       @include flexBox(center, center);
+      gap: 5px;
+      font-size: 20px;
+      font-weight: 600;
     }
     @include large {
       display: none;
@@ -51,7 +54,7 @@
       padding: 0;
     }
     &-list {
-      padding: 0;
+      padding: 0 20px;
     }
     &-filter {
       border-bottom: 1px solid $secondary-color;
@@ -111,6 +114,6 @@
   }
 }
 
-.active {
+.active-selector {
   bottom: 0;
 }

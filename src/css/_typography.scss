@@ -1,33 +1,41 @@
 body {
-  color: var(--primary-color);
+  color: $primary-color;
   font-family: "Electrolux";
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
 .btn {
-  display: inline-block;
+  @include flexBox(center, center);
+
   border-radius: 3px;
   padding: 7px 12px;
   border: 1px solid #d5d5d5;
   background-color: #ffffff;
-  font: 700 13px/18px "Electrolux", serif;
+  font: 600 13px/18px "Electrolux", serif;
   text-transform: uppercase;
-  color: var(--primary-color);
+  color: $primary-color;
   cursor: pointer;
   &:hover {
     opacity: 0.8;
     transition: all 0.3 ease-in-out;
   }
+  &--primary {
+    background-color: $primary-color;
+    color: #ffffff;
+  }
+  &-no-border {
+    border: none;
+  }
 }
-
-.btn--primary {
-  background-color: $primary-color;
-  color: #ffffff;
+.showMenu {
+  left: 0;
+  transition: 0.5s;
 }
-.btn-no-border {
-  border: none;
-}
-
 ul,
 li {
   padding: 0;
@@ -35,7 +43,6 @@ li {
 }
 
 .container {
-  display: block;
   width: 100%;
   padding: 0 15px;
   margin: 0 auto;
@@ -46,8 +53,13 @@ li {
   &__row {
     @include large {
       margin: 0 -20px;
-      
     }
+  }
+  &__wrapper {
+    display: flex;
+    min-height: 500px;
+    width: 100%;
+    // margin: 0 -20px;
   }
 }
 
@@ -88,6 +100,15 @@ label {
   align-items: center;
   // margin-bottom: 16px;
 }
+
+.oldprice {
+  text-decoration: line-through;
+}
+
+.danger {
+  color: red;
+}
+
 .disable {
   opacity: 0.5;
   pointer-events: none;
@@ -119,7 +140,6 @@ label {
     display: flex;
   }
 }
-
 .hide-on-desktop {
   @include large {
     display: none;
@@ -128,9 +148,13 @@ label {
     height: 0;
   }
 }
-
 .hide {
   display: none;
+}
+
+.product-container {
+  width: 100%;
+  padding: 0 20px;
 }
 
 .show {
@@ -140,26 +164,55 @@ label {
 .hideDropDown {
   display: none;
 }
+
 .dropDown {
   display: block;
-  &__header {
-  }
-
-  &__container {
-  }
 }
 
-.active {
-  &__content {
-    bottom: 0;
-  }
-  @include large {
-    bottom: auto;
-  }
+.price-old {
+  text-decoration: line-through;
+  font: 400 12px/18px $font-primary;
 }
 
 .full-img {
   img {
     height: 100%;
   }
+}
+
+.loadMore {
+  // width: 30px;
+  // height: 30px;
+}
+.cart-active .cart {
+  overflow-y: auto;
+  height: 500px;
+  overflow-x: hidden;
+  border: 1px solid rgba(223, 231, 243, 0.4);
+  // &:before {
+  //   content: "";
+  //   display: block;
+  //   width: 0;
+  //   height: 0;
+  //   top: 0px;
+  //   right: 50px;
+  //   border-left: 10px solid transparent;
+  //   border-right: 10px solid transparent;
+  //   border-bottom: 10px solid $secondary-color;
+  //   position: absolute;
+  //   margin: auto;
+  //   z-index: 99;
+  // }
+}
+
+.contact-icon {
+  position: fixed;
+  right: 15px;
+  bottom: 80px;
+  z-index: 10;
+}
+
+.hide-before:before,
+.hide-after:after {
+  display: none;
 }

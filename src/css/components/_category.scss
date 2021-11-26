@@ -1,4 +1,3 @@
-@import './slider';
 
 .category {
     margin-top: 20px;
@@ -7,14 +6,17 @@
         font: 600 18px/25.2px $font-primary;
         margin-bottom: 8px;
         @include large{
+            margin-top: 40px;
             font-size: 20px;
         }
     }
     &__content{
-        height: 64px;
+        margin-right: 20px;
+        height: 70px;
         @include large {
             height: 200px;
         }
+        border-bottom: 1px solid $primary-color;
     }
     &__item{
         font: 400 14px/18px $font-primary;
@@ -32,6 +34,7 @@
         @include flexBox(center, center, wrap, row);
         &-type {
             @include flexBox(center, center);
+            text-align: center;
             @include large{
                 width: 100%;
             }
@@ -48,9 +51,9 @@
     @include large {
         margin-top: 40px;
     }
-}
-.selected {
-    border: 2px solid $primary-color;
-    border-radius: 1px;
-    font-weight: 600;
+    .selected {
+        border: 2px solid $primary-color;
+        border-radius: 1px;
+        font-weight: 600;
+    }
 }

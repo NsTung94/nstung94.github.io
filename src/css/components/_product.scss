@@ -1,24 +1,34 @@
 .product {
   @include flexBox();
   @include large {
-    width: 80%;
+    margin: 0;
+    display: flex;
+    margin-left:  20px;
+    
     &__list {
       @include flexBox(stretch);
+      @include large {
+        gap: 40px;
+      }
     }
   }
   &__item {
     position: relative;
     @include flexBox();
     margin-bottom: 40px;
+    
     @include large {
       @include flexBox($dir: column);
-      width: calc(30% - 10px);
-      margin: 0 20px 40px;
+      width: calc((100% - 80px) / 3);
+      margin-bottom: 40px;
     }
     &-heart {
       position: absolute;
       top: 0;
+      width: 30px;
+      height: 30px;
       right: 15px;
+      background-image: url(/src/images/icon/heart-outline-icon.svg);
       @include large {
         right: 0;
       }
@@ -30,18 +40,25 @@
         position: absolute;
         flex-direction: column;
         width: auto;
-        height: 90px;
+        height: 100px;
       }
     }
     &-img {
       width: 110px;
-      height: 110px;
+      position: relative;
+      img {
+        width: 100%;
+      }
       @include large {
         margin-top: 28px;
         width: 100%;
-        height: auto;
+        
       }
       &--content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
         height: 100%;
         object-fit: contain;
         @include large {
@@ -62,6 +79,7 @@
     }
     &-name {
       font: 600 18px/22px $font-primary;
+      min-height: 50px;
       @include large {
         font-size: 20px;
         line-height: 26px;
@@ -95,17 +113,26 @@
       &--old {
         font: 400 14px/28px $font-primary;
         text-decoration: line-through;
+        &:after {
+          content: ' đ';
+          margin-left: 2px;
+        }
       }
       &--new {
         font: 600 18px/28px $font-primary;
         @include large {
           font-size: 24px;
         }
+        &:after {
+          margin-left: 2px;
+          content: ' đ';
+        }
       }
     }
     &-suggestion {
       @include flexBox(center);
       height: 46px;
+      // gap: 2px;
       @include large {
           display: none;
       }
@@ -128,6 +155,7 @@
     }
     &-payment {
       @include flexBox(center);
+      gap: 2px;
       height: 100%;
       width: 85%;
       padding: 5px;
@@ -136,6 +164,10 @@
     &-description {
       list-style-type: disc;
       padding-left: 15px;
+      li {
+        margin-bottom: 6px;
+        font: 400 14px/24px $font-primary;
+      }
       @include large {
         order: 1;
       }
@@ -152,13 +184,17 @@
         order: 3;
       }
       &--add,
-      &--research {
+      &--research,
+      &--out {
         height: 45px;
         width: 100%;
         font: 600 14px/16.8px $font-primary;
         @include large {
           width: calc(50% - 5px);
         }
+      }
+      &--out {
+        color: red;
       }
     }
     &-compare {
@@ -172,4 +208,21 @@
       }
     }
   }
+  .heart-active {
+    background-image: url(/src/images/icon/heart-filled-icon.svg);
+  }
+  
+  .price-number {
+    &:after {
+      content: ' đ';
+    }
+  }
+  .active {
+    bottom: 0;
+  }
+  .design {
+    @include flexBox($dir: column);
+    margin: 0 auto;
+  }
 }
+

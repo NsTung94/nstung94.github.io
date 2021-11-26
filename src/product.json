@@ -1,0 +1,180 @@
+[
+  {
+    "id": 1,
+    "picture": "./src/images/product/tulanh1.png",
+    "code": "EBB2802H-H",
+    "name": "253L NutriFresh® inverter bottom mount refrigerator - black",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "bundle" }],
+    "price": {
+      "old": 7505000,
+      "new": 3757000
+    },
+
+    "quantity": 0,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {
+        "value": "360 Cooling maintains a stable temperature to keep food fresh for longer"
+      },
+      { "value": "XL Freezer enables you to store more" }
+    ]
+  },
+  {
+    "id": 2,
+    "picture": "./src/images/product/tulanh2.png",
+    "code": "EBB3442K-A",
+    "name": "308L UltimateTaste 300 bottom freezer refrigerator ",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "gift" }, { "type": "discount" }],
+
+    "price": {
+      "new": 14789999
+    },
+    "quantity": 3,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 3,
+    "picture": "./src/images/product/tulanh3.png",
+    "code": "EBE4500B-G",
+    "name": "421L bottom freezer refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "bundle" }, { "type": "discount" }],
+    "price": {
+      "new": 16390000
+    },
+    "quantity": 6,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 4,
+    "picture": "./src/images/product/tulanh4.png",
+    "code": "EBE4500B-H",
+    "name": "421L bottom freezer refrigerator ",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "gift" }, { "type": "discount" }],
+    "price": {
+      "new": 16590000
+    },
+    "quantity": 2,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 5,
+    "picture": "./src/images/product/tulanh5.png",
+    "code": "EHE5224B-A",
+    "name": "491L NutriFresh® inverter French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "discount" }],
+    "price": {
+      "old": 12945000,
+      "new": 25890000
+    },
+
+    "quantity": 0,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      {
+        "value": "TasteLock crisper keeps your fruit & vegetables fresh for 7 days."
+      },
+      {
+        "value": "Automatic ice maker provides cubed or crushed ice at your fingertips."
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "discount" }],
+    "price": {
+      "new": 42990000
+    },
+    "quantity": 5,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 7,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "discount" }],
+    "price": {
+      "new": 42990000
+    },
+    "quantity": 0,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  },
+  {
+    "id": 8,
+    "picture": "./src/images/product/tulanh6.png",
+    "code": "EHE6879A-B",
+    "name": "617L French door refrigerator",
+    "category": "refrigeration",
+    "review": 102,
+    "dealType": [{ "type": "new" }, { "type": "discount" }],
+    "price": {
+      "new": 42990000
+    },
+    "quantity": 3,
+    "cartQuantity": 0,
+    "interest": 0,
+    "payment": 3300000,
+    "description": [
+      { "value": "TasteSeal keeps fish for 7 days* without freezing." },
+      { "value": "TasteLockAuto keeps vegetables fresh for 7 days*." },
+      { "value": "WaterStream for chilled water through the door." }
+    ]
+  }
+  
+]

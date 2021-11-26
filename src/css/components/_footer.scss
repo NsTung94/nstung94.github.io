@@ -1,12 +1,27 @@
 .footer {
   @include flexBox();
-
+  &__container {
+    @include large {
+      @include flexBox($dir: column);
+      height: 375px;
+    }
+  }
   &__option {
     background-color: $primary-color;
     color: #fff;
     padding-top: 10px;
     &-item {
       width: 100%;
+      @include large {
+        @include flexBox($dir: column);
+        width: 150px;
+        pointer-events: none;
+        margin-top: 40px;
+        margin-right: 100px;
+      }
+      &:last-child {
+        margin-top: 15px;
+      }
       &-title {
         position: relative;
         text-transform: uppercase;
@@ -35,47 +50,64 @@
           right: 15px;
           background-color: #fff;
         }
-        // @include large {
-        //   border: none;
-        //   &:before, &:after {
-        //     display: none;
-        //   }
-        // }
-      }
-      &-content{
-          padding: 0;
-          height: 0;
-          overflow: hidden;
-          transition: 0.5s;
-          li{
-            padding: 5px;
+        @include large {
+          border: none;
+          &:before, &:after {
+            display: none;
           }
-          // @include large {
-          //   display: flex;
-          //   height: 100px;
-          // }
+        }
+      }
+      &-content {
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        li {
+          padding: 5px;
+          font: 400 14px/30px $font-primary;
+          @include large {
+            padding: 0;
+            line-height: 35px;
+          }
+        }
+        @include large {
+          @include flexBox(column);
+          height: auto;
+        }
       }
     }
+   
     @include large {
-      @include flexBox($dir: column)
+      @include flexBox($dir: column);
     }
   }
-
-  &__connect{
-      @include flexBox();
-      margin-top: 16px;
-    &-icon{
-        margin:0 15px 15px 0;
+  &__connect {
+    @include flexBox(center, space-between);
+    margin-top: 16px;
+    &-icon {
+      margin: 0 15px 15px 0;
     }
-    &-infor{
-        margin-bottom: 15px;
+    &-infor {
+      margin-bottom: 15px;
     }
-    &-download{
+    &-download {
+      width: 40%;
+      &--option {
         @include flexBox();
-        &--button {
-            width: 100%;
-            padding: 5px 0;
-        }
+        gap: 10px;
+      }
+      @include flexBox();
+      &--button {
+        padding: 5px 0;
+      }
+      &--store {
+      }
+    }
+    &-term, &-copyright {
+      margin: 10px;
+      margin-left: 0;
     }
   }
 }
+
+

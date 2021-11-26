@@ -1,21 +1,31 @@
 .filter {
-  @include flexBox(center, space-between);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  height: 80px;
-  z-index: 10;
+  &__container {
+    @include flexBox(center, space-between);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: #fff;
+    height: 80px;
+    z-index: 10;
+    @include large {
+      position: relative;
+      width: 100%;
+      &__button-wrap-reset {
+        @include flexBox(center, space-between);
+        width: 15%;
+      }
+    }
+  }
   &__wrapper {
     width: 100%;
     @include flexBox(center, space-between);
     @include large {
-        height: 40px;
+      height: 40px;
+      margin: 0;
     }
   }
   &__button {
-    width: 120px;
+    min-width: 120px;
     height: 45px;
     font: 600 16px/19.2px $font-primary;
     position: relative;
@@ -25,10 +35,10 @@
         margin: 0 5px;
       }
     }
-    &-item{
-        @include flexBox(center);
-        gap: 5px;
-        position: relative;
+    &-item {
+      @include flexBox(center, center);
+      gap: 5px;
+      position: relative;
     }
     &-reset {
       display: none;
@@ -50,34 +60,39 @@
       }
     }
     @include large {
-        @include flexBox(center);
-      
       border: none;
+
+      @include flexBox(center);
+      padding: 0;
       width: 20%;
+
       &-number {
-          padding: 0 30px;
-          width: 60%;
-          text-transform: capitalize;
-          &:after {
-              content: ' Products';
-              margin-left: 10px;
-          }
+        padding: 0 30px;
+        width: 60%;
+        text-transform: capitalize;
+        &:after {
+          content: " Products";
+          margin-left: 10px;
+        }
       }
     }
-  }
-  @include large {
-    position: relative;
-    width: 100%;
-    &__button-wrap-reset {
-        @include flexBox(center, space-between);
-        width: 20%;
+    &:hover {
+      opacity: 1;
+    }
+    &-wrap-reset {
+      @include flexBox(center, space-between);
+      width: 17%;
+      
     }
   }
-
+  
   &-sort-selection {
+    z-index: 70;
     position: fixed;
     width: 100%;
     height: 100%;
+    box-shadow: -1px 1px 0 $secondary-color;
+
     @include flexBox(center, center, wrap, column);
     bottom: -100%;
     left: 0;
@@ -88,11 +103,10 @@
       bottom: 0;
       height: 0;
       overflow: hidden;
-
     }
     &--overlay {
       width: 100%;
-      height: 80%;
+      height: 75%;
       background-color: black;
       opacity: 0.5;
       @include large {
@@ -100,28 +114,44 @@
       }
     }
     &--list {
-      background-color: #fff;
       width: 100%;
-      height: 20%;
+      flex-grow: 1;
+      background-color: #fff;
       @include flexBox(center, center, wrap, column);
       button {
         border: none;
         width: 100%;
         padding: 5px;
+
         cursor: pointer;
         background-color: #fff;
+        &:hover {
+          opacity: 1;
+        }
       }
       @include large {
         height: 100%;
         justify-content: unset;
       }
+      &:hover {
+        opacity: 1;
+      }
+    }
+    &--button {
+      font: 400 16px/30px $font-primary;
     }
   }
-}
-
-.active {
-  bottom: 0;
-  @include large {
-    height: 120px;
+  .active {
+    bottom: 0;
+    opacity: 1;
+    @include large {
+      height: 120px;
+    }
+  }
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
   }
 }

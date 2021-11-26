@@ -6,6 +6,10 @@
 .no-js .owl-carousel,
 .owl-carousel.owl-loaded {
   display: flex;
+  // padding: 25px 0;
+  @include large {
+    padding: 25px 0;
+  }
 }
 .owl-carousel .owl-nav {
   margin: 0;
@@ -16,9 +20,14 @@
 .owl-stage {
   width: 150%;
   display: flex;
-  // overflow: hidden;
   flex-wrap: nowrap;
-  margin-left: 10px;
+  margin: 0 25px;
+}
+
+.owl-carousel .owl-stage-outer {
+  @include large {
+    height: 160px;
+  }
 }
 .owl-prev,
 .owl-next {
