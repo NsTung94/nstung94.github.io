@@ -1,9 +1,8 @@
-// console.log ( Product)
-export const productItemTemplate = (product) => {
-  // Product Item Container
+export const template = (product) => {
   let productItem = document.createElement("div");
   productItem.classList.add("product__item");
   productItem.setAttribute("data-id", product.id);
+
   // Heart Button
   let heartBtn = document.createElement("div");
   heartBtn.classList.add("product__item-heart", "js-heart-button");
@@ -40,26 +39,18 @@ export const productItemTemplate = (product) => {
   // Product Detail
   let detail = document.createElement("div");
   detail.classList.add("item", "product__item-detail");
-  let code = document.createElement("div");
-  code.classList.add("product__item-code");
-  code.innerHTML = `${product.code}`;
-  let name = document.createElement("div");
-  name.classList.add("product__item-name");
-  name.innerHTML = `${product.name}`;
-  let review = document.createElement("div");
-  review.classList.add("product__item-rate");
-  review.innerHTML = `
-        <div class="product__item-rate--star">
-            <img src="./src/images/icon/star.png" alt="" />
-        </div>
-        <div class="product__item-rate--number">
-            ${product.review} Reviews
-        </div>
-        `;
-
-  detail.appendChild(code);
-  detail.appendChild(name);
-  detail.appendChild(review);
+  detail.innerHTML =`
+    <div class="product__item-code">${product.code}</div>
+    <div class="product__item-name">${product.name}</div>
+    <div class="product__item-rate">
+      <div class="product__item-rate--star">
+        <img src="./src/images/icon/star.png" alt="" />
+      </div>
+      <div class="product__item-rate--number">
+        ${product.review} Reviews
+      </div>  
+    </div>
+  `
 
   // Product Price
   let price = document.createElement("div");
@@ -106,15 +97,19 @@ export const productItemTemplate = (product) => {
   // Product Action
   let action = document.createElement("div");
   action.classList.add("item", "product__item-action");
-  let add = document.createElement("div");
-  add.classList.add("btn","btn--primary","product__item-action--add","js-add-cart");
-  add.setAttribute("data-id", product.id);
-  add.innerHTML = `add to cart`;
-  let research = document.createElement("div");
-  research.classList.add("btn", "product__item-action--research");
-  research.innerHTML = `learn more`;
-  action.appendChild(add);
-  action.appendChild(research);
+  action.innerHTML = `
+
+      ${product.quantity > 0 || product.isOutOfStock === true
+        ? `<button class="btn btn--primary product__item-action--add js-add-cart" data-id="${product.id}">
+        add to cart
+        </button>`
+        : `<button class="btn product__item-action--out danger disable">out of stock </button>`
+      }
+      
+      <button class="btn product__item-action--research" data-id="${product.id}">
+        learn more
+      </button>
+  `
   // product.purchaseProduct();
 
   let compare = document.createElement("div");
@@ -139,6 +134,5 @@ export const productItemTemplate = (product) => {
   productItem.appendChild(description);
   productItem.appendChild(action);
   productItem.appendChild(compare);
-
   return productItem;
-};
+}

@@ -1,6 +1,11 @@
-class LazyFuntion {
+class LazyFunction {
+  constructor(){
+    this.lazyImage();
+    this.lazyFilterBar();
+    
+  }
   lazyImage() {
-    var lazyObjects = [].slice.call(
+    let lazyObjects = [].slice.call(
         document.querySelectorAll(".lazy-observer")
       );
     if ("IntersectionObserver" in window) {
@@ -29,9 +34,9 @@ class LazyFuntion {
     }
   }
   lazyFilterBar() {
-    var bar = document.querySelector(".filter");
-    var header = document.querySelector("#header");
-    var footer = document.querySelector("#footer");
+    let bar = document.querySelector(".filter");
+    let header = document.getElementById("header");
+    let footer = document.getElementById("footer");
    
     let observer = new IntersectionObserver(function (entries) {
       entries.forEach((entry) => {
@@ -46,7 +51,6 @@ class LazyFuntion {
     observer.observe(header);
     observer.observe(footer);
   }
-
   reachLoadMore() {
     let destination = document.querySelector(".loadMore");
   
@@ -69,6 +73,4 @@ class LazyFuntion {
   }
 }
 
-const lazyFunction = new LazyFuntion();
-lazyFunction.lazyImage();
-lazyFunction.lazyFilterBar();
+export default new LazyFunction();

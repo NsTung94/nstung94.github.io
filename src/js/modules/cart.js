@@ -1,8 +1,11 @@
 class Cart {
+  constructor(){
+    this.openPriceCart();
+  }
   openPriceCart() {
-    var openSubPrice = document.querySelector(".js-open-sub");
-    var closeSubPrice = document.querySelector(".js-close-sub");
-    var subPrice = document.querySelector(".js-sub");
+    const openSubPrice = document.querySelector(".js-open-sub");
+    const closeSubPrice = document.querySelector(".js-close-sub");
+    const subPrice = document.querySelector(".js-sub");
 
     openSubPrice.addEventListener("click", function () {
       subPrice.classList.add("expand");
@@ -16,5 +19,5 @@ class Cart {
 }
 
 
-const cart = new Cart();
-cart.openPriceCart();
+export default new Cart();
+

@@ -1,11 +1,7 @@
 
-var start = 0;
-var end = 3;
-
-// import './modules/Cart.js';
 import './modules/Dropdown.js';
 import './modules/FilterSortFunction.js';
 import './modules/LazyFunction.js';
 import './modules/Menu.js';
 import './modules/Product.js';
-import './modules/CartPopup.js';
+import './modules/CartMini.js';

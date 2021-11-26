@@ -1,4 +1,8 @@
-export default class Dropdown {
+class Dropdown {
+  constructor() {
+    this.dropdown();
+    this.language();
+  }
   dropdown() {
     let dropdown = document.querySelectorAll(".js-dropdown-menu");
     dropdown.forEach(function (item) {
@@ -38,32 +42,8 @@ export default class Dropdown {
       });
     });
   }
-  cartPopUp() {
-    let cartPopup = document.querySelector('.js-cart');
-    let cartButton = document.querySelector('.js-cart-open');
-   
-    cartButton.addEventListener('click', function(){
-      if (cartPopup.classList.contains('cart-active')){
-        cartPopup.classList.remove('cart-active');
-      }else{
-        cartPopup.classList.add('cart-active');
-      }
-    })
-  }
+  
 }
 
-// const cartPopups = [...document.getElementsByClassName('.js-cart')];
+export default new Dropdown();
 
-// window.addEventListener('click', ({ target }) => {
-//   const popup = target.closest('.js-cart');
-//   const clickedOnClosedPopup = popup && !popup.classList.contains('cart-active');
-  
-//   cartPopups.forEach(p => p.classList.remove('cart-active'));
-  
-//   if (clickedOnClosedPopup) popup.classList.add('cart-active');  
-// });
-
-const dropdown = new Dropdown();
-dropdown.dropdown();
-dropdown.language();
-dropdown.cartPopUp();
