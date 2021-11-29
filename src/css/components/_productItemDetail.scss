@@ -1,0 +1,87 @@
+.product__item {
+  &-detail {
+    width: calc(100% - 110px);
+    @include large {
+      width: 100%;
+    }
+  }
+  &-code {
+    text-transform: uppercase;
+    font-weight: 600;
+    @include font-size(14);
+    line-height: 22px;
+  }
+  &-name {
+    font-weight: 600;
+    @include font-size(18);
+    line-height: 22px;
+    min-height: 50px;
+    @include large {
+      font-size: 20px;
+      line-height: 26px;
+      height: 80px;
+    }
+  }
+  &-rate {
+    @include flexBox(baseline);
+    gap: 5px;
+    &--number {
+      font-weight: 400;
+      @include font-size(14);
+      line-height: 16.8px;
+      width: fit-content;
+      &:before {
+        content: "(";
+      }
+      &:after {
+        content: ")";
+      }
+      @include large {
+        line-height: 24px;
+      }
+    }
+  }
+  &-description {
+    list-style-type: disc;
+    padding-left: 15px;
+    li {
+      margin-bottom: 6px;
+      font-weight: 400;
+      @include font-size(14);
+      line-height: 24px;
+    }
+    @include large {
+      order: 1;
+    }
+    &--item {
+      font-weight: 400;
+      @include font-size(14);
+      line-height: 24px;
+    }
+  }
+  &-action {
+    @include flexBox();
+    gap: 5px;
+    @include large {
+      flex-direction: row-reverse;
+      gap: 10px;
+      order: 3;
+    }
+    &--add,
+    &--research,
+    &--out {
+      height: 45px;
+      width: 100%;
+      font-weight: 600;
+      @include font-size(14);
+      line-height: 16.8px;
+      @include large {
+        width: calc(50% - 5px);
+      }
+    }
+    &--out {
+      color: red;
+    }
+  }
+ 
+}

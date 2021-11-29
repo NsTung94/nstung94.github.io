@@ -1,0 +1,75 @@
+.product__item {
+    position: relative;
+    @include flexBox();
+    margin-bottom: 40px;
+
+    @include large {
+      @include flexBox($dir: column);
+      width: calc((100% - 80px) / 3);
+      margin-bottom: 40px;
+    }
+    &-heart {
+      position: absolute;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      right: 15px;
+      background-image: url(/src/images/icon/heart-outline-icon.svg);
+      @include large {
+        right: 0;
+      }
+    }
+    &-tag {
+      @include flexBox();
+      gap: 8px;
+      @include large {
+        position: absolute;
+        flex-direction: column;
+        width: auto;
+        height: 100px;
+      }
+    }
+    &-img {
+      width: 110px;
+      position: relative;
+      img {
+        width: 100%;
+      }
+      @include large {
+        margin-top: 28px;
+        width: 100%;
+      }
+      &--content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        @include large {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+    &-suggestion {
+      @include flexBox(center);
+      height: 46px;
+      // gap: 2px;
+      @include large {
+        display: none;
+      }
+    }
+    &-compare {
+      width: auto;
+      &-label {
+        padding-left: 10px;
+        font-weight: 400;
+        @include font-size(14);
+        line-height: 22px;
+      }
+      @include large {
+        order: 4;
+      }
+    }
+  }
