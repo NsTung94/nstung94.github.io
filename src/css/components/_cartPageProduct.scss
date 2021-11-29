@@ -1,0 +1,123 @@
+.cartpage__product {
+  @include flexBox(stretch);
+  margin: 20px 0 40px;
+  &-checkbox {
+    @include flexBox(flex-end);
+    gap: 10px;
+    &--checkmark {
+      margin-right: 10px;
+    }
+  }
+  &-code {
+    text-transform: uppercase;
+    font-weight: 400;
+    @include font-size(14);
+    line-height: 21px;
+  }
+  &-cost {
+    text-align: center;
+  }
+  &-delete {
+    align-self: flex-start;
+  }
+  &-detail {
+    @include flexBox(center, space-between);
+    margin-bottom: 10px;
+    width: 100%;
+    &--install {
+      align-items: flex-end;
+    }
+  }
+  &-imgsrc {
+    width: 100%;
+  }
+  &-outstock {
+    font-weight: 600;
+    @include font-size(14);
+    &-note {
+      font-weight: 400;
+    }
+  }
+  &-left {
+    @include flexBox(center, flex-start, wrap, column);
+    width: 20%;
+  }
+  &-link {
+    position: relative;
+    width: 20%;
+    height: 50px;
+    &:before {
+      content: "";
+      width: 35px;
+      height: 50px;
+      border: solid $primary-color;
+      padding: 3px;
+      position: absolute;
+      top: 15px;
+      left: 50%;
+      border-width: 0 0 1px 1px;
+    }
+  }
+  &-name {
+    font-weight: 600;
+    @include font-size(18);
+    line-height: 26px;
+    width: calc(100% - 20px);
+    @include large {
+      max-width: 70%;
+    }
+  }
+  &-price {
+    text-align: end;
+    &--new {
+      font-weight: 600;
+      @include font-size(16);
+      line-height: 22px;
+    }
+    &--old {
+      font-weight: 400;
+      @include font-size(14);
+      line-height: 19px;
+    }
+  }
+  &-quantity {
+    @include flexBox(stretch);
+    &--add {
+      order: 3;
+      @include large {
+        order: 1;
+      }
+    }
+    &--decrease,
+    &--increase {
+      position: relative;
+      &:before {
+        content: "";
+        width: 14px;
+        height: 2px;
+        position: absolute;
+        top: calc(50% - 1px);
+        background-color: #011e41;
+        left: calc(50% - 7px);
+      }
+    }
+    &--increase {
+      &:after {
+        content: "";
+        width: 2px;
+        height: 14px;
+        position: absolute;
+        top: calc(50% - 7px);
+        background-color: #011e41;
+        left: calc(50% - 1px);
+      }
+    }
+    &--number {
+      @include font-size(16);
+    }
+  }
+  &-right {
+    @include flexBox();
+    width: 80%;
+  }
+}

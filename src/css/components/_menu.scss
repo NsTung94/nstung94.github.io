@@ -9,101 +9,7 @@
   z-index: 9999;
   transition: 0.5s;
   overflow: hidden;
-  &__content {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    background-color: white;
-    border: 1px solid;
-    height: 100%;
-    width: 300px;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    &-heading {
-      @include flexBox(center, flex-end);
-      &-span {
-        height: 18px;
-        font-weight: 600;
-        display: block;
-        position: relative;
-        cursor: pointer;
-       
-      }
-      &-img {
-        height: 100%;
-      }
-      &-title {
-        font-weight: 600;
-        flex-grow: 1;
-        align-self: center;
-        text-decoration: none;
-        font-size: 16px;
-        height: 48px;
-        line-height: 24px;
-        padding: 15px 50px 15px 40px;
-        color: $primary-color;
-        cursor: pointer;
-        @include flexBox(center, unset);
-        gap: 10px;
-      }
-      &--nosub {
-        pointer-events: none;
-      }
-      &-icon {
-        padding-right: 20px;
-      }
-    }
-    &-productList {
-      padding: 0 20px 25px 0;
-      margin-top: 25px;
-    }
-  }
-  &__subMenu {
-    display: flex;
-    left: 0;
-    width: 100%;
-    top: 0;
-    position: absolute;
-    z-index: 1;
-    min-width: 200px;
-    border: 1px solid #dbdfe1;
-    background: #fff;
-    height: 100%;
-    overflow: auto;
-    justify-content: space-between;
-    transform: translateX(120%);
-    transition: transform 0.4s;
-    &-heading {
-      display: block;
-      width: 100%;
-      padding: 27px 50px 27px 60px;
-      position: relative;
-      color: #011e41;
-      font-size: 1.14286rem;
-      font-weight: 600;
-      line-height: 1;
-      background-color: #dfe7ea;
-      cursor: pointer;
-      &:before {
-        position: absolute;
-        content: "";
-        width: 12px;
-        height: 12px;
-        border: solid var(--primary-color);
-        padding: 3px;
-        transform: rotate(-45deg);
-        bottom: 30px;
-        border-width: 2px 0 0 2px;
-        left: 35px;
-      }
-    }
-    &-item {
-      padding: 15px 45px 15px 30px;
-      font-weight: 600;
-      font-size: 14px;
-      pointer-events: none;
-    }
-  }
+  
   &__footer {
     position: relative;
     &-a {
@@ -111,9 +17,8 @@
       gap: 10px;
       text-decoration: none;
       color: $primary-color;
-      font-size: 16px;
+      @include font-size(16);
       position: relative;
-      font-size: 1.14286rem;
       padding: 12px 50px 12px 35px;
       font-weight: 600;
       flex: 1;

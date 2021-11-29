@@ -1,0 +1,21 @@
+.cartpage__header {
+    @include flexBox(center, center);
+    height: 65px;
+    border-bottom: 1px solid $secondary-color;
+    padding: 0 20px;
+    @include large {
+      justify-content: flex-start;
+      width: 82%;
+      margin: 0 auto;
+      position: relative;
+    }
+    &-logo {
+      @include large {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }

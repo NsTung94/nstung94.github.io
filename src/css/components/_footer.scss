@@ -8,7 +8,7 @@
   }
   &__option {
     background-color: $primary-color;
-    color: #fff;
+    color: $white-color;
     padding-top: 10px;
     &-item {
       width: 100%;
@@ -27,9 +27,11 @@
         text-transform: uppercase;
         position: relative;
         display: block;
-        font: 600 14px/22px $font-primary;
-        border-bottom: 1px solid #fff;
-        color: #fff;
+        font-weight: 600;
+        @include font-size(14);
+        line-height: 22px;
+        border-bottom: 1px solid $white-color;
+        color: $white-color;
         padding: 8px 0;
         text-decoration: none;
         &:before {
@@ -39,7 +41,7 @@
           height: 14px;
           top: calc(50% - 6px);
           right: 22px;
-          background-color: #fff;
+          background-color: $white-color;
         }
         &:after {
           position: absolute;
@@ -48,11 +50,12 @@
           height: 2px;
           top: calc(50%);
           right: 15px;
-          background-color: #fff;
+          background-color: $white-color;
         }
         @include large {
           border: none;
-          &:before, &:after {
+          &:before,
+          &:after {
             display: none;
           }
         }
@@ -64,7 +67,9 @@
         transition: 0.5s;
         li {
           padding: 5px;
-          font: 400 14px/30px $font-primary;
+          font-weight: 400;
+          @include font-size(14);
+          line-height: 30px;
           @include large {
             padding: 0;
             line-height: 35px;
@@ -76,7 +81,7 @@
         }
       }
     }
-   
+
     @include large {
       @include flexBox($dir: column);
     }
@@ -103,11 +108,10 @@
       &--store {
       }
     }
-    &-term, &-copyright {
+    &-term,
+    &-copyright {
       margin: 10px;
       margin-left: 0;
     }
   }
 }
-
-

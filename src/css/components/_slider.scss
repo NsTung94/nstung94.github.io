@@ -56,7 +56,7 @@
 }
 .owl-theme .owl-nav [class*="owl-"] {
   color: $primary-color;
-  font-size: 39px;
+  @include font-size(39);
   background: transparent;
   margin: 0;
   padding: 0;

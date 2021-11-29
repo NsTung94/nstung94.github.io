@@ -1,0 +1,57 @@
+.filter-sort-selection {
+  z-index: 70;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  box-shadow: -1px 1px 0 $secondary-color;
+
+  @include flexBox(center, center, wrap, column);
+  bottom: -100%;
+  left: 0;
+  transition: 0.5s;
+  @include large {
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  &--overlay {
+    width: 100%;
+    height: 75%;
+    background-color: black;
+    opacity: 0.5;
+    @include large {
+      display: none;
+    }
+  }
+  &--list {
+    width: 100%;
+    flex-grow: 1;
+    background-color: $white-color;
+    @include flexBox(center, center, wrap, column);
+    button {
+      border: none;
+      width: 100%;
+      padding: 5px;
+
+      cursor: pointer;
+      background-color: $white-color;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    @include large {
+      height: 100%;
+      justify-content: unset;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &--button {
+    font-weight: 400;
+    @include font-size(16);
+    line-height: 30px;
+  }
+}

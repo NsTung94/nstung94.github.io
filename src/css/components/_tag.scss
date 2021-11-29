@@ -2,7 +2,9 @@
   border: 1px solid $primary-color;
   padding: 0 8px;
   text-transform: uppercase;
-  font: 600 14px/26px $font-primary;
+  font-weight: 600;
+  @include font-size(14);
+  line-height: 26px;
   border-radius: 2px;
   z-index: 1;
 
@@ -17,7 +19,7 @@
   }
   &--gift {
     position: relative;
-    
+
     &:before {
       position: absolute;
       background-image: url(/src/images/icon/gift.png);
@@ -25,19 +27,19 @@
       height: 20px;
       top: 0;
       left: 0;
-
     }
   }
   &--bundle,
   &--discount {
-
     @include flexBox(center, center);
-    color: #fff;
+    color: $white-color;
     position: relative;
     @include large {
       width: 57px;
       height: 54px;
-      font: 600 12px/16px $font-primary;
+      font-weight: 600;
+      @include font-size(12);
+      line-height: 16px;
       &:before,
       &:after {
         position: absolute;

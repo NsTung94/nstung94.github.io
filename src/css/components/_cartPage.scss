@@ -1,0 +1,108 @@
+.cartpage {
+  
+  &__left {
+    @include large {
+      width: calc(100% * 7 / 12);
+      padding: 0 20px;
+    }
+  }
+  &__right {
+    z-index: 10;
+    @include large {
+      max-width: calc(100% / 3);
+      flex: 0 0 calc(100% / 3);
+      margin-left: calc(100% / 12);
+    }
+  }
+  &__middle {
+    margin-left: calc(100% / 12);
+  }
+  &__heading {
+    font-weight: 600;
+    font-size: 40px;
+    line-height:48px;
+    padding: 20px 0;
+    @include large {
+      padding: 40px 20px;
+    }
+  }
+  &__promotion {
+    @include flexBox(stretch);
+    margin: 20px 0;
+    &-input {
+      flex-grow: 1;
+    }
+  }
+  &__apply {
+    width: 120px;
+  }
+  &__checkout {
+    height: 45px;
+    margin-bottom: 8px;
+  }
+  &__title {
+    font-weight: 600;
+    @include font-size(16);
+    line-height: 26px;
+    text-transform: uppercase;
+    border-bottom: 1px solid $secondary-color;
+    margin: 20px 0;
+    padding-bottom: 10px;
+  }
+  &__return {
+    width: 150px;
+    position: relative;
+    margin: 15px 0px;
+    padding-left: 20px;
+    font-weight: 600;
+    @include font-size(14);
+    cursor: pointer;
+    &:before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border: solid $primary-color;
+      padding: 3px;
+      position: absolute;
+      transform: rotate(-45deg);
+      top: 4px;
+      border-width: 2px 0 0 2px;
+      left: 0;
+    }
+  }
+  &__container {
+    max-width: 82%;
+    display: block;
+    margin: 0 auto;
+  }
+  &-box {
+    width: 40px;
+    height: 40px;
+  }
+  .row {
+    @include flexBox($jc: space-between);
+  }
+  .expand {
+    @include flexBox(stretch, $dir: column);
+    height: auto;
+    z-index: 9999;
+  }
+  .wrapper-cart {
+    @include large {
+      height: 100%;
+      background: linear-gradient(90deg, $white-color calc( 61.6%), $cart-price-background-color calc(38.4%));
+      position: relative;
+    }
+  }
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
+  }
+  .hide-on-desktop {
+    @include large {
+      display: none;
+    }
+  }
+}

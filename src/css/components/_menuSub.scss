@@ -1,0 +1,46 @@
+.menu__subMenu {
+    display: flex;
+    left: 0;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    min-width: 200px;
+    border: 1px solid $secondary-color;
+    background: $white-color;
+    height: 100%;
+    overflow: auto;
+    justify-content: space-between;
+    transform: translateX(120%);
+    transition: transform 0.4s;
+    &-heading {
+      display: block;
+      width: 100%;
+      padding: 27px 50px 27px 60px;
+      position: relative;
+      color: $primary-color;
+      font-size: 1.14286rem;
+      font-weight: 600;
+      line-height: 1;
+      background-color: $secondary-color;
+      cursor: pointer;
+      &:before {
+        position: absolute;
+        content: "";
+        width: 12px;
+        height: 12px;
+        border: solid $primary-color;
+        padding: 3px;
+        transform: rotate(-45deg);
+        bottom: 30px;
+        border-width: 2px 0 0 2px;
+        left: 35px;
+      }
+    }
+    &-item {
+      padding: 15px 45px 15px 30px;
+      font-weight: 600;
+      @include font-size(14);
+      pointer-events: none;
+    }
+  }

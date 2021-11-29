@@ -7,7 +7,7 @@
   width: auto;
   height: 100%;
   z-index: 60;
-  background-color: #fff;
+  background-color: $white-color;
   transition: bottom 0.8s ease-in-out;
   @include large {
     position: static;
@@ -32,10 +32,10 @@
       width: 21px;
       height: 21px;
     }
-    &--iconFilter{
+    &--iconFilter {
       @include flexBox(center, center);
       gap: 5px;
-      font-size: 20px;
+      @include font-size(20);
       font-weight: 600;
     }
     @include large {
@@ -65,7 +65,9 @@
       position: relative;
       text-transform: uppercase;
       cursor: pointer;
-      font: 600 14px/17px $font-primary;
+      font-weight: 600;
+      @include font-size(14);
+      line-height: 17px;
       padding: 10px 0;
       &:before {
         position: absolute;
@@ -89,14 +91,14 @@
     &-content {
       height: 0;
       transition: 0.5s;
-      overflow:hidden;
+      overflow: hidden;
       @include flexBox(center, $dir: column);
     }
     &-checkbox {
       width: 100%;
       padding-top: 10px;
     }
-    &-label{
+    &-label {
       margin-left: 15px;
     }
   }
@@ -107,7 +109,7 @@
     position: relative;
     bottom: 15px;
     width: 100%;
-    background-color: #fff;
+    background-color: $white-color;
     &-button {
       width: calc(50% - 5px);
     }

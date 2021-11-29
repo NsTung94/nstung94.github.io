@@ -1,6 +1,6 @@
 body {
   color: $primary-color;
-  font-family: "Electrolux";
+  font-family: "Electrolux", serif;
   margin: 0;
 }
 
@@ -14,8 +14,8 @@ a {
 
   border-radius: 3px;
   padding: 7px 12px;
-  border: 1px solid #d5d5d5;
-  background-color: #ffffff;
+  border: 1px solid $secondary-color;
+  background-color: $white-color;
   font: 600 13px/18px "Electrolux", serif;
   text-transform: uppercase;
   color: $primary-color;
@@ -26,7 +26,7 @@ a {
   }
   &--primary {
     background-color: $primary-color;
-    color: #ffffff;
+    color: $white-color;
   }
   &-no-border {
     border: none;

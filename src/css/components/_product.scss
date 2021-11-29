@@ -3,8 +3,8 @@
   @include large {
     margin: 0;
     display: flex;
-    margin-left:  20px;
-    
+    margin-left: 20px;
+
     &__list {
       @include flexBox(stretch);
       @include large {
@@ -16,7 +16,7 @@
     position: relative;
     @include flexBox();
     margin-bottom: 40px;
-    
+
     @include large {
       @include flexBox($dir: column);
       width: calc((100% - 80px) / 3);
@@ -52,7 +52,6 @@
       @include large {
         margin-top: 28px;
         width: 100%;
-        
       }
       &--content {
         position: absolute;
@@ -75,10 +74,14 @@
     }
     &-code {
       text-transform: uppercase;
-      font: 600 14px/22px $font-primary;
+      font-weight: 600;
+      @include font-size(14);
+      line-height: 22px;
     }
     &-name {
-      font: 600 18px/22px $font-primary;
+      font-weight: 600;
+      @include font-size(18);
+      line-height: 22px;
       min-height: 50px;
       @include large {
         font-size: 20px;
@@ -90,7 +93,9 @@
       @include flexBox(baseline);
       gap: 5px;
       &--number {
-        font: 400 14px/16.8px $font-primary;
+        font-weight: 400;
+        @include font-size(14);
+        line-height: 16.8px;
         width: fit-content;
         &:before {
           content: "(";
@@ -111,21 +116,25 @@
         order: 2;
       }
       &--old {
-        font: 400 14px/28px $font-primary;
+        font-weight: 400;
+        @include font-size(14);
+        line-height: 28px;
         text-decoration: line-through;
         &:after {
-          content: ' đ';
+          content: " đ";
           margin-left: 2px;
         }
       }
       &--new {
-        font: 600 18px/28px $font-primary;
+        font-weight: 600;
+        @include font-size(18);
+        line-height: 28px;
         @include large {
-          font-size: 24px;
+          @include font-size(24);
         }
         &:after {
           margin-left: 2px;
-          content: ' đ';
+          content: " đ";
         }
       }
     }
@@ -134,22 +143,25 @@
       height: 46px;
       // gap: 2px;
       @include large {
-          display: none;
+        display: none;
       }
     }
     &-interest {
       width: 15%;
       height: 100%;
       background-color: $primary-color;
-      color: #fff;
+      color: $white-color;
       @include flexBox(center, center);
       &--number {
-        font: 600 18px $font-primary;
+        font-weight: 600;
+        @include font-size(18);
         @include flexBox($dir: column);
         &:after {
           content: "interest";
           text-transform: uppercase;
-          font: 600 8px/10px $font-primary;
+          font-weight: 600;
+          @include font-size(8);
+          line-height: 10px;
         }
       }
     }
@@ -166,13 +178,17 @@
       padding-left: 15px;
       li {
         margin-bottom: 6px;
-        font: 400 14px/24px $font-primary;
+        font-weight: 400;
+        @include font-size(14);
+        line-height: 24px;
       }
       @include large {
         order: 1;
       }
       &--item {
-        font: 400 14px/24px $font-primary;
+        font-weight: 400;
+        @include font-size(14);
+        line-height: 24px;
       }
     }
     &-action {
@@ -188,7 +204,9 @@
       &--out {
         height: 45px;
         width: 100%;
-        font: 600 14px/16.8px $font-primary;
+        font-weight: 600;
+        @include font-size(14);
+        line-height: 16.8px;
         @include large {
           width: calc(50% - 5px);
         }
@@ -201,7 +219,9 @@
       width: auto;
       &-label {
         padding-left: 10px;
-        font: 400 16px/22px $font-primary;  
+        font-weight: 400;
+        @include font-size(14);
+        line-height: 22px;
       }
       @include large {
         order: 4;
@@ -211,10 +231,10 @@
   .heart-active {
     background-image: url(/src/images/icon/heart-filled-icon.svg);
   }
-  
+
   .price-number {
     &:after {
-      content: ' đ';
+      content: " đ";
     }
   }
   .active {
@@ -225,4 +245,3 @@
     margin: 0 auto;
   }
 }
-

@@ -1,5 +1,3 @@
-import Wish from "./Wish.js";
-
 export const template = (product) => {
   let productItem = document.createElement("div");
   productItem.classList.add("product__item");
@@ -118,8 +116,8 @@ export const template = (product) => {
   compare.classList.add("product__item-compare", "hide-on-mobile");
   compare.innerHTML = `
             <label class="checkBox js-compare-checkbox">
-              <input type="checkbox" class="" />
-              <span class="checkmark checkmark--compare"></span>
+              <input type="checkbox" class="checkbox__input" />
+              <span class="checkbox__checkmark checkmark--compare"></span>
               <span class="checkbox__label product__item-compare-label">
                 Add to Compare</span
               >

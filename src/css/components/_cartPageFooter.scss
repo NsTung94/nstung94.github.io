@@ -1,0 +1,33 @@
+.cartpage__footer {
+    margin-bottom: 200px;
+    &-header {
+      border-top: 1px solid $secondary-color;
+      border-bottom: none;
+      padding: 40px 0 20px;
+      margin: 0;
+    }
+    &-list {
+      list-style: none;
+    }
+    &-method {
+      position: relative;
+      padding-left: 25px;
+      &:before {
+        content: "";
+        width: 7px;
+        height: 15px;
+        border: solid $primary-color;
+        padding: 3px;
+        position: absolute;
+        transform: rotate(45deg);
+        top: -5px;
+        border-width: 0 3px 3px 0;
+        left: 0;
+      }
+    }
+    &-logos {
+      @include flexBox();
+      gap: 10px;
+      margin: 20px 0;
+    }
+  }

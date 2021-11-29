@@ -1,0 +1,75 @@
+.cartpage__price {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: $white-color;
+  z-index: 9999;
+  @include large {
+    position: relative;
+    background-color: transparent;
+    padding: 0 20px;
+  }
+  &-container {
+    padding: 15px;
+    box-shadow: -1px -1px $secondary-color;
+    background-color: $white-color;
+    @include large {
+      background-color: transparent;
+      padding: 0 0 40px 30px;
+      box-shadow: none;
+    }
+  }
+  &-total {
+    @include flexBox(center, space-between);
+    margin-bottom: 10px;
+    @include large {
+      margin: 10px 0 0 0;
+    }
+    &--title {
+      text-transform: uppercase;
+      font-weight: 600;
+      @include font-size(12);
+      line-height: 20px;
+      @include large {
+        font-size: 22px;
+      }
+    }
+    &--icon {
+      transform: rotate(-90deg);
+      width: 10px;
+      height: 10px;
+      @include large {
+        display: none;
+      }
+    }
+    &--number {
+      @include flexBox(center, center);
+      gap: 10px;
+      span {
+        font-weight: 600;
+        @include font-size(18);
+        line-height: 26px;
+        position: relative;
+      }
+    }
+  }
+  &-noted {
+    @include large {
+      opacity: 0.5;
+      @include flexBox(flex-end, flex-end);
+      margin-bottom: 20px;
+      font-weight: 400;
+      @include font-size(14);
+    }
+  }
+  &-free {
+    font-weight: 400;
+    @include font-size(14);
+    margin-bottom: 16px;
+  }
+  &-secure {
+    font-weight: 600;
+    @include font-size(14);
+  }
+}

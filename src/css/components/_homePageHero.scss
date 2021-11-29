@@ -1,0 +1,39 @@
+.header__hero {
+    &-wrapper {
+      position: relative;
+      margin: 0 -15px;
+      @include flexBox();
+      @include large{
+        height: 368px;
+      }
+    }
+    &-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      @include large{
+        height: 100%;
+      }
+    }
+    &-inner {
+      @include flexBox(center, center);
+      width: 100%;
+      height: 74px;
+      background-color: $primary-color;
+      text-transform: capitalize;
+      font-weight: 600;
+      @include font-size(26);
+      line-height: 34px;
+      color: #fff;
+      @include large {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15%;
+        width: 470px;
+        height: 148px;
+        justify-content: flex-start;
+        padding-left: 55px;
+      }
+    }
+  }

@@ -1,0 +1,54 @@
+.header__navigation {
+    @include flexBox();
+    height: 100%;
+    width: auto;
+    &-icons {
+      @include flexBox(center, flex-end, wrap, row);
+      margin-bottom: 10px;
+      width: 100%;
+      height: 100%;
+      @include large {
+        width: auto;
+      }
+    }
+    &-icon {
+      margin-left: 15px;
+      position: relative;
+      
+    }
+    &-language {
+      position: relative;
+      border-left: 1px solid $primary-color;
+      padding-left: 20px;
+      margin-left: 20px;
+      @include flexBox(center, center);
+      &-dropdown {
+        @include flexBox(center, center, wrap, column);
+        position: absolute;
+        top: 30px;
+        right: 0;
+        width: 150px;
+        height: 50px;
+        background-color: #fff;
+        box-shadow: 1px 1px 1px 1px $secondary-color;
+        padding: 10px;
+      }
+      &--icon {
+        height: auto;
+      }
+    }
+    @include large {
+      flex-grow: 1;
+      @include flexBox(center, space-between);
+    }
+    &-link {
+      @include flexBox(center);
+      padding: 0 10px;
+    }
+    &-button{
+      margin: 0 20px;
+      font-weight: 600;
+      @include font-size(14);
+      line-height: 26px;
+    }
+  }

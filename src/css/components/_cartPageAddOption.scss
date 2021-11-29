@@ -1,0 +1,52 @@
+.cartpage__add {
+    margin: 15px 0;
+    @include flexBox(stretch);
+    background-color: $secondary-color;
+    padding: 15px;
+    @include large {
+      padding: 10px 20px;
+    }
+    &-btn {
+      order: 3;
+      padding: 8px 30px;
+      @include large {
+        order: 2;
+      }
+    }
+    &-left {
+      width: 20%;
+      @include large {
+        margin-right: 10px;
+      }
+    }
+    &-right {
+      @include flexBox(center);
+      width: 80%;
+      @include large {
+        width: calc(80% - 10px);
+      }
+    }
+    &-increase,
+    &-number,
+    &-decrease {
+      width: 35px;
+      height: 35px;
+    }
+    &-img {
+      @include flexBox(center, center);
+      padding: 0 10px 10px 0;
+      width: 100%;
+      @include large {
+        padding: 15px;
+      }
+    }
+    &-tax {
+      order: 1;
+      width: 100%;
+      text-align: end;
+      @include large {
+        order: 2;
+        width: auto;
+      }
+    }
+  }

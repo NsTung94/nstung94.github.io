@@ -1,6 +1,6 @@
 import { template } from "./product-template.js";
-import Wish from "./wish.js";
-import ProductServices from "../services/sharedproduct.service.js";
+import WishList from "./WishList.js";
+import ProductServices from "../services/ProductServices.js";
 
 class Product {
   startIndex = 0;
@@ -27,33 +27,31 @@ class Product {
 
   displayProducts(products = []) {
     let existingCart = ProductServices.getCartProducts();
-  
-    const promise = new Promise((resolve, reject) => {
-        products.forEach((product) => {
-        this.productListElement.appendChild(template(product));
-        });
-        this.initAddToCartEvent();
-        ProductServices.setCartValues(existingCart);
-        resolve(true);
-    })
-    promise.then(()=>{
-      Wish.initWish()
-    })
+    products.forEach((product) => {
+      this.productListElement.appendChild(template(product));
+    });
+    this.initAddToCartEvent();
+    ProductServices.setCartValues(existingCart);
+    WishList.initWish();
   }
-  loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
-    const loadedProducts = ProductServices.getProducts(startIndex, pageSize);
-    if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
-      const button = document.getElementById("load-more");
-      button.classList.add("hide");
-    } else {
+  async loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
+    try {
+      const loadedProducts = await ProductServices.getProducts(
+        startIndex,
+        pageSize
+      );
+      if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
+        const button = document.getElementById("load-more");
+        button.classList.add("hide");
+      }
       this.currentProducts = [...this.currentProducts, ...loadedProducts];
+      // save new products
+      ProductServices.saveProducts(this.currentProducts);
+      // Display products
+      this.displayProducts(loadedProducts);
+    } catch (err) {
+      console.log(err);
     }
-
-    // save new products
-    ProductServices.saveProducts(this.currentProducts);
-    // Display products
-    this.displayProducts(loadedProducts);
-    //
   }
 
   loadMore() {
