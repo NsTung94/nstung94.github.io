@@ -19,7 +19,7 @@
   &--overlay {
     width: 100%;
     height: 75%;
-    background-color: black;
+    background-color: $dark-color;
     opacity: 0.5;
     @include large {
       display: none;

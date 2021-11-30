@@ -24,7 +24,7 @@
       font-weight: 600;
       @include font-size(26);
       line-height: 34px;
-      color: #fff;
+      color: $white-color;
       @include large {
         position: absolute;
         top: 50%;

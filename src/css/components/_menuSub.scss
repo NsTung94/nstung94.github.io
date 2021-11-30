@@ -16,7 +16,9 @@
     &-heading {
       display: block;
       width: 100%;
-      padding: 27px 50px 27px 60px;
+      padding: 27px 0;
+      padding-right: 50px;
+      padding-left: 60px;
       position: relative;
       color: $primary-color;
       font-size: 1.14286rem;
@@ -38,7 +40,9 @@
       }
     }
     &-item {
-      padding: 15px 45px 15px 30px;
+      padding: 15px 0;
+      padding-right: 45px ;
+      padding-left: 30px;
       font-weight: 600;
       @include font-size(14);
       pointer-events: none;

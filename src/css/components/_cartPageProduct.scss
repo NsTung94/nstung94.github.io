@@ -97,7 +97,7 @@
         height: 2px;
         position: absolute;
         top: calc(50% - 1px);
-        background-color: #011e41;
+        background-color: $primary-color;
         left: calc(50% - 7px);
       }
     }
@@ -108,7 +108,7 @@
         height: 14px;
         position: absolute;
         top: calc(50% - 7px);
-        background-color: #011e41;
+        background-color: $primary-color;
         left: calc(50% - 1px);
       }
     }

@@ -72,10 +72,6 @@ li {
   margin-bottom: 16px;
 }
 
-:root {
-  --primary-color: #011e41;
-}
-
 html {
   font-size: $body-font-size;
   font-family: "Electrolux";
@@ -189,20 +185,6 @@ label {
   height: 500px;
   overflow-x: hidden;
   border: 1px solid rgba(223, 231, 243, 0.4);
-  // &:before {
-  //   content: "";
-  //   display: block;
-  //   width: 0;
-  //   height: 0;
-  //   top: 0px;
-  //   right: 50px;
-  //   border-left: 10px solid transparent;
-  //   border-right: 10px solid transparent;
-  //   border-bottom: 10px solid $secondary-color;
-  //   position: absolute;
-  //   margin: auto;
-  //   z-index: 99;
-  // }
 }
 
 .contact-icon {
