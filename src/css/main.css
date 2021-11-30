@@ -104,7 +104,7 @@ li {
 }
 @media only screen and (min-width: 1024px) {
   .container {
-    max-width: 1180px;
+    width: 80%;
     padding: 0 20px;
   }
 }
@@ -209,11 +209,6 @@ label {
   display: none;
 }
 
-.product-container {
-  width: 100%;
-  padding: 0 20px;
-}
-
 .show {
   display: block;
 }
@@ -254,9 +249,6 @@ label {
   display: none;
 }
 
-.header {
-  margin-bottom: 24px;
-}
 .header__wrapper {
   display: flex;
   align-items: center;
@@ -275,7 +267,7 @@ label {
 }
 @media only screen and (min-width: 1024px) {
   .header__wrapper {
-    padding: 0 15%;
+    padding: 0 calc(10% + 20px);
   }
 }
 .header__logo {
@@ -293,8 +285,12 @@ label {
 .header__breadcrumb-mobile {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .header__breadcrumb-mobile {
+    font-size: 0.875rem;
+  }
 }
 .header__breadcrumb-mobile--item {
   text-decoration: none;
@@ -324,10 +320,14 @@ label {
 .header__breadcrumb-desktop li a {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 26px;
   opacity: 0.5;
+}
+@media only screen and (min-width: 1024px) {
+  .header__breadcrumb-desktop li a {
+    font-size: 0.875rem;
+  }
 }
 .header__breadcrumb-desktop li + li a {
   text-decoration: underline;
@@ -352,6 +352,14 @@ label {
   height: 20px;
   border-radius: 50%;
   background-color: red;
+}
+.header .hide-on-mobile {
+  display: none;
+}
+@media only screen and (min-width: 1024px) {
+  .header .hide-on-mobile {
+    display: flex;
+  }
 }
 
 .header__navigation {
@@ -435,9 +443,13 @@ label {
   margin: 0 20px;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 26px;
+}
+@media only screen and (min-width: 1024px) {
+  .header__navigation-button {
+    font-size: 0.875rem;
+  }
 }
 .header__navigation .hide {
   display: none;
@@ -479,10 +491,14 @@ label {
   text-transform: capitalize;
   font-weight: 600;
   font-size: 26px;
-  font-size: rem-calc(26);
-  font-size: rem-calc(26px);
+  font-size: 1.8571428571rem;
   line-height: 34px;
   color: #fff;
+}
+@media only screen and (min-width: 1024px) {
+  .header__hero-inner {
+    font-size: 1.625rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .header__hero-inner {
@@ -565,11 +581,15 @@ label {
 .owl-theme .owl-nav [class*=owl-] {
   color: #011E41;
   font-size: 39px;
-  font-size: rem-calc(39);
-  font-size: rem-calc(39px);
+  font-size: 2.7857142857rem;
   background: transparent;
   margin: 0;
   padding: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .owl-theme .owl-nav [class*=owl-] {
+    font-size: 2.4375rem;
+  }
 }
 .owl-theme .owl-nav [class*=owl-]:hover {
   background-color: transparent;
@@ -611,14 +631,18 @@ label {
   text-decoration: none;
   color: #011E41;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   position: relative;
   padding: 12px 0;
   padding-right: 50px;
   padding-left: 35px;
   font-weight: 600;
   flex: 1;
+}
+@media only screen and (min-width: 1024px) {
+  .menu__footer-a {
+    font-size: 1rem;
+  }
 }
 .menu__footer:before {
   content: " ";
@@ -698,8 +722,7 @@ label {
   align-self: center;
   text-decoration: none;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   height: 48px;
   line-height: 24px;
   padding: 15px 0;
@@ -713,6 +736,11 @@ label {
   flex-wrap: wrap;
   flex-direction: row;
   gap: 10px;
+}
+@media only screen and (min-width: 1024px) {
+  .menu__content-heading-title {
+    font-size: 1rem;
+  }
 }
 .menu__content-heading--nosub {
   pointer-events: none;
@@ -774,9 +802,13 @@ label {
   padding-left: 30px;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   pointer-events: none;
+}
+@media only screen and (min-width: 1024px) {
+  .menu__subMenu-item {
+    font-size: 0.875rem;
+  }
 }
 
 .category {
@@ -786,17 +818,25 @@ label {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 18px;
-  font-size: rem-calc(18);
-  font-size: rem-calc(18px);
+  font-size: 1.2857142857rem;
   line-height: 25px;
   margin-bottom: 8px;
 }
 @media only screen and (min-width: 1024px) {
   .category__header {
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .category__header {
     margin-top: 40px;
     font-size: 20px;
-    font-size: rem-calc(20);
-    font-size: rem-calc(20px);
+    font-size: 1.4285714286rem;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  .category__header {
+    font-size: 1.25rem;
   }
 }
 .category__content {
@@ -812,8 +852,7 @@ label {
 .category__item {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 18px;
   min-width: fit-content;
   height: 60px;
@@ -825,6 +864,11 @@ label {
   justify-content: center;
   flex-wrap: wrap;
   flex-direction: row;
+}
+@media only screen and (min-width: 1024px) {
+  .category__item {
+    font-size: 0.875rem;
+  }
 }
 .category__item:hover {
   border: 2px solid #011E41;
@@ -882,7 +926,6 @@ label {
 @media only screen and (min-width: 1024px) {
   .filter__container {
     position: relative;
-    width: 100%;
   }
   .filter__container__button-wrap-reset {
     display: flex;
@@ -910,13 +953,17 @@ label {
 .filter__button {
   min-width: 120px;
   height: 45px;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 19px;
   position: relative;
   cursor: pointer;
+}
+@media only screen and (min-width: 1024px) {
+  .filter__button {
+    font-size: 1rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .filter__button-detail {
@@ -1074,9 +1121,13 @@ label {
 .filter-sort-selection--button {
   font-weight: 400;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 30px;
+}
+@media only screen and (min-width: 1024px) {
+  .filter-sort-selection--button {
+    font-size: 1rem;
+  }
 }
 
 .selector {
@@ -1134,9 +1185,13 @@ label {
   flex-direction: row;
   gap: 5px;
   font-size: 20px;
-  font-size: rem-calc(20);
-  font-size: rem-calc(20px);
+  font-size: 1.4285714286rem;
   font-weight: 600;
+}
+@media only screen and (min-width: 1024px) {
+  .selector__header--iconFilter {
+    font-size: 1.25rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .selector__header {
@@ -1171,10 +1226,14 @@ label {
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 17px;
   padding: 10px 0;
+}
+@media only screen and (min-width: 1024px) {
+  .selector__container-title {
+    font-size: 0.875rem;
+  }
 }
 .selector__container-title:before {
   position: absolute;
@@ -1368,9 +1427,13 @@ label {
   padding-left: 10px;
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 22px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-compare-label {
+    font-size: 0.875rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .product__item-compare {
@@ -1390,17 +1453,25 @@ label {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 22px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-code {
+    font-size: 0.875rem;
+  }
 }
 .product__item-name {
   font-weight: 600;
   font-size: 18px;
-  font-size: rem-calc(18);
-  font-size: rem-calc(18px);
+  font-size: 1.2857142857rem;
   line-height: 22px;
   min-height: 50px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-name {
+    font-size: 1.125rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .product__item-name {
@@ -1420,10 +1491,14 @@ label {
 .product__item-rate--number {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 16.8px;
   width: fit-content;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-rate--number {
+    font-size: 0.875rem;
+  }
 }
 .product__item-rate--number:before {
   content: "(";
@@ -1444,9 +1519,13 @@ label {
   margin-bottom: 6px;
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-description li {
+    font-size: 0.875rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .product__item-description {
@@ -1456,9 +1535,13 @@ label {
 .product__item-description--item {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-description--item {
+    font-size: 0.875rem;
+  }
 }
 .product__item-action {
   display: flex;
@@ -1480,9 +1563,13 @@ label {
   width: 100%;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 16.8px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-action--add, .product__item-action--research, .product__item-action--out {
+    font-size: 0.875rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .product__item-action--add, .product__item-action--research, .product__item-action--out {
@@ -1510,10 +1597,14 @@ label {
 .product__item-price--old {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 28px;
   text-decoration: line-through;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-price--old {
+    font-size: 0.875rem;
+  }
 }
 .product__item-price--old:after {
   content: " đ";
@@ -1522,15 +1613,23 @@ label {
 .product__item-price--new {
   font-weight: 600;
   font-size: 18px;
-  font-size: rem-calc(18);
-  font-size: rem-calc(18px);
+  font-size: 1.2857142857rem;
   line-height: 28px;
 }
 @media only screen and (min-width: 1024px) {
   .product__item-price--new {
+    font-size: 1.125rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-price--new {
     font-size: 24px;
-    font-size: rem-calc(24);
-    font-size: rem-calc(24px);
+    font-size: 1.7142857143rem;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  .product__item-price--new {
+    font-size: 1.5rem;
   }
 }
 .product__item-price--new:after {
@@ -1551,22 +1650,30 @@ label {
 .product__item-interest--number {
   font-weight: 600;
   font-size: 18px;
-  font-size: rem-calc(18);
-  font-size: rem-calc(18px);
+  font-size: 1.2857142857rem;
   display: flex;
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
   flex-direction: column;
 }
+@media only screen and (min-width: 1024px) {
+  .product__item-interest--number {
+    font-size: 1.125rem;
+  }
+}
 .product__item-interest--number:after {
   content: "interest";
   text-transform: uppercase;
   font-weight: 600;
   font-size: 8px;
-  font-size: rem-calc(8);
-  font-size: rem-calc(8px);
+  font-size: 0.5714285714rem;
   line-height: 10px;
+}
+@media only screen and (min-width: 1024px) {
+  .product__item-interest--number:after {
+    font-size: 0.5rem;
+  }
 }
 .product__item-payment {
   display: flex;
@@ -1649,13 +1756,17 @@ label {
   display: block;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 22px;
   border-bottom: 1px solid #fff;
   color: #fff;
   padding: 8px 0;
   text-decoration: none;
+}
+@media only screen and (min-width: 1024px) {
+  .footer__option-item-title {
+    font-size: 0.875rem;
+  }
 }
 .footer__option-item-title:before {
   position: absolute;
@@ -1693,9 +1804,13 @@ label {
   padding: 5px;
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 30px;
+}
+@media only screen and (min-width: 1024px) {
+  .footer__option-item-content li {
+    font-size: 0.875rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .footer__option-item-content li {
@@ -1766,11 +1881,15 @@ label {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 26px;
   border-radius: 2px;
   z-index: 1;
+}
+@media only screen and (min-width: 1024px) {
+  .tag {
+    font-size: 0.875rem;
+  }
 }
 .tag--new, .tag--gift {
   display: flex;
@@ -1810,10 +1929,16 @@ label {
     height: 54px;
     font-weight: 600;
     font-size: 12px;
-    font-size: rem-calc(12);
-    font-size: rem-calc(12px);
+    font-size: 0.8571428571rem;
     line-height: 16px;
   }
+}
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  .tag--bundle, .tag--discount {
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (min-width: 1024px) {
   .tag--bundle:before, .tag--bundle:after, .tag--discount:before, .tag--discount:after {
     position: absolute;
     content: "";
@@ -1824,10 +1949,14 @@ label {
     border-top: 0px solid transparent;
     border-bottom: 20px solid transparent;
   }
+}
+@media only screen and (min-width: 1024px) {
   .tag--bundle:before, .tag--discount:before {
     left: 0;
     border-left: 29px solid #fe392f;
   }
+}
+@media only screen and (min-width: 1024px) {
   .tag--bundle:after, .tag--discount:after {
     right: 0;
     border-right: 29px solid #fe392f;
@@ -1856,12 +1985,16 @@ label {
 .checkBox .checkbox__label {
   font-weight: 400;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 22px;
   vertical-align: middle;
   padding-left: 10px;
   cursor: pointer;
+}
+@media only screen and (min-width: 1024px) {
+  .checkBox .checkbox__label {
+    font-size: 1rem;
+  }
 }
 .checkBox .checkbox__input {
   position: absolute;
@@ -1944,6 +2077,7 @@ label {
   flex-wrap: no-wrap;
   flex-direction: column;
   padding-right: 0 15px;
+  width: 100%;
   height: 250px;
   overflow-y: scroll;
 }
@@ -1984,16 +2118,24 @@ label {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__footer-title {
+    font-size: 1rem;
+  }
 }
 .cart__footer__number {
   font-weight: 600;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 24px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__footer__number {
+    font-size: 1rem;
+  }
 }
 .cart__footer-action {
   display: flex;
@@ -2033,9 +2175,13 @@ label {
   flex-direction: row;
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 22px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__footer-extra-content {
+    font-size: 0.875rem;
+  }
 }
 .cart__empty {
   width: 100%;
@@ -2080,19 +2226,27 @@ label {
 .cart__item-name {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 18px;
   margin-bottom: 3px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__item-name {
+    font-size: 0.875rem;
+  }
 }
 .cart__item-code {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 12px;
-  font-size: rem-calc(12);
-  font-size: rem-calc(12px);
+  font-size: 0.8571428571rem;
   line-height: 16px;
   margin-bottom: 8px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__item-code {
+    font-size: 0.75rem;
+  }
 }
 .cart__item-quantity {
   display: flex;
@@ -2105,16 +2259,24 @@ label {
 .cart__item-quantity--number {
   font-weight: 600;
   font-size: 12px;
-  font-size: rem-calc(12);
-  font-size: rem-calc(12px);
+  font-size: 0.8571428571rem;
   line-height: 20px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__item-quantity--number {
+    font-size: 0.75rem;
+  }
 }
 .cart__item-price {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 22px;
+}
+@media only screen and (min-width: 1024px) {
+  .cart__item-price {
+    font-size: 0.875rem;
+  }
 }
 .cart__item-price:after {
   content: " đ";
@@ -2185,13 +2347,17 @@ label {
 .cartpage__title {
   font-weight: 600;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 26px;
   text-transform: uppercase;
   border-bottom: 1px solid #dfe7ea;
   margin: 20px 0;
   padding-bottom: 10px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__title {
+    font-size: 1rem;
+  }
 }
 .cartpage__return {
   width: 150px;
@@ -2200,9 +2366,13 @@ label {
   padding-left: 20px;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   cursor: pointer;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__return {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__return:before {
   content: "";
@@ -2437,15 +2607,23 @@ label {
   padding-top: 10px;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   max-width: 70%;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__gift-name {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__gift-quantity {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__gift-quantity {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__gift-right {
   width: 60%;
@@ -2529,9 +2707,13 @@ label {
   text-transform: uppercase;
   font-weight: 600;
   font-size: 12px;
-  font-size: rem-calc(12);
-  font-size: rem-calc(12px);
+  font-size: 0.8571428571rem;
   line-height: 20px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-total--title {
+    font-size: 0.75rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .cartpage__price-total--title {
@@ -2559,10 +2741,14 @@ label {
 .cartpage__price-total--number span {
   font-weight: 600;
   font-size: 18px;
-  font-size: rem-calc(18);
-  font-size: rem-calc(18px);
+  font-size: 1.2857142857rem;
   line-height: 26px;
   position: relative;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-total--number span {
+    font-size: 1.125rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .cartpage__price-noted {
@@ -2575,22 +2761,34 @@ label {
     margin-bottom: 20px;
     font-weight: 400;
     font-size: 14px;
-    font-size: rem-calc(14);
-    font-size: rem-calc(14px);
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 1024px) and (min-width: 1024px) {
+  .cartpage__price-noted {
+    font-size: 0.875rem;
   }
 }
 .cartpage__price-free {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   margin-bottom: 16px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-free {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__price-secure {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__price-secure {
+    font-size: 0.875rem;
+  }
 }
 
 .cartpage__product {
@@ -2616,9 +2814,13 @@ label {
   text-transform: uppercase;
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 21px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__product-code {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__product-cost {
   text-align: center;
@@ -2644,8 +2846,12 @@ label {
 .cartpage__product-outstock {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__product-outstock {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__product-outstock-note {
   font-weight: 400;
@@ -2677,10 +2883,14 @@ label {
 .cartpage__product-name {
   font-weight: 600;
   font-size: 18px;
-  font-size: rem-calc(18);
-  font-size: rem-calc(18px);
+  font-size: 1.2857142857rem;
   line-height: 26px;
   width: calc(100% - 20px);
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__product-name {
+    font-size: 1.125rem;
+  }
 }
 @media only screen and (min-width: 1024px) {
   .cartpage__product-name {
@@ -2693,16 +2903,24 @@ label {
 .cartpage__product-price--new {
   font-weight: 600;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   line-height: 22px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__product-price--new {
+    font-size: 1rem;
+  }
 }
 .cartpage__product-price--old {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   line-height: 19px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__product-price--old {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__product-quantity {
   display: flex;
@@ -2742,8 +2960,12 @@ label {
 }
 .cartpage__product-quantity--number {
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__product-quantity--number {
+    font-size: 1rem;
+  }
 }
 .cartpage__product-right {
   display: flex;
@@ -2788,10 +3010,14 @@ label {
   flex-direction: row;
   font-weight: 600;
   font-size: 12px;
-  font-size: rem-calc(12);
-  font-size: rem-calc(12px);
+  font-size: 0.8571428571rem;
   line-height: 26px;
   text-transform: uppercase;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__sub-item {
+    font-size: 0.75rem;
+  }
 }
 .cartpage__sub-header {
   height: 50px;
@@ -2806,9 +3032,13 @@ label {
 .cartpage__sub-header-title {
   font-weight: 600;
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
   text-transform: uppercase;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__sub-header-title {
+    font-size: 1rem;
+  }
 }
 .cartpage__sub-header-icon {
   transform: rotate(90deg);
@@ -2865,10 +3095,14 @@ label {
   height: 45px;
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   border: 1px solid #011E41;
   border-radius: 0;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-button {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__more-button--bundle {
   margin: auto;
@@ -2877,28 +3111,44 @@ label {
 .cartpage__more-code {
   font-weight: 600;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   margin-bottom: 4px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-code {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__more-cost {
   font-weight: 600;
   font-size: 24px;
-  font-size: rem-calc(24);
-  font-size: rem-calc(24px);
+  font-size: 1.7142857143rem;
   margin: 16px 0;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-cost {
+    font-size: 1.5rem;
+  }
 }
 .cartpage__more-cost--tax {
   font-size: 16px;
-  font-size: rem-calc(16);
-  font-size: rem-calc(16px);
+  font-size: 1.1428571429rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-cost--tax {
+    font-size: 1rem;
+  }
 }
 .cartpage__more-cost--tax:after {
   content: "(tax included)";
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-cost--tax:after {
+    font-size: 0.875rem;
+  }
 }
 .cartpage__more-title, .cartpage__more-save, .cartpage__more-price, .cartpage__more-oldprice, .cartpage__more-name {
   display: flex;
@@ -2925,22 +3175,34 @@ label {
 .cartpage__more-name {
   font-weight: 600;
   font-size: 20px;
-  font-size: rem-calc(20);
-  font-size: rem-calc(20px);
+  font-size: 1.4285714286rem;
   margin: 4px 0 8px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-name {
+    font-size: 1.25rem;
+  }
 }
 .cartpage__more-price {
   font-weight: 600;
   font-size: 30px;
-  font-size: rem-calc(30);
-  font-size: rem-calc(30px);
+  font-size: 2.1428571429rem;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-price {
+    font-size: 1.875rem;
+  }
 }
 .cartpage__more-oldprice {
   font-weight: 400;
   font-size: 14px;
-  font-size: rem-calc(14);
-  font-size: rem-calc(14px);
+  font-size: 1rem;
   margin-bottom: 25px;
+}
+@media only screen and (min-width: 1024px) {
+  .cartpage__more-oldprice {
+    font-size: 0.875rem;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

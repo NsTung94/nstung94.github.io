@@ -1,4 +1,4 @@
-import { template } from "./product-template.js";
+import ProductItemBuilder from "./ProductItemBuilder.js";
 import WishList from "./WishList.js";
 import ProductServices from "../services/ProductServices.js";
 
@@ -28,7 +28,7 @@ class Product {
   displayProducts(products = []) {
     let existingCart = ProductServices.getCartProducts();
     products.forEach((product) => {
-      this.productListElement.appendChild(template(product));
+      this.productListElement.appendChild(ProductItemBuilder.buildFromDataModel(product));
     });
     this.initAddToCartEvent();
     ProductServices.setCartValues(existingCart);

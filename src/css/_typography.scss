@@ -47,7 +47,8 @@ li {
   padding: 0 15px;
   margin: 0 auto;
   @include large {
-    max-width: 1180px;
+    width: 80%;
+    // max-width: 1180px;
     padding: 0 20px;
   }
   &__row {
@@ -146,11 +147,6 @@ label {
 }
 .hide {
   display: none;
-}
-
-.product-container {
-  width: 100%;
-  padding: 0 20px;
 }
 
 .show {

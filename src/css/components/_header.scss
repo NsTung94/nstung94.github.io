@@ -1,6 +1,4 @@
-.header {
-  margin-bottom: 24px;
-  
+.header {  
   &__wrapper {
     @include flexBox(center, space-between);
     width: 100%;
@@ -13,7 +11,7 @@
     background-color: $white-color;
     padding: 0 15px;
     @include large {
-      padding: 0 15%;
+      padding: 0 calc(10% + 20px);
     }
   }
   &__logo {
@@ -77,6 +75,12 @@
         border-radius: 50%;
         background-color: red;
     }
+}
+.hide-on-mobile {
+  display: none;
+  @include large{
+    display: flex;
+  }
 }
 }
 

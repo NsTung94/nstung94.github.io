@@ -1,4 +1,4 @@
-import { cartTemplate } from "./cart-template.js";
+import CartItemBuilder from "./CartItemBuilder.js";
 import ProductServices from '../services/ProductServices.js';
 
 class CartMiniComponent {
@@ -37,7 +37,7 @@ class CartMiniComponent {
   renderCartProduct(products = []) {
     this.cartListElement.innerHTML = '';
     products.forEach((product) =>
-      this.cartListElement.appendChild(cartTemplate(product))
+      this.cartListElement.appendChild(CartItemBuilder.buildFromDataModel(product))
     );
     //init everything
     this.initIncreaseCartEvent(products);

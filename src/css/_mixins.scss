@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @mixin font-face(
   $name,
   $path,
@@ -24,8 +26,10 @@
 
 @mixin font-size($sizeValue: 1.6) {
 	font-size: $sizeValue + px;
-	font-size: rem-calc($sizeValue);
-	font-size: rem-calc($sizeValue + px);
+	font-size: math.div($sizeValue, 14) + rem;
+  @include large{
+    font-size: math.div($sizeValue, 16) + rem;
+  }
 }
 
 @mixin flexBox($ai: flex-start, $jc: flex-start, $wrap: wrap, $dir: row) {

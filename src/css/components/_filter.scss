@@ -9,7 +9,7 @@
     z-index: 10;
     @include large {
       position: relative;
-      width: 100%;
+      // width: 100%;
       &__button-wrap-reset {
         @include flexBox(center, space-between);
         width: 15%;
@@ -27,7 +27,7 @@
   &__button {
     min-width: 120px;
     height: 45px;
-    font-weight: 400;
+    font-weight: 600;
     @include font-size(16);
     line-height: 19px;
     position: relative;
