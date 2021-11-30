@@ -1,5 +1,5 @@
 import CartItemBuilder from "./CartItemBuilder.js";
-import ProductServices from '../services/ProductServices.js';
+import CartServices from '../services/CartServices.js';
 
 class CartMiniComponent {
   cartListElement = document.getElementById("cart-list");
@@ -8,10 +8,10 @@ class CartMiniComponent {
   numberInCartItem = document.querySelector(".js-number-cart-item");
   addToCart = document.querySelectorAll(".js-add-cart");
   constructor() {
-    this.initMiniCartEvent();
+    this.bindingMiniCartEvent();
   }
 
-  initMiniCartEvent() {
+  bindingMiniCartEvent() {
     let cartDisplay = document.querySelector(".js-cart");
     let cartButton = document.querySelector(".js-cart-open");
 
@@ -28,7 +28,7 @@ class CartMiniComponent {
   }
 
   loadCartProducts() {
-    const currentCartProducts = ProductServices.getCartProducts();
+    const currentCartProducts = CartServices.getCartProducts();
     this.renderCartProduct(currentCartProducts);
     this.displayNumberInCart(currentCartProducts);
     this.displayTotalPrice(currentCartProducts);
@@ -40,9 +40,9 @@ class CartMiniComponent {
       this.cartListElement.appendChild(CartItemBuilder.buildFromDataModel(product))
     );
     //init everything
-    this.initIncreaseCartEvent(products);
-    this.initDecreaseCartEvent(products);
-    this.initDeleteCartEvent(products);
+    this.bindingIncreaseCartEvent(products);
+    this.bindingDecreaseCartEvent(products);
+    this.bindingDeleteCartEvent(products);
   }
 
   displayNumberInCart(products = []) {
@@ -51,7 +51,7 @@ class CartMiniComponent {
     this.contentHided.forEach((content) => {
       if (!products.length) {
         content.classList.add("hide");
-        ProductServices.setCartValues([]);
+        CartServices.setCartValues([]);
       } else {
         content.classList.remove("hide");
         this.numberInCart.innerHTML = `${totalNumberItem}`;
@@ -78,7 +78,7 @@ class CartMiniComponent {
       button.classList.remove("disable");
       item.cartQuantity += 1;
       products[index] = item;
-      ProductServices.updateCartProduct(products);
+      CartServices.updateCartProduct(products);
     } else {
       button.classList.add("disable");
     }
@@ -92,19 +92,20 @@ class CartMiniComponent {
       button.classList.remove("disable");
       item.cartQuantity -= 1;
       products[index] = item;
-      ProductServices.updateCartProduct(products);
+      CartServices.updateCartProduct(products);
     } else {
-      self.deleteCart(products, productId);
+      self.deleteCartItem(products, productId);
     }
     this.loadCartProducts();
   }
-  deleteCart(products, productId) {
+  deleteCartItem(products, productId) {
     const item = products.find((target) => target.id === productId);
     products = products.filter((product) => product !== item);
-    ProductServices.updateCartProduct(products);
+    CartServices.updateCartProduct(products);
     this.loadCartProducts();
   }
-  initIncreaseCartEvent(products) {
+
+  bindingIncreaseCartEvent(products) {
     let buttons = document.querySelectorAll(".js-cart-increase");
     const self = this;
     buttons.forEach(function (button) {
@@ -114,7 +115,8 @@ class CartMiniComponent {
       });
     });
   }
-  initDecreaseCartEvent(products) {
+
+  bindingDecreaseCartEvent(products) {
     let buttons = document.querySelectorAll(".js-cart-decrease");
     const self = this;
     buttons.forEach(function (button) {
@@ -125,13 +127,13 @@ class CartMiniComponent {
       });
     });
   }
-  initDeleteCartEvent(products) {
+  bindingDeleteCartEvent(products) {
     let deleteCartButton = document.querySelectorAll(".js-cart-delete");
     const self = this;
     deleteCartButton.forEach(function (deleteBtn) {
       deleteBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        self.deleteCart(products, productId);
+        self.deleteCartItem(products, productId);
       });
     });
   }

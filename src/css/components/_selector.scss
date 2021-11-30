@@ -19,7 +19,7 @@
     text-transform: uppercase;
     position: relative;
     display: flex;
-    padding: 15px ;
+    padding: 15px;
     padding-left: 30px;
     width: 100%;
     text-align: left;
@@ -115,8 +115,14 @@
       width: calc(50% - 5px);
     }
   }
-}
-
-.active-selector {
-  bottom: 0;
+  .active-selector {
+    bottom: 0;
+  }
+  .show {
+    display: block;
+  }
+  .hide-before:before,
+  .hide-after:after {
+    display: none;
+  }
 }

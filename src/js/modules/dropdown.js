@@ -10,9 +10,11 @@ class Dropdown {
       let content = item.querySelector(".js-dropdown-content");
       button.addEventListener("click", function () {
         if (item.classList.contains("show")) {
+          button.classList.remove('hide-before');
           item.classList.remove("show");
           content.style.height = "0px";
         } else {
+          button.classList.add('hide-before');
           item.classList.add("show");
           let number = content.querySelectorAll(".js-checkbox").length;
           let displayHeight = number * 40;

@@ -1,6 +1,7 @@
 import ProductItemBuilder from "./ProductItemBuilder.js";
 import WishList from "./WishList.js";
 import ProductServices from "../services/ProductServices.js";
+import CartServices from "../services/CartServices.js";
 
 class Product {
   startIndex = 0;
@@ -12,13 +13,13 @@ class Product {
 
   constructor() {
     this.loadProducts();
-    this.initEvents();
+    this.bindingEvents();
   }
 
   loadProducts = async () => {
     try {
       await ProductServices.fetchProducts();
-      this.numberProductsContainer.innerHTML = ProductServices.productsCount;
+      this.numberProductsContainer.innerHTML = ProductServices._productsCount;
       this.loadNewProductsToRender();
     } catch (err) {
       console.log(err);
@@ -26,12 +27,12 @@ class Product {
   };
 
   displayProducts(products = []) {
-    let existingCart = ProductServices.getCartProducts();
+    let existingCart = CartServices.getCartProducts();
     products.forEach((product) => {
       this.productListElement.appendChild(ProductItemBuilder.buildFromDataModel(product));
     });
-    this.initAddToCartEvent();
-    ProductServices.setCartValues(existingCart);
+    this.bindingAddToCartEvent();
+    CartServices.setCartValues(existingCart);
     WishList.initWish();
   }
   async loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
@@ -60,13 +61,13 @@ class Product {
     this.loadNewProductsToRender(this.startIndex);
   }
 
-  initAddToCartEvent() {
+  bindingAddToCartEvent() {
     let button = this.productListElement.querySelectorAll(".js-add-cart");
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = ProductServices.allProducts.find(
+        const targetProduct = ProductServices._allProducts.find(
           (target) => target.id === productId
         );
         self.addToCartProducts(targetProduct);
@@ -75,7 +76,7 @@ class Product {
   }
 
   addToCartProducts(item) {
-    let cartProducts = ProductServices.getCartProducts();
+    let cartProducts = CartServices.getCartProducts();
     const index = cartProducts.findIndex((product) => product.id === item.id);
 
     if (index !== -1) {
@@ -95,11 +96,11 @@ class Product {
       cartProducts.push({ ...item, cartQuantity: 1 });
     }
 
-    ProductServices.updateCartProduct(cartProducts);
-    ProductServices.setCartValues(cartProducts);
+    CartServices.updateCartProduct(cartProducts);
+    CartServices.setCartValues(cartProducts);
   }
 
-  initEvents() {
+  bindingEvents() {
     document
       .getElementById("load-more")
       .addEventListener("click", this.loadMore.bind(this));

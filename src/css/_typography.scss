@@ -149,10 +149,6 @@ label {
   display: none;
 }
 
-.show {
-  display: block;
-}
-
 .hideDropDown {
   display: none;
 }
@@ -190,7 +186,4 @@ label {
   z-index: 10;
 }
 
-.hide-before:before,
-.hide-after:after {
-  display: none;
-}
+

@@ -3,10 +3,6 @@ class CartServices {
     _cartItemKey = '_cartItemKey';
     numberCartItem = document.querySelector('.js-number-cart');
     
-    getCurrentProducts() {
-      return _currentProducts;
-    }
-    
     updateCartProduct(products){
       this._cartProducts = [...products];
       this.saveToCartProducts(this._cartProducts);
@@ -23,11 +19,11 @@ class CartServices {
     }
     
     setCartValues(cart) {
-      let itemsTotal = 0;
+      let _itemsTotal = 0;
       cart.map(item => {
-        itemsTotal += item.cartQuantity;
+        _itemsTotal += item.cartQuantity;
       });
-      this.numberCartItem.innerText = itemsTotal;
+      this.numberCartItem.innerText = _itemsTotal;
     }
   }
   

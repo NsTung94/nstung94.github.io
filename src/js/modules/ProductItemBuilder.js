@@ -1,7 +1,5 @@
 class ProductItemBuilder {
   buildFromDataModel(product) {
-    console.log("product in item builder", product);
-
     const productItem = document.createElement("div");
     productItem.classList.add("product__item");
     productItem.setAttribute("data-id", product.id);
