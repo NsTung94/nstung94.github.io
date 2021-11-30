@@ -57,7 +57,7 @@
 .owl-theme .owl-nav [class*="owl-"] {
   color: $primary-color;
   @include font-size(39);
-  background: transparent;
+  background-color: transparent;
   margin: 0;
   padding: 0;
   &:hover {

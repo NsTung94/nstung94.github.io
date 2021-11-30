@@ -90,7 +90,7 @@
   .wrapper-cart {
     @include large {
       height: 100%;
-      background: linear-gradient(90deg, $white-color calc( 61.6%), $cart-price-background-color calc(38.4%));
+      background-color: linear-gradient(90deg, $white-color calc( 61.6%), $cart-price-background-color calc(38.4%));
       position: relative;
     }
   }
