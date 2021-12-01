@@ -6,22 +6,20 @@ class CartMiniComponent {
   contentHided = document.querySelectorAll(".js-hide-on-none");
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
-  addToCart = document.querySelectorAll(".js-add-cart");
   constructor() {
-    this.bindingMiniCartEvent();
+    this.openMiniCart();
   }
 
-  bindingMiniCartEvent() {
+  openMiniCart() {
     let cartDisplay = document.querySelector(".js-cart");
-    let cartButton = document.querySelector(".js-cart-open");
+    let buttonOpenCart = document.querySelector(".js-cart-open");
 
     const self = this;
-    cartButton.addEventListener("click", function () {
+    buttonOpenCart.addEventListener("click", function () {
       if (cartDisplay.classList.contains("cart-active")) {
         cartDisplay.classList.remove("cart-active");
       } else {
         cartDisplay.classList.add("cart-active");
-        self.addToCart.forEach((button) => button.classList.add("disable"));
       }
       self.loadCartProducts();
     });

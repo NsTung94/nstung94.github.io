@@ -1,0 +1,34 @@
+
+script(src='https://code.jquery.com/jquery-3.3.1.min.js')
+script(src='./node_modules/owl.carousel/dist/owl.carousel.min.js')
+script(src='https://cdnjs.cloudflare.com/ajax/libs/lazysizes/5.2.0/lazysizes.min.js')
+script.
+    var owl = $(".owl-carousel");
+    owl.children().each(function (index) {
+    $(this).attr("data-position", index);
+    });
+
+    owl.owlCarousel({
+    navText: [
+        "<span><img src='./src/images/icon/chevron-left.png'/></span>",
+        "<span><img src='./src/images/icon/chevron-right.png'/></span>",
+    ],
+    lazyLoad: true,
+    dots: false,
+    responsiveClass: true,
+    autoWidth: true,
+    responsive: {
+        0: {
+        center: false,
+        item: 2,
+        },
+        600: {
+        item: 8,
+        center: false,
+        nav: true,
+        },
+    },
+    });
+    $(document).on("click", ".owl-item>div", function () {
+    owl.trigger("to.owl.carousel", [$(this).data("position"), 300]);
+    });

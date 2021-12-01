@@ -1,13 +1,11 @@
 class FilterSortFunction {
   constructor() {
-    this.filterSelector();
+    this.openFilterSelector();
     this.closeFilterSelector();
-    this.sortSelector();
-    this.closeSortSelector();
     this.resetFilterSelection();
   }
 
-  filterSelector() {
+  openFilterSelector() {
     let button = document.querySelector(".js-selector-open");
     let selectorPopup = document.querySelector(".js-selector");
     button.addEventListener("click", function () {
@@ -20,26 +18,6 @@ class FilterSortFunction {
     buttons.forEach(function (btn) {
       btn.addEventListener("click", function () {
         selectorPopup.classList.remove("active-selector");
-      });
-    });
-  }
-  sortSelector() {
-    let btn = document.querySelector(".js-sort-open");
-    let sortPopup = document.querySelector(".js-sort-selector");
-    btn.addEventListener("click", function () {
-      if (sortPopup.classList.contains("active")) {
-        sortPopup.classList.remove("active");
-      } else {
-        sortPopup.classList.add("active");
-      }
-    });
-  }
-  closeSortSelector() {
-    let btns = document.querySelectorAll(".js-sort-close");
-    let sortPopup = document.querySelector(".js-sort-selector");
-    btns.forEach(function (btn) {
-      btn.addEventListener("click", function () {
-        sortPopup.classList.remove("active");
       });
     });
   }

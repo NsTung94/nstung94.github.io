@@ -3,17 +3,17 @@ class Cart {
     this.openPriceCart();
   }
   openPriceCart() {
-    const openSubPrice = document.querySelector(".js-open-sub");
-    const closeSubPrice = document.querySelector(".js-close-sub");
+    const buttonOpenSubPrice = document.querySelector(".js-open-sub");
+    const buttonCloseSubPrice = document.querySelector(".js-close-sub");
     const subPrice = document.querySelector(".js-sub");
 
-    openSubPrice.addEventListener("click", function () {
+    buttonOpenSubPrice.addEventListener("click", function () {
       subPrice.classList.add("expand");
-      openSubPrice.classList.add("hide");
+      buttonOpenSubPrice.classList.add("hide");
     });
-    closeSubPrice.addEventListener("click", function () {
+    buttonCloseSubPrice.addEventListener("click", function () {
       subPrice.classList.remove("expand");
-      openSubPrice.classList.remove("hide");
+      buttonOpenSubPrice.classList.remove("hide");
     });
   }
 }

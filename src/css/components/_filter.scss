@@ -63,7 +63,7 @@
     }
     @include large {
       border: none;
-
+      min-width: unset;
       @include flexBox(center);
       padding: 0;
       width: 20%;
@@ -90,7 +90,7 @@
     bottom: 0;
     opacity: 1;
     @include large {
-      height: 120px;
+      height: 160px;
     }
   }
   .hide-on-mobile {

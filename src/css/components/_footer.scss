@@ -23,6 +23,7 @@
         margin-top: 15px;
       }
       &-title {
+        cursor: pointer;
         position: relative;
         text-transform: uppercase;
         position: relative;
@@ -53,6 +54,7 @@
           background-color: $white-color;
         }
         @include large {
+          cursor: unset;
           border: none;
           &:before,
           &:after {
@@ -80,6 +82,10 @@
           height: auto;
         }
       }
+      .hide-before:before,
+      .hide-after:after {
+        display: none;
+      }
     }
 
     @include large {
@@ -104,6 +110,7 @@
       @include flexBox();
       &--button {
         padding: 5px 0;
+        width: 100%;
       }
       &--store {
       }
@@ -112,6 +119,14 @@
     &-copyright {
       margin: 10px;
       margin-left: 0;
+      width: 100%;
+      @include large {
+        width: calc((100% - 20px) /2 );
+      }
     }
+  }
+  &__bottom {
+    @include flexBox(center, space-between, $dir: row);
+    width: 100%;
   }
 }

@@ -4,7 +4,6 @@ class Menu {
     this.openSubMenu()
   }
   initMenu() {
-    // const menuBtn = document.querySelector(".js-open-menu");
     const menuBtn = document.querySelector('.js-open-menu');
     const menu = document.querySelector(".menu");
     menuBtn.addEventListener("click", function () {
@@ -18,7 +17,7 @@ class Menu {
   openSubMenu() {
     let allSubMenuButton = document.querySelectorAll(".js-open-submenu");
     allSubMenuButton.forEach(function (key) {
-      const menuToOpen = key.querySelector(".js-submenu");
+      const menuToOpen = key.querySelector(".js-subMenu");
       key.addEventListener("click", function () {
         if (menuToOpen.classList.contains("active")) {
           menuToOpen.classList.remove("active");

@@ -42,11 +42,14 @@
       }
       &-icon {
         padding-right: 20px;
+        height: 15px;
       }
+      &-img {
+        height: 100%;
+      };
     }
     &-productList {
-      padding-right: 20px;
-      padding-bottom: 25px ;
+      padding-bottom: 25px;
       margin-top: 25px;
     }
   }

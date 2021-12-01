@@ -6,7 +6,7 @@
   right: 0;
   width: auto;
   height: 100%;
-  z-index: 60;
+  z-index: 99;
   background-color: $white-color;
   transition: bottom 0.8s ease-in-out;
   @include large {
@@ -115,9 +115,7 @@
       width: calc(50% - 5px);
     }
   }
-  .active-selector {
-    bottom: 0;
-  }
+  
   .show {
     display: block;
   }

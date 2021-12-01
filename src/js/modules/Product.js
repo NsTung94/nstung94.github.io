@@ -67,33 +67,34 @@ class Product {
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
         let productId = Number(e.currentTarget.getAttribute("data-id"));
-        const targetProduct = ProductServices._allProducts.find(
-          (target) => target.id === productId
-        );
-        self.addToCartProducts(targetProduct);
+        
+        self.addToCartProducts(productId);
       });
     });
   }
 
-  addToCartProducts(item) {
+  addToCartProducts(productId) {
+    const targetProduct = ProductServices._allProducts.find(
+      (target) => target.id === productId
+    );
     let cartProducts = CartServices.getCartProducts();
-    const index = cartProducts.findIndex((product) => product.id === item.id);
+    const index = cartProducts.findIndex((product) => product.id === targetProduct.id);
 
     if (index !== -1) {
       // storage quantity is cart maximum amount => return storage number
-      if (cartProducts[index].cartQuantity < item.quantity) {
+      if (cartProducts[index].cartQuantity < targetProduct.quantity) {
         // cartProducts[index].cartQuantity += 1;
-        item.isOutOfStock =
-          cartProducts[index].cartQuantity === item.quantity ? true : false;
+        targetProduct.isOutOfStock =
+          cartProducts[index].cartQuantity === targetProduct.quantity ? true : false;
       }
     } else {
-      if (item.quantity === 0) {
-        return; //Do not add item into cart
+      if (targetProduct.quantity === 0) {
+        return; //Do not add targetProduct into cart
       }
 
       // Add to cart
-      item.isOutOfStock = item.quantity === 1 ? true : false;
-      cartProducts.push({ ...item, cartQuantity: 1 });
+      targetProduct.isOutOfStock = targetProduct.quantity === 1 ? true : false;
+      cartProducts.push({ ...targetProduct, cartQuantity: 1 });
     }
 
     CartServices.updateCartProduct(cartProducts);

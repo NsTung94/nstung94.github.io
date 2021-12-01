@@ -1,4 +1,4 @@
-.header {  
+.header {
   &__wrapper {
     @include flexBox(center, space-between);
     width: 100%;
@@ -40,48 +40,45 @@
     &-desktop {
       @include flexBox(center);
       padding: 0;
-      li + li:before {
+      &--item + &--item:before {
         padding: 8px;
         color: $dark-color;
         content: "/\00a0";
       }
-      li a {
+      &--item &--link {
         font-weight: 600;
         @include font-size(14);
         line-height: 26px;
         opacity: 0.5;
       }
-      li + li a {
+      &--item + &--item &--link {
         text-decoration: underline;
         font-style: italic;
         color: $primary-color;
         opacity: 1;
       }
     }
-    
   }
   .count {
-    &__wrapper  {
-        position: relative;
+    &__wrapper {
+      position: relative;
     }
     &__number {
-        @include flexBox(center, center);
-        position: absolute;
-        color:$white-color;
-        bottom: -5px;
-        right: -5px;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        background-color: $danger-color;
+      @include flexBox(center, center);
+      position: absolute;
+      color: $white-color;
+      bottom: -5px;
+      right: -5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background-color: $danger-color;
     }
-}
-.hide-on-mobile {
-  display: none;
-  @include large{
-    display: flex;
+  }
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
   }
 }
-}
-
-

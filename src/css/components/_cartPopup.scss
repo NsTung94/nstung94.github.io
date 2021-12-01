@@ -5,10 +5,13 @@
   height: 0;
   width: 474px;
   top: 50px;
-  right: -40px;
+  right: 0;
   background-color: $white-color;
   overflow: hidden;
   box-shadow: -1px 1px 0px $secondary-color;
+  @include large{
+    right: -40px;
+  }
   &__header {
     @include flexBox(center, $dir: row);
     gap: 5px;
@@ -49,6 +52,7 @@
   &__footer {
     border-top: 1px solid $secondary-color;
     height: 150px;
+    margin-bottom: 0;
     &-total {
       padding: 20px 15px 13px;
       @include flexBox(center, space-between);
@@ -99,6 +103,9 @@
     color: $tag-discount-color;
   }
   .hide {
+    display: none;
+  }
+  .hide-after:after {
     display: none;
   }
 }
