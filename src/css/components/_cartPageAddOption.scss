@@ -1,0 +1,60 @@
+.cartpage__add {
+    @include toRem(margin, 15);
+    margin-left: 0;
+    margin-right: 0;
+    @include flexBox(stretch);
+    background-color: $secondary-color;
+    @include toRem(padding, 15);
+    @include large {
+      @include toRem(padding-top, 10);
+      @include toRem(padding-bottom, 10);
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
+    }
+    &-btn {
+      order: 3;
+      @include toRem(padding, 30);
+      @include toRem(padding-top, 8);
+      @include toRem(padding-bottom, 8);
+      @include large {
+        order: 2;
+      }
+    }
+    &-left {
+      width: 20%;
+      @include large {
+        @include toRem(margin-right, 10);
+      }
+    }
+    &-right {
+      @include flexBox(center);
+      width: 80%;
+      @include large {
+        width: calc(80% - 10px);
+      }
+    }
+    &-increase,
+    &-number,
+    &-decrease {
+      @include toRem(width, 35);
+      @include toRem(height, 35);
+    }
+    &-img {
+      @include flexBox(center, center);
+      @include toRem(padding-right, 10);
+      @include toRem(padding-bottom, 10);
+      width: 100%;
+      @include large {
+        padding: 15px;
+      }
+    }
+    &-tax {
+      order: 1;
+      width: 100%;
+      text-align: end;
+      @include large {
+        order: 2;
+        width: auto;
+      }
+    }
+  }

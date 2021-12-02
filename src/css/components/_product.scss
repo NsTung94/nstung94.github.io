@@ -1,0 +1,33 @@
+.product {
+  @include flexBox();
+  @include large {
+    margin: 0;
+    display: flex;
+    @include toRem(margin-left, 20);
+    
+    &__list {
+      @include flexBox(stretch);
+      @include large {
+        @include toRem(gap, 40);
+      }
+    }
+  }
+  
+  .heart-active {
+    background-image: url(/src/images/icon/heart-filled-icon.svg);
+  }
+  
+  .price-number {
+    &:after {
+      content: " đ";
+    }
+  }
+  .active {
+    bottom: 0;
+  }
+  .design {
+    @include flexBox($dir: column);
+    margin: 0 auto;
+  }
+  
+}

@@ -1,0 +1,81 @@
+.owl-carousel {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.no-js .owl-carousel,
+.owl-carousel.owl-loaded {
+  display: flex;
+  // padding: 25px 0;
+  @include large {
+    padding: 0;
+    @include toRem(padding-bottom, 25);
+    @include toRem(padding-top, 25);
+  }
+}
+.owl-carousel .owl-nav {
+  margin: 0;
+}
+.owl-item .active {
+  width: fit-content;
+}
+.owl-stage {
+  width: 150%;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 0;
+  @include toRem(margin-left, 25);
+  @include toRem(margin-right, 25);
+}
+
+.owl-carousel .owl-stage-outer {
+  @include large {
+    @include toRem(height, 160);
+  }
+}
+.owl-prev,
+.owl-next {
+  text-align: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  // left: 0;
+  @include toRem(width, 20);
+  
+  span {
+    position: absolute;
+    color: $primary-color;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include toRem(width, 20);
+    height: auto;
+  }
+}
+.owl-prev {
+  left: 0;
+}
+.owl-next {
+  right: 0;
+}
+.owl-theme .owl-nav [class*="owl-"] {
+  color: $primary-color;
+  @include font-size(39);
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  &:hover {
+    background-color: transparent;
+  }
+}
+
+.owl-item > div {
+  cursor: pointer;
+  transition: margin 0.4s ease;
+}
+.owl-item.center > div {
+  cursor: auto;
+  margin: 0;
+  border: 1.5px solid $primary-color;
+}
+

@@ -1,0 +1,147 @@
+.footer {
+  @include flexBox();
+  &__container {
+    @include large {
+      @include flexBox($dir: column);
+      @include toRem(height, 375);
+    }
+  }
+  &__option {
+    background-color: $primary-color;
+    color: $white-color;
+    @include toRem(padding-top, 10);
+    &-item {
+      width: 100%;
+      @include large {
+        @include flexBox($dir: column);
+        @include toRem(width, 150);
+        @include toRem(margin-top, 10);
+        @include toRem(margin-right, 100);
+        pointer-events: none;
+      }
+      &:last-child {
+        border-bottom: none;
+        @include large {
+          @include toRem(margin-top, 15);
+        }
+      }
+      &-title {
+        cursor: pointer;
+        position: relative;
+        text-transform: uppercase;
+        position: relative;
+        display: block;
+        font-weight: 600;
+        @include font-size(14);
+        @include toRem(line-height, 22);
+        border-bottom: 1px solid $white-color;
+        color: $white-color;
+        padding: 0;
+        @include toRem(padding-top, 8);
+        @include toRem(padding-bottom, 8);
+        text-decoration: none;
+        &:before {
+          position: absolute;
+          content: "";
+          @include toRem(width, 2);
+          @include toRem(height, 14);
+          @include toRem(right, 22);
+          top: calc(50% - 6px);
+          background-color: $white-color;
+        }
+        &:after {
+          position: absolute;
+          content: "";
+          @include toRem(width, 16);
+          @include toRem(height, 2);
+          @include toRem(right, 15);
+          top: calc(50%);
+          background-color: $white-color;
+        }
+        @include large {
+          cursor: unset;
+          border: none;
+          &:before,
+          &:after {
+            display: none;
+          }
+        }
+        &:last-child{
+          border-bottom: none;
+        }
+      }
+      &-content {
+        padding: 0;
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        .js-checkbox {
+          @include toRem(padding, 5);
+          font-weight: 400;
+          @include font-size(14);
+          @include toRem(line-height, 30);
+          @include large {
+            padding: 0;
+            @include toRem(line-height, 35);
+            width: 100%;
+          }
+        }
+        @include large {
+          @include flexBox(column);
+          height: auto;
+        }
+      }
+      .hide-before:before,
+      .hide-after:after {
+        display: none;
+      }
+    }
+    
+    @include large {
+      @include flexBox($dir: column);
+    }
+  }
+  &__connect {
+    @include flexBox(center, space-between);
+    @include toRem(margin-top, 16);
+    &-icon {
+      margin: 0;
+      @include toRem(margin-left, 15);
+      @include toRem(margin-bottom, 15);
+    }
+    &-infor {
+      @include toRem(margin-bottom, 15);
+    }
+    &-download {
+      width: 40%;
+      &--option {
+        @include flexBox();
+        @include toRem(gap, 10);
+      }
+      @include flexBox();
+      &--button {
+        padding: 0;
+        @include toRem(padding-top, 5);
+        @include toRem(padding-bottom, 5);
+        width: 100%;
+      }
+      &--store {
+      }
+    }
+    &-term,
+    &-copyright {
+      @include toRem(margin, 10);
+      margin-left: 0;
+      width: 100%;
+      @include large {
+        width: calc((100% - 20px) /2 );
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+  &__bottom {
+    @include flexBox(center, space-between, $dir: row);
+    width: 100%;
+  }
+}

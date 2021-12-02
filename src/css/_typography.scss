@@ -1,0 +1,200 @@
+body {
+  color: $primary-color;
+  font-family: "Electrolux", serif;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: $primary-color;
+}
+
+.btn {
+  @include flexBox(center, center);
+  @include toRem(border-radius, 3);
+  @include toRem(border-width, 1);
+  @include toRem(padding-top, 7);
+  @include toRem(padding-bottom, 7);
+  @include toRem(padding-left, 12);
+  @include toRem(padding-right, 12);
+  border: solid $secondary-color;
+  background-color: $white-color;
+  font-weight: 600;
+  @include toRem(font-size, 13);
+  @include toRem(line-height, 18);
+  text-transform: uppercase;
+  color: $primary-color;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+    transition: all 0.3 ease-in-out;
+  }
+  &--primary {
+    background-color: $primary-color;
+    color: $white-color;
+  }
+  &-no-border {
+    border: none;
+  }
+}
+.showMenu {
+  left: 0;
+  transition: 0.5s;
+}
+ul,
+li {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  padding: 0 ;
+  @include toRem(padding-left, 15);
+  @include toRem(padding-right, 15);
+  margin: 0 auto;
+  @include large {
+    width: 80%;
+    padding: 0;
+    @include toRem(padding-left, 20);
+    @include toRem(padding-right, 20);
+  }
+  &__row {
+    @include large {
+      margin: 0;
+      @include toRem(margin-left, -20);
+      @include toRem(margin-right, -20);
+    }
+  }
+  &__wrapper {
+    display: flex;
+    @include toRem(min-height, 500);
+    width: 100%;
+    .active-selector {
+      bottom: 0;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+}
+
+.item {
+  width: 100%;
+  @include toRem(margin-bottom, 16);
+}
+
+html {
+  @include toRem(font-size, $body-font-size);
+  font-family: "Electrolux", serif;
+  @include desktop {
+    @include toRem(font-size, $body-font-size-tablet);
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}
+
+.oldprice {
+  text-decoration: line-through;
+}
+
+.danger {
+  color: $danger-color;
+}
+
+.disable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.show {
+  visibility: visible;
+}
+
+.center-flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.flex-start-column {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.hide-on-mobile {
+  display: none;
+  @include large {
+    display: flex;
+  }
+}
+.hide-on-desktop {
+  @include large {
+    display: none;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+}
+.hide {
+  display: none;
+}
+
+.hideDropDown {
+  display: none;
+}
+
+.dropDown {
+  display: block;
+}
+
+.price-old {
+  text-decoration: line-through;
+  font-weight: 400;
+  @include font-size(12);
+  @include toRem(line-height, 18);
+}
+
+.full-img {
+  img {
+    height: 100%;
+  }
+}
+
+.cart-active .cart {
+  overflow-y: auto;
+  @include toRem(height, 477);
+  overflow-x: hidden;
+  border: solid rgba(223, 231, 243, 0.4);
+  @include toRem(border-width, 1) ;
+}
+
+.contact-icon {
+  position: fixed;
+  @include toRem(right, 15);
+  @include toRem(bottom, 80);
+  z-index: 9;
+  @include large {
+    z-index: 10;
+  }
+}

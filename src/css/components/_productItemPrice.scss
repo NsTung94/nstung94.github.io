@@ -1,0 +1,59 @@
+.product__item {
+  &-price {
+    @include flexBox(baseline);
+    @include toRem(gap, 5);
+    @include large {
+      margin-top: auto;
+      order: 2;
+    }
+    &--old {
+      font-weight: 400;
+      @include font-size(14);
+      @include toRem(line-height, 28);
+      text-decoration: line-through;
+      &:after {
+        content: " đ";
+        @include toRem(margin-left, 2);
+      }
+    }
+    &--new {
+      font-weight: 600;
+      @include font-size(18);
+      @include toRem(line-height, 28);
+      @include large {
+        @include font-size(24);
+      }
+      &:after {
+        @include toRem(margin-left, 2);
+        content: " đ";
+      }
+    }
+  }
+  &-interest {
+    width: 15%;
+    height: 100%;
+    background-color: $primary-color;
+    color: $white-color;
+    @include flexBox(center, center);
+    &--number {
+      font-weight: 600;
+      @include font-size(18);
+      @include flexBox($dir: column);
+      &:after {
+        content: "interest";
+        text-transform: uppercase;
+        font-weight: 600;
+        @include font-size(8);
+        @include toRem(line-height, 10);
+      }
+    }
+  }
+  &-payment {
+    @include flexBox(center);
+    @include toRem(gap, 2);
+    height: 100%;
+    width: 85%;
+    @include toRem(padding, 5);
+    background-color: $secondary-color;
+  }
+}

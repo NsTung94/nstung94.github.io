@@ -1,0 +1,24 @@
+.container.filter__container   
+    .container__row.filter__wrapper 
+        .filter__button-wrap-reset 
+            .btn.center-flex-row.filter__button.js-selector-open 
+                img(src='./src/images/icon/filter-icon.svg' alt='').hide-on-desktop
+                .filter__button-item.center-flex-row Filter 
+            .filter__button-reset.hide-on-mobile.js-reset-selector 
+                img(src='./src/images/icon/reset-filter.svg' alt='')
+                span.filter__button-reset-name Reset 
+        .btn.btn-no-border.filter__button.filter__button-number.hide-on-mobile
+            span.filter__button-item#numberProducts 
+        .btn.center-flew-row.filter__button.js-include-active 
+            .filter__button-item.js-sort-open 
+                span.filter__button-detail Sort by 
+                .filter__button-detail.hide-on-mobile : default 
+                .filter__button-detail
+                    img(src='./src/images/icon/chevron-down.png')
+            .filter-sort-selection.js-sort-selector 
+                .filter-sort-selection--overlay.hide-on-desktop.js-sort-close 
+                .filter-sort-selection--list.js-sort-close 
+                    button.filter-sort-selection--button.js-sort-option Default        
+                    button.filter-sort-selection--button.js-sort-option Price high to low        
+                    button.filter-sort-selection--button.js-sort-option Price low to high 
+                    button.filter-sort-selection--button.js-sort-option Highest rate  

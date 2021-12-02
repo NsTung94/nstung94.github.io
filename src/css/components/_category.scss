@@ -1,0 +1,73 @@
+.category {
+  margin: auto;
+  @include toRem(margin-top, 20);
+  @include toRem(margin-bottom, 20);
+  &__header {
+    text-transform: uppercase;
+    font-weight: 600;
+    @include font-size(18);
+    line-height: 25px;
+    @include toRem(margin-bottom, 8);
+    @include large {
+      @include toRem(margin-top, 40);
+      @include font-size(20);
+    }
+  }
+  &__content {
+    @include toRem(margin-right, 20);
+    @include toRem(height, 70);
+    @include large {
+      @include toRem(height, 200);
+    }
+    border-bottom: 1px solid $primary-color;
+  }
+  &__item {
+    font-weight: 400;
+    @include font-size(14);
+    @include toRem(line-height, 18);
+    @include toRem(height, 60);
+    @include toRem(margin-left, 8);
+    @include toRem(margin-right, 8);
+    @include toRem(padding-top, 11);
+    @include toRem(padding-bottom, 11);
+    @include toRem(padding-left, 18);
+    @include toRem(padding-right, 18);
+    min-width: fit-content;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    &:hover {
+      border: 2px solid $primary-color;
+      @include toRem(border-radius, 2);
+      font-weight: 600;
+      opacity: 0.8;
+    }
+    @include flexBox(center, center, wrap, row);
+    &-type {
+      @include flexBox(center, center);
+      text-align: center;
+      @include large {
+        width: 100%;
+      }
+    }
+    @include large {
+      @include toRem(height, 160);
+      @include toRem(width, 130);
+      @include toRem(max-width, 135);
+      margin:0;
+      @include toRem(margin-left,10);
+      @include toRem(margin-right,10);
+      @include toRem(padding-left,25);
+      @include toRem(padding-right,25);
+      @include toRem(padding-top,1);
+      @include toRem(padding-bottom,1);
+      border: none;
+    }
+  }
+  @include large {
+    @include toRem(margin-top,40);
+  }
+  .selected {
+    border: 2px solid $primary-color;
+    @include toRem(border-radius,1);
+    font-weight: 600;
+  }
+}

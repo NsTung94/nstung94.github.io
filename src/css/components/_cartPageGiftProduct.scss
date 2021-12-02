@@ -1,0 +1,56 @@
+.cartpage__gift {
+    @include flexBox(stretch);
+    border: solid $primary-color;
+    @include toRem(border-width, 1);
+    @include toRem(margin-top, 5);
+    @include toRem(margin-bottom, 5);
+    @include toRem(padding-bottom, 10);
+    
+    position: relative;
+    &-button {
+      width: 100%;
+      @include flexBox(center, center);
+      @include toRem(gap, 10);
+      border-radius: 0;
+      border: none;
+      pointer-events: none;
+      @include large {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: fit-content;
+      }
+    }
+    &-cost {
+      @include flexBox(center);
+      width: fit-content;
+      @include toRem(gap, 12);
+      @include toRem(margin-right, 20);
+    }
+    &-img {
+      @include flexBox(center, center);
+      height: 100%;
+    }
+    &-left {
+      width: 40%;
+      @include large {
+        width: 20%;
+      }
+    }
+    &-name {
+      @include toRem(padding-top, 10);
+      font-weight: 600;
+      @include font-size(14);
+      max-width: 70%;
+    }
+    &-quantity {
+      font-weight: 600;
+      @include font-size(14);
+    }
+    &-right {
+      width: 60%;
+      @include large {
+        width: 80%;
+      }
+    }
+  }

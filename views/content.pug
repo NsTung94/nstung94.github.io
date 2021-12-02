@@ -1,0 +1,58 @@
+.container__wrapper 
+    section.selector.js-selector 
+        .selector__header.hide-on-desktop.js-selector-close
+            .selector__header--iconFilter
+                img(src='./src/images/icon/filter-icon.svg' alt='') 
+                span Filter
+            div 
+                img(src='./src/images/icon/close-icon.svg' alt='').selector__header--icon
+        .selector__container
+            ul.selector__container-list
+                li.selector__container-filter.js-dropdown-menu
+                    .selector__container-title.js-dropdown-button Promotions
+                    .selector__container-content.js-dropdown-content
+                        .selector__container-checkbox.js-filter-promo-checkbox.js-checkbox 
+                            label.checkBox
+                                input(type='checkbox' value='new').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label New 
+                        .selector__container-checkbox.js-filter-promo-checkbox.js-checkbox 
+                            label.checkBox
+                                input(type='checkbox' value='discount').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label Sale
+                        .selector__container-checkbox.js-filter-promo-checkbox.js-checkbox 
+                            label.checkBox
+                                input(type='checkbox' value='gift').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label Free Gift 
+                        .selector__container-checkbox.js-filter-promo-checkbox.js-checkbox 
+                            label.checkBox
+                                input(type='checkbox' value='bundle').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label Bundle 
+                li.selector__container-filter.js-dropdown-menu
+                    .selector__container-title.js-dropdown-button Prices 
+                    .selector__container-content.js-dropdown-content 
+                        .selector__container-checkbox.js-checkbox.js-filter-price-checkbox
+                            label.checkBox.js-selector-checkbox
+                                input(type='checkbox' value='low').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label < 5 millions
+                        .selector__container-checkbox.js-checkbox.js-filter-price-checkbox
+                            label.checkBox.js-selector-checkbox
+                                input(type='checkbox' value='medium').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label 5-10 millions
+                        .selector__container-checkbox.js-checkbox.js-filter-price-checkbox
+                            label.checkBox.js-selector-checkbox
+                                input(type='checkbox' value='high').checkbox__input.js-filter-check.checked
+                                span.checkbox__checkmark 
+                                span.checkbox__label.selector__container-label 10-20 millions
+        .selector__footer.hide-on-desktop
+            .btn.center-flex-row.selector__footer-button.js-reset-selector reset 
+            .btn.btn--primary.center-flex-row.selector__footer-button.js-selector-close.js-apply-filter Apply Filters
+    section.container.product
+        .container__row.product__list.js-product-list#product-list 
+        .design 
+            .btn.btn--primary.loadMore#load-more(type='button') Load More

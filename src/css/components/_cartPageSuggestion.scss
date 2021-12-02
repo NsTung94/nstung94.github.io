@@ -1,0 +1,96 @@
+.cartpage__more {
+  @include flexBox(stretch);
+  @include toRem(margin-bottom, 40);
+  &--buy {
+    @include toRem(padding-left, 20);
+    @include toRem(border-width, 1);
+    border: solid $secondary-color;
+  }
+  &-item {
+    @include flexBox(flex-start, flex-start, wrap, column);
+    width: 50%;
+    @include large {
+      width: calc(100% / 3);
+    }
+    &--bundle {
+      background-color: $primary-color;
+      @include flexBox(stretch, $dir: column);
+      color: $white-color;
+      @include toRem(padding-bottom, 20);
+      @include large {
+        padding: 0;
+      }
+    }
+    &--buy {
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
+    }
+  }
+  &-img {
+    margin: 0 auto;
+  }
+  &-button {
+    width: 100%;
+    @include toRem(height, 45);
+    font-weight: 600;
+    @include font-size(14);
+    border: 1px solid $primary-color;
+    border-radius: 0;
+    &--bundle {
+      margin: auto;
+      width: 80%;
+    }
+  }
+  &-code {
+    font-weight: 600;
+    @include font-size(14);
+    @include toRem(margin-bottom, 4);
+  }
+  &-cost {
+    font-weight: 600;
+    @include font-size(24);
+    @include toRem(margin-bottom, 16);
+    @include toRem(margin-top, 16);
+    &--tax {
+      @include font-size(16);
+      &:after {
+        content: "(tax included)";
+        font-weight: 400;
+        @include font-size(14);
+      }
+    }
+  }
+  &-title,
+  &-save,
+  &-price,
+  &-oldprice,
+  &-name {
+    @include flexBox(center, center);
+  }
+  &-title {
+    @include flexBox(center, center);
+    text-transform: capitalize;
+    @include toRem(height, 57);
+  }
+  &-save {
+    background-color: $danger-color;
+    border: none;
+    border-radius: 0;
+    color: $white-color;
+  }
+  &-name {
+    font-weight: 600;
+    @include font-size(20);
+    @include toRem(margin-top, 4);
+    @include toRem(margin-bottom, 8);
+  }
+  &-price {
+    font-weight: 600;
+    @include font-size(30);
+  }
+  &-oldprice {
+    font-weight: 400;
+    @include font-size(14);
+    @include toRem(margin-bottom, 25);
+  }
+}

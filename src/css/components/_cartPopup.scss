@@ -1,0 +1,119 @@
+.cart {
+  @include flexBox($dir: column);
+  position: absolute;
+  z-index: 50;
+  height: 0;
+  @include toRem(width, 474);
+  @include toRem(top, 50);
+  right: 0;
+  background-color: $white-color;
+  overflow: hidden;
+  box-shadow: -1px 1px 0px $secondary-color;
+  @include large{
+    @include toRem(right, -40);
+  }
+  &__header {
+    @include flexBox(center, $dir: row);
+    @include toRem(gap, 5);
+    @include toRem(padding, 15);
+    @include toRem(height, 50);
+    border-bottom: 1px solid $secondary-color;
+    font-weight: 400;
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 24);
+    &-number {
+      opacity: 0.5;
+      &:before {
+        content: "(";
+      }
+      &:after {
+        content: ")";
+      }
+    }
+  }
+  &__container {
+    @include flexBox($wrap: no-wrap, $dir: column);
+    @include toRem(padding-right, 15);
+    @include toRem(height, 250);
+    width: 100%;
+    overflow-y: scroll;
+    &-detail {
+      @include flexBox(flex-start, $dir: column);
+      @include toRem(max-width, 220);
+      @include toRem(padding-top, 10);
+      height: 100%;
+    }
+    &-decision {
+      @include flexBox(flex-end, flex-start, wrap, column);
+      flex-grow: 1;
+      @include toRem(gap, 8);
+      @include toRem(padding-top, 10);
+      height: 100%;
+    }
+  }
+  &__footer {
+    border-top: 1px solid $secondary-color;
+    @include toRem(height, 150);
+    margin-bottom: 0;
+    &-total {
+      @include toRem(padding-top, 20);
+      @include toRem(padding-bottom, 13);
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
+      @include flexBox(center, space-between);
+    }
+    &-title {
+      text-transform: uppercase;
+      font-weight: 600;
+      @include font-size(16);
+      @include toRem(line-height, 24);
+    }
+    &__number {
+      font-weight: 600;
+      @include font-size(16);
+      @include toRem(line-height, 24);
+    }
+    &-action {
+      @include flexBox();
+      padding: 0;
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
+      @include toRem(margin-bottom, 15);
+      &-button {
+        @include flexBox(center, center);
+        @include toRem(height, 45);
+        width: calc((100% - 8px) / 2);
+      }
+    }
+    &-extra {
+      @include toRem(height, 41);
+      background-color: $secondary-color;
+      padding: 0;
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
+      @include flexBox(center);
+      @include toRem(gap, 10);
+      &-content {
+        @include flexBox(center);
+        font-weight: 400;
+        @include font-size(14);
+        @include toRem(line-height, 22);
+      }
+    }
+  }
+  &__empty {
+    width: 100%;
+    @include toRem(height, 400);
+    @include toRem(gap, 20);
+    @include flexBox(center, center, wrap, column);
+  }
+  .price-out-stock {
+    color: $tag-discount-color;
+  }
+  .hide {
+    display: none;
+  }
+  .hide-after:after {
+    display: none;
+  }
+}

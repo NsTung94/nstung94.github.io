@@ -1,0 +1,52 @@
+.checkBox {
+  @include toRem(line-height, 22);
+  @include toRem(font-size, 18);
+  display: flex;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+  .checkbox__label {
+    font-weight: 400;
+    @include font-size(16);
+    @include toRem(line-height, 22);
+    @include toRem(padding-left, 10);
+    vertical-align: middle;
+    cursor: pointer;
+  }
+  .checkbox__input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkbox__checkmark {
+    border: 1px solid $primary-color;
+    @include toRem(height, 22);
+    @include toRem(width, 22);
+    @include toRem(border-radius, 2);
+    @include toRem(padding, 10);
+    position: relative;
+    align-self: center;
+    top: 0;
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      border-right: 2px solid $primary-color;
+      border-bottom: 2px solid $primary-color;
+      transform: rotate(45deg);
+      @include toRem(left, 7);
+      @include toRem(width, 6);
+      @include toRem(height, 12);
+      @include toRem(top, 3);
+    }
+  }
+}
+
+.checkbox__input:checked ~ .checkbox__checkmark {
+  border-color: $primary-color;
+  &:after {
+    display: block;
+  }
+}

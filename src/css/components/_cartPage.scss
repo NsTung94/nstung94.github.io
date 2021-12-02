@@ -1,0 +1,124 @@
+.cartpage {
+  
+  &__left {
+    @include large {
+      width: calc(100% * 7 / 12);
+      padding: 0 20px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+  &__right {
+    z-index: 10;
+    @include large {
+      max-width: calc(100% / 3);
+      flex: 0 0 calc(100% / 3);
+      margin-left: calc(100% / 12);
+    }
+  }
+  &__middle {
+    margin-left: calc(100% / 12);
+  }
+  &__heading {
+    font-weight: 600;
+    @include toRem(font-size, 40);
+
+    @include toRem(line-height, 48);
+    padding: 20px 0;
+    @include toRem(padding-top, 20);
+    @include toRem(padding-bottom, 20);
+    padding-left: 0;
+    padding-right: 0;
+    @include large {
+      @include toRem(padding-top, 40);
+      @include toRem(padding-bottom, 40);
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
+    }
+  }
+  &__promotion {
+    @include flexBox(stretch);
+    @include toRem(margin, 20);
+    margin-left:0;
+    margin-right:0;
+    &-input {
+      flex-grow: 1;
+    }
+  }
+  &__apply {
+    width: 120px;
+  }
+  &__checkout {
+    height: 45px;
+    margin-bottom: 8px;
+  }
+  &__title {
+    font-weight: 600;
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 26);
+    text-transform: uppercase;
+    border-bottom: 1px solid $secondary-color;
+    @include toRem(margin, 20);
+    margin-left:0;
+    margin-right:0;
+    @include toRem(padding-bottom, 10);
+  }
+  &__return {
+    width: 150px;
+    position: relative;
+    @include toRem(margin, 15);
+    margin-left:0;
+    margin-right:0;
+    @include toRem(padding-left, 20);
+    font-weight: 600;
+    @include font-size(14);
+    cursor: pointer;
+    &:before {
+      content: "";
+      @include toRem(width, 10);
+      @include toRem(height, 10);
+      border: solid $primary-color;
+      @include toRem(padding, 3);
+      position: absolute;
+      transform: rotate(-45deg);
+      @include toRem(top, 4);
+      border-width: 2px 0 0 2px;
+      left: 0;
+    }
+  }
+  &__container {
+    max-width: 82%;
+    display: block;
+    margin: 0 auto;
+  }
+  &-box {
+    @include toRem(width, 40);
+    @include toRem(height, 40);
+  }
+  .row {
+    @include flexBox($jc: space-between);
+  }
+  .expand {
+    @include flexBox(stretch, $dir: column);
+    height: auto;
+    z-index: 9999;
+  }
+  .wrapper-cart {
+    @include large {
+      height: 100%;
+      background: linear-gradient(90deg, $white-color calc( 100% * 7.4 / 12), $cart-price-background-color calc(100% * 4.6 / 12));
+      position: relative;
+    }
+  }
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
+  }
+  .hide-on-desktop {
+    @include large {
+      display: none;
+    }
+  }
+}

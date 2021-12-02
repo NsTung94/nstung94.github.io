@@ -1,0 +1,139 @@
+.selector {
+  @include flexBox($dir: column);
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+  z-index: 99;
+  background-color: $white-color;
+  transition: bottom 0.8s ease-in-out;
+  @include large {
+    position: static;
+    width: 25%;
+    @include toRem(margin-left, -20);
+  }
+  &__header {
+    @include flexBox(center, space-between);
+    text-transform: uppercase;
+    position: relative;
+    display: flex;
+    @include toRem(padding, 15);
+    @include toRem(padding-left, 30);
+    width: 100%;
+    text-align: left;
+    border: none;
+    background-color: $secondary-color;
+    margin-top: 0;
+    &-icon {
+      position: absolute;
+      @include toRem(right, 15);
+      top: calc(50%);
+      @include toRem(width, 21);
+      @include toRem(height, 21);
+    }
+    &--iconFilter {
+      @include flexBox(center, center);
+      @include toRem(gap, 5);
+      gap: 5px;
+      @include font-size(20);
+      font-weight: 600;
+    }
+    @include large {
+      display: none;
+    }
+  }
+  &__container {
+    position: relative;
+    left: 0;
+    right: 0;
+    flex: 1 0 auto;
+    overflow: auto;
+    @include toRem(padding, 15);
+    width: 100%;
+    @include large {
+      padding: 0;
+    }
+    &-list {
+      padding: 0 ;
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
+    }
+    &-filter {
+      border-bottom: 1px solid $secondary-color;
+      padding: 0;
+      @include toRem(padding-top, 20);
+      @include toRem(padding-bottom, 20);
+      overflow: hidden;
+      @include large {
+        @include toRem(max-width, 210);
+        max-width: 210px;
+      }
+    }
+    &-title {
+      position: relative;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: 600;
+      @include font-size(14);
+      @include toRem(line-height, 17);
+      padding: 0;
+      @include toRem(padding-top, 10);
+      @include toRem(padding-bottom, 10);
+      &:before {
+        position: absolute;
+        content: "";
+        @include toRem(width, 2);
+        @include toRem(height, 14);
+        top: calc(50% - 6px);
+        @include toRem(right, 22);
+        background-color: $primary-color;
+      }
+      &:after {
+        position: absolute;
+        content: "";
+        @include toRem(width, 16);
+        @include toRem(height, 2);
+        top: calc(50%);
+        @include toRem(right, 15);
+        background-color: $primary-color;
+      }
+    }
+    &-content {
+      height: 0;
+      transition: 0.5s;
+      overflow: hidden;
+      @include flexBox(center, $dir: column);
+    }
+    &-checkbox {
+      width: 100%;
+      @include toRem(padding-top, 10);
+    }
+    &-label {
+      @include toRem(margin-left, 15);
+    }
+  }
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    @include toRem(padding-left, 15);
+    @include toRem(padding-right, 15);
+    position: relative;
+    @include toRem(bottom, 15);
+    width: 100%;
+    background-color: $white-color;
+    &-button {
+      width: calc(50% - 5px);
+    }
+  }
+  
+  .show {
+    display: block;
+  }
+  .hide-before:before,
+  .hide-after:after {
+    display: none;
+  }
+}

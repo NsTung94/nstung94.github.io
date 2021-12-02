@@ -1,0 +1,59 @@
+.cart__item {
+  @include flexBox(center, $dir: row);
+  // height: 100%;
+  width: 100%;
+
+  padding:0;
+  @include toRem(padding-top, 10);
+  @include toRem(padding-bottom, 10);
+  border-bottom: 1px solid $secondary-color;
+  &-img {
+    @include toRem(width, 70);
+    @include toRem(height, 150);
+    @include flexBox(center, center);
+    &--imgSrc {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  &-name {
+    font-weight: 600;
+    @include font-size(14);
+    @include toRem(line-height, 18);
+    @include toRem(margin-bottom, 3);
+  }
+  &-code {
+    text-transform: uppercase;
+    font-weight: 400;
+    @include font-size(12);
+    @include toRem(line-height, 16);
+    @include toRem(margin-bottom, 8);
+  }
+  &-quantity {
+    @include flexBox();
+    @include toRem(height, 30);
+    &--number {
+      font-weight: 600;
+      @include font-size(12);
+      @include toRem(line-height, 20);
+    }
+  }
+  &-price {
+    font-weight: 400;
+    @include font-size(14);
+    @include toRem(line-height, 22);
+    &:after {
+      content: " đ";
+    }
+  }
+  &-delete {
+    @include flexBox(flex-end, flex-end, wrap, column);
+    opacity: 0.5;
+    &--small {
+      @include toRem(width, 13);
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

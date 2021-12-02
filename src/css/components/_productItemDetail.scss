@@ -1,0 +1,87 @@
+.product__item {
+  &-detail {
+    width: calc(100% - 110px);
+    @include large {
+      width: 100%;
+    }
+  }
+  &-code {
+    text-transform: uppercase;
+    font-weight: 600;
+    @include font-size(14);
+    @include toRem(line-height, 22);
+  }
+  &-name {
+    font-weight: 600;
+    @include font-size(18);
+    @include toRem(line-height, 22);
+    @include toRem(min-height, 50);
+    @include large {
+      @include toRem(font-size, 20);
+      @include toRem(line-height, 26);
+      @include toRem(height, 80);
+    }
+  }
+  &-rate {
+    @include flexBox(baseline);
+    @include toRem(gap, 5);
+    &--number {
+      font-weight: 400;
+      @include font-size(14);
+      @include toRem(line-height, 16.8);
+      line-height: 16.8px;
+      width: fit-content;
+      &:before {
+        content: "(";
+      }
+      &:after {
+        content: ")";
+      }
+      @include large {
+        @include toRem(line-height, 24);
+      }
+    }
+  }
+  &-description {
+    list-style-type: disc;
+    padding-left: 15px;
+    li {
+      margin-bottom: 6px;
+      font-weight: 400;
+      @include font-size(14);
+      @include toRem(line-height, 24);
+    }
+    @include large {
+      order: 1;
+    }
+    &--item {
+      font-weight: 400;
+      @include font-size(14);
+      @include toRem(line-height, 24);
+    }
+  }
+  &-action {
+    @include flexBox();
+    @include toRem(gap, 5);
+    @include large {
+      flex-direction: row-reverse;
+      @include toRem(gap, 10);
+      order: 3;
+    }
+    &--add,
+    &--research,
+    &--out {
+      @include toRem(height, 45);
+      width: 100%;
+      font-weight: 600;
+      @include font-size(14);
+      @include toRem(line-height, 16.8);
+      @include large {
+        width: calc(50% - 5px);
+      }
+    }
+    &--out {
+      color: red;
+    }
+  }
+}

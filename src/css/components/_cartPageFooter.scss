@@ -1,0 +1,35 @@
+.cartpage__footer {
+    @include toRem(margin-bottom, 200);
+    &-header {
+      border-top: 1px solid $secondary-color;
+      border-bottom: none;
+      @include toRem(padding-top, 40);
+      @include toRem(padding-bottom, 20);
+    }
+    &-list {
+      list-style: none;
+    }
+    &-method {
+      position: relative;
+      @include toRem(padding-left, 25);
+      &:before {
+        content: "";
+        @include toRem(width, 7);
+        @include toRem(height, 15);
+        border: solid $primary-color;
+        @include toRem(padding, 3);
+        position: absolute;
+        transform: rotate(45deg);
+        @include toRem(top, -5);
+        @include toRem(border-right, 3);
+        @include toRem(border-bottom, 3);
+        left: 0;
+      }
+    }
+    &-logos {
+      @include flexBox();
+      @include toRem(gap, 10);
+      @include toRem(margin-top, 20);
+      @include toRem(margin-bottom, 20);
+    }
+  }

@@ -1,0 +1,55 @@
+.header__wrapper 
+    .header__logo 
+        img(src='./src/images/logo/electrolux_logo.png')
+    .header__navigation
+        .header__navigation-link.hide-on-mobile 
+            .header__navigation-button Appliances
+            .header__navigation-button Support
+            .header__navigation-button Promotions
+        ul.header__navigation-icons 
+            li.header__navigation-icon 
+                .btn.btn-no-border.count__wrapper
+                    img(src='./src/images/icon/search.svg').header__navigation-icon--img.counter__icon
+                    span.count__number.js-number-wish 0
+            li.header__navigation-icon.hide-on-mobile 
+                .btn.btn-no-border 
+                    img(src='./src/images/icon/user.png').header__navigation-icon--img
+            li.header__navigation-icon.js-cart 
+                .btn.btn-no-border.count__wrapper.js-cart-open
+                    img(src='./src/images/icon/Cart.svg').header__navigation-icon--img.count__icon
+                    span.count__number.js-number-cart 0
+                .cart.cart-active__item
+                    .item.cart__header
+                        .cart__header-title Your cart 
+                        .cart__header-number.js-number-cart-item 
+                    .container.cart__container.js-cart-list.js-hide-on-none#cart-list 
+                    .item.cart__footer.js-hide-on-none 
+                        .cart__footer-total 
+                            .cart__footer-title total 
+                            .cart__footer-number.js-totalPrice 
+                        .cart__footer-action 
+                            .btn.cart__footer-action-button.js-open-cartpage
+                                a(href="cart.html") View cart 
+                            .btn.btn--primary.cart__footer-action-button Check out
+                        .cart__footer-extra 
+                            img(src="./src/images/icon/gift.png").cart__footer-extra-icon
+                            .cart__footer-extra-content Free Gift on all orders over 550.000 VND 
+                    .cart__empty
+                        img(src="./src/images/logo/empty-box.png")
+                        .cart__empty-content There are no items in your bag
+
+            li.header__navigation-icon.js-open-menu.hide-on-desktop 
+                .btn.btn-no-border 
+                    img(src='./src/images/icon/hamburger.svg').header__navigation-icon--img
+            li.header__navigation-icon.header__navigation-language.js-language.hide-on-mobile EN 
+                img(src='./src/images/icon/chevron-down.png').header__navigation-language--icon
+                ul.header__navigation-language-dropdown.js-language-dropdown.hide
+                    li(data-after="EN") English
+                    li(data-after="VN") Vietnamese
+.header__breadcrumb
+    button.header__breadcrumb-mobile.hide-on-desktop.btn.btn-no-border 
+        a(href="#").header__breadcrumb-mobile--item Back to Homepage 
+    ul.header__breadcrumb-desktop.hide-on-mobile 
+        li.header__breadcrumb-desktop--item.disable Home    
+        li.header__breadcrumb-desktop--item  
+            a(href="#").header__breadcrumb-desktop--link Promotions  

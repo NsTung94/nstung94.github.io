@@ -1,0 +1,87 @@
+.header {
+  &__wrapper {
+    @include flexBox(center, space-between);
+    width: 100%;
+    @include toRem(height, 63);
+    box-shadow: 0px 1px 0px $secondary-color;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: $white-color;
+    padding: 0;
+    @include toRem(padding-left, 15);
+    @include toRem(padding-right, 15);
+    padding: 0 15px;
+    @include large {
+      padding: 0 calc(10% + 20px);
+    }
+  }
+  &__logo {
+    width: fit-content;
+  }
+  &__breadcrumb {
+    @include flexBox(center);
+    @include toRem(margin-top, 63);
+    @include toRem(height, 42);
+    &-mobile {
+      font-weight: 600;
+      @include font-size(14);
+      &--item {
+        text-decoration: none;
+        text-transform: capitalize;
+        color: $primary-color;
+        &:before {
+          content: " <";
+          color: $primary-color;
+          @include toRem(padding-right, 5);
+          @include toRem(width, 15);
+          @include toRem(height, 15);
+        }
+      }
+    }
+    &-desktop {
+      @include flexBox(center);
+      padding: 0;
+      &--item + &--item:before {
+        @include toRem(padding, 8);
+        color: $dark-color;
+        content: "/\00a0";
+      }
+      &--item &--link {
+        font-weight: 600;
+        @include font-size(14);
+        @include toRem(line-height, 26);
+        opacity: 0.5;
+      }
+      &--item + &--item &--link {
+        text-decoration: underline;
+        font-style: italic;
+        color: $primary-color;
+        opacity: 1;
+      }
+    }
+  }
+  .count {
+    &__wrapper {
+      position: relative;
+    }
+    &__number {
+      @include flexBox(center, center);
+      position: absolute;
+      color: $white-color;
+      @include toRem(bottom, -5);
+      @include toRem(right, -5);
+      @include toRem(width, 20);
+      @include toRem(height, 20);
+      border-radius: 50%;
+      background-color: $danger-color;
+    }
+  }
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
+  }
+}

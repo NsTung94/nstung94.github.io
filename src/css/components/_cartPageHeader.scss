@@ -1,0 +1,23 @@
+.cartpage__header {
+    @include flexBox(center, center);
+    @include toRem(height, 65);
+    @include toRem(border-bottom, 1);
+    @include toRem(padding-left, 20);
+    @include toRem(padding-right, 20);
+    border-bottom: solid $secondary-color;
+    @include large {
+      justify-content: flex-start;
+      width: 82%;
+      margin: 0 auto;
+      position: relative;
+    }
+    &-logo {
+      @include large {
+        width: fit-content;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }

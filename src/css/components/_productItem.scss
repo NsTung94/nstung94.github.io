@@ -1,0 +1,76 @@
+.product__item {
+    position: relative;
+    @include flexBox();
+    @include toRem(margin-bottom, 40);
+    
+    @include large {
+      @include flexBox($dir: column);
+      width: calc((100% - 80px) / 3);
+      margin-bottom: 40px;
+    }
+    &-heart {
+      position: absolute;
+      top: 0;
+      @include toRem(width, 30);
+      @include toRem(height, 30);
+      @include toRem(right, 15);
+      background-image: url(/src/images/icon/heart-outline-icon.svg);
+      @include large {
+        right: 0;
+      }
+    }
+    &-tag {
+      @include flexBox();
+      @include toRem(gap, 8);
+      width: 100%;
+      @include toRem(height, 50);
+      @include large {
+        position: absolute;
+        flex-direction: column;
+        width: auto;
+        @include toRem(height, 100);
+      }
+    }
+    &-img {
+      @include toRem(width, 110);
+      position: relative;
+      img {
+        width: 100%;
+      }
+      @include large {
+        @include toRem(margin-top, 28);
+        width: 100%;
+      }
+      &--content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        @include large {
+          display: block;
+          margin: 0 auto;
+        }
+      }
+    }
+    &-suggestion {
+      @include flexBox(center);
+      @include toRem(height, 46);
+      @include large {
+        display: none;
+      }
+    }
+    &-compare {
+      width: auto;
+      &-label {
+        @include toRem(padding-left, 10);
+        font-weight: 400;
+        @include font-size(14);
+        @include toRem(line-height, 22);
+      }
+      @include large {
+        order: 4;
+      }
+    }
+  }

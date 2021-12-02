@@ -1,0 +1,126 @@
+.cartpage__product {
+  @include flexBox(stretch);
+  @include toRem(margin-top, 20);
+  @include toRem(margin-bottom, 20);
+  &-checkbox {
+    @include flexBox(flex-end);
+    gap: 10px;
+    &--checkmark {
+      @include toRem(margin-right, 10);
+    }
+  }
+  &-code {
+    text-transform: uppercase;
+    font-weight: 400;
+    @include font-size(14);
+    @include toRem(line-height, 21);
+  }
+  &-cost {
+    text-align: center;
+  }
+  &-delete {
+    align-self: flex-start;
+  }
+  &-detail {
+    @include flexBox(center, space-between);
+    @include toRem(margin-bottom, 10);
+    width: 100%;
+    &--install {
+      align-items: flex-end;
+    }
+  }
+  &-imgsrc {
+    width: 100%;
+  }
+  &-outstock {
+    font-weight: 600;
+    @include font-size(14);
+    &-note {
+      font-weight: 400;
+    }
+  }
+  &-left {
+    @include flexBox(center, flex-start, wrap, column);
+    width: 20%;
+  }
+  &-link {
+    position: relative;
+    width: 20%;
+    @include toRem(height, 50);
+    &:before {
+      content: "";
+      @include toRem(width, 35);
+      @include toRem(height, 50);
+      border: solid $primary-color;
+      @include toRem(padding, 3);
+      position: absolute;
+      @include toRem(top, 15);
+      left: 50%;
+      border-width: 0 0 1px 1px;
+      @include toRem(border-bottom, 1);
+      @include toRem(border-left, 1);
+    }
+  }
+  &-name {
+    font-weight: 600;
+    @include font-size(18);
+    line-height: 26px;
+    width: calc(100% - 20px);
+    @include large {
+      max-width: 70%;
+    }
+  }
+  &-price {
+    text-align: end;
+    &--new {
+      font-weight: 600;
+      @include font-size(16);
+      @include toRem(line-height, 22);
+    }
+    &--old {
+      font-weight: 400;
+      @include font-size(14);
+      @include toRem(line-height, 19);
+    }
+  }
+  &-quantity {
+    @include flexBox(stretch);
+    &--add {
+      order: 3;
+      @include large {
+        order: 1;
+      }
+    }
+    &--decrease,
+    &--increase {
+      position: relative;
+      &:before {
+        content: "";
+        @include toRem(width, 14);
+        @include toRem(height, 2);
+        position: absolute;
+        top: calc(50% - 1px);
+        background-color: $primary-color;
+        left: calc(50% - 7px);
+      }
+    }
+    &--increase {
+      &:after {
+        content: "";
+        @include toRem(width, 2);
+        @include toRem(height, 14);
+        position: absolute;
+        top: calc(50% - 7px);
+        background-color: $primary-color;
+        left: calc(50% - 1px);
+      }
+    }
+    &--number {
+      @include font-size(16);
+    }
+  }
+  &-right {
+    @include flexBox();
+    width: 80%;
+  }
+}

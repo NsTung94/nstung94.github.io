@@ -1,0 +1,52 @@
+.menu__subMenu {
+    display: flex;
+    left: 0;
+    width: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 1;
+    @include toRem(min-width, 200);
+    border: 1px solid $secondary-color;
+    background: $white-color;
+    height: 100%;
+    overflow: auto;
+    justify-content: space-between;
+    transform: translateX(120%);
+    transition: transform 0.4s;
+    &-heading {
+      display: block;
+      width: 100%;
+      @include toRem(padding-top, 27);
+      @include toRem(padding-bottom, 27);
+      @include toRem(padding-right, 50);
+      @include toRem(padding-left, 60);
+      position: relative;
+      color: $primary-color;
+      font-size: 1.14286rem;
+      font-weight: 600;
+      background-color: $secondary-color;
+      cursor: pointer;
+      &:before {
+        position: absolute;
+        content: "";
+        @include toRem(width, 12);
+        @include toRem(height, 12);
+        border: solid $primary-color;
+        @include toRem(padding, 3);
+        transform: rotate(-45deg);
+        @include toRem(bottom, 30);
+        @include toRem(border-top, 2);
+        @include toRem(border-left, 2);
+        @include toRem(left, 35);
+      }
+    }
+    &-item {
+      @include toRem(padding-top, 15);
+      @include toRem(padding-bottom, 15);
+      @include toRem(padding-right, 45);
+      @include toRem(padding-left, 30);
+      font-weight: 600;
+      @include font-size(14);
+      pointer-events: none;
+    }
+  }

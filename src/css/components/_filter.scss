@@ -1,0 +1,104 @@
+.filter {
+  &__container {
+    @include flexBox(center, space-between);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: $white-color;
+    @include toRem(height, 80);
+    z-index: 10;
+    @include large {
+      position: relative;
+      // width: 100%;
+      &__button-wrap-reset {
+        @include flexBox(center, space-between);
+        width: 15%;
+      }
+    }
+  }
+  &__wrapper {
+    width: 100%;
+    @include flexBox(center, space-between);
+    @include large {
+      @include toRem(height, 40);
+      margin: 0;
+    }
+  }
+  &__button {
+    @include toRem(min-width, 120);
+    @include toRem(height, 45);
+    font-weight: 600;
+    @include font-size(16);
+    @include toRem(line-height, 19);
+    position: relative;
+    cursor: pointer;
+    &-detail {
+      @include large {
+        @include toRem(margin-right, 5);
+        @include toRem(margin-left, 5);
+      }
+    }
+    &-item {
+      @include flexBox(center, center);
+      @include toRem(gap, 5);
+      position: relative;
+    }
+    &-reset {
+      display: none;
+      @include large {
+        @include flexBox();
+        cursor: pointer;
+      }
+    }
+    &:first-child {
+      @include large {
+        pointer-events: none;
+      }
+    }
+    &:last-child {
+      @include large {
+        text-transform: capitalize;
+        justify-content: flex-end;
+      }
+    }
+    @include large {
+      border: none;
+      min-width: unset;
+      @include flexBox(center);
+      padding: 0;
+      width: 20%;
+      
+      &-number {
+        padding: 0;
+        @include toRem(padding-left, 30);
+        @include toRem(padding-right, 30);
+        width: 60%;
+        text-transform: capitalize;
+        &:after {
+          content: " Products";
+          @include toRem(margin-left, 10);
+        }
+      }
+    }
+    &:hover {
+      opacity: 1;
+    }
+    &-wrap-reset {
+      @include flexBox(center, space-between);
+      width: 17%;
+    }
+  }
+  .active {
+    bottom: 0;
+    opacity: 1;
+    @include large {
+      @include toRem(height, 160);
+    }
+  }
+  .hide-on-mobile {
+    display: none;
+    @include large {
+      display: flex;
+    }
+  }
+}

@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title Training w/ PUG
+    link(rel='stylesheet' href='./node_modules/owl.carousel/dist/assets/owl.carousel.min.css')
+    link(rel='stylesheet' href='./node_modules/owl.carousel/dist/assets/owl.theme.default.min.css')
+    link(rel='stylesheet' href='/src/css/main.css')
+   
+  body
+    .wrapper
+      .menu
+        include menu.pug 
+      header
+        .container.header#header
+          include header.pug
+        .header__hero 
+          .header__hero-wrapper 
+            img(src='./src/images/product/hero.png').header__hero-img
+            .header__hero-inner Promotion
+      section.container.category 
+        include category.pug 
+      section.filter 
+        include filterBar.pug
+      .container.product__container.flex
+        include content.pug
+      .contact-icon
+        a(href='tel:123-456-7890')
+          img(src='./src/images/logo/contact-mobile.png').contact-icon--mobile.hide-on-desktop
+        a(href='tel:123-456-7890')
+          img(src='./src/images/logo/contact.png').contact-icon--desktop.hide-on-mobile
+      footer#footer
+        include footer.pug
+    script(type='module' src='./src/js/main.js')
+    include scripts.pug

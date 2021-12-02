@@ -1,0 +1,42 @@
+.cartpage__sub {
+  display: none;
+  height: 0;
+  background-color: $white-color;
+  @include large {
+    background-color: transparent;
+    @include flexBox(stretch, $dir: column);
+    height: auto;
+  }
+  &-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $primary-color;
+    opacity: 0.85;
+    z-index: -10;
+  }
+  &-item {
+    @include flexBox(center, space-between);
+    font-weight: 600;
+    @include font-size(12);
+    @include toRem(line-height, 24);
+    text-transform: uppercase;
+  }
+  &-header {
+    @include toRem(height, 50);
+    @include flexBox(center, space-between);
+    border-bottom: 1px solid $secondary-color;
+    @include toRem( margin-bottom, 15);
+    &-title {
+      font-weight: 600;
+      @include font-size(16);
+      text-transform: uppercase;
+    }
+
+    &-icon {
+      transform: rotate(90deg);
+    }
+  }
+}
