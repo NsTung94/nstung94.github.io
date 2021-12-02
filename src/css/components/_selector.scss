@@ -12,15 +12,15 @@
   @include large {
     position: static;
     width: 25%;
-    margin-left: -20px;
+    @include toRem(margin-left, -20);
   }
   &__header {
     @include flexBox(center, space-between);
     text-transform: uppercase;
     position: relative;
     display: flex;
-    padding: 15px;
-    padding-left: 30px;
+    @include toRem(padding, 15);
+    @include toRem(padding-left, 30);
     width: 100%;
     text-align: left;
     border: none;
@@ -28,13 +28,14 @@
     margin-top: 0;
     &-icon {
       position: absolute;
-      right: 15px;
+      @include toRem(right, 15);
       top: calc(50%);
-      width: 21px;
-      height: 21px;
+      @include toRem(width, 21);
+      @include toRem(height, 21);
     }
     &--iconFilter {
       @include flexBox(center, center);
+      @include toRem(gap, 5);
       gap: 5px;
       @include font-size(20);
       font-weight: 600;
@@ -49,19 +50,24 @@
     right: 0;
     flex: 1 0 auto;
     overflow: auto;
-    padding: 15px;
+    @include toRem(padding, 15);
     width: 100%;
     @include large {
       padding: 0;
     }
     &-list {
-      padding: 0 20px;
+      padding: 0 ;
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
     }
     &-filter {
       border-bottom: 1px solid $secondary-color;
-      padding: 20px 0;
+      padding: 0;
+      @include toRem(padding-top, 20);
+      @include toRem(padding-bottom, 20);
       overflow: hidden;
       @include large {
+        @include toRem(max-width, 210);
         max-width: 210px;
       }
     }
@@ -71,24 +77,26 @@
       cursor: pointer;
       font-weight: 600;
       @include font-size(14);
-      line-height: 17px;
-      padding: 10px 0;
+      @include toRem(line-height, 17);
+      padding: 0;
+      @include toRem(padding-top, 10);
+      @include toRem(padding-bottom, 10);
       &:before {
         position: absolute;
         content: "";
-        width: 2px;
-        height: 14px;
+        @include toRem(width, 2);
+        @include toRem(height, 14);
         top: calc(50% - 6px);
-        right: 22px;
+        @include toRem(right, 22);
         background-color: $primary-color;
       }
       &:after {
         position: absolute;
         content: "";
-        width: 16px;
-        height: 2px;
+        @include toRem(width, 16);
+        @include toRem(height, 2);
         top: calc(50%);
-        right: 15px;
+        @include toRem(right, 15);
         background-color: $primary-color;
       }
     }
@@ -100,18 +108,20 @@
     }
     &-checkbox {
       width: 100%;
-      padding-top: 10px;
+      @include toRem(padding-top, 10);
     }
     &-label {
-      margin-left: 15px;
+      @include toRem(margin-left, 15);
     }
   }
   &__footer {
     display: flex;
     justify-content: space-between;
-    padding: 0 15px;
+    padding: 0;
+    @include toRem(padding-left, 15);
+    @include toRem(padding-right, 15);
     position: relative;
-    bottom: 15px;
+    @include toRem(bottom, 15);
     width: 100%;
     background-color: $white-color;
     &-button {

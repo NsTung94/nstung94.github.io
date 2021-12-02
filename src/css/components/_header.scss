@@ -2,13 +2,16 @@
   &__wrapper {
     @include flexBox(center, space-between);
     width: 100%;
-    height: 63px;
+    @include toRem(height, 63);
     box-shadow: 0px 1px 0px $secondary-color;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 99;
     background-color: $white-color;
+    padding: 0;
+    @include toRem(padding-left, 15);
+    @include toRem(padding-right, 15);
     padding: 0 15px;
     @include large {
       padding: 0 calc(10% + 20px);
@@ -19,8 +22,8 @@
   }
   &__breadcrumb {
     @include flexBox(center);
-    margin-top: 63px;
-    height: 42px;
+    @include toRem(margin-top, 63);
+    @include toRem(height, 42);
     &-mobile {
       font-weight: 600;
       @include font-size(14);
@@ -31,9 +34,9 @@
         &:before {
           content: " <";
           color: $primary-color;
-          padding-right: 5px;
-          width: 15px;
-          height: 15px;
+          @include toRem(padding-right, 5);
+          @include toRem(width, 15);
+          @include toRem(height, 15);
         }
       }
     }
@@ -41,14 +44,14 @@
       @include flexBox(center);
       padding: 0;
       &--item + &--item:before {
-        padding: 8px;
+        @include toRem(padding, 8);
         color: $dark-color;
         content: "/\00a0";
       }
       &--item &--link {
         font-weight: 600;
         @include font-size(14);
-        line-height: 26px;
+        @include toRem(line-height, 26);
         opacity: 0.5;
       }
       &--item + &--item &--link {
@@ -67,10 +70,10 @@
       @include flexBox(center, center);
       position: absolute;
       color: $white-color;
-      bottom: -5px;
-      right: -5px;
-      width: 20px;
-      height: 20px;
+      @include toRem(bottom, -5);
+      @include toRem(right, -5);
+      @include toRem(width, 20);
+      @include toRem(height, 20);
       border-radius: 50%;
       background-color: $danger-color;
     }

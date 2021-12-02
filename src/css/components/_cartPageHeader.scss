@@ -1,8 +1,10 @@
 .cartpage__header {
     @include flexBox(center, center);
-    height: 65px;
-    border-bottom: 1px solid $secondary-color;
-    padding: 0 20px;
+    @include toRem(height, 65);
+    @include toRem(border-bottom, 1);
+    @include toRem(padding-left, 20);
+    @include toRem(padding-right, 20);
+    border-bottom: solid $secondary-color;
     @include large {
       justify-content: flex-start;
       width: 82%;

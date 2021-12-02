@@ -4,6 +4,8 @@
     @include large {
       width: calc(100% * 7 / 12);
       padding: 0 20px;
+      padding-top: 0;
+      padding-bottom: 0;
     }
   }
   &__right {
@@ -19,16 +21,26 @@
   }
   &__heading {
     font-weight: 600;
-    font-size: 40px;
-    line-height:48px;
+    @include toRem(font-size, 40);
+
+    @include toRem(line-height, 48);
     padding: 20px 0;
+    @include toRem(padding-top, 20);
+    @include toRem(padding-bottom, 20);
+    padding-left: 0;
+    padding-right: 0;
     @include large {
-      padding: 40px 20px;
+      @include toRem(padding-top, 40);
+      @include toRem(padding-bottom, 40);
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
     }
   }
   &__promotion {
     @include flexBox(stretch);
-    margin: 20px 0;
+    @include toRem(margin, 20);
+    margin-left:0;
+    margin-right:0;
     &-input {
       flex-grow: 1;
     }
@@ -42,30 +54,34 @@
   }
   &__title {
     font-weight: 600;
-    @include font-size(16);
-    line-height: 26px;
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 26);
     text-transform: uppercase;
     border-bottom: 1px solid $secondary-color;
-    margin: 20px 0;
-    padding-bottom: 10px;
+    @include toRem(margin, 20);
+    margin-left:0;
+    margin-right:0;
+    @include toRem(padding-bottom, 10);
   }
   &__return {
     width: 150px;
     position: relative;
-    margin: 15px 0px;
-    padding-left: 20px;
+    @include toRem(margin, 15);
+    margin-left:0;
+    margin-right:0;
+    @include toRem(padding-left, 20);
     font-weight: 600;
     @include font-size(14);
     cursor: pointer;
     &:before {
       content: "";
-      width: 10px;
-      height: 10px;
+      @include toRem(width, 10);
+      @include toRem(height, 10);
       border: solid $primary-color;
-      padding: 3px;
+      @include toRem(padding, 3);
       position: absolute;
       transform: rotate(-45deg);
-      top: 4px;
+      @include toRem(top, 4);
       border-width: 2px 0 0 2px;
       left: 0;
     }
@@ -76,8 +92,8 @@
     margin: 0 auto;
   }
   &-box {
-    width: 40px;
-    height: 40px;
+    @include toRem(width, 40);
+    @include toRem(height, 40);
   }
   .row {
     @include flexBox($jc: space-between);
@@ -90,7 +106,7 @@
   .wrapper-cart {
     @include large {
       height: 100%;
-      background-color: linear-gradient(90deg, $white-color calc( 61.6%), $cart-price-background-color calc(38.4%));
+      background: linear-gradient(90deg, $white-color calc( 100% * 7.4 / 12), $cart-price-background-color calc(100% * 4.6 / 12));
       position: relative;
     }
   }

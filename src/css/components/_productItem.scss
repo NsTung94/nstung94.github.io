@@ -1,8 +1,8 @@
 .product__item {
     position: relative;
     @include flexBox();
-    margin-bottom: 40px;
-
+    @include toRem(margin-bottom, 40);
+    
     @include large {
       @include flexBox($dir: column);
       width: calc((100% - 80px) / 3);
@@ -11,9 +11,9 @@
     &-heart {
       position: absolute;
       top: 0;
-      width: 30px;
-      height: 30px;
-      right: 15px;
+      @include toRem(width, 30);
+      @include toRem(height, 30);
+      @include toRem(right, 15);
       background-image: url(/src/images/icon/heart-outline-icon.svg);
       @include large {
         right: 0;
@@ -21,24 +21,24 @@
     }
     &-tag {
       @include flexBox();
-      gap: 8px;
+      @include toRem(gap, 8);
       width: 100%;
-      height: 50px;
+      @include toRem(height, 50);
       @include large {
         position: absolute;
         flex-direction: column;
         width: auto;
-        height: 100px;
+        @include toRem(height, 100);
       }
     }
     &-img {
-      width: 110px;
+      @include toRem(width, 110);
       position: relative;
       img {
         width: 100%;
       }
       @include large {
-        margin-top: 28px;
+        @include toRem(margin-top, 28);
         width: 100%;
       }
       &--content {
@@ -56,8 +56,7 @@
     }
     &-suggestion {
       @include flexBox(center);
-      height: 46px;
-      // gap: 2px;
+      @include toRem(height, 46);
       @include large {
         display: none;
       }
@@ -65,10 +64,10 @@
     &-compare {
       width: auto;
       &-label {
-        padding-left: 10px;
+        @include toRem(padding-left, 10);
         font-weight: 400;
         @include font-size(14);
-        line-height: 22px;
+        @include toRem(line-height, 22);
       }
       @include large {
         order: 4;

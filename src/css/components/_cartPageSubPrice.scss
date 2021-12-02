@@ -21,14 +21,14 @@
     @include flexBox(center, space-between);
     font-weight: 600;
     @include font-size(12);
-    line-height: 26px;
+    @include toRem(line-height, 24);
     text-transform: uppercase;
   }
   &-header {
-    height: 50px;
+    @include toRem(height, 50);
     @include flexBox(center, space-between);
     border-bottom: 1px solid $secondary-color;
-    margin-bottom: 15px;
+    @include toRem( margin-bottom, 15);
     &-title {
       font-weight: 600;
       @include font-size(16);

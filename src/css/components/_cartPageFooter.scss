@@ -1,33 +1,35 @@
 .cartpage__footer {
-    margin-bottom: 200px;
+    @include toRem(margin-bottom, 200);
     &-header {
       border-top: 1px solid $secondary-color;
       border-bottom: none;
-      padding: 40px 0 20px;
-      margin: 0;
+      @include toRem(padding-top, 40);
+      @include toRem(padding-bottom, 20);
     }
     &-list {
       list-style: none;
     }
     &-method {
       position: relative;
-      padding-left: 25px;
+      @include toRem(padding-left, 25);
       &:before {
         content: "";
-        width: 7px;
-        height: 15px;
+        @include toRem(width, 7);
+        @include toRem(height, 15);
         border: solid $primary-color;
-        padding: 3px;
+        @include toRem(padding, 3);
         position: absolute;
         transform: rotate(45deg);
-        top: -5px;
-        border-width: 0 3px 3px 0;
+        @include toRem(top, -5);
+        @include toRem(border-right, 3);
+        @include toRem(border-bottom, 3);
         left: 0;
       }
     }
     &-logos {
       @include flexBox();
-      gap: 10px;
-      margin: 20px 0;
+      @include toRem(gap, 10);
+      @include toRem(margin-top, 20);
+      @include toRem(margin-bottom, 20);
     }
   }

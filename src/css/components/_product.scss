@@ -3,20 +3,20 @@
   @include large {
     margin: 0;
     display: flex;
-    margin-left: 20px;
-
+    @include toRem(margin-left, 20);
+    
     &__list {
       @include flexBox(stretch);
       @include large {
-        gap: 40px;
+        @include toRem(gap, 40);
       }
     }
   }
- 
+  
   .heart-active {
     background-image: url(/src/images/icon/heart-filled-icon.svg);
   }
-
+  
   .price-number {
     &:after {
       content: " đ";

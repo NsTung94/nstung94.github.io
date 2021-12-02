@@ -5,18 +5,18 @@
     background-color: white;
     border: 1px solid;
     height: 100%;
-    width: 300px;
+    @include toRem(width, 300);
     overflow-y: scroll;
     overflow-x: hidden;
     &-heading {
       @include flexBox(center, flex-end);
       &-span {
-        height: 18px;
+        @include toRem(height, 18);
         font-weight: 600;
         display: block;
         position: relative;
         cursor: pointer;
-       
+        
       }
       &-img {
         height: 100%;
@@ -27,29 +27,30 @@
         align-self: center;
         text-decoration: none;
         @include font-size(16);
-        height: 48px;
-        line-height: 24px;
-        padding: 15px 0 ;
-        padding-right: 50px;
-        padding-left: 40px;
+        @include toRem(height, 48);
+        @include toRem(line-height, 24);
+        @include toRem(padding-top, 15);
+        @include toRem(padding-top, 15);
+        @include toRem(padding-right, 50);
+        @include toRem(padding-left, 40);
         color: $primary-color;
         cursor: pointer;
         @include flexBox(center, unset);
-        gap: 10px;
+        @include toRem(gap, 10);
       }
       &--nosub {
         pointer-events: none;
       }
       &-icon {
-        padding-right: 20px;
-        height: 15px;
+        @include toRem(padding-right, 20);
+        @include toRem(height, 15);
       }
       &-img {
         height: 100%;
       };
     }
     &-productList {
-      padding-bottom: 25px;
-      margin-top: 25px;
+      @include toRem(padding-bottom, 25);
+      @include toRem(margin-top, 25);
     }
   }

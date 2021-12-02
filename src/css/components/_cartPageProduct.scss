@@ -1,18 +1,19 @@
 .cartpage__product {
   @include flexBox(stretch);
-  margin: 20px 0 40px;
+  @include toRem(margin-top, 20);
+  @include toRem(margin-bottom, 20);
   &-checkbox {
     @include flexBox(flex-end);
     gap: 10px;
     &--checkmark {
-      margin-right: 10px;
+      @include toRem(margin-right, 10);
     }
   }
   &-code {
     text-transform: uppercase;
     font-weight: 400;
     @include font-size(14);
-    line-height: 21px;
+    @include toRem(line-height, 21);
   }
   &-cost {
     text-align: center;
@@ -22,7 +23,7 @@
   }
   &-detail {
     @include flexBox(center, space-between);
-    margin-bottom: 10px;
+    @include toRem(margin-bottom, 10);
     width: 100%;
     &--install {
       align-items: flex-end;
@@ -45,17 +46,19 @@
   &-link {
     position: relative;
     width: 20%;
-    height: 50px;
+    @include toRem(height, 50);
     &:before {
       content: "";
-      width: 35px;
-      height: 50px;
+      @include toRem(width, 35);
+      @include toRem(height, 50);
       border: solid $primary-color;
-      padding: 3px;
+      @include toRem(padding, 3);
       position: absolute;
-      top: 15px;
+      @include toRem(top, 15);
       left: 50%;
       border-width: 0 0 1px 1px;
+      @include toRem(border-bottom, 1);
+      @include toRem(border-left, 1);
     }
   }
   &-name {
@@ -72,12 +75,12 @@
     &--new {
       font-weight: 600;
       @include font-size(16);
-      line-height: 22px;
+      @include toRem(line-height, 22);
     }
     &--old {
       font-weight: 400;
       @include font-size(14);
-      line-height: 19px;
+      @include toRem(line-height, 19);
     }
   }
   &-quantity {
@@ -93,8 +96,8 @@
       position: relative;
       &:before {
         content: "";
-        width: 14px;
-        height: 2px;
+        @include toRem(width, 14);
+        @include toRem(height, 2);
         position: absolute;
         top: calc(50% - 1px);
         background-color: $primary-color;
@@ -104,8 +107,8 @@
     &--increase {
       &:after {
         content: "";
-        width: 2px;
-        height: 14px;
+        @include toRem(width, 2);
+        @include toRem(height, 14);
         position: absolute;
         top: calc(50% - 7px);
         background-color: $primary-color;

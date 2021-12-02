@@ -1,6 +1,6 @@
 .checkBox {
-  line-height: 22px;
-  font-size: 1.14286rem;
+  @include toRem(line-height, 22);
+  @include toRem(font-size, 18);
   display: flex;
   position: relative;
   user-select: none;
@@ -8,9 +8,9 @@
   .checkbox__label {
     font-weight: 400;
     @include font-size(16);
-    line-height: 22px;
+    @include toRem(line-height, 22);
+    @include toRem(padding-left, 10);
     vertical-align: middle;
-    padding-left: 10px;
     cursor: pointer;
   }
   .checkbox__input {
@@ -22,10 +22,10 @@
   }
   .checkbox__checkmark {
     border: 1px solid $primary-color;
-    height: 22px;
-    width: 22px;
-    border-radius: 2px;
-    padding: 10px;
+    @include toRem(height, 22);
+    @include toRem(width, 22);
+    @include toRem(border-radius, 2);
+    @include toRem(padding, 10);
     position: relative;
     align-self: center;
     top: 0;
@@ -36,10 +36,10 @@
       border-right: 2px solid $primary-color;
       border-bottom: 2px solid $primary-color;
       transform: rotate(45deg);
-      left: 7px;
-      width: 6px;
-      height: 12px;
-      top: 3px;
+      @include toRem(left, 7);
+      @include toRem(width, 6);
+      @include toRem(height, 12);
+      @include toRem(top, 3);
     }
   }
 }

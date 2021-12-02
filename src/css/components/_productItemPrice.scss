@@ -1,7 +1,7 @@
 .product__item {
   &-price {
     @include flexBox(baseline);
-    gap: 5px;
+    @include toRem(gap, 5);
     @include large {
       margin-top: auto;
       order: 2;
@@ -9,22 +9,22 @@
     &--old {
       font-weight: 400;
       @include font-size(14);
-      line-height: 28px;
+      @include toRem(line-height, 28);
       text-decoration: line-through;
       &:after {
         content: " đ";
-        margin-left: 2px;
+        @include toRem(margin-left, 2);
       }
     }
     &--new {
       font-weight: 600;
       @include font-size(18);
-      line-height: 28px;
+      @include toRem(line-height, 28);
       @include large {
         @include font-size(24);
       }
       &:after {
-        margin-left: 2px;
+        @include toRem(margin-left, 2);
         content: " đ";
       }
     }
@@ -44,16 +44,16 @@
         text-transform: uppercase;
         font-weight: 600;
         @include font-size(8);
-        line-height: 10px;
+        @include toRem(line-height, 10);
       }
     }
   }
   &-payment {
     @include flexBox(center);
-    gap: 2px;
+    @include toRem(gap, 2);
     height: 100%;
     width: 85%;
-    padding: 5px;
+    @include toRem(padding, 5);
     background-color: $secondary-color;
   }
 }

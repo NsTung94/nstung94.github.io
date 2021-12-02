@@ -8,49 +8,51 @@
   @include large {
     position: relative;
     background-color: transparent;
-    padding: 0 20px;
+    @include toRem(padding-left, 20);
+    @include toRem(padding-right, 20);
   }
   &-container {
-    padding: 15px;
+    @include toRem(padding, 15);
     box-shadow: -1px -1px $secondary-color;
     background-color: $white-color;
     @include large {
       background-color: transparent;
-      padding-bottom: 40px;
-      padding-right: 30px;
+      @include toRem(padding-bottom, 40);
+      @include toRem(padding-right, 30);
       box-shadow: none;
     }
   }
   &-total {
     @include flexBox(center, space-between);
-    margin-bottom: 10px;
+    @include toRem(margin-bottom, 10);
     @include large {
-      margin: 10px 0 0 0;
+      @include toRem(margin-top, 10);
+      @include toRem(margin-bottom, 0);
     }
     &--title {
       text-transform: uppercase;
       font-weight: 600;
       @include font-size(12);
-      line-height: 20px;
+      @include toRem(line-height, 20);
       @include large {
-        font-size: 22px;
+        @include toRem(font-size, 22);
       }
     }
     &--icon {
       transform: rotate(-90deg);
-      width: 10px;
-      height: 10px;
+      @include toRem(width, 10);
+      @include toRem(height, 10);
       @include large {
         display: none;
       }
     }
     &--number {
       @include flexBox(center, center);
-      gap: 10px;
+      @include toRem(gap, 10);
       span {
         font-weight: 600;
         @include font-size(18);
-        line-height: 26px;
+        @include toRem(line-height, 26);
         position: relative;
       }
     }
@@ -59,7 +61,7 @@
     @include large {
       opacity: 0.5;
       @include flexBox(flex-end, flex-end);
-      margin-bottom: 20px;
+      @include toRem(margin-bottom, 20);
       font-weight: 400;
       @include font-size(14);
     }
@@ -67,7 +69,7 @@
   &-free {
     font-weight: 400;
     @include font-size(14);
-    margin-bottom: 16px;
+    @include toRem(margin-bottom, 16);
   }
   &-secure {
     font-weight: 600;

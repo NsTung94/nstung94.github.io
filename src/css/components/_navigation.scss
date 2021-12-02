@@ -4,7 +4,7 @@
     width: auto;
     &-icons {
       @include flexBox(center, flex-end, wrap, row);
-      margin-bottom: 10px;
+      @include toRem(margin-bottom, 10);
       width: 100%;
       height: 100%;
       @include large {
@@ -12,28 +12,28 @@
       }
     }
     &-icon {
-      margin-left: 15px;
+      @include toRem(margin-left, 15);
       position: relative;
       
     }
     &-language {
       position: relative;
       border-left: 1px solid $primary-color;
-      padding-left: 20px;
-      margin-left: 20px;
+      @include toRem(padding-left, 20);
+      @include toRem(margin-left, 20);
       cursor: pointer;
       @include flexBox(center, center);
       &-dropdown {
         @include flexBox(center, center, wrap, column);
         position: absolute;
-        gap: 10px;
-        top: 30px;
+        @include toRem(gap, 10);
+        @include toRem(top, 30);
         right: 0;
-        width: 150px;
+        @include toRem(width, 150);
         height: auto;
         background-color: $white-color;
         box-shadow: 1px 1px 1px 1px $secondary-color;
-        padding: 10px;
+        @include toRem(padding, 10);
         transition: all 0.5s; 
       }
       &--icon {
@@ -46,13 +46,17 @@
     }
     &-link {
       @include flexBox(center);
-      padding: 0 10px;
+      padding: 0;
+      @include toRem(padding-left, 10);
+      @include toRem(padding-right, 10);
     }
     &-button{
-      margin: 0 20px;
+      margin: 0;
+      @include toRem(margin-left, 20);
+      @include toRem(margin-right, 20);
       font-weight: 600;
       @include font-size(14);
-      line-height: 26px;
+      @include toRem(line-height, 26);
     }
     .hide {
       display: none;

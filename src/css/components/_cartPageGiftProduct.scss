@@ -1,14 +1,17 @@
 .cartpage__gift {
     @include flexBox(stretch);
-    border: 1px solid $primary-color;
-    margin: 5px 0;
-    padding-bottom: 10px;
+    border: solid $primary-color;
+    @include toRem(border-width, 1);
+    @include toRem(margin-top, 5);
+    @include toRem(margin-bottom, 5);
+    @include toRem(padding-bottom, 10);
+    
     position: relative;
     &-button {
       width: 100%;
       @include flexBox(center, center);
-      gap: 10px;
-      border-radius: 0px;
+      @include toRem(gap, 10);
+      border-radius: 0;
       border: none;
       pointer-events: none;
       @include large {
@@ -21,8 +24,8 @@
     &-cost {
       @include flexBox(center);
       width: fit-content;
-      gap: 12px;
-      margin-right: 20px;
+      @include toRem(gap, 12);
+      @include toRem(margin-right, 20);
     }
     &-img {
       @include flexBox(center, center);
@@ -35,7 +38,7 @@
       }
     }
     &-name {
-      padding-top: 10px;
+      @include toRem(padding-top, 10);
       font-weight: 600;
       @include font-size(14);
       max-width: 70%;

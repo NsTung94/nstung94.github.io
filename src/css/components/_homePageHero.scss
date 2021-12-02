@@ -1,15 +1,17 @@
 .header__hero {
     &-wrapper {
       position: relative;
-      margin: 0 -15px;
+      margin:0 ;
+      @include toRem(margin-left, -15);
+      @include toRem(margin-right, -15);
       @include flexBox();
       @include large{
-        height: 368px;
+        @include toRem(height, 368);
       }
     }
     &-img {
       width: 100%;
-      height: 200px;
+      @include toRem(height, 200);
       object-fit: cover;
       @include large{
         height: 100%;
@@ -18,22 +20,22 @@
     &-inner {
       @include flexBox(center, center);
       width: 100%;
-      height: 74px;
+      @include toRem(height, 74);
       background-color: $primary-color;
       text-transform: capitalize;
       font-weight: 600;
       @include font-size(26);
-      line-height: 34px;
+      @include toRem(line-height, 34);
       color: $white-color;
       @include large {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
         left: 15%;
-        width: 470px;
-        height: 148px;
+        @include toRem(width, 470);
+        @include toRem(height, 148);
+        @include toRem(padding-left, 55);
         justify-content: flex-start;
-        padding-left: 55px;
       }
     }
   }

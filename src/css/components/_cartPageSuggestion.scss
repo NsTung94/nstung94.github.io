@@ -1,9 +1,10 @@
 .cartpage__more {
   @include flexBox(stretch);
-  margin-bottom: 40px;
+  @include toRem(margin-bottom, 40);
   &--buy {
-    padding-left: 20px;
-    border: 1px solid $secondary-color;
+    @include toRem(padding-left, 20);
+    @include toRem(border-width, 1);
+    border: solid $secondary-color;
   }
   &-item {
     @include flexBox(flex-start, flex-start, wrap, column);
@@ -15,13 +16,14 @@
       background-color: $primary-color;
       @include flexBox(stretch, $dir: column);
       color: $white-color;
-      padding-bottom: 20px;
+      @include toRem(padding-bottom, 20);
       @include large {
         padding: 0;
       }
     }
     &--buy {
-      padding: 0 20px;
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
     }
   }
   &-img {
@@ -29,7 +31,7 @@
   }
   &-button {
     width: 100%;
-    height: 45px;
+    @include toRem(height, 45);
     font-weight: 600;
     @include font-size(14);
     border: 1px solid $primary-color;
@@ -42,12 +44,13 @@
   &-code {
     font-weight: 600;
     @include font-size(14);
-    margin-bottom: 4px;
+    @include toRem(margin-bottom, 4);
   }
   &-cost {
     font-weight: 600;
     @include font-size(24);
-    margin: 16px 0;
+    @include toRem(margin-bottom, 16);
+    @include toRem(margin-top, 16);
     &--tax {
       @include font-size(16);
       &:after {
@@ -67,7 +70,7 @@
   &-title {
     @include flexBox(center, center);
     text-transform: capitalize;
-    height: 57px;
+    @include toRem(height, 57);
   }
   &-save {
     background-color: $danger-color;
@@ -78,7 +81,8 @@
   &-name {
     font-weight: 600;
     @include font-size(20);
-    margin: 4px 0 8px;
+    @include toRem(margin-top, 4);
+    @include toRem(margin-bottom, 8);
   }
   &-price {
     font-weight: 600;
@@ -87,6 +91,6 @@
   &-oldprice {
     font-weight: 400;
     @include font-size(14);
-    margin-bottom: 25px;
+    @include toRem(margin-bottom, 25);
   }
 }

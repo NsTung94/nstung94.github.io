@@ -5,7 +5,7 @@
     top: 0;
     position: absolute;
     z-index: 1;
-    min-width: 200px;
+    @include toRem(min-width, 200);
     border: 1px solid $secondary-color;
     background: $white-color;
     height: 100%;
@@ -16,33 +16,35 @@
     &-heading {
       display: block;
       width: 100%;
-      padding: 27px 0;
-      padding-right: 50px;
-      padding-left: 60px;
+      @include toRem(padding-top, 27);
+      @include toRem(padding-bottom, 27);
+      @include toRem(padding-right, 50);
+      @include toRem(padding-left, 60);
       position: relative;
       color: $primary-color;
       font-size: 1.14286rem;
       font-weight: 600;
-      line-height: 1;
       background-color: $secondary-color;
       cursor: pointer;
       &:before {
         position: absolute;
         content: "";
-        width: 12px;
-        height: 12px;
+        @include toRem(width, 12);
+        @include toRem(height, 12);
         border: solid $primary-color;
-        padding: 3px;
+        @include toRem(padding, 3);
         transform: rotate(-45deg);
-        bottom: 30px;
-        border-width: 2px 0 0 2px;
-        left: 35px;
+        @include toRem(bottom, 30);
+        @include toRem(border-top, 2);
+        @include toRem(border-left, 2);
+        @include toRem(left, 35);
       }
     }
     &-item {
-      padding: 15px 0;
-      padding-right: 45px ;
-      padding-left: 30px;
+      @include toRem(padding-top, 15);
+      @include toRem(padding-bottom, 15);
+      @include toRem(padding-right, 45);
+      @include toRem(padding-left, 30);
       font-weight: 600;
       @include font-size(14);
       pointer-events: none;

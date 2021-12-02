@@ -14,21 +14,22 @@
     position: relative;
     &-a {
       @include flexBox(center);
-      gap: 10px;
+      @include toRem(gap, 10);
       text-decoration: none;
       color: $primary-color;
       @include font-size(16);
       position: relative;
-      padding: 12px 0;
-      padding-right: 50px;
-      padding-left: 35px;
+      @include toRem(padding-top, 12);
+      @include toRem(padding-bottom, 12);
+      @include toRem(padding-right, 50);
+      @include toRem(padding-left, 35);
       font-weight: 600;
       flex: 1;
     }
     &:before {
       content: " ";
       display: block;
-      height: 1px;
+      @include toRem(height, 1);
       width: 100%;
       background-color: $secondary-color;
       position: absolute;
@@ -43,8 +44,8 @@
   }
   .overlay__heading {
     position: relative;
-    height: 60px;
-    min-width: 50px;
+    @include toRem(height, 60);
+    @include toRem(min-width, 50);
     background-color: $primary-color;
     &-icon {
       position: absolute;

@@ -1,14 +1,21 @@
 .cartpage__add {
-    margin: 15px 0;
+    @include toRem(margin, 15);
+    margin-left: 0;
+    margin-right: 0;
     @include flexBox(stretch);
     background-color: $secondary-color;
-    padding: 15px;
+    @include toRem(padding, 15);
     @include large {
-      padding: 10px 20px;
+      @include toRem(padding-top, 10);
+      @include toRem(padding-bottom, 10);
+      @include toRem(padding-left, 20);
+      @include toRem(padding-right, 20);
     }
     &-btn {
       order: 3;
-      padding: 8px 30px;
+      @include toRem(padding, 30);
+      @include toRem(padding-top, 8);
+      @include toRem(padding-bottom, 8);
       @include large {
         order: 2;
       }
@@ -16,7 +23,7 @@
     &-left {
       width: 20%;
       @include large {
-        margin-right: 10px;
+        @include toRem(margin-right, 10);
       }
     }
     &-right {
@@ -29,13 +36,13 @@
     &-increase,
     &-number,
     &-decrease {
-      width: 35px;
-      height: 35px;
+      @include toRem(width, 35);
+      @include toRem(height, 35);
     }
     &-img {
       @include flexBox(center, center);
-      padding-right: 10px;
-      padding-bottom: 10px;
+      @include toRem(padding-right, 10);
+      @include toRem(padding-bottom, 10);
       width: 100%;
       @include large {
         padding: 15px;

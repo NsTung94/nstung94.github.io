@@ -3,26 +3,26 @@
   &__container {
     @include large {
       @include flexBox($dir: column);
-      height: 375px;
+      @include toRem(height, 375);
     }
   }
   &__option {
     background-color: $primary-color;
     color: $white-color;
-    padding-top: 10px;
+    @include toRem(padding-top, 10);
     &-item {
       width: 100%;
       @include large {
         @include flexBox($dir: column);
-        width: 150px;
+        @include toRem(width, 150);
+        @include toRem(margin-top, 10);
+        @include toRem(margin-right, 100);
         pointer-events: none;
-        margin-top: 10px;
-        margin-right: 100px;
       }
       &:last-child {
         border-bottom: none;
         @include large {
-          margin-top: 15px;
+          @include toRem(margin-top, 15);
         }
       }
       &-title {
@@ -33,27 +33,29 @@
         display: block;
         font-weight: 600;
         @include font-size(14);
-        line-height: 22px;
+        @include toRem(line-height, 22);
         border-bottom: 1px solid $white-color;
         color: $white-color;
-        padding: 8px 0;
+        padding: 0;
+        @include toRem(padding-top, 8);
+        @include toRem(padding-bottom, 8);
         text-decoration: none;
         &:before {
           position: absolute;
           content: "";
-          width: 2px;
-          height: 14px;
+          @include toRem(width, 2);
+          @include toRem(height, 14);
+          @include toRem(right, 22);
           top: calc(50% - 6px);
-          right: 22px;
           background-color: $white-color;
         }
         &:after {
           position: absolute;
           content: "";
-          width: 16px;
-          height: 2px;
+          @include toRem(width, 16);
+          @include toRem(height, 2);
+          @include toRem(right, 15);
           top: calc(50%);
-          right: 15px;
           background-color: $white-color;
         }
         @include large {
@@ -74,13 +76,13 @@
         overflow: hidden;
         transition: 0.5s;
         .js-checkbox {
-          padding: 5px;
+          @include toRem(padding, 5);
           font-weight: 400;
           @include font-size(14);
-          line-height: 30px;
+          @include toRem(line-height, 30);
           @include large {
             padding: 0;
-            line-height: 35px;
+            @include toRem(line-height, 35);
             width: 100%;
           }
         }
@@ -94,29 +96,33 @@
         display: none;
       }
     }
-
+    
     @include large {
       @include flexBox($dir: column);
     }
   }
   &__connect {
     @include flexBox(center, space-between);
-    margin-top: 16px;
+    @include toRem(margin-top, 16);
     &-icon {
-      margin: 0 15px 15px 0;
+      margin: 0;
+      @include toRem(margin-left, 15);
+      @include toRem(margin-bottom, 15);
     }
     &-infor {
-      margin-bottom: 15px;
+      @include toRem(margin-bottom, 15);
     }
     &-download {
       width: 40%;
       &--option {
         @include flexBox();
-        gap: 10px;
+        @include toRem(gap, 10);
       }
       @include flexBox();
       &--button {
-        padding: 5px 0;
+        padding: 0;
+        @include toRem(padding-top, 5);
+        @include toRem(padding-bottom, 5);
         width: 100%;
       }
       &--store {
@@ -124,7 +130,7 @@
     }
     &-term,
     &-copyright {
-      margin: 10px;
+      @include toRem(margin, 10);
       margin-left: 0;
       width: 100%;
       @include large {

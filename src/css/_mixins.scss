@@ -1,5 +1,13 @@
 @use 'sass:math';
 
+@mixin toRem($property, $value){
+  #{$property}: $value + px;
+  #{$property}: math.div($value, $body-font-size) + rem;
+  @include large {
+    #{$property}: math.div($value, $body-font-size-tablet) + rem;
+  }
+}
+
 @mixin font-size($sizeValue: 1.6) {
 	font-size: $sizeValue + px;
 	font-size: math.div($sizeValue, 14) + rem;

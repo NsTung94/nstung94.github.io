@@ -3,22 +3,24 @@
   position: absolute;
   z-index: 50;
   height: 0;
-  width: 474px;
-  top: 50px;
+  @include toRem(width, 474);
+  @include toRem(top, 50);
   right: 0;
   background-color: $white-color;
   overflow: hidden;
   box-shadow: -1px 1px 0px $secondary-color;
   @include large{
-    right: -40px;
+    @include toRem(right, -40);
   }
   &__header {
     @include flexBox(center, $dir: row);
-    gap: 5px;
-    padding: 15px;
-    height: 50px;
+    @include toRem(gap, 5);
+    @include toRem(padding, 15);
+    @include toRem(height, 50);
     border-bottom: 1px solid $secondary-color;
-    font: 400 16px/24px $font-primary;
+    font-weight: 400;
+    @include toRem(font-size, 16);
+    @include toRem(line-height, 24);
     &-number {
       opacity: 0.5;
       &:before {
@@ -31,73 +33,79 @@
   }
   &__container {
     @include flexBox($wrap: no-wrap, $dir: column);
-    padding-right: 0 15px;
+    @include toRem(padding-right, 15);
+    @include toRem(height, 250);
     width: 100%;
-    height: 250px;
     overflow-y: scroll;
     &-detail {
       @include flexBox(flex-start, $dir: column);
-      max-width: 220px;
+      @include toRem(max-width, 220);
+      @include toRem(padding-top, 10);
       height: 100%;
-      padding-top: 10px;
     }
     &-decision {
       @include flexBox(flex-end, flex-start, wrap, column);
       flex-grow: 1;
-      gap: 8px;
+      @include toRem(gap, 8);
+      @include toRem(padding-top, 10);
       height: 100%;
-      padding-top: 10px;
     }
   }
   &__footer {
     border-top: 1px solid $secondary-color;
-    height: 150px;
+    @include toRem(height, 150);
     margin-bottom: 0;
     &-total {
-      padding: 20px 15px 13px;
+      @include toRem(padding-top, 20);
+      @include toRem(padding-bottom, 13);
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
       @include flexBox(center, space-between);
     }
     &-title {
       text-transform: uppercase;
       font-weight: 600;
       @include font-size(16);
-      line-height: 24px;
+      @include toRem(line-height, 24);
     }
     &__number {
       font-weight: 600;
       @include font-size(16);
-      line-height: 24px;
+      @include toRem(line-height, 24);
     }
     &-action {
       @include flexBox();
-      gap: 8px;
-      padding: 0 15px;
-      margin-bottom: 15px;
+      padding: 0;
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
+      @include toRem(margin-bottom, 15);
       &-button {
         @include flexBox(center, center);
-        height: 45px;
+        @include toRem(height, 45);
         width: calc((100% - 8px) / 2);
       }
     }
     &-extra {
-      height: 41px;
+      @include toRem(height, 41);
       background-color: $secondary-color;
-      padding: 0 15px;
+      padding: 0;
+      @include toRem(padding-left, 15);
+      @include toRem(padding-right, 15);
       @include flexBox(center);
-      gap: 10px;
+      @include toRem(gap, 10);
       &-content {
         @include flexBox(center);
         font-weight: 400;
         @include font-size(14);
-        line-height: 22px;
+        @include toRem(line-height, 22);
       }
     }
   }
   &__empty {
     width: 100%;
-    height: 400px;
+    @include toRem(height, 400);
+    @include toRem(gap, 20);
     @include flexBox(center, center, wrap, column);
-    gap: 20px;
   }
   .price-out-stock {
     color: $tag-discount-color;
