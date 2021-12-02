@@ -1,4 +1,4 @@
-class FilterSortFunction {
+class FilterFunction {
   constructor() {
     this.openFilterSelector();
     this.closeFilterSelector();
@@ -34,4 +34,4 @@ class FilterSortFunction {
   }
 }
 
-export default new FilterSortFunction();
+export default new FilterFunction();

@@ -10,10 +10,9 @@ app.use('/node_modules',express.static(path.join(__dirname, 'node_modules')));
 app.set("views", "./views");
 app.set("view engine", "pug");
 
-
 // get response for '/'
 app.get("/", (req, res) => {
-  res.render("layout");
+  res.render("layout", {title: 'Training w/ PUG'});
 });
 
 app.listen(3000, () => {

@@ -1,6 +1,6 @@
 class CartServices {
     _cartProduct = [];
-    _cartItemKey = '_cartItemKey';
+    CART_ITEM_KEY = '_cartItemKey';
     numberCartItem = document.querySelector('.js-number-cart');
     
     updateCartProduct(products){
@@ -9,12 +9,12 @@ class CartServices {
     }
     
     saveToCartProducts(item){
-      localStorage.setItem(this._cartItemKey, JSON.stringify(item));
+      localStorage.setItem(this.CART_ITEM_KEY, JSON.stringify(item));
     }
     
     getCartProducts(){
-      return localStorage.getItem(this._cartItemKey)
-        ? JSON.parse(localStorage.getItem(this._cartItemKey))
+      return localStorage.getItem(this.CART_ITEM_KEY)
+        ? JSON.parse(localStorage.getItem(this.CART_ITEM_KEY))
         : [];
     }
     

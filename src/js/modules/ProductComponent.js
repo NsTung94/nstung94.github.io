@@ -3,7 +3,7 @@ import WishList from "./WishList.js";
 import ProductServices from "../services/ProductServices.js";
 import CartServices from "../services/CartServices.js";
 
-class Product {
+class ProductComponent {
   startIndex = 0;
   pageSize = 3;
   currentProducts = [];
@@ -108,4 +108,4 @@ class Product {
   }
 }
 
-export default new Product();
+export default new ProductComponent();

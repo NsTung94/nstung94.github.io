@@ -1,29 +1,5 @@
 @use 'sass:math';
 
-@mixin font-face(
-  $name,
-  $path,
-  $weight: null,
-  $style: null,
-  $exts: eot ttf svg woff woff2
-) {
-  // to do woff woff2
-  $src: $path;
-
-  $formats: (
-    eot: "embedded-opentype",
-    ttf: "truetype",
-  );
-
-  @font-face {
-    font-family: quote($name);
-    font-style: $style;
-    font-weight: $weight;
-    src: $src;
-    font-display: swap;
-  }
-}
-
 @mixin font-size($sizeValue: 1.6) {
 	font-size: $sizeValue + px;
 	font-size: math.div($sizeValue, 14) + rem;

@@ -61,6 +61,9 @@
       border-bottom: 1px solid $secondary-color;
       padding: 20px 0;
       overflow: hidden;
+      @include large {
+        max-width: 210px;
+      }
     }
     &-title {
       position: relative;

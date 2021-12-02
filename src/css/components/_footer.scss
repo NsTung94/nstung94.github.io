@@ -16,11 +16,14 @@
         @include flexBox($dir: column);
         width: 150px;
         pointer-events: none;
-        margin-top: 40px;
+        margin-top: 10px;
         margin-right: 100px;
       }
       &:last-child {
-        margin-top: 15px;
+        border-bottom: none;
+        @include large {
+          margin-top: 15px;
+        }
       }
       &-title {
         cursor: pointer;
@@ -61,6 +64,9 @@
             display: none;
           }
         }
+        &:last-child{
+          border-bottom: none;
+        }
       }
       &-content {
         padding: 0;
@@ -75,6 +81,7 @@
           @include large {
             padding: 0;
             line-height: 35px;
+            width: 100%;
           }
         }
         @include large {
@@ -122,6 +129,8 @@
       width: 100%;
       @include large {
         width: calc((100% - 20px) /2 );
+        display: flex;
+        justify-content: center;
       }
     }
   }
