@@ -18,7 +18,8 @@ html
             img(src='./src/images/product/hero.png').header__hero-img
             .header__hero-inner Promotion
       section.container.category 
-        include category.pug 
+        //- include category.pug 
+        block category
       section.filter 
         include filterBar.pug
       .container.product__container.flex
