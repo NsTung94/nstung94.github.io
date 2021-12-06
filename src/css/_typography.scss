@@ -73,6 +73,9 @@ li {
     .active-selector {
       bottom: 0;
     }
+    @include large {
+      max-width: 1180px;
+    }
   }
 }
 

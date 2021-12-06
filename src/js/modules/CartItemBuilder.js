@@ -38,7 +38,7 @@ class CartItemBuilder{
                     )}</div>`
                   : `<div class="hide"></div>`
               }
-            <div class="cart__item-delete--big">
+            <div class="cart__item-delete">
               <img class="js-cart-delete" data-id=${product.id}
                 src="./src/images/icon/delete-icon.svg" alt=""
               />  

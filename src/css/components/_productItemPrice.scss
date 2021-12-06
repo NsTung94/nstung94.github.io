@@ -1,6 +1,6 @@
 .product__item {
   &-price {
-    @include flexBox(baseline);
+    @include flexBox(center);
     @include toRem(gap, 5);
     @include large {
       margin-top: auto;

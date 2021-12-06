@@ -27,21 +27,21 @@ class ProductComponent {
   };
 
   displayProducts(products = []) {
-    let existingCart = CartServices.getCartProducts();
     products.forEach((product) => {
       this.productListElement.appendChild(ProductItemBuilder.buildFromDataModel(product));
     });
-    this.bindingAddToCartEvent();
-    CartServices.setCartValues(existingCart);
+    this.bindingAddToCartEvent()
+    CartServices.displayProductInCartQuantity();
     WishList.initWish();
   }
+
   async loadNewProductsToRender(startIndex = 0, pageSize = this.pageSize) {
     try {
       const loadedProducts = await ProductServices.getProducts(
         startIndex,
         pageSize
       );
-      if (loadedProducts.length === 0 || loadedProducts.length < pageSize) {
+      if (!loadedProducts.length || loadedProducts.length < pageSize) {
         const button = document.getElementById("load-more");
         button.classList.add("hide");
       }
@@ -62,30 +62,32 @@ class ProductComponent {
   }
 
   bindingAddToCartEvent() {
-    let button = this.productListElement.querySelectorAll(".js-add-cart");
+    const button = this.productListElement.querySelectorAll(".js-add-cart");
     const self = this;
     button.forEach(function (addBtn) {
       addBtn.addEventListener("click", function (e) {
-        let productId = Number(e.currentTarget.getAttribute("data-id"));
+          const productId = e.currentTarget.getAttribute("data-id");
+        if (productId){
+        self.addToCartProducts(+productId);
+        }
         
-        self.addToCartProducts(productId);
       });
     });
   }
 
   addToCartProducts(productId) {
     const targetProduct = ProductServices._allProducts.find(
-      (target) => target.id === productId
+      (product) => product.id === productId
     );
-    let cartProducts = CartServices.getCartProducts();
-    const index = cartProducts.findIndex((product) => product.id === targetProduct.id);
+    const cartProducts = CartServices.getCartProducts();
+    const existingProductIndex = cartProducts.findIndex((product) => product.id === targetProduct.id);
 
-    if (index !== -1) {
+    if (existingProductIndex !== -1) {
       // storage quantity is cart maximum amount => return storage number
-      if (cartProducts[index].cartQuantity < targetProduct.quantity) {
+      if (cartProducts[existingProductIndex].cartQuantity < targetProduct.quantity) {
         // cartProducts[index].cartQuantity += 1;
         targetProduct.isOutOfStock =
-          cartProducts[index].cartQuantity === targetProduct.quantity ? true : false;
+          cartProducts[existingProductIndex].cartQuantity === targetProduct.quantity ? true : false;
       }
     } else {
       if (targetProduct.quantity === 0) {
@@ -98,7 +100,7 @@ class ProductComponent {
     }
 
     CartServices.updateCartProduct(cartProducts);
-    CartServices.setCartValues(cartProducts);
+    CartServices.displayProductInCartQuantity();
   }
 
   bindingEvents() {

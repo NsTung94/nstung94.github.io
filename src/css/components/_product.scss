@@ -1,4 +1,6 @@
 .product {
+  flex:  0 0 80%;
+  max-width: 80%;
   @include flexBox();
   @include large {
     margin: 0;

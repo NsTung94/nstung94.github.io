@@ -1,6 +1,11 @@
 .product__item {
   &-detail {
     width: calc(100% - 110px);
+    cursor: pointer;
+    &:hover {
+      transition: all 0.5s;
+      opacity: 0.8;
+    }
     @include large {
       width: 100%;
     }
@@ -73,6 +78,7 @@
     &--out {
       @include toRem(height, 45);
       width: 100%;
+      min-width: auto;
       font-weight: 600;
       @include font-size(14);
       @include toRem(line-height, 16.8);

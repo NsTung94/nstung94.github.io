@@ -2,15 +2,17 @@ import CartItemBuilder from "./CartItemBuilder.js";
 import CartServices from '../services/CartServices.js';
 
 class CartMiniComponent {
+  // variables
   cartListElement = document.getElementById("cart-list");
   contentHided = document.querySelectorAll(".js-hide-on-none");
   numberInCart = document.querySelector(".js-number-cart");
   numberInCartItem = document.querySelector(".js-number-cart-item");
+
   constructor() {
-    this.openMiniCart();
+    this.bindingMiniCartEvents();
   }
 
-  openMiniCart() {
+  bindingMiniCartEvents() {
     let cartDisplay = document.querySelector(".js-cart");
     let buttonOpenCart = document.querySelector(".js-cart-open");
 
@@ -20,8 +22,8 @@ class CartMiniComponent {
         cartDisplay.classList.remove("cart-active");
       } else {
         cartDisplay.classList.add("cart-active");
+        self.loadCartProducts();
       }
-      self.loadCartProducts();
     });
   }
 
@@ -49,7 +51,7 @@ class CartMiniComponent {
     this.contentHided.forEach((content) => {
       if (!products.length) {
         content.classList.add("hide");
-        CartServices.setCartValues([]);
+        CartServices.displayProductInCartQuantity();
       } else {
         content.classList.remove("hide");
         this.numberInCart.innerHTML = `${totalNumberItem}`;

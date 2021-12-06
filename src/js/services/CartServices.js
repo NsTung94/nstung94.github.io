@@ -3,6 +3,12 @@ class CartServices {
     CART_ITEM_KEY = '_cartItemKey';
     numberCartItem = document.querySelector('.js-number-cart');
     
+    getCartProducts(){
+      return localStorage.getItem(this.CART_ITEM_KEY)
+        ? JSON.parse(localStorage.getItem(this.CART_ITEM_KEY))
+        : [];
+    }
+
     updateCartProduct(products){
       this._cartProducts = [...products];
       this.saveToCartProducts(this._cartProducts);
@@ -12,15 +18,10 @@ class CartServices {
       localStorage.setItem(this.CART_ITEM_KEY, JSON.stringify(item));
     }
     
-    getCartProducts(){
-      return localStorage.getItem(this.CART_ITEM_KEY)
-        ? JSON.parse(localStorage.getItem(this.CART_ITEM_KEY))
-        : [];
-    }
-    
-    setCartValues(cart) {
+    displayProductInCartQuantity() {
+      const productsInCart = this.getCartProducts()
       let _itemsTotal = 0;
-      cart.map(item => {
+      productsInCart.map(item => {
         _itemsTotal += item.cartQuantity;
       });
       this.numberCartItem.innerText = _itemsTotal;

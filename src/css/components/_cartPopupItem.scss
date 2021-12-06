@@ -48,12 +48,7 @@
   }
   &-delete {
     @include flexBox(flex-end, flex-end, wrap, column);
-    opacity: 0.5;
-    &--small {
-      @include toRem(width, 13);
-      img {
-        width: 100%;
-      }
-    }
+    cursor: pointer;
+    
   }
 }

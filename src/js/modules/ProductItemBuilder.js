@@ -14,19 +14,19 @@ class ProductItemBuilder {
             return '<div class="tag tag--new">new</div>';
           }
           if (deal.type === "discount") {
-            return '<div class="tag tag--discount">sale</div>';
+            return '<div class="tag-wrapper"><div class="tag tag--discount">sale</div></div>';
           }
           if (deal.type === "gift") {
             return '<div class="tag tag--gift"><img src="./src/images/icon/gift.png"/>free gift</div>';
           }
           if (deal.type === "bundle") {
-            return '<div class="tag tag--bundle">bundle</div>';
+            return '<div class="tag-wrapper"><div class="tag tag--bundle">bundle</div></div>';
           }
         })
         .join("")}
       </div>
       <div class="product__item-img">
-        <img src="${product.picture}"/>
+        <img class="product__item-img-imgSrc" src="${product.picture}"/>
       </div>
     
       <div class= "item product__item-detail">
